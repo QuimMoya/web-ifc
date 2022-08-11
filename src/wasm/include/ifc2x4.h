@@ -23,15 +23,14 @@ namespace ifc2x4 {
 	static const unsigned int IFCALARM = 3087945054;
 	static const unsigned int IFCALARMTYPE = 3001207471;
 	static const unsigned int IFCALIGNMENT = 325726236;
-	static const unsigned int IFCALIGNMENT2DHORIZONTAL = 749761778;
-	static const unsigned int IFCALIGNMENT2DHORIZONTALSEGMENT = 3199563722;
-	static const unsigned int IFCALIGNMENT2DSEGMENT = 2483840362;
-	static const unsigned int IFCALIGNMENT2DVERSEGCIRCULARARC = 3379348081;
-	static const unsigned int IFCALIGNMENT2DVERSEGLINE = 3239324667;
-	static const unsigned int IFCALIGNMENT2DVERSEGPARABOLICARC = 4263986512;
-	static const unsigned int IFCALIGNMENT2DVERTICAL = 53199957;
-	static const unsigned int IFCALIGNMENT2DVERTICALSEGMENT = 2029264950;
-	static const unsigned int IFCALIGNMENTCURVE = 3512275521;
+	static const unsigned int IFCALIGNMENTCANT = 4266260250;
+	static const unsigned int IFCALIGNMENTCANTSEGMENT = 3752311538;
+	static const unsigned int IFCALIGNMENTHORIZONTAL = 1545765605;
+	static const unsigned int IFCALIGNMENTHORIZONTALSEGMENT = 536804194;
+	static const unsigned int IFCALIGNMENTPARAMETERSEGMENT = 2879124712;
+	static const unsigned int IFCALIGNMENTSEGMENT = 317615605;
+	static const unsigned int IFCALIGNMENTVERTICAL = 1662888072;
+	static const unsigned int IFCALIGNMENTVERTICALSEGMENT = 3633395639;
 	static const unsigned int IFCANNOTATION = 1674181508;
 	static const unsigned int IFCANNOTATIONFILLAREA = 669184980;
 	static const unsigned int IFCAPPLICATION = 639542469;
@@ -48,12 +47,12 @@ namespace ifc2x4 {
 	static const unsigned int IFCAXIS1PLACEMENT = 4261334040;
 	static const unsigned int IFCAXIS2PLACEMENT2D = 3125803723;
 	static const unsigned int IFCAXIS2PLACEMENT3D = 2740243338;
+	static const unsigned int IFCAXIS2PLACEMENTLINEAR = 3425423356;
 	static const unsigned int IFCBSPLINECURVE = 1967976161;
 	static const unsigned int IFCBSPLINECURVEWITHKNOTS = 2461110595;
 	static const unsigned int IFCBSPLINESURFACE = 2887950389;
 	static const unsigned int IFCBSPLINESURFACEWITHKNOTS = 167062518;
 	static const unsigned int IFCBEAM = 753842376;
-	static const unsigned int IFCBEAMSTANDARDCASE = 2906023776;
 	static const unsigned int IFCBEAMTYPE = 819618141;
 	static const unsigned int IFCBEARING = 4196446775;
 	static const unsigned int IFCBEARINGTYPE = 3649138523;
@@ -63,6 +62,7 @@ namespace ifc2x4 {
 	static const unsigned int IFCBOILERTYPE = 231477066;
 	static const unsigned int IFCBOOLEANCLIPPINGRESULT = 3649129432;
 	static const unsigned int IFCBOOLEANRESULT = 2736907675;
+	static const unsigned int IFCBOREHOLE = 3314249567;
 	static const unsigned int IFCBOUNDARYCONDITION = 4037036970;
 	static const unsigned int IFCBOUNDARYCURVE = 1136057603;
 	static const unsigned int IFCBOUNDARYEDGECONDITION = 1560379544;
@@ -76,14 +76,15 @@ namespace ifc2x4 {
 	static const unsigned int IFCBRIDGE = 644574406;
 	static const unsigned int IFCBRIDGEPART = 963979645;
 	static const unsigned int IFCBUILDING = 4031249490;
-	static const unsigned int IFCBUILDINGELEMENT = 3299480353;
 	static const unsigned int IFCBUILDINGELEMENTPART = 2979338954;
 	static const unsigned int IFCBUILDINGELEMENTPARTTYPE = 39481116;
 	static const unsigned int IFCBUILDINGELEMENTPROXY = 1095909175;
 	static const unsigned int IFCBUILDINGELEMENTPROXYTYPE = 1909888760;
-	static const unsigned int IFCBUILDINGELEMENTTYPE = 1950629157;
 	static const unsigned int IFCBUILDINGSTOREY = 3124254112;
 	static const unsigned int IFCBUILDINGSYSTEM = 1177604601;
+	static const unsigned int IFCBUILTELEMENT = 1876633798;
+	static const unsigned int IFCBUILTELEMENTTYPE = 1626504194;
+	static const unsigned int IFCBUILTSYSTEM = 3862327254;
 	static const unsigned int IFCBURNER = 2938176219;
 	static const unsigned int IFCBURNERTYPE = 2188180465;
 	static const unsigned int IFCCSHAPEPROFILEDEF = 2898889636;
@@ -114,19 +115,18 @@ namespace ifc2x4 {
 	static const unsigned int IFCCIRCLE = 2611217952;
 	static const unsigned int IFCCIRCLEHOLLOWPROFILEDEF = 2937912522;
 	static const unsigned int IFCCIRCLEPROFILEDEF = 1383045692;
-	static const unsigned int IFCCIRCULARARCSEGMENT2D = 1062206242;
 	static const unsigned int IFCCIVILELEMENT = 1677625105;
 	static const unsigned int IFCCIVILELEMENTTYPE = 3893394355;
 	static const unsigned int IFCCLASSIFICATION = 747523909;
 	static const unsigned int IFCCLASSIFICATIONREFERENCE = 647927063;
 	static const unsigned int IFCCLOSEDSHELL = 2205249479;
+	static const unsigned int IFCCLOTHOID = 3497074424;
 	static const unsigned int IFCCOIL = 639361253;
 	static const unsigned int IFCCOILTYPE = 2301859152;
 	static const unsigned int IFCCOLOURRGB = 776857604;
 	static const unsigned int IFCCOLOURRGBLIST = 3285139300;
 	static const unsigned int IFCCOLOURSPECIFICATION = 3264961684;
 	static const unsigned int IFCCOLUMN = 843113511;
-	static const unsigned int IFCCOLUMNSTANDARDCASE = 905975707;
 	static const unsigned int IFCCOLUMNTYPE = 300633059;
 	static const unsigned int IFCCOMMUNICATIONSAPPLIANCE = 3221913625;
 	static const unsigned int IFCCOMMUNICATIONSAPPLIANCETYPE = 400855858;
@@ -164,15 +164,20 @@ namespace ifc2x4 {
 	static const unsigned int IFCCONTROLLERTYPE = 578613899;
 	static const unsigned int IFCCONVERSIONBASEDUNIT = 2889183280;
 	static const unsigned int IFCCONVERSIONBASEDUNITWITHOFFSET = 2713554722;
+	static const unsigned int IFCCONVEYORSEGMENT = 3460952963;
+	static const unsigned int IFCCONVEYORSEGMENTTYPE = 2940368186;
 	static const unsigned int IFCCOOLEDBEAM = 4136498852;
 	static const unsigned int IFCCOOLEDBEAMTYPE = 335055490;
 	static const unsigned int IFCCOOLINGTOWER = 3640358203;
 	static const unsigned int IFCCOOLINGTOWERTYPE = 2954562838;
 	static const unsigned int IFCCOORDINATEOPERATION = 1785450214;
 	static const unsigned int IFCCOORDINATEREFERENCESYSTEM = 1466758467;
+	static const unsigned int IFCCOSINESPIRAL = 2000195564;
 	static const unsigned int IFCCOSTITEM = 3895139033;
 	static const unsigned int IFCCOSTSCHEDULE = 1419761937;
 	static const unsigned int IFCCOSTVALUE = 602808272;
+	static const unsigned int IFCCOURSE = 1502416096;
+	static const unsigned int IFCCOURSETYPE = 4189326743;
 	static const unsigned int IFCCOVERING = 1973544240;
 	static const unsigned int IFCCOVERINGTYPE = 1916426348;
 	static const unsigned int IFCCREWRESOURCE = 3295246426;
@@ -185,7 +190,7 @@ namespace ifc2x4 {
 	static const unsigned int IFCCURVE = 2601014836;
 	static const unsigned int IFCCURVEBOUNDEDPLANE = 2827736869;
 	static const unsigned int IFCCURVEBOUNDEDSURFACE = 2629017746;
-	static const unsigned int IFCCURVESEGMENT2D = 1186437898;
+	static const unsigned int IFCCURVESEGMENT = 4212018352;
 	static const unsigned int IFCCURVESTYLE = 3800577675;
 	static const unsigned int IFCCURVESTYLEFONT = 1105321065;
 	static const unsigned int IFCCURVESTYLEFONTANDSCALING = 2367409068;
@@ -200,9 +205,12 @@ namespace ifc2x4 {
 	static const unsigned int IFCDERIVEDUNITELEMENT = 1045800335;
 	static const unsigned int IFCDIMENSIONALEXPONENTS = 2949456006;
 	static const unsigned int IFCDIRECTION = 32440307;
+	static const unsigned int IFCDIRECTRIXCURVESWEPTAREASOLID = 593015953;
+	static const unsigned int IFCDIRECTRIXDERIVEDREFERENCESWEPTAREASOLID = 4234616927;
 	static const unsigned int IFCDISCRETEACCESSORY = 1335981549;
 	static const unsigned int IFCDISCRETEACCESSORYTYPE = 2635815018;
-	static const unsigned int IFCDISTANCEEXPRESSION = 1945343521;
+	static const unsigned int IFCDISTRIBUTIONBOARD = 3693000487;
+	static const unsigned int IFCDISTRIBUTIONBOARDTYPE = 479945903;
 	static const unsigned int IFCDISTRIBUTIONCHAMBERELEMENT = 1052013943;
 	static const unsigned int IFCDISTRIBUTIONCHAMBERELEMENTTYPE = 1599208980;
 	static const unsigned int IFCDISTRIBUTIONCIRCUIT = 562808652;
@@ -220,8 +228,6 @@ namespace ifc2x4 {
 	static const unsigned int IFCDOOR = 395920057;
 	static const unsigned int IFCDOORLININGPROPERTIES = 2963535650;
 	static const unsigned int IFCDOORPANELPROPERTIES = 1714330368;
-	static const unsigned int IFCDOORSTANDARDCASE = 3242481149;
-	static const unsigned int IFCDOORSTYLE = 526551008;
 	static const unsigned int IFCDOORTYPE = 2323601079;
 	static const unsigned int IFCDRAUGHTINGPREDEFINEDCOLOUR = 445594917;
 	static const unsigned int IFCDRAUGHTINGPREDEFINEDCURVEFONT = 4006246654;
@@ -231,6 +237,9 @@ namespace ifc2x4 {
 	static const unsigned int IFCDUCTSEGMENTTYPE = 3760055223;
 	static const unsigned int IFCDUCTSILENCER = 1360408905;
 	static const unsigned int IFCDUCTSILENCERTYPE = 2030761528;
+	static const unsigned int IFCEARTHWORKSCUT = 3071239417;
+	static const unsigned int IFCEARTHWORKSELEMENT = 1077100507;
+	static const unsigned int IFCEARTHWORKSFILL = 3376911765;
 	static const unsigned int IFCEDGE = 3900360178;
 	static const unsigned int IFCEDGECURVE = 476780140;
 	static const unsigned int IFCEDGELOOP = 1472233963;
@@ -240,6 +249,8 @@ namespace ifc2x4 {
 	static const unsigned int IFCELECTRICDISTRIBUTIONBOARDTYPE = 2417008758;
 	static const unsigned int IFCELECTRICFLOWSTORAGEDEVICE = 3310460725;
 	static const unsigned int IFCELECTRICFLOWSTORAGEDEVICETYPE = 3277789161;
+	static const unsigned int IFCELECTRICFLOWTREATMENTDEVICE = 24726584;
+	static const unsigned int IFCELECTRICFLOWTREATMENTDEVICETYPE = 2142170206;
 	static const unsigned int IFCELECTRICGENERATOR = 264262732;
 	static const unsigned int IFCELECTRICGENERATORTYPE = 1534661035;
 	static const unsigned int IFCELECTRICMOTOR = 402227799;
@@ -287,6 +298,7 @@ namespace ifc2x4 {
 	static const unsigned int IFCFACETEDBREPWITHVOIDS = 3737207727;
 	static const unsigned int IFCFACILITY = 24185140;
 	static const unsigned int IFCFACILITYPART = 1310830890;
+	static const unsigned int IFCFACILITYPARTCOMMON = 4228831410;
 	static const unsigned int IFCFAILURECONNECTIONCONDITION = 4219587988;
 	static const unsigned int IFCFAN = 3415622556;
 	static const unsigned int IFCFANTYPE = 346874300;
@@ -334,6 +346,12 @@ namespace ifc2x4 {
 	static const unsigned int IFCGEOMETRICREPRESENTATIONITEM = 2453401579;
 	static const unsigned int IFCGEOMETRICREPRESENTATIONSUBCONTEXT = 4142052618;
 	static const unsigned int IFCGEOMETRICSET = 3590301190;
+	static const unsigned int IFCGEOMODEL = 2680139844;
+	static const unsigned int IFCGEOSLICE = 1971632696;
+	static const unsigned int IFCGEOTECHNICALASSEMBLY = 2713699986;
+	static const unsigned int IFCGEOTECHNICALELEMENT = 4230923436;
+	static const unsigned int IFCGEOTECHNICALSTRATUM = 1594536857;
+	static const unsigned int IFCGRADIENTCURVE = 2898700619;
 	static const unsigned int IFCGRID = 3009204131;
 	static const unsigned int IFCGRIDAXIS = 852622518;
 	static const unsigned int IFCGRIDPLACEMENT = 178086475;
@@ -345,10 +363,13 @@ namespace ifc2x4 {
 	static const unsigned int IFCHUMIDIFIERTYPE = 1806887404;
 	static const unsigned int IFCISHAPEPROFILEDEF = 1484403080;
 	static const unsigned int IFCIMAGETEXTURE = 3905492369;
+	static const unsigned int IFCIMPACTPROTECTIONDEVICE = 2568555532;
+	static const unsigned int IFCIMPACTPROTECTIONDEVICETYPE = 3948183225;
 	static const unsigned int IFCINDEXEDCOLOURMAP = 3570813810;
 	static const unsigned int IFCINDEXEDPOLYCURVE = 2571569899;
 	static const unsigned int IFCINDEXEDPOLYGONALFACE = 178912537;
 	static const unsigned int IFCINDEXEDPOLYGONALFACEWITHVOIDS = 2294589976;
+	static const unsigned int IFCINDEXEDPOLYGONALTEXTUREMAP = 3465909080;
 	static const unsigned int IFCINDEXEDTEXTUREMAP = 1437953363;
 	static const unsigned int IFCINDEXEDTRIANGLETEXTUREMAP = 2133299955;
 	static const unsigned int IFCINTERCEPTOR = 4175244083;
@@ -359,6 +380,8 @@ namespace ifc2x4 {
 	static const unsigned int IFCIRREGULARTIMESERIESVALUE = 3020489413;
 	static const unsigned int IFCJUNCTIONBOX = 2176052936;
 	static const unsigned int IFCJUNCTIONBOXTYPE = 4288270099;
+	static const unsigned int IFCKERB = 2696325953;
+	static const unsigned int IFCKERBTYPE = 679976338;
 	static const unsigned int IFCLSHAPEPROFILEDEF = 572779678;
 	static const unsigned int IFCLABORRESOURCE = 3827777499;
 	static const unsigned int IFCLABORRESOURCETYPE = 428585644;
@@ -378,14 +401,18 @@ namespace ifc2x4 {
 	static const unsigned int IFCLIGHTSOURCEPOSITIONAL = 1520743889;
 	static const unsigned int IFCLIGHTSOURCESPOT = 3422422726;
 	static const unsigned int IFCLINE = 1281925730;
-	static const unsigned int IFCLINESEGMENT2D = 3092502836;
+	static const unsigned int IFCLINEARELEMENT = 2176059722;
 	static const unsigned int IFCLINEARPLACEMENT = 388784114;
 	static const unsigned int IFCLINEARPOSITIONINGELEMENT = 1154579445;
+	static const unsigned int IFCLIQUIDTERMINAL = 1638804497;
+	static const unsigned int IFCLIQUIDTERMINALTYPE = 1770583370;
 	static const unsigned int IFCLOCALPLACEMENT = 2624227202;
 	static const unsigned int IFCLOOP = 1008929658;
 	static const unsigned int IFCMANIFOLDSOLIDBREP = 1425443689;
 	static const unsigned int IFCMAPCONVERSION = 3057273783;
 	static const unsigned int IFCMAPPEDITEM = 2347385850;
+	static const unsigned int IFCMARINEFACILITY = 525669439;
+	static const unsigned int IFCMARINEPART = 976884017;
 	static const unsigned int IFCMATERIAL = 1838606355;
 	static const unsigned int IFCMATERIALCLASSIFICATIONRELATIONSHIP = 1847130766;
 	static const unsigned int IFCMATERIALCONSTITUENT = 3708119000;
@@ -404,6 +431,7 @@ namespace ifc2x4 {
 	static const unsigned int IFCMATERIALPROFILEWITHOFFSETS = 552965576;
 	static const unsigned int IFCMATERIALPROPERTIES = 3265635763;
 	static const unsigned int IFCMATERIALRELATIONSHIP = 853536259;
+	static const unsigned int IFCOPENINGSTANDARDCASE = 3079942009;
 	static const unsigned int IFCMATERIALUSAGEDEFINITION = 1507914824;
 	static const unsigned int IFCMEASUREWITHUNIT = 2597039031;
 	static const unsigned int IFCMECHANICALFASTENER = 377706215;
@@ -411,14 +439,19 @@ namespace ifc2x4 {
 	static const unsigned int IFCMEDICALDEVICE = 1437502449;
 	static const unsigned int IFCMEDICALDEVICETYPE = 1114901282;
 	static const unsigned int IFCMEMBER = 1073191201;
-	static const unsigned int IFCMEMBERSTANDARDCASE = 1911478936;
 	static const unsigned int IFCMEMBERTYPE = 3181161470;
 	static const unsigned int IFCMETRIC = 3368373690;
 	static const unsigned int IFCMIRROREDPROFILEDEF = 2998442950;
+	static const unsigned int IFCMOBILETELECOMMUNICATIONSAPPLIANCE = 2078563270;
+	static const unsigned int IFCMOBILETELECOMMUNICATIONSAPPLIANCETYPE = 1950438474;
 	static const unsigned int IFCMONETARYUNIT = 2706619895;
+	static const unsigned int IFCMOORINGDEVICE = 234836483;
+	static const unsigned int IFCMOORINGDEVICETYPE = 710110818;
 	static const unsigned int IFCMOTORCONNECTION = 2474470126;
 	static const unsigned int IFCMOTORCONNECTIONTYPE = 977012517;
 	static const unsigned int IFCNAMEDUNIT = 1918398963;
+	static const unsigned int IFCNAVIGATIONELEMENT = 2182337498;
+	static const unsigned int IFCNAVIGATIONELEMENTTYPE = 506776471;
 	static const unsigned int IFCOBJECT = 3888040117;
 	static const unsigned int IFCOBJECTDEFINITION = 219451334;
 	static const unsigned int IFCOBJECTPLACEMENT = 3701648758;
@@ -428,12 +461,11 @@ namespace ifc2x4 {
 	static const unsigned int IFCOFFSETCURVE2D = 3388369263;
 	static const unsigned int IFCOFFSETCURVE3D = 3505215534;
 	static const unsigned int IFCOFFSETCURVEBYDISTANCES = 2485787929;
+	static const unsigned int IFCOPENCROSSPROFILEDEF = 182550632;
 	static const unsigned int IFCOPENSHELL = 2665983363;
 	static const unsigned int IFCOPENINGELEMENT = 3588315303;
-	static const unsigned int IFCOPENINGSTANDARDCASE = 3079942009;
 	static const unsigned int IFCORGANIZATION = 4251960020;
 	static const unsigned int IFCORGANIZATIONRELATIONSHIP = 1411181986;
-	static const unsigned int IFCORIENTATIONEXPRESSION = 643959842;
 	static const unsigned int IFCORIENTEDEDGE = 1029017970;
 	static const unsigned int IFCOUTERBOUNDARYCURVE = 144952367;
 	static const unsigned int IFCOUTLET = 3694346114;
@@ -441,6 +473,8 @@ namespace ifc2x4 {
 	static const unsigned int IFCOWNERHISTORY = 1207048766;
 	static const unsigned int IFCPARAMETERIZEDPROFILEDEF = 2529465313;
 	static const unsigned int IFCPATH = 2519244187;
+	static const unsigned int IFCPAVEMENT = 1383356374;
+	static const unsigned int IFCPAVEMENTTYPE = 514975943;
 	static const unsigned int IFCPCURVE = 1682466193;
 	static const unsigned int IFCPERFORMANCEHISTORY = 2382730787;
 	static const unsigned int IFCPERMEABLECOVERINGPROPERTIES = 3566463478;
@@ -462,15 +496,16 @@ namespace ifc2x4 {
 	static const unsigned int IFCPLANAREXTENT = 1663979128;
 	static const unsigned int IFCPLANE = 220341763;
 	static const unsigned int IFCPLATE = 3171933400;
-	static const unsigned int IFCPLATESTANDARDCASE = 1156407060;
 	static const unsigned int IFCPLATETYPE = 4017108033;
 	static const unsigned int IFCPOINT = 2067069095;
+	static const unsigned int IFCPOINTBYDISTANCEEXPRESSION = 2165702409;
 	static const unsigned int IFCPOINTONCURVE = 4022376103;
 	static const unsigned int IFCPOINTONSURFACE = 1423911732;
 	static const unsigned int IFCPOLYLOOP = 2924175390;
 	static const unsigned int IFCPOLYGONALBOUNDEDHALFSPACE = 2775532180;
 	static const unsigned int IFCPOLYGONALFACESET = 2839578677;
 	static const unsigned int IFCPOLYLINE = 3724593414;
+	static const unsigned int IFCPOLYNOMIALCURVE = 3381221214;
 	static const unsigned int IFCPORT = 3740093272;
 	static const unsigned int IFCPOSITIONINGELEMENT = 1946335990;
 	static const unsigned int IFCPOSTALADDRESS = 3355820592;
@@ -518,18 +553,22 @@ namespace ifc2x4 {
 	static const unsigned int IFCPROTECTIVEDEVICETRIPPINGUNIT = 2295281155;
 	static const unsigned int IFCPROTECTIVEDEVICETRIPPINGUNITTYPE = 655969474;
 	static const unsigned int IFCPROTECTIVEDEVICETYPE = 1842657554;
-	static const unsigned int IFCPROXY = 3219374653;
 	static const unsigned int IFCPUMP = 90941305;
 	static const unsigned int IFCPUMPTYPE = 2250791053;
 	static const unsigned int IFCQUANTITYAREA = 2044713172;
 	static const unsigned int IFCQUANTITYCOUNT = 2093928680;
 	static const unsigned int IFCQUANTITYLENGTH = 931644368;
+	static const unsigned int IFCQUANTITYNUMBER = 2691318326;
 	static const unsigned int IFCQUANTITYSET = 2090586900;
 	static const unsigned int IFCQUANTITYTIME = 3252649465;
 	static const unsigned int IFCQUANTITYVOLUME = 2405470396;
 	static const unsigned int IFCQUANTITYWEIGHT = 825690147;
+	static const unsigned int IFCRAIL = 3290496277;
+	static const unsigned int IFCRAILTYPE = 1763565496;
 	static const unsigned int IFCRAILING = 2262370178;
 	static const unsigned int IFCRAILINGTYPE = 2893384427;
+	static const unsigned int IFCRAILWAY = 3992365140;
+	static const unsigned int IFCRAILWAYPART = 1891881377;
 	static const unsigned int IFCRAMP = 3024970846;
 	static const unsigned int IFCRAMPFLIGHT = 3283111854;
 	static const unsigned int IFCRAMPFLIGHTTYPE = 2324767716;
@@ -544,6 +583,7 @@ namespace ifc2x4 {
 	static const unsigned int IFCREFERENCE = 2433181523;
 	static const unsigned int IFCREFERENT = 4021432810;
 	static const unsigned int IFCREGULARTIMESERIES = 3413951693;
+	static const unsigned int IFCREINFORCEDSOIL = 3798194928;
 	static const unsigned int IFCREINFORCEMENTBARPROPERTIES = 1580146022;
 	static const unsigned int IFCREINFORCEMENTDEFINITIONPROPERTIES = 3765753017;
 	static const unsigned int IFCREINFORCINGBAR = 979691226;
@@ -552,6 +592,7 @@ namespace ifc2x4 {
 	static const unsigned int IFCREINFORCINGELEMENTTYPE = 964333572;
 	static const unsigned int IFCREINFORCINGMESH = 2320036040;
 	static const unsigned int IFCREINFORCINGMESHTYPE = 2310774935;
+	static const unsigned int IFCRELADHERESTOELEMENT = 3818125796;
 	static const unsigned int IFCRELAGGREGATES = 160246688;
 	static const unsigned int IFCRELASSIGNS = 3939117080;
 	static const unsigned int IFCRELASSIGNSTOACTOR = 1683148259;
@@ -568,6 +609,7 @@ namespace ifc2x4 {
 	static const unsigned int IFCRELASSOCIATESDOCUMENT = 982818633;
 	static const unsigned int IFCRELASSOCIATESLIBRARY = 3840914261;
 	static const unsigned int IFCRELASSOCIATESMATERIAL = 2655215786;
+	static const unsigned int IFCRELASSOCIATESPROFILEDEF = 1033248425;
 	static const unsigned int IFCRELCONNECTS = 826625072;
 	static const unsigned int IFCRELCONNECTSELEMENTS = 1204542856;
 	static const unsigned int IFCRELCONNECTSPATHELEMENTS = 3945020480;
@@ -615,6 +657,8 @@ namespace ifc2x4 {
 	static const unsigned int IFCREVOLVEDAREASOLIDTAPERED = 3243963512;
 	static const unsigned int IFCRIGHTCIRCULARCONE = 4158566097;
 	static const unsigned int IFCRIGHTCIRCULARCYLINDER = 3626867408;
+	static const unsigned int IFCROAD = 146592293;
+	static const unsigned int IFCROADPART = 550521510;
 	static const unsigned int IFCROOF = 2016517767;
 	static const unsigned int IFCROOFTYPE = 2781568857;
 	static const unsigned int IFCROOT = 2341007311;
@@ -624,25 +668,33 @@ namespace ifc2x4 {
 	static const unsigned int IFCSANITARYTERMINALTYPE = 1768891740;
 	static const unsigned int IFCSCHEDULINGTIME = 1054537805;
 	static const unsigned int IFCSEAMCURVE = 2157484638;
+	static const unsigned int IFCSECONDORDERPOLYNOMIALSPIRAL = 3649235739;
 	static const unsigned int IFCSECTIONPROPERTIES = 2042790032;
 	static const unsigned int IFCSECTIONREINFORCEMENTPROPERTIES = 4165799628;
 	static const unsigned int IFCSECTIONEDSOLID = 1862484736;
 	static const unsigned int IFCSECTIONEDSOLIDHORIZONTAL = 1290935644;
 	static const unsigned int IFCSECTIONEDSPINE = 1509187699;
+	static const unsigned int IFCSECTIONEDSURFACE = 1356537516;
+	static const unsigned int IFCSEGMENT = 823603102;
+	static const unsigned int IFCSEGMENTEDREFERENCECURVE = 544395925;
 	static const unsigned int IFCSENSOR = 4086658281;
 	static const unsigned int IFCSENSORTYPE = 1783015770;
+	static const unsigned int IFCSEVENTHORDERPOLYNOMIALSPIRAL = 1027922057;
 	static const unsigned int IFCSHADINGDEVICE = 1329646415;
 	static const unsigned int IFCSHADINGDEVICETYPE = 4074543187;
 	static const unsigned int IFCSHAPEASPECT = 867548509;
 	static const unsigned int IFCSHAPEMODEL = 3982875396;
 	static const unsigned int IFCSHAPEREPRESENTATION = 4240577450;
 	static const unsigned int IFCSHELLBASEDSURFACEMODEL = 4124623270;
+	static const unsigned int IFCSIGN = 33720170;
+	static const unsigned int IFCSIGNTYPE = 3599934289;
+	static const unsigned int IFCSIGNAL = 991950508;
+	static const unsigned int IFCSIGNALTYPE = 1894708472;
 	static const unsigned int IFCSIMPLEPROPERTY = 3692461612;
 	static const unsigned int IFCSIMPLEPROPERTYTEMPLATE = 3663146110;
+	static const unsigned int IFCSINESPIRAL = 42703149;
 	static const unsigned int IFCSITE = 4097777520;
 	static const unsigned int IFCSLAB = 1529196076;
-	static const unsigned int IFCSLABELEMENTEDCASE = 3127900445;
-	static const unsigned int IFCSLABSTANDARDCASE = 3027962421;
 	static const unsigned int IFCSLABTYPE = 2533589738;
 	static const unsigned int IFCSLIPPAGECONNECTIONCONDITION = 2609359061;
 	static const unsigned int IFCSOLARDEVICE = 3420628829;
@@ -660,6 +712,7 @@ namespace ifc2x4 {
 	static const unsigned int IFCSPATIALZONETYPE = 2481509218;
 	static const unsigned int IFCSPHERE = 451544542;
 	static const unsigned int IFCSPHERICALSURFACE = 4015995234;
+	static const unsigned int IFCSPIRAL = 2735484536;
 	static const unsigned int IFCSTACKTERMINAL = 1404847402;
 	static const unsigned int IFCSTACKTERMINALTYPE = 3112655638;
 	static const unsigned int IFCSTAIR = 331165859;
@@ -759,20 +812,26 @@ namespace ifc2x4 {
 	static const unsigned int IFCTEXTSTYLETEXTMODEL = 1640371178;
 	static const unsigned int IFCTEXTURECOORDINATE = 280115917;
 	static const unsigned int IFCTEXTURECOORDINATEGENERATOR = 1742049831;
+	static const unsigned int IFCTEXTURECOORDINATEINDICES = 222769930;
+	static const unsigned int IFCTEXTURECOORDINATEINDICESWITHVOIDS = 1010789467;
 	static const unsigned int IFCTEXTUREMAP = 2552916305;
 	static const unsigned int IFCTEXTUREVERTEX = 1210645708;
 	static const unsigned int IFCTEXTUREVERTEXLIST = 3611470254;
+	static const unsigned int IFCTHIRDORDERPOLYNOMIALSPIRAL = 782932809;
 	static const unsigned int IFCTIMEPERIOD = 1199560280;
 	static const unsigned int IFCTIMESERIES = 3101149627;
 	static const unsigned int IFCTIMESERIESVALUE = 581633288;
 	static const unsigned int IFCTOPOLOGICALREPRESENTATIONITEM = 1377556343;
 	static const unsigned int IFCTOPOLOGYREPRESENTATION = 1735638870;
 	static const unsigned int IFCTOROIDALSURFACE = 1935646853;
+	static const unsigned int IFCTRACKELEMENT = 3425753595;
+	static const unsigned int IFCTRACKELEMENTTYPE = 618700268;
 	static const unsigned int IFCTRANSFORMER = 3825984169;
 	static const unsigned int IFCTRANSFORMERTYPE = 1692211062;
-	static const unsigned int IFCTRANSITIONCURVESEGMENT2D = 2595432518;
 	static const unsigned int IFCTRANSPORTELEMENT = 1620046519;
 	static const unsigned int IFCTRANSPORTELEMENTTYPE = 2097647324;
+	static const unsigned int IFCTRANSPORTATIONDEVICE = 1953115116;
+	static const unsigned int IFCTRANSPORTATIONDEVICETYPE = 3665877780;
 	static const unsigned int IFCTRAPEZIUMPROFILEDEF = 2715220739;
 	static const unsigned int IFCTRIANGULATEDFACESET = 2916149573;
 	static const unsigned int IFCTRIANGULATEDIRREGULARNETWORK = 1229763772;
@@ -792,6 +851,8 @@ namespace ifc2x4 {
 	static const unsigned int IFCVALVE = 4207607924;
 	static const unsigned int IFCVALVETYPE = 728799441;
 	static const unsigned int IFCVECTOR = 1417489154;
+	static const unsigned int IFCVEHICLE = 840318589;
+	static const unsigned int IFCVEHICLETYPE = 3651464721;
 	static const unsigned int IFCVERTEX = 2799835756;
 	static const unsigned int IFCVERTEXLOOP = 2759199220;
 	static const unsigned int IFCVERTEXPOINT = 1907098498;
@@ -803,7 +864,6 @@ namespace ifc2x4 {
 	static const unsigned int IFCVIRTUALGRIDINTERSECTION = 891718957;
 	static const unsigned int IFCVOIDINGFEATURE = 926996030;
 	static const unsigned int IFCWALL = 2391406946;
-	static const unsigned int IFCWALLELEMENTEDCASE = 4156078855;
 	static const unsigned int IFCWALLSTANDARDCASE = 3512223829;
 	static const unsigned int IFCWALLTYPE = 1898987631;
 	static const unsigned int IFCWASTETERMINAL = 4237592921;
@@ -811,8 +871,6 @@ namespace ifc2x4 {
 	static const unsigned int IFCWINDOW = 3304561284;
 	static const unsigned int IFCWINDOWLININGPROPERTIES = 336235671;
 	static const unsigned int IFCWINDOWPANELPROPERTIES = 512836454;
-	static const unsigned int IFCWINDOWSTANDARDCASE = 486154966;
-	static const unsigned int IFCWINDOWSTYLE = 1299126871;
 	static const unsigned int IFCWINDOWTYPE = 4009809668;
 	static const unsigned int IFCWORKCALENDAR = 4088093105;
 	static const unsigned int IFCWORKCONTROL = 1028945134;
@@ -829,19 +887,23 @@ namespace ifc2x4 {
 			case ifc2x4::IFCAIRTOAIRHEATRECOVERY: return true;
 			case ifc2x4::IFCALARM: return true;
 			case ifc2x4::IFCALIGNMENT: return true;
+			case ifc2x4::IFCALIGNMENTCANT: return true;
+			case ifc2x4::IFCALIGNMENTHORIZONTAL: return true;
+			case ifc2x4::IFCALIGNMENTSEGMENT: return true;
+			case ifc2x4::IFCALIGNMENTVERTICAL: return true;
 			case ifc2x4::IFCANNOTATION: return true;
 			case ifc2x4::IFCAUDIOVISUALAPPLIANCE: return true;
 			case ifc2x4::IFCBEAM: return true;
-			case ifc2x4::IFCBEAMSTANDARDCASE: return true;
 			case ifc2x4::IFCBEARING: return true;
 			case ifc2x4::IFCBOILER: return true;
+			case ifc2x4::IFCBOREHOLE: return true;
 			case ifc2x4::IFCBRIDGE: return true;
 			case ifc2x4::IFCBRIDGEPART: return true;
 			case ifc2x4::IFCBUILDING: return true;
-			case ifc2x4::IFCBUILDINGELEMENT: return true;
 			case ifc2x4::IFCBUILDINGELEMENTPART: return true;
 			case ifc2x4::IFCBUILDINGELEMENTPROXY: return true;
 			case ifc2x4::IFCBUILDINGSTOREY: return true;
+			case ifc2x4::IFCBUILTELEMENT: return true;
 			case ifc2x4::IFCBURNER: return true;
 			case ifc2x4::IFCCABLECARRIERFITTING: return true;
 			case ifc2x4::IFCCABLECARRIERSEGMENT: return true;
@@ -853,31 +915,36 @@ namespace ifc2x4 {
 			case ifc2x4::IFCCIVILELEMENT: return true;
 			case ifc2x4::IFCCOIL: return true;
 			case ifc2x4::IFCCOLUMN: return true;
-			case ifc2x4::IFCCOLUMNSTANDARDCASE: return true;
 			case ifc2x4::IFCCOMMUNICATIONSAPPLIANCE: return true;
 			case ifc2x4::IFCCOMPRESSOR: return true;
 			case ifc2x4::IFCCONDENSER: return true;
 			case ifc2x4::IFCCONTROLLER: return true;
+			case ifc2x4::IFCCONVEYORSEGMENT: return true;
 			case ifc2x4::IFCCOOLEDBEAM: return true;
 			case ifc2x4::IFCCOOLINGTOWER: return true;
+			case ifc2x4::IFCCOURSE: return true;
 			case ifc2x4::IFCCOVERING: return true;
 			case ifc2x4::IFCCURTAINWALL: return true;
 			case ifc2x4::IFCDAMPER: return true;
 			case ifc2x4::IFCDEEPFOUNDATION: return true;
 			case ifc2x4::IFCDISCRETEACCESSORY: return true;
+			case ifc2x4::IFCDISTRIBUTIONBOARD: return true;
 			case ifc2x4::IFCDISTRIBUTIONCHAMBERELEMENT: return true;
 			case ifc2x4::IFCDISTRIBUTIONCONTROLELEMENT: return true;
 			case ifc2x4::IFCDISTRIBUTIONELEMENT: return true;
 			case ifc2x4::IFCDISTRIBUTIONFLOWELEMENT: return true;
 			case ifc2x4::IFCDISTRIBUTIONPORT: return true;
 			case ifc2x4::IFCDOOR: return true;
-			case ifc2x4::IFCDOORSTANDARDCASE: return true;
 			case ifc2x4::IFCDUCTFITTING: return true;
 			case ifc2x4::IFCDUCTSEGMENT: return true;
 			case ifc2x4::IFCDUCTSILENCER: return true;
+			case ifc2x4::IFCEARTHWORKSCUT: return true;
+			case ifc2x4::IFCEARTHWORKSELEMENT: return true;
+			case ifc2x4::IFCEARTHWORKSFILL: return true;
 			case ifc2x4::IFCELECTRICAPPLIANCE: return true;
 			case ifc2x4::IFCELECTRICDISTRIBUTIONBOARD: return true;
 			case ifc2x4::IFCELECTRICFLOWSTORAGEDEVICE: return true;
+			case ifc2x4::IFCELECTRICFLOWTREATMENTDEVICE: return true;
 			case ifc2x4::IFCELECTRICGENERATOR: return true;
 			case ifc2x4::IFCELECTRICMOTOR: return true;
 			case ifc2x4::IFCELECTRICTIMECONTROL: return true;
@@ -892,6 +959,7 @@ namespace ifc2x4 {
 			case ifc2x4::IFCEXTERNALSPATIALSTRUCTUREELEMENT: return true;
 			case ifc2x4::IFCFACILITY: return true;
 			case ifc2x4::IFCFACILITYPART: return true;
+			case ifc2x4::IFCFACILITYPARTCOMMON: return true;
 			case ifc2x4::IFCFAN: return true;
 			case ifc2x4::IFCFASTENER: return true;
 			case ifc2x4::IFCFEATUREELEMENT: return true;
@@ -912,49 +980,66 @@ namespace ifc2x4 {
 			case ifc2x4::IFCFURNISHINGELEMENT: return true;
 			case ifc2x4::IFCFURNITURE: return true;
 			case ifc2x4::IFCGEOGRAPHICELEMENT: return true;
+			case ifc2x4::IFCGEOMODEL: return true;
+			case ifc2x4::IFCGEOSLICE: return true;
+			case ifc2x4::IFCGEOTECHNICALASSEMBLY: return true;
+			case ifc2x4::IFCGEOTECHNICALELEMENT: return true;
+			case ifc2x4::IFCGEOTECHNICALSTRATUM: return true;
 			case ifc2x4::IFCGRID: return true;
 			case ifc2x4::IFCHEATEXCHANGER: return true;
 			case ifc2x4::IFCHUMIDIFIER: return true;
+			case ifc2x4::IFCIMPACTPROTECTIONDEVICE: return true;
 			case ifc2x4::IFCINTERCEPTOR: return true;
 			case ifc2x4::IFCJUNCTIONBOX: return true;
+			case ifc2x4::IFCKERB: return true;
 			case ifc2x4::IFCLAMP: return true;
 			case ifc2x4::IFCLIGHTFIXTURE: return true;
+			case ifc2x4::IFCLINEARELEMENT: return true;
 			case ifc2x4::IFCLINEARPOSITIONINGELEMENT: return true;
+			case ifc2x4::IFCLIQUIDTERMINAL: return true;
+			case ifc2x4::IFCMARINEFACILITY: return true;
+			case ifc2x4::IFCMARINEPART: return true;
 			case ifc2x4::IFCMECHANICALFASTENER: return true;
 			case ifc2x4::IFCMEDICALDEVICE: return true;
 			case ifc2x4::IFCMEMBER: return true;
-			case ifc2x4::IFCMEMBERSTANDARDCASE: return true;
+			case ifc2x4::IFCMOBILETELECOMMUNICATIONSAPPLIANCE: return true;
+			case ifc2x4::IFCMOORINGDEVICE: return true;
 			case ifc2x4::IFCMOTORCONNECTION: return true;
+			case ifc2x4::IFCNAVIGATIONELEMENT: return true;
 			case ifc2x4::IFCOPENINGELEMENT: return true;
-			case ifc2x4::IFCOPENINGSTANDARDCASE: return true;
 			case ifc2x4::IFCOUTLET: return true;
+			case ifc2x4::IFCPAVEMENT: return true;
 			case ifc2x4::IFCPILE: return true;
 			case ifc2x4::IFCPIPEFITTING: return true;
 			case ifc2x4::IFCPIPESEGMENT: return true;
 			case ifc2x4::IFCPLATE: return true;
-			case ifc2x4::IFCPLATESTANDARDCASE: return true;
 			case ifc2x4::IFCPORT: return true;
 			case ifc2x4::IFCPOSITIONINGELEMENT: return true;
 			case ifc2x4::IFCPROJECTIONELEMENT: return true;
 			case ifc2x4::IFCPROTECTIVEDEVICE: return true;
 			case ifc2x4::IFCPROTECTIVEDEVICETRIPPINGUNIT: return true;
-			case ifc2x4::IFCPROXY: return true;
 			case ifc2x4::IFCPUMP: return true;
+			case ifc2x4::IFCRAIL: return true;
 			case ifc2x4::IFCRAILING: return true;
+			case ifc2x4::IFCRAILWAY: return true;
+			case ifc2x4::IFCRAILWAYPART: return true;
 			case ifc2x4::IFCRAMP: return true;
 			case ifc2x4::IFCRAMPFLIGHT: return true;
 			case ifc2x4::IFCREFERENT: return true;
+			case ifc2x4::IFCREINFORCEDSOIL: return true;
 			case ifc2x4::IFCREINFORCINGBAR: return true;
 			case ifc2x4::IFCREINFORCINGELEMENT: return true;
 			case ifc2x4::IFCREINFORCINGMESH: return true;
+			case ifc2x4::IFCROAD: return true;
+			case ifc2x4::IFCROADPART: return true;
 			case ifc2x4::IFCROOF: return true;
 			case ifc2x4::IFCSANITARYTERMINAL: return true;
 			case ifc2x4::IFCSENSOR: return true;
 			case ifc2x4::IFCSHADINGDEVICE: return true;
+			case ifc2x4::IFCSIGN: return true;
+			case ifc2x4::IFCSIGNAL: return true;
 			case ifc2x4::IFCSITE: return true;
 			case ifc2x4::IFCSLAB: return true;
-			case ifc2x4::IFCSLABELEMENTEDCASE: return true;
-			case ifc2x4::IFCSLABSTANDARDCASE: return true;
 			case ifc2x4::IFCSOLARDEVICE: return true;
 			case ifc2x4::IFCSPACE: return true;
 			case ifc2x4::IFCSPACEHEATER: return true;
@@ -992,22 +1077,23 @@ namespace ifc2x4 {
 			case ifc2x4::IFCTENDON: return true;
 			case ifc2x4::IFCTENDONANCHOR: return true;
 			case ifc2x4::IFCTENDONCONDUIT: return true;
+			case ifc2x4::IFCTRACKELEMENT: return true;
 			case ifc2x4::IFCTRANSFORMER: return true;
 			case ifc2x4::IFCTRANSPORTELEMENT: return true;
+			case ifc2x4::IFCTRANSPORTATIONDEVICE: return true;
 			case ifc2x4::IFCTUBEBUNDLE: return true;
 			case ifc2x4::IFCUNITARYCONTROLELEMENT: return true;
 			case ifc2x4::IFCUNITARYEQUIPMENT: return true;
 			case ifc2x4::IFCVALVE: return true;
+			case ifc2x4::IFCVEHICLE: return true;
 			case ifc2x4::IFCVIBRATIONDAMPER: return true;
 			case ifc2x4::IFCVIBRATIONISOLATOR: return true;
 			case ifc2x4::IFCVIRTUALELEMENT: return true;
 			case ifc2x4::IFCVOIDINGFEATURE: return true;
 			case ifc2x4::IFCWALL: return true;
-			case ifc2x4::IFCWALLELEMENTEDCASE: return true;
 			case ifc2x4::IFCWALLSTANDARDCASE: return true;
 			case ifc2x4::IFCWASTETERMINAL: return true;
 			case ifc2x4::IFCWINDOW: return true;
-			case ifc2x4::IFCWINDOWSTANDARDCASE: return true;
 			default: return false;
 		}
 	}
@@ -1018,19 +1104,23 @@ namespace ifc2x4 {
 		IFCAIRTOAIRHEATRECOVERY,
 		IFCALARM,
 		IFCALIGNMENT,
+		IFCALIGNMENTCANT,
+		IFCALIGNMENTHORIZONTAL,
+		IFCALIGNMENTSEGMENT,
+		IFCALIGNMENTVERTICAL,
 		IFCANNOTATION,
 		IFCAUDIOVISUALAPPLIANCE,
 		IFCBEAM,
-		IFCBEAMSTANDARDCASE,
 		IFCBEARING,
 		IFCBOILER,
+		IFCBOREHOLE,
 		IFCBRIDGE,
 		IFCBRIDGEPART,
 		IFCBUILDING,
-		IFCBUILDINGELEMENT,
 		IFCBUILDINGELEMENTPART,
 		IFCBUILDINGELEMENTPROXY,
 		IFCBUILDINGSTOREY,
+		IFCBUILTELEMENT,
 		IFCBURNER,
 		IFCCABLECARRIERFITTING,
 		IFCCABLECARRIERSEGMENT,
@@ -1042,31 +1132,36 @@ namespace ifc2x4 {
 		IFCCIVILELEMENT,
 		IFCCOIL,
 		IFCCOLUMN,
-		IFCCOLUMNSTANDARDCASE,
 		IFCCOMMUNICATIONSAPPLIANCE,
 		IFCCOMPRESSOR,
 		IFCCONDENSER,
 		IFCCONTROLLER,
+		IFCCONVEYORSEGMENT,
 		IFCCOOLEDBEAM,
 		IFCCOOLINGTOWER,
+		IFCCOURSE,
 		IFCCOVERING,
 		IFCCURTAINWALL,
 		IFCDAMPER,
 		IFCDEEPFOUNDATION,
 		IFCDISCRETEACCESSORY,
+		IFCDISTRIBUTIONBOARD,
 		IFCDISTRIBUTIONCHAMBERELEMENT,
 		IFCDISTRIBUTIONCONTROLELEMENT,
 		IFCDISTRIBUTIONELEMENT,
 		IFCDISTRIBUTIONFLOWELEMENT,
 		IFCDISTRIBUTIONPORT,
 		IFCDOOR,
-		IFCDOORSTANDARDCASE,
 		IFCDUCTFITTING,
 		IFCDUCTSEGMENT,
 		IFCDUCTSILENCER,
+		IFCEARTHWORKSCUT,
+		IFCEARTHWORKSELEMENT,
+		IFCEARTHWORKSFILL,
 		IFCELECTRICAPPLIANCE,
 		IFCELECTRICDISTRIBUTIONBOARD,
 		IFCELECTRICFLOWSTORAGEDEVICE,
+		IFCELECTRICFLOWTREATMENTDEVICE,
 		IFCELECTRICGENERATOR,
 		IFCELECTRICMOTOR,
 		IFCELECTRICTIMECONTROL,
@@ -1081,6 +1176,7 @@ namespace ifc2x4 {
 		IFCEXTERNALSPATIALSTRUCTUREELEMENT,
 		IFCFACILITY,
 		IFCFACILITYPART,
+		IFCFACILITYPARTCOMMON,
 		IFCFAN,
 		IFCFASTENER,
 		IFCFEATUREELEMENT,
@@ -1101,49 +1197,66 @@ namespace ifc2x4 {
 		IFCFURNISHINGELEMENT,
 		IFCFURNITURE,
 		IFCGEOGRAPHICELEMENT,
+		IFCGEOMODEL,
+		IFCGEOSLICE,
+		IFCGEOTECHNICALASSEMBLY,
+		IFCGEOTECHNICALELEMENT,
+		IFCGEOTECHNICALSTRATUM,
 		IFCGRID,
 		IFCHEATEXCHANGER,
 		IFCHUMIDIFIER,
+		IFCIMPACTPROTECTIONDEVICE,
 		IFCINTERCEPTOR,
 		IFCJUNCTIONBOX,
+		IFCKERB,
 		IFCLAMP,
 		IFCLIGHTFIXTURE,
+		IFCLINEARELEMENT,
 		IFCLINEARPOSITIONINGELEMENT,
+		IFCLIQUIDTERMINAL,
+		IFCMARINEFACILITY,
+		IFCMARINEPART,
 		IFCMECHANICALFASTENER,
 		IFCMEDICALDEVICE,
 		IFCMEMBER,
-		IFCMEMBERSTANDARDCASE,
+		IFCMOBILETELECOMMUNICATIONSAPPLIANCE,
+		IFCMOORINGDEVICE,
 		IFCMOTORCONNECTION,
+		IFCNAVIGATIONELEMENT,
 		IFCOPENINGELEMENT,
-		IFCOPENINGSTANDARDCASE,
 		IFCOUTLET,
+		IFCPAVEMENT,
 		IFCPILE,
 		IFCPIPEFITTING,
 		IFCPIPESEGMENT,
 		IFCPLATE,
-		IFCPLATESTANDARDCASE,
 		IFCPORT,
 		IFCPOSITIONINGELEMENT,
 		IFCPROJECTIONELEMENT,
 		IFCPROTECTIVEDEVICE,
 		IFCPROTECTIVEDEVICETRIPPINGUNIT,
-		IFCPROXY,
 		IFCPUMP,
+		IFCRAIL,
 		IFCRAILING,
+		IFCRAILWAY,
+		IFCRAILWAYPART,
 		IFCRAMP,
 		IFCRAMPFLIGHT,
 		IFCREFERENT,
+		IFCREINFORCEDSOIL,
 		IFCREINFORCINGBAR,
 		IFCREINFORCINGELEMENT,
 		IFCREINFORCINGMESH,
+		IFCROAD,
+		IFCROADPART,
 		IFCROOF,
 		IFCSANITARYTERMINAL,
 		IFCSENSOR,
 		IFCSHADINGDEVICE,
+		IFCSIGN,
+		IFCSIGNAL,
 		IFCSITE,
 		IFCSLAB,
-		IFCSLABELEMENTEDCASE,
-		IFCSLABSTANDARDCASE,
 		IFCSOLARDEVICE,
 		IFCSPACE,
 		IFCSPACEHEATER,
@@ -1181,22 +1294,23 @@ namespace ifc2x4 {
 		IFCTENDON,
 		IFCTENDONANCHOR,
 		IFCTENDONCONDUIT,
+		IFCTRACKELEMENT,
 		IFCTRANSFORMER,
 		IFCTRANSPORTELEMENT,
+		IFCTRANSPORTATIONDEVICE,
 		IFCTUBEBUNDLE,
 		IFCUNITARYCONTROLELEMENT,
 		IFCUNITARYEQUIPMENT,
 		IFCVALVE,
+		IFCVEHICLE,
 		IFCVIBRATIONDAMPER,
 		IFCVIBRATIONISOLATOR,
 		IFCVIRTUALELEMENT,
 		IFCVOIDINGFEATURE,
 		IFCWALL,
-		IFCWALLELEMENTEDCASE,
 		IFCWALLSTANDARDCASE,
 		IFCWASTETERMINAL,
-		IFCWINDOW,
-		IFCWINDOWSTANDARDCASE
+		IFCWINDOW
 	};
 };
 	const char* GetReadableNameFromTypeCode(unsigned int ifcCode) {
@@ -1219,15 +1333,14 @@ namespace ifc2x4 {
 			case ifc2x4::IFCALARM: return "IFCALARM";
 			case ifc2x4::IFCALARMTYPE: return "IFCALARMTYPE";
 			case ifc2x4::IFCALIGNMENT: return "IFCALIGNMENT";
-			case ifc2x4::IFCALIGNMENT2DHORIZONTAL: return "IFCALIGNMENT2DHORIZONTAL";
-			case ifc2x4::IFCALIGNMENT2DHORIZONTALSEGMENT: return "IFCALIGNMENT2DHORIZONTALSEGMENT";
-			case ifc2x4::IFCALIGNMENT2DSEGMENT: return "IFCALIGNMENT2DSEGMENT";
-			case ifc2x4::IFCALIGNMENT2DVERSEGCIRCULARARC: return "IFCALIGNMENT2DVERSEGCIRCULARARC";
-			case ifc2x4::IFCALIGNMENT2DVERSEGLINE: return "IFCALIGNMENT2DVERSEGLINE";
-			case ifc2x4::IFCALIGNMENT2DVERSEGPARABOLICARC: return "IFCALIGNMENT2DVERSEGPARABOLICARC";
-			case ifc2x4::IFCALIGNMENT2DVERTICAL: return "IFCALIGNMENT2DVERTICAL";
-			case ifc2x4::IFCALIGNMENT2DVERTICALSEGMENT: return "IFCALIGNMENT2DVERTICALSEGMENT";
-			case ifc2x4::IFCALIGNMENTCURVE: return "IFCALIGNMENTCURVE";
+			case ifc2x4::IFCALIGNMENTCANT: return "IFCALIGNMENTCANT";
+			case ifc2x4::IFCALIGNMENTCANTSEGMENT: return "IFCALIGNMENTCANTSEGMENT";
+			case ifc2x4::IFCALIGNMENTHORIZONTAL: return "IFCALIGNMENTHORIZONTAL";
+			case ifc2x4::IFCALIGNMENTHORIZONTALSEGMENT: return "IFCALIGNMENTHORIZONTALSEGMENT";
+			case ifc2x4::IFCALIGNMENTPARAMETERSEGMENT: return "IFCALIGNMENTPARAMETERSEGMENT";
+			case ifc2x4::IFCALIGNMENTSEGMENT: return "IFCALIGNMENTSEGMENT";
+			case ifc2x4::IFCALIGNMENTVERTICAL: return "IFCALIGNMENTVERTICAL";
+			case ifc2x4::IFCALIGNMENTVERTICALSEGMENT: return "IFCALIGNMENTVERTICALSEGMENT";
 			case ifc2x4::IFCANNOTATION: return "IFCANNOTATION";
 			case ifc2x4::IFCANNOTATIONFILLAREA: return "IFCANNOTATIONFILLAREA";
 			case ifc2x4::IFCAPPLICATION: return "IFCAPPLICATION";
@@ -1244,12 +1357,12 @@ namespace ifc2x4 {
 			case ifc2x4::IFCAXIS1PLACEMENT: return "IFCAXIS1PLACEMENT";
 			case ifc2x4::IFCAXIS2PLACEMENT2D: return "IFCAXIS2PLACEMENT2D";
 			case ifc2x4::IFCAXIS2PLACEMENT3D: return "IFCAXIS2PLACEMENT3D";
+			case ifc2x4::IFCAXIS2PLACEMENTLINEAR: return "IFCAXIS2PLACEMENTLINEAR";
 			case ifc2x4::IFCBSPLINECURVE: return "IFCBSPLINECURVE";
 			case ifc2x4::IFCBSPLINECURVEWITHKNOTS: return "IFCBSPLINECURVEWITHKNOTS";
 			case ifc2x4::IFCBSPLINESURFACE: return "IFCBSPLINESURFACE";
 			case ifc2x4::IFCBSPLINESURFACEWITHKNOTS: return "IFCBSPLINESURFACEWITHKNOTS";
 			case ifc2x4::IFCBEAM: return "IFCBEAM";
-			case ifc2x4::IFCBEAMSTANDARDCASE: return "IFCBEAMSTANDARDCASE";
 			case ifc2x4::IFCBEAMTYPE: return "IFCBEAMTYPE";
 			case ifc2x4::IFCBEARING: return "IFCBEARING";
 			case ifc2x4::IFCBEARINGTYPE: return "IFCBEARINGTYPE";
@@ -1259,6 +1372,7 @@ namespace ifc2x4 {
 			case ifc2x4::IFCBOILERTYPE: return "IFCBOILERTYPE";
 			case ifc2x4::IFCBOOLEANCLIPPINGRESULT: return "IFCBOOLEANCLIPPINGRESULT";
 			case ifc2x4::IFCBOOLEANRESULT: return "IFCBOOLEANRESULT";
+			case ifc2x4::IFCBOREHOLE: return "IFCBOREHOLE";
 			case ifc2x4::IFCBOUNDARYCONDITION: return "IFCBOUNDARYCONDITION";
 			case ifc2x4::IFCBOUNDARYCURVE: return "IFCBOUNDARYCURVE";
 			case ifc2x4::IFCBOUNDARYEDGECONDITION: return "IFCBOUNDARYEDGECONDITION";
@@ -1272,14 +1386,15 @@ namespace ifc2x4 {
 			case ifc2x4::IFCBRIDGE: return "IFCBRIDGE";
 			case ifc2x4::IFCBRIDGEPART: return "IFCBRIDGEPART";
 			case ifc2x4::IFCBUILDING: return "IFCBUILDING";
-			case ifc2x4::IFCBUILDINGELEMENT: return "IFCBUILDINGELEMENT";
 			case ifc2x4::IFCBUILDINGELEMENTPART: return "IFCBUILDINGELEMENTPART";
 			case ifc2x4::IFCBUILDINGELEMENTPARTTYPE: return "IFCBUILDINGELEMENTPARTTYPE";
 			case ifc2x4::IFCBUILDINGELEMENTPROXY: return "IFCBUILDINGELEMENTPROXY";
 			case ifc2x4::IFCBUILDINGELEMENTPROXYTYPE: return "IFCBUILDINGELEMENTPROXYTYPE";
-			case ifc2x4::IFCBUILDINGELEMENTTYPE: return "IFCBUILDINGELEMENTTYPE";
 			case ifc2x4::IFCBUILDINGSTOREY: return "IFCBUILDINGSTOREY";
 			case ifc2x4::IFCBUILDINGSYSTEM: return "IFCBUILDINGSYSTEM";
+			case ifc2x4::IFCBUILTELEMENT: return "IFCBUILTELEMENT";
+			case ifc2x4::IFCBUILTELEMENTTYPE: return "IFCBUILTELEMENTTYPE";
+			case ifc2x4::IFCBUILTSYSTEM: return "IFCBUILTSYSTEM";
 			case ifc2x4::IFCBURNER: return "IFCBURNER";
 			case ifc2x4::IFCBURNERTYPE: return "IFCBURNERTYPE";
 			case ifc2x4::IFCCSHAPEPROFILEDEF: return "IFCCSHAPEPROFILEDEF";
@@ -1310,19 +1425,18 @@ namespace ifc2x4 {
 			case ifc2x4::IFCCIRCLE: return "IFCCIRCLE";
 			case ifc2x4::IFCCIRCLEHOLLOWPROFILEDEF: return "IFCCIRCLEHOLLOWPROFILEDEF";
 			case ifc2x4::IFCCIRCLEPROFILEDEF: return "IFCCIRCLEPROFILEDEF";
-			case ifc2x4::IFCCIRCULARARCSEGMENT2D: return "IFCCIRCULARARCSEGMENT2D";
 			case ifc2x4::IFCCIVILELEMENT: return "IFCCIVILELEMENT";
 			case ifc2x4::IFCCIVILELEMENTTYPE: return "IFCCIVILELEMENTTYPE";
 			case ifc2x4::IFCCLASSIFICATION: return "IFCCLASSIFICATION";
 			case ifc2x4::IFCCLASSIFICATIONREFERENCE: return "IFCCLASSIFICATIONREFERENCE";
 			case ifc2x4::IFCCLOSEDSHELL: return "IFCCLOSEDSHELL";
+			case ifc2x4::IFCCLOTHOID: return "IFCCLOTHOID";
 			case ifc2x4::IFCCOIL: return "IFCCOIL";
 			case ifc2x4::IFCCOILTYPE: return "IFCCOILTYPE";
 			case ifc2x4::IFCCOLOURRGB: return "IFCCOLOURRGB";
 			case ifc2x4::IFCCOLOURRGBLIST: return "IFCCOLOURRGBLIST";
 			case ifc2x4::IFCCOLOURSPECIFICATION: return "IFCCOLOURSPECIFICATION";
 			case ifc2x4::IFCCOLUMN: return "IFCCOLUMN";
-			case ifc2x4::IFCCOLUMNSTANDARDCASE: return "IFCCOLUMNSTANDARDCASE";
 			case ifc2x4::IFCCOLUMNTYPE: return "IFCCOLUMNTYPE";
 			case ifc2x4::IFCCOMMUNICATIONSAPPLIANCE: return "IFCCOMMUNICATIONSAPPLIANCE";
 			case ifc2x4::IFCCOMMUNICATIONSAPPLIANCETYPE: return "IFCCOMMUNICATIONSAPPLIANCETYPE";
@@ -1360,15 +1474,20 @@ namespace ifc2x4 {
 			case ifc2x4::IFCCONTROLLERTYPE: return "IFCCONTROLLERTYPE";
 			case ifc2x4::IFCCONVERSIONBASEDUNIT: return "IFCCONVERSIONBASEDUNIT";
 			case ifc2x4::IFCCONVERSIONBASEDUNITWITHOFFSET: return "IFCCONVERSIONBASEDUNITWITHOFFSET";
+			case ifc2x4::IFCCONVEYORSEGMENT: return "IFCCONVEYORSEGMENT";
+			case ifc2x4::IFCCONVEYORSEGMENTTYPE: return "IFCCONVEYORSEGMENTTYPE";
 			case ifc2x4::IFCCOOLEDBEAM: return "IFCCOOLEDBEAM";
 			case ifc2x4::IFCCOOLEDBEAMTYPE: return "IFCCOOLEDBEAMTYPE";
 			case ifc2x4::IFCCOOLINGTOWER: return "IFCCOOLINGTOWER";
 			case ifc2x4::IFCCOOLINGTOWERTYPE: return "IFCCOOLINGTOWERTYPE";
 			case ifc2x4::IFCCOORDINATEOPERATION: return "IFCCOORDINATEOPERATION";
 			case ifc2x4::IFCCOORDINATEREFERENCESYSTEM: return "IFCCOORDINATEREFERENCESYSTEM";
+			case ifc2x4::IFCCOSINESPIRAL: return "IFCCOSINESPIRAL";
 			case ifc2x4::IFCCOSTITEM: return "IFCCOSTITEM";
 			case ifc2x4::IFCCOSTSCHEDULE: return "IFCCOSTSCHEDULE";
 			case ifc2x4::IFCCOSTVALUE: return "IFCCOSTVALUE";
+			case ifc2x4::IFCCOURSE: return "IFCCOURSE";
+			case ifc2x4::IFCCOURSETYPE: return "IFCCOURSETYPE";
 			case ifc2x4::IFCCOVERING: return "IFCCOVERING";
 			case ifc2x4::IFCCOVERINGTYPE: return "IFCCOVERINGTYPE";
 			case ifc2x4::IFCCREWRESOURCE: return "IFCCREWRESOURCE";
@@ -1381,7 +1500,7 @@ namespace ifc2x4 {
 			case ifc2x4::IFCCURVE: return "IFCCURVE";
 			case ifc2x4::IFCCURVEBOUNDEDPLANE: return "IFCCURVEBOUNDEDPLANE";
 			case ifc2x4::IFCCURVEBOUNDEDSURFACE: return "IFCCURVEBOUNDEDSURFACE";
-			case ifc2x4::IFCCURVESEGMENT2D: return "IFCCURVESEGMENT2D";
+			case ifc2x4::IFCCURVESEGMENT: return "IFCCURVESEGMENT";
 			case ifc2x4::IFCCURVESTYLE: return "IFCCURVESTYLE";
 			case ifc2x4::IFCCURVESTYLEFONT: return "IFCCURVESTYLEFONT";
 			case ifc2x4::IFCCURVESTYLEFONTANDSCALING: return "IFCCURVESTYLEFONTANDSCALING";
@@ -1396,9 +1515,12 @@ namespace ifc2x4 {
 			case ifc2x4::IFCDERIVEDUNITELEMENT: return "IFCDERIVEDUNITELEMENT";
 			case ifc2x4::IFCDIMENSIONALEXPONENTS: return "IFCDIMENSIONALEXPONENTS";
 			case ifc2x4::IFCDIRECTION: return "IFCDIRECTION";
+			case ifc2x4::IFCDIRECTRIXCURVESWEPTAREASOLID: return "IFCDIRECTRIXCURVESWEPTAREASOLID";
+			case ifc2x4::IFCDIRECTRIXDERIVEDREFERENCESWEPTAREASOLID: return "IFCDIRECTRIXDERIVEDREFERENCESWEPTAREASOLID";
 			case ifc2x4::IFCDISCRETEACCESSORY: return "IFCDISCRETEACCESSORY";
 			case ifc2x4::IFCDISCRETEACCESSORYTYPE: return "IFCDISCRETEACCESSORYTYPE";
-			case ifc2x4::IFCDISTANCEEXPRESSION: return "IFCDISTANCEEXPRESSION";
+			case ifc2x4::IFCDISTRIBUTIONBOARD: return "IFCDISTRIBUTIONBOARD";
+			case ifc2x4::IFCDISTRIBUTIONBOARDTYPE: return "IFCDISTRIBUTIONBOARDTYPE";
 			case ifc2x4::IFCDISTRIBUTIONCHAMBERELEMENT: return "IFCDISTRIBUTIONCHAMBERELEMENT";
 			case ifc2x4::IFCDISTRIBUTIONCHAMBERELEMENTTYPE: return "IFCDISTRIBUTIONCHAMBERELEMENTTYPE";
 			case ifc2x4::IFCDISTRIBUTIONCIRCUIT: return "IFCDISTRIBUTIONCIRCUIT";
@@ -1416,8 +1538,6 @@ namespace ifc2x4 {
 			case ifc2x4::IFCDOOR: return "IFCDOOR";
 			case ifc2x4::IFCDOORLININGPROPERTIES: return "IFCDOORLININGPROPERTIES";
 			case ifc2x4::IFCDOORPANELPROPERTIES: return "IFCDOORPANELPROPERTIES";
-			case ifc2x4::IFCDOORSTANDARDCASE: return "IFCDOORSTANDARDCASE";
-			case ifc2x4::IFCDOORSTYLE: return "IFCDOORSTYLE";
 			case ifc2x4::IFCDOORTYPE: return "IFCDOORTYPE";
 			case ifc2x4::IFCDRAUGHTINGPREDEFINEDCOLOUR: return "IFCDRAUGHTINGPREDEFINEDCOLOUR";
 			case ifc2x4::IFCDRAUGHTINGPREDEFINEDCURVEFONT: return "IFCDRAUGHTINGPREDEFINEDCURVEFONT";
@@ -1427,6 +1547,9 @@ namespace ifc2x4 {
 			case ifc2x4::IFCDUCTSEGMENTTYPE: return "IFCDUCTSEGMENTTYPE";
 			case ifc2x4::IFCDUCTSILENCER: return "IFCDUCTSILENCER";
 			case ifc2x4::IFCDUCTSILENCERTYPE: return "IFCDUCTSILENCERTYPE";
+			case ifc2x4::IFCEARTHWORKSCUT: return "IFCEARTHWORKSCUT";
+			case ifc2x4::IFCEARTHWORKSELEMENT: return "IFCEARTHWORKSELEMENT";
+			case ifc2x4::IFCEARTHWORKSFILL: return "IFCEARTHWORKSFILL";
 			case ifc2x4::IFCEDGE: return "IFCEDGE";
 			case ifc2x4::IFCEDGECURVE: return "IFCEDGECURVE";
 			case ifc2x4::IFCEDGELOOP: return "IFCEDGELOOP";
@@ -1436,6 +1559,8 @@ namespace ifc2x4 {
 			case ifc2x4::IFCELECTRICDISTRIBUTIONBOARDTYPE: return "IFCELECTRICDISTRIBUTIONBOARDTYPE";
 			case ifc2x4::IFCELECTRICFLOWSTORAGEDEVICE: return "IFCELECTRICFLOWSTORAGEDEVICE";
 			case ifc2x4::IFCELECTRICFLOWSTORAGEDEVICETYPE: return "IFCELECTRICFLOWSTORAGEDEVICETYPE";
+			case ifc2x4::IFCELECTRICFLOWTREATMENTDEVICE: return "IFCELECTRICFLOWTREATMENTDEVICE";
+			case ifc2x4::IFCELECTRICFLOWTREATMENTDEVICETYPE: return "IFCELECTRICFLOWTREATMENTDEVICETYPE";
 			case ifc2x4::IFCELECTRICGENERATOR: return "IFCELECTRICGENERATOR";
 			case ifc2x4::IFCELECTRICGENERATORTYPE: return "IFCELECTRICGENERATORTYPE";
 			case ifc2x4::IFCELECTRICMOTOR: return "IFCELECTRICMOTOR";
@@ -1483,6 +1608,7 @@ namespace ifc2x4 {
 			case ifc2x4::IFCFACETEDBREPWITHVOIDS: return "IFCFACETEDBREPWITHVOIDS";
 			case ifc2x4::IFCFACILITY: return "IFCFACILITY";
 			case ifc2x4::IFCFACILITYPART: return "IFCFACILITYPART";
+			case ifc2x4::IFCFACILITYPARTCOMMON: return "IFCFACILITYPARTCOMMON";
 			case ifc2x4::IFCFAILURECONNECTIONCONDITION: return "IFCFAILURECONNECTIONCONDITION";
 			case ifc2x4::IFCFAN: return "IFCFAN";
 			case ifc2x4::IFCFANTYPE: return "IFCFANTYPE";
@@ -1530,6 +1656,12 @@ namespace ifc2x4 {
 			case ifc2x4::IFCGEOMETRICREPRESENTATIONITEM: return "IFCGEOMETRICREPRESENTATIONITEM";
 			case ifc2x4::IFCGEOMETRICREPRESENTATIONSUBCONTEXT: return "IFCGEOMETRICREPRESENTATIONSUBCONTEXT";
 			case ifc2x4::IFCGEOMETRICSET: return "IFCGEOMETRICSET";
+			case ifc2x4::IFCGEOMODEL: return "IFCGEOMODEL";
+			case ifc2x4::IFCGEOSLICE: return "IFCGEOSLICE";
+			case ifc2x4::IFCGEOTECHNICALASSEMBLY: return "IFCGEOTECHNICALASSEMBLY";
+			case ifc2x4::IFCGEOTECHNICALELEMENT: return "IFCGEOTECHNICALELEMENT";
+			case ifc2x4::IFCGEOTECHNICALSTRATUM: return "IFCGEOTECHNICALSTRATUM";
+			case ifc2x4::IFCGRADIENTCURVE: return "IFCGRADIENTCURVE";
 			case ifc2x4::IFCGRID: return "IFCGRID";
 			case ifc2x4::IFCGRIDAXIS: return "IFCGRIDAXIS";
 			case ifc2x4::IFCGRIDPLACEMENT: return "IFCGRIDPLACEMENT";
@@ -1541,10 +1673,13 @@ namespace ifc2x4 {
 			case ifc2x4::IFCHUMIDIFIERTYPE: return "IFCHUMIDIFIERTYPE";
 			case ifc2x4::IFCISHAPEPROFILEDEF: return "IFCISHAPEPROFILEDEF";
 			case ifc2x4::IFCIMAGETEXTURE: return "IFCIMAGETEXTURE";
+			case ifc2x4::IFCIMPACTPROTECTIONDEVICE: return "IFCIMPACTPROTECTIONDEVICE";
+			case ifc2x4::IFCIMPACTPROTECTIONDEVICETYPE: return "IFCIMPACTPROTECTIONDEVICETYPE";
 			case ifc2x4::IFCINDEXEDCOLOURMAP: return "IFCINDEXEDCOLOURMAP";
 			case ifc2x4::IFCINDEXEDPOLYCURVE: return "IFCINDEXEDPOLYCURVE";
 			case ifc2x4::IFCINDEXEDPOLYGONALFACE: return "IFCINDEXEDPOLYGONALFACE";
 			case ifc2x4::IFCINDEXEDPOLYGONALFACEWITHVOIDS: return "IFCINDEXEDPOLYGONALFACEWITHVOIDS";
+			case ifc2x4::IFCINDEXEDPOLYGONALTEXTUREMAP: return "IFCINDEXEDPOLYGONALTEXTUREMAP";
 			case ifc2x4::IFCINDEXEDTEXTUREMAP: return "IFCINDEXEDTEXTUREMAP";
 			case ifc2x4::IFCINDEXEDTRIANGLETEXTUREMAP: return "IFCINDEXEDTRIANGLETEXTUREMAP";
 			case ifc2x4::IFCINTERCEPTOR: return "IFCINTERCEPTOR";
@@ -1555,6 +1690,8 @@ namespace ifc2x4 {
 			case ifc2x4::IFCIRREGULARTIMESERIESVALUE: return "IFCIRREGULARTIMESERIESVALUE";
 			case ifc2x4::IFCJUNCTIONBOX: return "IFCJUNCTIONBOX";
 			case ifc2x4::IFCJUNCTIONBOXTYPE: return "IFCJUNCTIONBOXTYPE";
+			case ifc2x4::IFCKERB: return "IFCKERB";
+			case ifc2x4::IFCKERBTYPE: return "IFCKERBTYPE";
 			case ifc2x4::IFCLSHAPEPROFILEDEF: return "IFCLSHAPEPROFILEDEF";
 			case ifc2x4::IFCLABORRESOURCE: return "IFCLABORRESOURCE";
 			case ifc2x4::IFCLABORRESOURCETYPE: return "IFCLABORRESOURCETYPE";
@@ -1574,14 +1711,18 @@ namespace ifc2x4 {
 			case ifc2x4::IFCLIGHTSOURCEPOSITIONAL: return "IFCLIGHTSOURCEPOSITIONAL";
 			case ifc2x4::IFCLIGHTSOURCESPOT: return "IFCLIGHTSOURCESPOT";
 			case ifc2x4::IFCLINE: return "IFCLINE";
-			case ifc2x4::IFCLINESEGMENT2D: return "IFCLINESEGMENT2D";
+			case ifc2x4::IFCLINEARELEMENT: return "IFCLINEARELEMENT";
 			case ifc2x4::IFCLINEARPLACEMENT: return "IFCLINEARPLACEMENT";
 			case ifc2x4::IFCLINEARPOSITIONINGELEMENT: return "IFCLINEARPOSITIONINGELEMENT";
+			case ifc2x4::IFCLIQUIDTERMINAL: return "IFCLIQUIDTERMINAL";
+			case ifc2x4::IFCLIQUIDTERMINALTYPE: return "IFCLIQUIDTERMINALTYPE";
 			case ifc2x4::IFCLOCALPLACEMENT: return "IFCLOCALPLACEMENT";
 			case ifc2x4::IFCLOOP: return "IFCLOOP";
 			case ifc2x4::IFCMANIFOLDSOLIDBREP: return "IFCMANIFOLDSOLIDBREP";
 			case ifc2x4::IFCMAPCONVERSION: return "IFCMAPCONVERSION";
 			case ifc2x4::IFCMAPPEDITEM: return "IFCMAPPEDITEM";
+			case ifc2x4::IFCMARINEFACILITY: return "IFCMARINEFACILITY";
+			case ifc2x4::IFCMARINEPART: return "IFCMARINEPART";
 			case ifc2x4::IFCMATERIAL: return "IFCMATERIAL";
 			case ifc2x4::IFCMATERIALCLASSIFICATIONRELATIONSHIP: return "IFCMATERIALCLASSIFICATIONRELATIONSHIP";
 			case ifc2x4::IFCMATERIALCONSTITUENT: return "IFCMATERIALCONSTITUENT";
@@ -1607,14 +1748,19 @@ namespace ifc2x4 {
 			case ifc2x4::IFCMEDICALDEVICE: return "IFCMEDICALDEVICE";
 			case ifc2x4::IFCMEDICALDEVICETYPE: return "IFCMEDICALDEVICETYPE";
 			case ifc2x4::IFCMEMBER: return "IFCMEMBER";
-			case ifc2x4::IFCMEMBERSTANDARDCASE: return "IFCMEMBERSTANDARDCASE";
 			case ifc2x4::IFCMEMBERTYPE: return "IFCMEMBERTYPE";
 			case ifc2x4::IFCMETRIC: return "IFCMETRIC";
 			case ifc2x4::IFCMIRROREDPROFILEDEF: return "IFCMIRROREDPROFILEDEF";
+			case ifc2x4::IFCMOBILETELECOMMUNICATIONSAPPLIANCE: return "IFCMOBILETELECOMMUNICATIONSAPPLIANCE";
+			case ifc2x4::IFCMOBILETELECOMMUNICATIONSAPPLIANCETYPE: return "IFCMOBILETELECOMMUNICATIONSAPPLIANCETYPE";
 			case ifc2x4::IFCMONETARYUNIT: return "IFCMONETARYUNIT";
+			case ifc2x4::IFCMOORINGDEVICE: return "IFCMOORINGDEVICE";
+			case ifc2x4::IFCMOORINGDEVICETYPE: return "IFCMOORINGDEVICETYPE";
 			case ifc2x4::IFCMOTORCONNECTION: return "IFCMOTORCONNECTION";
 			case ifc2x4::IFCMOTORCONNECTIONTYPE: return "IFCMOTORCONNECTIONTYPE";
 			case ifc2x4::IFCNAMEDUNIT: return "IFCNAMEDUNIT";
+			case ifc2x4::IFCNAVIGATIONELEMENT: return "IFCNAVIGATIONELEMENT";
+			case ifc2x4::IFCNAVIGATIONELEMENTTYPE: return "IFCNAVIGATIONELEMENTTYPE";
 			case ifc2x4::IFCOBJECT: return "IFCOBJECT";
 			case ifc2x4::IFCOBJECTDEFINITION: return "IFCOBJECTDEFINITION";
 			case ifc2x4::IFCOBJECTPLACEMENT: return "IFCOBJECTPLACEMENT";
@@ -1624,12 +1770,11 @@ namespace ifc2x4 {
 			case ifc2x4::IFCOFFSETCURVE2D: return "IFCOFFSETCURVE2D";
 			case ifc2x4::IFCOFFSETCURVE3D: return "IFCOFFSETCURVE3D";
 			case ifc2x4::IFCOFFSETCURVEBYDISTANCES: return "IFCOFFSETCURVEBYDISTANCES";
+			case ifc2x4::IFCOPENCROSSPROFILEDEF: return "IFCOPENCROSSPROFILEDEF";
 			case ifc2x4::IFCOPENSHELL: return "IFCOPENSHELL";
 			case ifc2x4::IFCOPENINGELEMENT: return "IFCOPENINGELEMENT";
-			case ifc2x4::IFCOPENINGSTANDARDCASE: return "IFCOPENINGSTANDARDCASE";
 			case ifc2x4::IFCORGANIZATION: return "IFCORGANIZATION";
 			case ifc2x4::IFCORGANIZATIONRELATIONSHIP: return "IFCORGANIZATIONRELATIONSHIP";
-			case ifc2x4::IFCORIENTATIONEXPRESSION: return "IFCORIENTATIONEXPRESSION";
 			case ifc2x4::IFCORIENTEDEDGE: return "IFCORIENTEDEDGE";
 			case ifc2x4::IFCOUTERBOUNDARYCURVE: return "IFCOUTERBOUNDARYCURVE";
 			case ifc2x4::IFCOUTLET: return "IFCOUTLET";
@@ -1637,6 +1782,8 @@ namespace ifc2x4 {
 			case ifc2x4::IFCOWNERHISTORY: return "IFCOWNERHISTORY";
 			case ifc2x4::IFCPARAMETERIZEDPROFILEDEF: return "IFCPARAMETERIZEDPROFILEDEF";
 			case ifc2x4::IFCPATH: return "IFCPATH";
+			case ifc2x4::IFCPAVEMENT: return "IFCPAVEMENT";
+			case ifc2x4::IFCPAVEMENTTYPE: return "IFCPAVEMENTTYPE";
 			case ifc2x4::IFCPCURVE: return "IFCPCURVE";
 			case ifc2x4::IFCPERFORMANCEHISTORY: return "IFCPERFORMANCEHISTORY";
 			case ifc2x4::IFCPERMEABLECOVERINGPROPERTIES: return "IFCPERMEABLECOVERINGPROPERTIES";
@@ -1658,15 +1805,16 @@ namespace ifc2x4 {
 			case ifc2x4::IFCPLANAREXTENT: return "IFCPLANAREXTENT";
 			case ifc2x4::IFCPLANE: return "IFCPLANE";
 			case ifc2x4::IFCPLATE: return "IFCPLATE";
-			case ifc2x4::IFCPLATESTANDARDCASE: return "IFCPLATESTANDARDCASE";
 			case ifc2x4::IFCPLATETYPE: return "IFCPLATETYPE";
 			case ifc2x4::IFCPOINT: return "IFCPOINT";
+			case ifc2x4::IFCPOINTBYDISTANCEEXPRESSION: return "IFCPOINTBYDISTANCEEXPRESSION";
 			case ifc2x4::IFCPOINTONCURVE: return "IFCPOINTONCURVE";
 			case ifc2x4::IFCPOINTONSURFACE: return "IFCPOINTONSURFACE";
 			case ifc2x4::IFCPOLYLOOP: return "IFCPOLYLOOP";
 			case ifc2x4::IFCPOLYGONALBOUNDEDHALFSPACE: return "IFCPOLYGONALBOUNDEDHALFSPACE";
 			case ifc2x4::IFCPOLYGONALFACESET: return "IFCPOLYGONALFACESET";
 			case ifc2x4::IFCPOLYLINE: return "IFCPOLYLINE";
+			case ifc2x4::IFCPOLYNOMIALCURVE: return "IFCPOLYNOMIALCURVE";
 			case ifc2x4::IFCPORT: return "IFCPORT";
 			case ifc2x4::IFCPOSITIONINGELEMENT: return "IFCPOSITIONINGELEMENT";
 			case ifc2x4::IFCPOSTALADDRESS: return "IFCPOSTALADDRESS";
@@ -1680,7 +1828,6 @@ namespace ifc2x4 {
 			case ifc2x4::IFCPRESENTATIONLAYERASSIGNMENT: return "IFCPRESENTATIONLAYERASSIGNMENT";
 			case ifc2x4::IFCPRESENTATIONLAYERWITHSTYLE: return "IFCPRESENTATIONLAYERWITHSTYLE";
 			case ifc2x4::IFCPRESENTATIONSTYLE: return "IFCPRESENTATIONSTYLE";
-			case ifc2x4::IFCPRESENTATIONSTYLEASSIGNMENT: return "IFCPRESENTATIONSTYLEASSIGNMENT";
 			case ifc2x4::IFCPROCEDURE: return "IFCPROCEDURE";
 			case ifc2x4::IFCPROCEDURETYPE: return "IFCPROCEDURETYPE";
 			case ifc2x4::IFCPROCESS: return "IFCPROCESS";
@@ -1714,18 +1861,22 @@ namespace ifc2x4 {
 			case ifc2x4::IFCPROTECTIVEDEVICETRIPPINGUNIT: return "IFCPROTECTIVEDEVICETRIPPINGUNIT";
 			case ifc2x4::IFCPROTECTIVEDEVICETRIPPINGUNITTYPE: return "IFCPROTECTIVEDEVICETRIPPINGUNITTYPE";
 			case ifc2x4::IFCPROTECTIVEDEVICETYPE: return "IFCPROTECTIVEDEVICETYPE";
-			case ifc2x4::IFCPROXY: return "IFCPROXY";
 			case ifc2x4::IFCPUMP: return "IFCPUMP";
 			case ifc2x4::IFCPUMPTYPE: return "IFCPUMPTYPE";
 			case ifc2x4::IFCQUANTITYAREA: return "IFCQUANTITYAREA";
 			case ifc2x4::IFCQUANTITYCOUNT: return "IFCQUANTITYCOUNT";
 			case ifc2x4::IFCQUANTITYLENGTH: return "IFCQUANTITYLENGTH";
+			case ifc2x4::IFCQUANTITYNUMBER: return "IFCQUANTITYNUMBER";
 			case ifc2x4::IFCQUANTITYSET: return "IFCQUANTITYSET";
 			case ifc2x4::IFCQUANTITYTIME: return "IFCQUANTITYTIME";
 			case ifc2x4::IFCQUANTITYVOLUME: return "IFCQUANTITYVOLUME";
 			case ifc2x4::IFCQUANTITYWEIGHT: return "IFCQUANTITYWEIGHT";
+			case ifc2x4::IFCRAIL: return "IFCRAIL";
+			case ifc2x4::IFCRAILTYPE: return "IFCRAILTYPE";
 			case ifc2x4::IFCRAILING: return "IFCRAILING";
 			case ifc2x4::IFCRAILINGTYPE: return "IFCRAILINGTYPE";
+			case ifc2x4::IFCRAILWAY: return "IFCRAILWAY";
+			case ifc2x4::IFCRAILWAYPART: return "IFCRAILWAYPART";
 			case ifc2x4::IFCRAMP: return "IFCRAMP";
 			case ifc2x4::IFCRAMPFLIGHT: return "IFCRAMPFLIGHT";
 			case ifc2x4::IFCRAMPFLIGHTTYPE: return "IFCRAMPFLIGHTTYPE";
@@ -1740,6 +1891,7 @@ namespace ifc2x4 {
 			case ifc2x4::IFCREFERENCE: return "IFCREFERENCE";
 			case ifc2x4::IFCREFERENT: return "IFCREFERENT";
 			case ifc2x4::IFCREGULARTIMESERIES: return "IFCREGULARTIMESERIES";
+			case ifc2x4::IFCREINFORCEDSOIL: return "IFCREINFORCEDSOIL";
 			case ifc2x4::IFCREINFORCEMENTBARPROPERTIES: return "IFCREINFORCEMENTBARPROPERTIES";
 			case ifc2x4::IFCREINFORCEMENTDEFINITIONPROPERTIES: return "IFCREINFORCEMENTDEFINITIONPROPERTIES";
 			case ifc2x4::IFCREINFORCINGBAR: return "IFCREINFORCINGBAR";
@@ -1748,6 +1900,7 @@ namespace ifc2x4 {
 			case ifc2x4::IFCREINFORCINGELEMENTTYPE: return "IFCREINFORCINGELEMENTTYPE";
 			case ifc2x4::IFCREINFORCINGMESH: return "IFCREINFORCINGMESH";
 			case ifc2x4::IFCREINFORCINGMESHTYPE: return "IFCREINFORCINGMESHTYPE";
+			case ifc2x4::IFCRELADHERESTOELEMENT: return "IFCRELADHERESTOELEMENT";
 			case ifc2x4::IFCRELAGGREGATES: return "IFCRELAGGREGATES";
 			case ifc2x4::IFCRELASSIGNS: return "IFCRELASSIGNS";
 			case ifc2x4::IFCRELASSIGNSTOACTOR: return "IFCRELASSIGNSTOACTOR";
@@ -1764,6 +1917,7 @@ namespace ifc2x4 {
 			case ifc2x4::IFCRELASSOCIATESDOCUMENT: return "IFCRELASSOCIATESDOCUMENT";
 			case ifc2x4::IFCRELASSOCIATESLIBRARY: return "IFCRELASSOCIATESLIBRARY";
 			case ifc2x4::IFCRELASSOCIATESMATERIAL: return "IFCRELASSOCIATESMATERIAL";
+			case ifc2x4::IFCRELASSOCIATESPROFILEDEF: return "IFCRELASSOCIATESPROFILEDEF";
 			case ifc2x4::IFCRELCONNECTS: return "IFCRELCONNECTS";
 			case ifc2x4::IFCRELCONNECTSELEMENTS: return "IFCRELCONNECTSELEMENTS";
 			case ifc2x4::IFCRELCONNECTSPATHELEMENTS: return "IFCRELCONNECTSPATHELEMENTS";
@@ -1811,6 +1965,8 @@ namespace ifc2x4 {
 			case ifc2x4::IFCREVOLVEDAREASOLIDTAPERED: return "IFCREVOLVEDAREASOLIDTAPERED";
 			case ifc2x4::IFCRIGHTCIRCULARCONE: return "IFCRIGHTCIRCULARCONE";
 			case ifc2x4::IFCRIGHTCIRCULARCYLINDER: return "IFCRIGHTCIRCULARCYLINDER";
+			case ifc2x4::IFCROAD: return "IFCROAD";
+			case ifc2x4::IFCROADPART: return "IFCROADPART";
 			case ifc2x4::IFCROOF: return "IFCROOF";
 			case ifc2x4::IFCROOFTYPE: return "IFCROOFTYPE";
 			case ifc2x4::IFCROOT: return "IFCROOT";
@@ -1820,25 +1976,33 @@ namespace ifc2x4 {
 			case ifc2x4::IFCSANITARYTERMINALTYPE: return "IFCSANITARYTERMINALTYPE";
 			case ifc2x4::IFCSCHEDULINGTIME: return "IFCSCHEDULINGTIME";
 			case ifc2x4::IFCSEAMCURVE: return "IFCSEAMCURVE";
+			case ifc2x4::IFCSECONDORDERPOLYNOMIALSPIRAL: return "IFCSECONDORDERPOLYNOMIALSPIRAL";
 			case ifc2x4::IFCSECTIONPROPERTIES: return "IFCSECTIONPROPERTIES";
 			case ifc2x4::IFCSECTIONREINFORCEMENTPROPERTIES: return "IFCSECTIONREINFORCEMENTPROPERTIES";
 			case ifc2x4::IFCSECTIONEDSOLID: return "IFCSECTIONEDSOLID";
 			case ifc2x4::IFCSECTIONEDSOLIDHORIZONTAL: return "IFCSECTIONEDSOLIDHORIZONTAL";
 			case ifc2x4::IFCSECTIONEDSPINE: return "IFCSECTIONEDSPINE";
+			case ifc2x4::IFCSECTIONEDSURFACE: return "IFCSECTIONEDSURFACE";
+			case ifc2x4::IFCSEGMENT: return "IFCSEGMENT";
+			case ifc2x4::IFCSEGMENTEDREFERENCECURVE: return "IFCSEGMENTEDREFERENCECURVE";
 			case ifc2x4::IFCSENSOR: return "IFCSENSOR";
 			case ifc2x4::IFCSENSORTYPE: return "IFCSENSORTYPE";
+			case ifc2x4::IFCSEVENTHORDERPOLYNOMIALSPIRAL: return "IFCSEVENTHORDERPOLYNOMIALSPIRAL";
 			case ifc2x4::IFCSHADINGDEVICE: return "IFCSHADINGDEVICE";
 			case ifc2x4::IFCSHADINGDEVICETYPE: return "IFCSHADINGDEVICETYPE";
 			case ifc2x4::IFCSHAPEASPECT: return "IFCSHAPEASPECT";
 			case ifc2x4::IFCSHAPEMODEL: return "IFCSHAPEMODEL";
 			case ifc2x4::IFCSHAPEREPRESENTATION: return "IFCSHAPEREPRESENTATION";
 			case ifc2x4::IFCSHELLBASEDSURFACEMODEL: return "IFCSHELLBASEDSURFACEMODEL";
+			case ifc2x4::IFCSIGN: return "IFCSIGN";
+			case ifc2x4::IFCSIGNTYPE: return "IFCSIGNTYPE";
+			case ifc2x4::IFCSIGNAL: return "IFCSIGNAL";
+			case ifc2x4::IFCSIGNALTYPE: return "IFCSIGNALTYPE";
 			case ifc2x4::IFCSIMPLEPROPERTY: return "IFCSIMPLEPROPERTY";
 			case ifc2x4::IFCSIMPLEPROPERTYTEMPLATE: return "IFCSIMPLEPROPERTYTEMPLATE";
+			case ifc2x4::IFCSINESPIRAL: return "IFCSINESPIRAL";
 			case ifc2x4::IFCSITE: return "IFCSITE";
 			case ifc2x4::IFCSLAB: return "IFCSLAB";
-			case ifc2x4::IFCSLABELEMENTEDCASE: return "IFCSLABELEMENTEDCASE";
-			case ifc2x4::IFCSLABSTANDARDCASE: return "IFCSLABSTANDARDCASE";
 			case ifc2x4::IFCSLABTYPE: return "IFCSLABTYPE";
 			case ifc2x4::IFCSLIPPAGECONNECTIONCONDITION: return "IFCSLIPPAGECONNECTIONCONDITION";
 			case ifc2x4::IFCSOLARDEVICE: return "IFCSOLARDEVICE";
@@ -1856,6 +2020,7 @@ namespace ifc2x4 {
 			case ifc2x4::IFCSPATIALZONETYPE: return "IFCSPATIALZONETYPE";
 			case ifc2x4::IFCSPHERE: return "IFCSPHERE";
 			case ifc2x4::IFCSPHERICALSURFACE: return "IFCSPHERICALSURFACE";
+			case ifc2x4::IFCSPIRAL: return "IFCSPIRAL";
 			case ifc2x4::IFCSTACKTERMINAL: return "IFCSTACKTERMINAL";
 			case ifc2x4::IFCSTACKTERMINALTYPE: return "IFCSTACKTERMINALTYPE";
 			case ifc2x4::IFCSTAIR: return "IFCSTAIR";
@@ -1955,20 +2120,26 @@ namespace ifc2x4 {
 			case ifc2x4::IFCTEXTSTYLETEXTMODEL: return "IFCTEXTSTYLETEXTMODEL";
 			case ifc2x4::IFCTEXTURECOORDINATE: return "IFCTEXTURECOORDINATE";
 			case ifc2x4::IFCTEXTURECOORDINATEGENERATOR: return "IFCTEXTURECOORDINATEGENERATOR";
+			case ifc2x4::IFCTEXTURECOORDINATEINDICES: return "IFCTEXTURECOORDINATEINDICES";
+			case ifc2x4::IFCTEXTURECOORDINATEINDICESWITHVOIDS: return "IFCTEXTURECOORDINATEINDICESWITHVOIDS";
 			case ifc2x4::IFCTEXTUREMAP: return "IFCTEXTUREMAP";
 			case ifc2x4::IFCTEXTUREVERTEX: return "IFCTEXTUREVERTEX";
 			case ifc2x4::IFCTEXTUREVERTEXLIST: return "IFCTEXTUREVERTEXLIST";
+			case ifc2x4::IFCTHIRDORDERPOLYNOMIALSPIRAL: return "IFCTHIRDORDERPOLYNOMIALSPIRAL";
 			case ifc2x4::IFCTIMEPERIOD: return "IFCTIMEPERIOD";
 			case ifc2x4::IFCTIMESERIES: return "IFCTIMESERIES";
 			case ifc2x4::IFCTIMESERIESVALUE: return "IFCTIMESERIESVALUE";
 			case ifc2x4::IFCTOPOLOGICALREPRESENTATIONITEM: return "IFCTOPOLOGICALREPRESENTATIONITEM";
 			case ifc2x4::IFCTOPOLOGYREPRESENTATION: return "IFCTOPOLOGYREPRESENTATION";
 			case ifc2x4::IFCTOROIDALSURFACE: return "IFCTOROIDALSURFACE";
+			case ifc2x4::IFCTRACKELEMENT: return "IFCTRACKELEMENT";
+			case ifc2x4::IFCTRACKELEMENTTYPE: return "IFCTRACKELEMENTTYPE";
 			case ifc2x4::IFCTRANSFORMER: return "IFCTRANSFORMER";
 			case ifc2x4::IFCTRANSFORMERTYPE: return "IFCTRANSFORMERTYPE";
-			case ifc2x4::IFCTRANSITIONCURVESEGMENT2D: return "IFCTRANSITIONCURVESEGMENT2D";
 			case ifc2x4::IFCTRANSPORTELEMENT: return "IFCTRANSPORTELEMENT";
 			case ifc2x4::IFCTRANSPORTELEMENTTYPE: return "IFCTRANSPORTELEMENTTYPE";
+			case ifc2x4::IFCTRANSPORTATIONDEVICE: return "IFCTRANSPORTATIONDEVICE";
+			case ifc2x4::IFCTRANSPORTATIONDEVICETYPE: return "IFCTRANSPORTATIONDEVICETYPE";
 			case ifc2x4::IFCTRAPEZIUMPROFILEDEF: return "IFCTRAPEZIUMPROFILEDEF";
 			case ifc2x4::IFCTRIANGULATEDFACESET: return "IFCTRIANGULATEDFACESET";
 			case ifc2x4::IFCTRIANGULATEDIRREGULARNETWORK: return "IFCTRIANGULATEDIRREGULARNETWORK";
@@ -1988,6 +2159,8 @@ namespace ifc2x4 {
 			case ifc2x4::IFCVALVE: return "IFCVALVE";
 			case ifc2x4::IFCVALVETYPE: return "IFCVALVETYPE";
 			case ifc2x4::IFCVECTOR: return "IFCVECTOR";
+			case ifc2x4::IFCVEHICLE: return "IFCVEHICLE";
+			case ifc2x4::IFCVEHICLETYPE: return "IFCVEHICLETYPE";
 			case ifc2x4::IFCVERTEX: return "IFCVERTEX";
 			case ifc2x4::IFCVERTEXLOOP: return "IFCVERTEXLOOP";
 			case ifc2x4::IFCVERTEXPOINT: return "IFCVERTEXPOINT";
@@ -1999,7 +2172,6 @@ namespace ifc2x4 {
 			case ifc2x4::IFCVIRTUALGRIDINTERSECTION: return "IFCVIRTUALGRIDINTERSECTION";
 			case ifc2x4::IFCVOIDINGFEATURE: return "IFCVOIDINGFEATURE";
 			case ifc2x4::IFCWALL: return "IFCWALL";
-			case ifc2x4::IFCWALLELEMENTEDCASE: return "IFCWALLELEMENTEDCASE";
 			case ifc2x4::IFCWALLSTANDARDCASE: return "IFCWALLSTANDARDCASE";
 			case ifc2x4::IFCWALLTYPE: return "IFCWALLTYPE";
 			case ifc2x4::IFCWASTETERMINAL: return "IFCWASTETERMINAL";
@@ -2007,8 +2179,6 @@ namespace ifc2x4 {
 			case ifc2x4::IFCWINDOW: return "IFCWINDOW";
 			case ifc2x4::IFCWINDOWLININGPROPERTIES: return "IFCWINDOWLININGPROPERTIES";
 			case ifc2x4::IFCWINDOWPANELPROPERTIES: return "IFCWINDOWPANELPROPERTIES";
-			case ifc2x4::IFCWINDOWSTANDARDCASE: return "IFCWINDOWSTANDARDCASE";
-			case ifc2x4::IFCWINDOWSTYLE: return "IFCWINDOWSTYLE";
 			case ifc2x4::IFCWINDOWTYPE: return "IFCWINDOWTYPE";
 			case ifc2x4::IFCWORKCALENDAR: return "IFCWORKCALENDAR";
 			case ifc2x4::IFCWORKCONTROL: return "IFCWORKCONTROL";

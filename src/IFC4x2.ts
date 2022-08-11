@@ -55,32 +55,29 @@ FromRawLineData[ifc2x4.IFCALARMTYPE] = (d) => {
 FromRawLineData[ifc2x4.IFCALIGNMENT] = (d) => {
 	return IfcAlignment.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCALIGNMENT2DHORIZONTAL] = (d) => {
-	return IfcAlignment2DHorizontal.FromTape(d.ID, d.type, d.arguments);
+FromRawLineData[ifc2x4.IFCALIGNMENTCANT] = (d) => {
+	return IfcAlignmentCant.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCALIGNMENT2DHORIZONTALSEGMENT] = (d) => {
-	return IfcAlignment2DHorizontalSegment.FromTape(d.ID, d.type, d.arguments);
+FromRawLineData[ifc2x4.IFCALIGNMENTCANTSEGMENT] = (d) => {
+	return IfcAlignmentCantSegment.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCALIGNMENT2DSEGMENT] = (d) => {
-	return IfcAlignment2DSegment.FromTape(d.ID, d.type, d.arguments);
+FromRawLineData[ifc2x4.IFCALIGNMENTHORIZONTAL] = (d) => {
+	return IfcAlignmentHorizontal.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCALIGNMENT2DVERSEGCIRCULARARC] = (d) => {
-	return IfcAlignment2DVerSegCircularArc.FromTape(d.ID, d.type, d.arguments);
+FromRawLineData[ifc2x4.IFCALIGNMENTHORIZONTALSEGMENT] = (d) => {
+	return IfcAlignmentHorizontalSegment.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCALIGNMENT2DVERSEGLINE] = (d) => {
-	return IfcAlignment2DVerSegLine.FromTape(d.ID, d.type, d.arguments);
+FromRawLineData[ifc2x4.IFCALIGNMENTPARAMETERSEGMENT] = (d) => {
+	return IfcAlignmentParameterSegment.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCALIGNMENT2DVERSEGPARABOLICARC] = (d) => {
-	return IfcAlignment2DVerSegParabolicArc.FromTape(d.ID, d.type, d.arguments);
+FromRawLineData[ifc2x4.IFCALIGNMENTSEGMENT] = (d) => {
+	return IfcAlignmentSegment.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCALIGNMENT2DVERTICAL] = (d) => {
-	return IfcAlignment2DVertical.FromTape(d.ID, d.type, d.arguments);
+FromRawLineData[ifc2x4.IFCALIGNMENTVERTICAL] = (d) => {
+	return IfcAlignmentVertical.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCALIGNMENT2DVERTICALSEGMENT] = (d) => {
-	return IfcAlignment2DVerticalSegment.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCALIGNMENTCURVE] = (d) => {
-	return IfcAlignmentCurve.FromTape(d.ID, d.type, d.arguments);
+FromRawLineData[ifc2x4.IFCALIGNMENTVERTICALSEGMENT] = (d) => {
+	return IfcAlignmentVerticalSegment.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCANNOTATION] = (d) => {
 	return IfcAnnotation.FromTape(d.ID, d.type, d.arguments);
@@ -130,6 +127,9 @@ FromRawLineData[ifc2x4.IFCAXIS2PLACEMENT2D] = (d) => {
 FromRawLineData[ifc2x4.IFCAXIS2PLACEMENT3D] = (d) => {
 	return IfcAxis2Placement3D.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCAXIS2PLACEMENTLINEAR] = (d) => {
+	return IfcAxis2PlacementLinear.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCBSPLINECURVE] = (d) => {
 	return IfcBSplineCurve.FromTape(d.ID, d.type, d.arguments);
 };
@@ -144,9 +144,6 @@ FromRawLineData[ifc2x4.IFCBSPLINESURFACEWITHKNOTS] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCBEAM] = (d) => {
 	return IfcBeam.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCBEAMSTANDARDCASE] = (d) => {
-	return IfcBeamStandardCase.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCBEAMTYPE] = (d) => {
 	return IfcBeamType.FromTape(d.ID, d.type, d.arguments);
@@ -174,6 +171,9 @@ FromRawLineData[ifc2x4.IFCBOOLEANCLIPPINGRESULT] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCBOOLEANRESULT] = (d) => {
 	return IfcBooleanResult.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCBOREHOLE] = (d) => {
+	return IfcBorehole.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCBOUNDARYCONDITION] = (d) => {
 	return IfcBoundaryCondition.FromTape(d.ID, d.type, d.arguments);
@@ -214,9 +214,6 @@ FromRawLineData[ifc2x4.IFCBRIDGEPART] = (d) => {
 FromRawLineData[ifc2x4.IFCBUILDING] = (d) => {
 	return IfcBuilding.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCBUILDINGELEMENT] = (d) => {
-	return IfcBuildingElement.FromTape(d.ID, d.type, d.arguments);
-};
 FromRawLineData[ifc2x4.IFCBUILDINGELEMENTPART] = (d) => {
 	return IfcBuildingElementPart.FromTape(d.ID, d.type, d.arguments);
 };
@@ -229,14 +226,20 @@ FromRawLineData[ifc2x4.IFCBUILDINGELEMENTPROXY] = (d) => {
 FromRawLineData[ifc2x4.IFCBUILDINGELEMENTPROXYTYPE] = (d) => {
 	return IfcBuildingElementProxyType.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCBUILDINGELEMENTTYPE] = (d) => {
-	return IfcBuildingElementType.FromTape(d.ID, d.type, d.arguments);
-};
 FromRawLineData[ifc2x4.IFCBUILDINGSTOREY] = (d) => {
 	return IfcBuildingStorey.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCBUILDINGSYSTEM] = (d) => {
 	return IfcBuildingSystem.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCBUILTELEMENT] = (d) => {
+	return IfcBuiltElement.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCBUILTELEMENTTYPE] = (d) => {
+	return IfcBuiltElementType.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCBUILTSYSTEM] = (d) => {
+	return IfcBuiltSystem.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCBURNER] = (d) => {
 	return IfcBurner.FromTape(d.ID, d.type, d.arguments);
@@ -328,9 +331,6 @@ FromRawLineData[ifc2x4.IFCCIRCLEHOLLOWPROFILEDEF] = (d) => {
 FromRawLineData[ifc2x4.IFCCIRCLEPROFILEDEF] = (d) => {
 	return IfcCircleProfileDef.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCCIRCULARARCSEGMENT2D] = (d) => {
-	return IfcCircularArcSegment2D.FromTape(d.ID, d.type, d.arguments);
-};
 FromRawLineData[ifc2x4.IFCCIVILELEMENT] = (d) => {
 	return IfcCivilElement.FromTape(d.ID, d.type, d.arguments);
 };
@@ -345,6 +345,9 @@ FromRawLineData[ifc2x4.IFCCLASSIFICATIONREFERENCE] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCCLOSEDSHELL] = (d) => {
 	return IfcClosedShell.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCCLOTHOID] = (d) => {
+	return IfcClothoid.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCCOIL] = (d) => {
 	return IfcCoil.FromTape(d.ID, d.type, d.arguments);
@@ -363,9 +366,6 @@ FromRawLineData[ifc2x4.IFCCOLOURSPECIFICATION] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCCOLUMN] = (d) => {
 	return IfcColumn.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCCOLUMNSTANDARDCASE] = (d) => {
-	return IfcColumnStandardCase.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCCOLUMNTYPE] = (d) => {
 	return IfcColumnType.FromTape(d.ID, d.type, d.arguments);
@@ -478,6 +478,12 @@ FromRawLineData[ifc2x4.IFCCONVERSIONBASEDUNIT] = (d) => {
 FromRawLineData[ifc2x4.IFCCONVERSIONBASEDUNITWITHOFFSET] = (d) => {
 	return IfcConversionBasedUnitWithOffset.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCCONVEYORSEGMENT] = (d) => {
+	return IfcConveyorSegment.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCCONVEYORSEGMENTTYPE] = (d) => {
+	return IfcConveyorSegmentType.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCCOOLEDBEAM] = (d) => {
 	return IfcCooledBeam.FromTape(d.ID, d.type, d.arguments);
 };
@@ -496,6 +502,9 @@ FromRawLineData[ifc2x4.IFCCOORDINATEOPERATION] = (d) => {
 FromRawLineData[ifc2x4.IFCCOORDINATEREFERENCESYSTEM] = (d) => {
 	return IfcCoordinateReferenceSystem.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCCOSINESPIRAL] = (d) => {
+	return IfcCosineSpiral.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCCOSTITEM] = (d) => {
 	return IfcCostItem.FromTape(d.ID, d.type, d.arguments);
 };
@@ -504,6 +513,12 @@ FromRawLineData[ifc2x4.IFCCOSTSCHEDULE] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCCOSTVALUE] = (d) => {
 	return IfcCostValue.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCCOURSE] = (d) => {
+	return IfcCourse.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCCOURSETYPE] = (d) => {
+	return IfcCourseType.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCCOVERING] = (d) => {
 	return IfcCovering.FromTape(d.ID, d.type, d.arguments);
@@ -541,8 +556,8 @@ FromRawLineData[ifc2x4.IFCCURVEBOUNDEDPLANE] = (d) => {
 FromRawLineData[ifc2x4.IFCCURVEBOUNDEDSURFACE] = (d) => {
 	return IfcCurveBoundedSurface.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCCURVESEGMENT2D] = (d) => {
-	return IfcCurveSegment2D.FromTape(d.ID, d.type, d.arguments);
+FromRawLineData[ifc2x4.IFCCURVESEGMENT] = (d) => {
+	return IfcCurveSegment.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCCURVESTYLE] = (d) => {
 	return IfcCurveStyle.FromTape(d.ID, d.type, d.arguments);
@@ -586,14 +601,23 @@ FromRawLineData[ifc2x4.IFCDIMENSIONALEXPONENTS] = (d) => {
 FromRawLineData[ifc2x4.IFCDIRECTION] = (d) => {
 	return IfcDirection.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCDIRECTRIXCURVESWEPTAREASOLID] = (d) => {
+	return IfcDirectrixCurveSweptAreaSolid.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCDIRECTRIXDERIVEDREFERENCESWEPTAREASOLID] = (d) => {
+	return IfcDirectrixDerivedReferenceSweptAreaSolid.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCDISCRETEACCESSORY] = (d) => {
 	return IfcDiscreteAccessory.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCDISCRETEACCESSORYTYPE] = (d) => {
 	return IfcDiscreteAccessoryType.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCDISTANCEEXPRESSION] = (d) => {
-	return IfcDistanceExpression.FromTape(d.ID, d.type, d.arguments);
+FromRawLineData[ifc2x4.IFCDISTRIBUTIONBOARD] = (d) => {
+	return IfcDistributionBoard.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCDISTRIBUTIONBOARDTYPE] = (d) => {
+	return IfcDistributionBoardType.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCDISTRIBUTIONCHAMBERELEMENT] = (d) => {
 	return IfcDistributionChamberElement.FromTape(d.ID, d.type, d.arguments);
@@ -646,12 +670,6 @@ FromRawLineData[ifc2x4.IFCDOORLININGPROPERTIES] = (d) => {
 FromRawLineData[ifc2x4.IFCDOORPANELPROPERTIES] = (d) => {
 	return IfcDoorPanelProperties.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCDOORSTANDARDCASE] = (d) => {
-	return IfcDoorStandardCase.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCDOORSTYLE] = (d) => {
-	return IfcDoorStyle.FromTape(d.ID, d.type, d.arguments);
-};
 FromRawLineData[ifc2x4.IFCDOORTYPE] = (d) => {
 	return IfcDoorType.FromTape(d.ID, d.type, d.arguments);
 };
@@ -679,6 +697,15 @@ FromRawLineData[ifc2x4.IFCDUCTSILENCER] = (d) => {
 FromRawLineData[ifc2x4.IFCDUCTSILENCERTYPE] = (d) => {
 	return IfcDuctSilencerType.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCEARTHWORKSCUT] = (d) => {
+	return IfcEarthworksCut.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCEARTHWORKSELEMENT] = (d) => {
+	return IfcEarthworksElement.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCEARTHWORKSFILL] = (d) => {
+	return IfcEarthworksFill.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCEDGE] = (d) => {
 	return IfcEdge.FromTape(d.ID, d.type, d.arguments);
 };
@@ -705,6 +732,12 @@ FromRawLineData[ifc2x4.IFCELECTRICFLOWSTORAGEDEVICE] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCELECTRICFLOWSTORAGEDEVICETYPE] = (d) => {
 	return IfcElectricFlowStorageDeviceType.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCELECTRICFLOWTREATMENTDEVICE] = (d) => {
+	return IfcElectricFlowTreatmentDevice.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCELECTRICFLOWTREATMENTDEVICETYPE] = (d) => {
+	return IfcElectricFlowTreatmentDeviceType.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCELECTRICGENERATOR] = (d) => {
 	return IfcElectricGenerator.FromTape(d.ID, d.type, d.arguments);
@@ -847,6 +880,9 @@ FromRawLineData[ifc2x4.IFCFACILITY] = (d) => {
 FromRawLineData[ifc2x4.IFCFACILITYPART] = (d) => {
 	return IfcFacilityPart.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCFACILITYPARTCOMMON] = (d) => {
+	return IfcFacilityPartCommon.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCFAILURECONNECTIONCONDITION] = (d) => {
 	return IfcFailureConnectionCondition.FromTape(d.ID, d.type, d.arguments);
 };
@@ -988,6 +1024,24 @@ FromRawLineData[ifc2x4.IFCGEOMETRICREPRESENTATIONSUBCONTEXT] = (d) => {
 FromRawLineData[ifc2x4.IFCGEOMETRICSET] = (d) => {
 	return IfcGeometricSet.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCGEOMODEL] = (d) => {
+	return IfcGeomodel.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCGEOSLICE] = (d) => {
+	return IfcGeoslice.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCGEOTECHNICALASSEMBLY] = (d) => {
+	return IfcGeotechnicalAssembly.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCGEOTECHNICALELEMENT] = (d) => {
+	return IfcGeotechnicalElement.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCGEOTECHNICALSTRATUM] = (d) => {
+	return IfcGeotechnicalStratum.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCGRADIENTCURVE] = (d) => {
+	return IfcGradientCurve.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCGRID] = (d) => {
 	return IfcGrid.FromTape(d.ID, d.type, d.arguments);
 };
@@ -1021,6 +1075,12 @@ FromRawLineData[ifc2x4.IFCISHAPEPROFILEDEF] = (d) => {
 FromRawLineData[ifc2x4.IFCIMAGETEXTURE] = (d) => {
 	return IfcImageTexture.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCIMPACTPROTECTIONDEVICE] = (d) => {
+	return IfcImpactProtectionDevice.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCIMPACTPROTECTIONDEVICETYPE] = (d) => {
+	return IfcImpactProtectionDeviceType.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCINDEXEDCOLOURMAP] = (d) => {
 	return IfcIndexedColourMap.FromTape(d.ID, d.type, d.arguments);
 };
@@ -1032,6 +1092,9 @@ FromRawLineData[ifc2x4.IFCINDEXEDPOLYGONALFACE] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCINDEXEDPOLYGONALFACEWITHVOIDS] = (d) => {
 	return IfcIndexedPolygonalFaceWithVoids.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCINDEXEDPOLYGONALTEXTUREMAP] = (d) => {
+	return IfcIndexedPolygonalTextureMap.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCINDEXEDTEXTUREMAP] = (d) => {
 	return IfcIndexedTextureMap.FromTape(d.ID, d.type, d.arguments);
@@ -1062,6 +1125,12 @@ FromRawLineData[ifc2x4.IFCJUNCTIONBOX] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCJUNCTIONBOXTYPE] = (d) => {
 	return IfcJunctionBoxType.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCKERB] = (d) => {
+	return IfcKerb.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCKERBTYPE] = (d) => {
+	return IfcKerbType.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCLSHAPEPROFILEDEF] = (d) => {
 	return IfcLShapeProfileDef.FromTape(d.ID, d.type, d.arguments);
@@ -1120,14 +1189,20 @@ FromRawLineData[ifc2x4.IFCLIGHTSOURCESPOT] = (d) => {
 FromRawLineData[ifc2x4.IFCLINE] = (d) => {
 	return IfcLine.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCLINESEGMENT2D] = (d) => {
-	return IfcLineSegment2D.FromTape(d.ID, d.type, d.arguments);
+FromRawLineData[ifc2x4.IFCLINEARELEMENT] = (d) => {
+	return IfcLinearElement.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCLINEARPLACEMENT] = (d) => {
 	return IfcLinearPlacement.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCLINEARPOSITIONINGELEMENT] = (d) => {
 	return IfcLinearPositioningElement.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCLIQUIDTERMINAL] = (d) => {
+	return IfcLiquidTerminal.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCLIQUIDTERMINALTYPE] = (d) => {
+	return IfcLiquidTerminalType.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCLOCALPLACEMENT] = (d) => {
 	return IfcLocalPlacement.FromTape(d.ID, d.type, d.arguments);
@@ -1143,6 +1218,12 @@ FromRawLineData[ifc2x4.IFCMAPCONVERSION] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCMAPPEDITEM] = (d) => {
 	return IfcMappedItem.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCMARINEFACILITY] = (d) => {
+	return IfcMarineFacility.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCMARINEPART] = (d) => {
+	return IfcMarinePart.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCMATERIAL] = (d) => {
 	return IfcMaterial.FromTape(d.ID, d.type, d.arguments);
@@ -1219,9 +1300,6 @@ FromRawLineData[ifc2x4.IFCMEDICALDEVICETYPE] = (d) => {
 FromRawLineData[ifc2x4.IFCMEMBER] = (d) => {
 	return IfcMember.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCMEMBERSTANDARDCASE] = (d) => {
-	return IfcMemberStandardCase.FromTape(d.ID, d.type, d.arguments);
-};
 FromRawLineData[ifc2x4.IFCMEMBERTYPE] = (d) => {
 	return IfcMemberType.FromTape(d.ID, d.type, d.arguments);
 };
@@ -1231,8 +1309,20 @@ FromRawLineData[ifc2x4.IFCMETRIC] = (d) => {
 FromRawLineData[ifc2x4.IFCMIRROREDPROFILEDEF] = (d) => {
 	return IfcMirroredProfileDef.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCMOBILETELECOMMUNICATIONSAPPLIANCE] = (d) => {
+	return IfcMobileTelecommunicationsAppliance.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCMOBILETELECOMMUNICATIONSAPPLIANCETYPE] = (d) => {
+	return IfcMobileTelecommunicationsApplianceType.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCMONETARYUNIT] = (d) => {
 	return IfcMonetaryUnit.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCMOORINGDEVICE] = (d) => {
+	return IfcMooringDevice.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCMOORINGDEVICETYPE] = (d) => {
+	return IfcMooringDeviceType.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCMOTORCONNECTION] = (d) => {
 	return IfcMotorConnection.FromTape(d.ID, d.type, d.arguments);
@@ -1242,6 +1332,12 @@ FromRawLineData[ifc2x4.IFCMOTORCONNECTIONTYPE] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCNAMEDUNIT] = (d) => {
 	return IfcNamedUnit.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCNAVIGATIONELEMENT] = (d) => {
+	return IfcNavigationElement.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCNAVIGATIONELEMENTTYPE] = (d) => {
+	return IfcNavigationElementType.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCOBJECT] = (d) => {
 	return IfcObject.FromTape(d.ID, d.type, d.arguments);
@@ -1270,23 +1366,20 @@ FromRawLineData[ifc2x4.IFCOFFSETCURVE3D] = (d) => {
 FromRawLineData[ifc2x4.IFCOFFSETCURVEBYDISTANCES] = (d) => {
 	return IfcOffsetCurveByDistances.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCOPENCROSSPROFILEDEF] = (d) => {
+	return IfcOpenCrossProfileDef.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCOPENSHELL] = (d) => {
 	return IfcOpenShell.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCOPENINGELEMENT] = (d) => {
 	return IfcOpeningElement.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCOPENINGSTANDARDCASE] = (d) => {
-	return IfcOpeningStandardCase.FromTape(d.ID, d.type, d.arguments);
-};
 FromRawLineData[ifc2x4.IFCORGANIZATION] = (d) => {
 	return IfcOrganization.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCORGANIZATIONRELATIONSHIP] = (d) => {
 	return IfcOrganizationRelationship.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCORIENTATIONEXPRESSION] = (d) => {
-	return IfcOrientationExpression.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCORIENTEDEDGE] = (d) => {
 	return IfcOrientedEdge.FromTape(d.ID, d.type, d.arguments);
@@ -1308,6 +1401,12 @@ FromRawLineData[ifc2x4.IFCPARAMETERIZEDPROFILEDEF] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCPATH] = (d) => {
 	return IfcPath.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCPAVEMENT] = (d) => {
+	return IfcPavement.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCPAVEMENTTYPE] = (d) => {
+	return IfcPavementType.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCPCURVE] = (d) => {
 	return IfcPcurve.FromTape(d.ID, d.type, d.arguments);
@@ -1372,14 +1471,14 @@ FromRawLineData[ifc2x4.IFCPLANE] = (d) => {
 FromRawLineData[ifc2x4.IFCPLATE] = (d) => {
 	return IfcPlate.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCPLATESTANDARDCASE] = (d) => {
-	return IfcPlateStandardCase.FromTape(d.ID, d.type, d.arguments);
-};
 FromRawLineData[ifc2x4.IFCPLATETYPE] = (d) => {
 	return IfcPlateType.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCPOINT] = (d) => {
 	return IfcPoint.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCPOINTBYDISTANCEEXPRESSION] = (d) => {
+	return IfcPointByDistanceExpression.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCPOINTONCURVE] = (d) => {
 	return IfcPointOnCurve.FromTape(d.ID, d.type, d.arguments);
@@ -1398,6 +1497,9 @@ FromRawLineData[ifc2x4.IFCPOLYGONALFACESET] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCPOLYLINE] = (d) => {
 	return IfcPolyline.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCPOLYNOMIALCURVE] = (d) => {
+	return IfcPolynomialCurve.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCPORT] = (d) => {
 	return IfcPort.FromTape(d.ID, d.type, d.arguments);
@@ -1437,9 +1539,6 @@ FromRawLineData[ifc2x4.IFCPRESENTATIONLAYERWITHSTYLE] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCPRESENTATIONSTYLE] = (d) => {
 	return IfcPresentationStyle.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCPRESENTATIONSTYLEASSIGNMENT] = (d) => {
-	return IfcPresentationStyleAssignment.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCPROCEDURE] = (d) => {
 	return IfcProcedure.FromTape(d.ID, d.type, d.arguments);
@@ -1540,9 +1639,6 @@ FromRawLineData[ifc2x4.IFCPROTECTIVEDEVICETRIPPINGUNITTYPE] = (d) => {
 FromRawLineData[ifc2x4.IFCPROTECTIVEDEVICETYPE] = (d) => {
 	return IfcProtectiveDeviceType.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCPROXY] = (d) => {
-	return IfcProxy.FromTape(d.ID, d.type, d.arguments);
-};
 FromRawLineData[ifc2x4.IFCPUMP] = (d) => {
 	return IfcPump.FromTape(d.ID, d.type, d.arguments);
 };
@@ -1558,6 +1654,9 @@ FromRawLineData[ifc2x4.IFCQUANTITYCOUNT] = (d) => {
 FromRawLineData[ifc2x4.IFCQUANTITYLENGTH] = (d) => {
 	return IfcQuantityLength.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCQUANTITYNUMBER] = (d) => {
+	return IfcQuantityNumber.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCQUANTITYSET] = (d) => {
 	return IfcQuantitySet.FromTape(d.ID, d.type, d.arguments);
 };
@@ -1570,11 +1669,23 @@ FromRawLineData[ifc2x4.IFCQUANTITYVOLUME] = (d) => {
 FromRawLineData[ifc2x4.IFCQUANTITYWEIGHT] = (d) => {
 	return IfcQuantityWeight.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCRAIL] = (d) => {
+	return IfcRail.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCRAILTYPE] = (d) => {
+	return IfcRailType.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCRAILING] = (d) => {
 	return IfcRailing.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCRAILINGTYPE] = (d) => {
 	return IfcRailingType.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCRAILWAY] = (d) => {
+	return IfcRailway.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCRAILWAYPART] = (d) => {
+	return IfcRailwayPart.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCRAMP] = (d) => {
 	return IfcRamp.FromTape(d.ID, d.type, d.arguments);
@@ -1618,6 +1729,9 @@ FromRawLineData[ifc2x4.IFCREFERENT] = (d) => {
 FromRawLineData[ifc2x4.IFCREGULARTIMESERIES] = (d) => {
 	return IfcRegularTimeSeries.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCREINFORCEDSOIL] = (d) => {
+	return IfcReinforcedSoil.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCREINFORCEMENTBARPROPERTIES] = (d) => {
 	return IfcReinforcementBarProperties.FromTape(d.ID, d.type, d.arguments);
 };
@@ -1641,6 +1755,9 @@ FromRawLineData[ifc2x4.IFCREINFORCINGMESH] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCREINFORCINGMESHTYPE] = (d) => {
 	return IfcReinforcingMeshType.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCRELADHERESTOELEMENT] = (d) => {
+	return IfcRelAdheresToElement.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCRELAGGREGATES] = (d) => {
 	return IfcRelAggregates.FromTape(d.ID, d.type, d.arguments);
@@ -1689,6 +1806,9 @@ FromRawLineData[ifc2x4.IFCRELASSOCIATESLIBRARY] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCRELASSOCIATESMATERIAL] = (d) => {
 	return IfcRelAssociatesMaterial.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCRELASSOCIATESPROFILEDEF] = (d) => {
+	return IfcRelAssociatesProfileDef.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCRELCONNECTS] = (d) => {
 	return IfcRelConnects.FromTape(d.ID, d.type, d.arguments);
@@ -1831,6 +1951,12 @@ FromRawLineData[ifc2x4.IFCRIGHTCIRCULARCONE] = (d) => {
 FromRawLineData[ifc2x4.IFCRIGHTCIRCULARCYLINDER] = (d) => {
 	return IfcRightCircularCylinder.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCROAD] = (d) => {
+	return IfcRoad.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCROADPART] = (d) => {
+	return IfcRoadPart.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCROOF] = (d) => {
 	return IfcRoof.FromTape(d.ID, d.type, d.arguments);
 };
@@ -1858,6 +1984,9 @@ FromRawLineData[ifc2x4.IFCSCHEDULINGTIME] = (d) => {
 FromRawLineData[ifc2x4.IFCSEAMCURVE] = (d) => {
 	return IfcSeamCurve.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCSECONDORDERPOLYNOMIALSPIRAL] = (d) => {
+	return IfcSecondOrderPolynomialSpiral.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCSECTIONPROPERTIES] = (d) => {
 	return IfcSectionProperties.FromTape(d.ID, d.type, d.arguments);
 };
@@ -1873,11 +2002,23 @@ FromRawLineData[ifc2x4.IFCSECTIONEDSOLIDHORIZONTAL] = (d) => {
 FromRawLineData[ifc2x4.IFCSECTIONEDSPINE] = (d) => {
 	return IfcSectionedSpine.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCSECTIONEDSURFACE] = (d) => {
+	return IfcSectionedSurface.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCSEGMENT] = (d) => {
+	return IfcSegment.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCSEGMENTEDREFERENCECURVE] = (d) => {
+	return IfcSegmentedReferenceCurve.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCSENSOR] = (d) => {
 	return IfcSensor.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCSENSORTYPE] = (d) => {
 	return IfcSensorType.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCSEVENTHORDERPOLYNOMIALSPIRAL] = (d) => {
+	return IfcSeventhOrderPolynomialSpiral.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCSHADINGDEVICE] = (d) => {
 	return IfcShadingDevice.FromTape(d.ID, d.type, d.arguments);
@@ -1897,23 +2038,32 @@ FromRawLineData[ifc2x4.IFCSHAPEREPRESENTATION] = (d) => {
 FromRawLineData[ifc2x4.IFCSHELLBASEDSURFACEMODEL] = (d) => {
 	return IfcShellBasedSurfaceModel.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCSIGN] = (d) => {
+	return IfcSign.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCSIGNTYPE] = (d) => {
+	return IfcSignType.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCSIGNAL] = (d) => {
+	return IfcSignal.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCSIGNALTYPE] = (d) => {
+	return IfcSignalType.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCSIMPLEPROPERTY] = (d) => {
 	return IfcSimpleProperty.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCSIMPLEPROPERTYTEMPLATE] = (d) => {
 	return IfcSimplePropertyTemplate.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCSINESPIRAL] = (d) => {
+	return IfcSineSpiral.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCSITE] = (d) => {
 	return IfcSite.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCSLAB] = (d) => {
 	return IfcSlab.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCSLABELEMENTEDCASE] = (d) => {
-	return IfcSlabElementedCase.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCSLABSTANDARDCASE] = (d) => {
-	return IfcSlabStandardCase.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCSLABTYPE] = (d) => {
 	return IfcSlabType.FromTape(d.ID, d.type, d.arguments);
@@ -1965,6 +2115,9 @@ FromRawLineData[ifc2x4.IFCSPHERE] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCSPHERICALSURFACE] = (d) => {
 	return IfcSphericalSurface.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCSPIRAL] = (d) => {
+	return IfcSpiral.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCSTACKTERMINAL] = (d) => {
 	return IfcStackTerminal.FromTape(d.ID, d.type, d.arguments);
@@ -2263,6 +2416,12 @@ FromRawLineData[ifc2x4.IFCTEXTURECOORDINATE] = (d) => {
 FromRawLineData[ifc2x4.IFCTEXTURECOORDINATEGENERATOR] = (d) => {
 	return IfcTextureCoordinateGenerator.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCTEXTURECOORDINATEINDICES] = (d) => {
+	return IfcTextureCoordinateIndices.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCTEXTURECOORDINATEINDICESWITHVOIDS] = (d) => {
+	return IfcTextureCoordinateIndicesWithVoids.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCTEXTUREMAP] = (d) => {
 	return IfcTextureMap.FromTape(d.ID, d.type, d.arguments);
 };
@@ -2271,6 +2430,9 @@ FromRawLineData[ifc2x4.IFCTEXTUREVERTEX] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCTEXTUREVERTEXLIST] = (d) => {
 	return IfcTextureVertexList.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCTHIRDORDERPOLYNOMIALSPIRAL] = (d) => {
+	return IfcThirdOrderPolynomialSpiral.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCTIMEPERIOD] = (d) => {
 	return IfcTimePeriod.FromTape(d.ID, d.type, d.arguments);
@@ -2290,20 +2452,29 @@ FromRawLineData[ifc2x4.IFCTOPOLOGYREPRESENTATION] = (d) => {
 FromRawLineData[ifc2x4.IFCTOROIDALSURFACE] = (d) => {
 	return IfcToroidalSurface.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCTRACKELEMENT] = (d) => {
+	return IfcTrackElement.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCTRACKELEMENTTYPE] = (d) => {
+	return IfcTrackElementType.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCTRANSFORMER] = (d) => {
 	return IfcTransformer.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCTRANSFORMERTYPE] = (d) => {
 	return IfcTransformerType.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCTRANSITIONCURVESEGMENT2D] = (d) => {
-	return IfcTransitionCurveSegment2D.FromTape(d.ID, d.type, d.arguments);
-};
 FromRawLineData[ifc2x4.IFCTRANSPORTELEMENT] = (d) => {
 	return IfcTransportElement.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCTRANSPORTELEMENTTYPE] = (d) => {
 	return IfcTransportElementType.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCTRANSPORTATIONDEVICE] = (d) => {
+	return IfcTransportationDevice.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCTRANSPORTATIONDEVICETYPE] = (d) => {
+	return IfcTransportationDeviceType.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCTRAPEZIUMPROFILEDEF] = (d) => {
 	return IfcTrapeziumProfileDef.FromTape(d.ID, d.type, d.arguments);
@@ -2362,6 +2533,12 @@ FromRawLineData[ifc2x4.IFCVALVETYPE] = (d) => {
 FromRawLineData[ifc2x4.IFCVECTOR] = (d) => {
 	return IfcVector.FromTape(d.ID, d.type, d.arguments);
 };
+FromRawLineData[ifc2x4.IFCVEHICLE] = (d) => {
+	return IfcVehicle.FromTape(d.ID, d.type, d.arguments);
+};
+FromRawLineData[ifc2x4.IFCVEHICLETYPE] = (d) => {
+	return IfcVehicleType.FromTape(d.ID, d.type, d.arguments);
+};
 FromRawLineData[ifc2x4.IFCVERTEX] = (d) => {
 	return IfcVertex.FromTape(d.ID, d.type, d.arguments);
 };
@@ -2395,9 +2572,6 @@ FromRawLineData[ifc2x4.IFCVOIDINGFEATURE] = (d) => {
 FromRawLineData[ifc2x4.IFCWALL] = (d) => {
 	return IfcWall.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCWALLELEMENTEDCASE] = (d) => {
-	return IfcWallElementedCase.FromTape(d.ID, d.type, d.arguments);
-};
 FromRawLineData[ifc2x4.IFCWALLSTANDARDCASE] = (d) => {
 	return IfcWallStandardCase.FromTape(d.ID, d.type, d.arguments);
 };
@@ -2418,12 +2592,6 @@ FromRawLineData[ifc2x4.IFCWINDOWLININGPROPERTIES] = (d) => {
 };
 FromRawLineData[ifc2x4.IFCWINDOWPANELPROPERTIES] = (d) => {
 	return IfcWindowPanelProperties.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCWINDOWSTANDARDCASE] = (d) => {
-	return IfcWindowStandardCase.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCWINDOWSTYLE] = (d) => {
-	return IfcWindowStyle.FromTape(d.ID, d.type, d.arguments);
 };
 FromRawLineData[ifc2x4.IFCWINDOWTYPE] = (d) => {
 	return IfcWindowType.FromTape(d.ID, d.type, d.arguments);
@@ -2985,40 +3153,40 @@ export class IfcActionRequestTypeEnum {
 export class IfcActionSourceTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static DEAD_LOAD_G = "DEAD_LOAD_G";
-	static COMPLETION_G1 = "COMPLETION_G1";
-	static LIVE_LOAD_Q = "LIVE_LOAD_Q";
-	static SNOW_S = "SNOW_S";
-	static WIND_W = "WIND_W";
-	static PRESTRESSING_P = "PRESTRESSING_P";
-	static SETTLEMENT_U = "SETTLEMENT_U";
-	static TEMPERATURE_T = "TEMPERATURE_T";
-	static EARTHQUAKE_E = "EARTHQUAKE_E";
-	static FIRE = "FIRE";
-	static IMPULSE = "IMPULSE";
-	static IMPACT = "IMPACT";
-	static TRANSPORT = "TRANSPORT";
-	static ERECTION = "ERECTION";
-	static PROPPING = "PROPPING";
-	static SYSTEM_IMPERFECTION = "SYSTEM_IMPERFECTION";
-	static SHRINKAGE = "SHRINKAGE";
-	static CREEP = "CREEP";
-	static LACK_OF_FIT = "LACK_OF_FIT";
-	static BUOYANCY = "BUOYANCY";
-	static ICE = "ICE";
-	static CURRENT = "CURRENT";
-	static WAVE = "WAVE";
-	static RAIN = "RAIN";
 	static BRAKES = "BRAKES";
+	static BUOYANCY = "BUOYANCY";
+	static COMPLETION_G1 = "COMPLETION_G1";
+	static CREEP = "CREEP";
+	static CURRENT = "CURRENT";
+	static DEAD_LOAD_G = "DEAD_LOAD_G";
+	static EARTHQUAKE_E = "EARTHQUAKE_E";
+	static ERECTION = "ERECTION";
+	static FIRE = "FIRE";
+	static ICE = "ICE";
+	static IMPACT = "IMPACT";
+	static IMPULSE = "IMPULSE";
+	static LACK_OF_FIT = "LACK_OF_FIT";
+	static LIVE_LOAD_Q = "LIVE_LOAD_Q";
+	static PRESTRESSING_P = "PRESTRESSING_P";
+	static PROPPING = "PROPPING";
+	static RAIN = "RAIN";
+	static SETTLEMENT_U = "SETTLEMENT_U";
+	static SHRINKAGE = "SHRINKAGE";
+	static SNOW_S = "SNOW_S";
+	static SYSTEM_IMPERFECTION = "SYSTEM_IMPERFECTION";
+	static TEMPERATURE_T = "TEMPERATURE_T";
+	static TRANSPORT = "TRANSPORT";
+	static WAVE = "WAVE";
+	static WIND_W = "WIND_W";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcActionTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static EXTRAORDINARY_A = "EXTRAORDINARY_A";
 	static PERMANENT_G = "PERMANENT_G";
 	static VARIABLE_Q = "VARIABLE_Q";
-	static EXTRAORDINARY_A = "EXTRAORDINARY_A";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3036,10 +3204,10 @@ export class IfcActuatorTypeEnum {
 export class IfcAddressTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static DISTRIBUTIONPOINT = "DISTRIBUTIONPOINT";
+	static HOME = "HOME";
 	static OFFICE = "OFFICE";
 	static SITE = "SITE";
-	static HOME = "HOME";
-	static DISTRIBUTIONPOINT = "DISTRIBUTIONPOINT";
 	static USERDEFINED = "USERDEFINED";
 };
 export class IfcAirTerminalBoxTypeEnum {
@@ -3067,12 +3235,12 @@ export class IfcAirToAirHeatRecoveryTypeEnum {
 	static FIXEDPLATECOUNTERFLOWEXCHANGER = "FIXEDPLATECOUNTERFLOWEXCHANGER";
 	static FIXEDPLATECROSSFLOWEXCHANGER = "FIXEDPLATECROSSFLOWEXCHANGER";
 	static FIXEDPLATEPARALLELFLOWEXCHANGER = "FIXEDPLATEPARALLELFLOWEXCHANGER";
+	static HEATPIPE = "HEATPIPE";
 	static ROTARYWHEEL = "ROTARYWHEEL";
 	static RUNAROUNDCOILLOOP = "RUNAROUNDCOILLOOP";
-	static HEATPIPE = "HEATPIPE";
-	static TWINTOWERENTHALPYRECOVERYLOOPS = "TWINTOWERENTHALPYRECOVERYLOOPS";
-	static THERMOSIPHONSEALEDTUBEHEATEXCHANGERS = "THERMOSIPHONSEALEDTUBEHEATEXCHANGERS";
 	static THERMOSIPHONCOILTYPEHEATEXCHANGERS = "THERMOSIPHONCOILTYPEHEATEXCHANGERS";
+	static THERMOSIPHONSEALEDTUBEHEATEXCHANGERS = "THERMOSIPHONSEALEDTUBEHEATEXCHANGERS";
+	static TWINTOWERENTHALPYRECOVERYLOOPS = "TWINTOWERENTHALPYRECOVERYLOOPS";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3083,10 +3251,36 @@ export class IfcAlarmTypeEnum {
 	static BREAKGLASSBUTTON = "BREAKGLASSBUTTON";
 	static LIGHT = "LIGHT";
 	static MANUALPULLBOX = "MANUALPULLBOX";
+	static RAILWAYCROCODILE = "RAILWAYCROCODILE";
+	static RAILWAYDETONATOR = "RAILWAYDETONATOR";
 	static SIREN = "SIREN";
 	static WHISTLE = "WHISTLE";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcAlignmentCantSegmentTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static BLOSSCURVE = "BLOSSCURVE";
+	static CONSTANTCANT = "CONSTANTCANT";
+	static COSINECURVE = "COSINECURVE";
+	static HELMERTCURVE = "HELMERTCURVE";
+	static LINEARTRANSITION = "LINEARTRANSITION";
+	static SINECURVE = "SINECURVE";
+	static VIENNESEBEND = "VIENNESEBEND";
+};
+export class IfcAlignmentHorizontalSegmentTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static BLOSSCURVE = "BLOSSCURVE";
+	static CIRCULARARC = "CIRCULARARC";
+	static CLOTHOID = "CLOTHOID";
+	static COSINECURVE = "COSINECURVE";
+	static CUBIC = "CUBIC";
+	static HELMERTCURVE = "HELMERTCURVE";
+	static LINE = "LINE";
+	static SINECURVE = "SINECURVE";
+	static VIENNESEBEND = "VIENNESEBEND";
 };
 export class IfcAlignmentTypeEnum {
 	value: string;
@@ -3094,12 +3288,20 @@ export class IfcAlignmentTypeEnum {
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
+export class IfcAlignmentVerticalSegmentTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static CIRCULARARC = "CIRCULARARC";
+	static CLOTHOID = "CLOTHOID";
+	static CONSTANTGRADIENT = "CONSTANTGRADIENT";
+	static PARABOLICARC = "PARABOLICARC";
+};
 export class IfcAnalysisModelTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static IN_PLANE_LOADING_2D = "IN_PLANE_LOADING_2D";
-	static OUT_PLANE_LOADING_2D = "OUT_PLANE_LOADING_2D";
 	static LOADING_3D = "LOADING_3D";
+	static OUT_PLANE_LOADING_2D = "OUT_PLANE_LOADING_2D";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3107,9 +3309,24 @@ export class IfcAnalysisTheoryTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static FIRST_ORDER_THEORY = "FIRST_ORDER_THEORY";
+	static FULL_NONLINEAR_THEORY = "FULL_NONLINEAR_THEORY";
 	static SECOND_ORDER_THEORY = "SECOND_ORDER_THEORY";
 	static THIRD_ORDER_THEORY = "THIRD_ORDER_THEORY";
-	static FULL_NONLINEAR_THEORY = "FULL_NONLINEAR_THEORY";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcAnnotationTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static ASBUILTAREA = "ASBUILTAREA";
+	static ASBUILTLINE = "ASBUILTLINE";
+	static ASBUILTPOINT = "ASBUILTPOINT";
+	static ASSUMEDAREA = "ASSUMEDAREA";
+	static ASSUMEDLINE = "ASSUMEDLINE";
+	static ASSUMEDPOINT = "ASSUMEDPOINT";
+	static NON_PHYSICAL_SIGNAL = "NON_PHYSICAL_SIGNAL";
+	static SUPERELEVATIONEVENT = "SUPERELEVATIONEVENT";
+	static WIDTHEVENT = "WIDTHEVENT";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3124,8 +3341,8 @@ export class IfcArithmeticOperatorEnum {
 export class IfcAssemblyPlaceEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static SITE = "SITE";
 	static FACTORY = "FACTORY";
+	static SITE = "SITE";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcAudioVisualApplianceTypeEnum {
@@ -3133,11 +3350,13 @@ export class IfcAudioVisualApplianceTypeEnum {
 	constructor(v: string) { this.value = v;}
 	static AMPLIFIER = "AMPLIFIER";
 	static CAMERA = "CAMERA";
+	static COMMUNICATIONTERMINAL = "COMMUNICATIONTERMINAL";
 	static DISPLAY = "DISPLAY";
 	static MICROPHONE = "MICROPHONE";
 	static PLAYER = "PLAYER";
 	static PROJECTOR = "PROJECTOR";
 	static RECEIVER = "RECEIVER";
+	static RECORDINGEQUIPMENT = "RECORDINGEQUIPMENT";
 	static SPEAKER = "SPEAKER";
 	static SWITCHER = "SWITCHER";
 	static TELEPHONE = "TELEPHONE";
@@ -3148,43 +3367,43 @@ export class IfcAudioVisualApplianceTypeEnum {
 export class IfcBSplineCurveForm {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static POLYLINE_FORM = "POLYLINE_FORM";
 	static CIRCULAR_ARC = "CIRCULAR_ARC";
 	static ELLIPTIC_ARC = "ELLIPTIC_ARC";
-	static PARABOLIC_ARC = "PARABOLIC_ARC";
 	static HYPERBOLIC_ARC = "HYPERBOLIC_ARC";
+	static PARABOLIC_ARC = "PARABOLIC_ARC";
+	static POLYLINE_FORM = "POLYLINE_FORM";
 	static UNSPECIFIED = "UNSPECIFIED";
 };
 export class IfcBSplineSurfaceForm {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static PLANE_SURF = "PLANE_SURF";
-	static CYLINDRICAL_SURF = "CYLINDRICAL_SURF";
 	static CONICAL_SURF = "CONICAL_SURF";
-	static SPHERICAL_SURF = "SPHERICAL_SURF";
-	static TOROIDAL_SURF = "TOROIDAL_SURF";
-	static SURF_OF_REVOLUTION = "SURF_OF_REVOLUTION";
-	static RULED_SURF = "RULED_SURF";
+	static CYLINDRICAL_SURF = "CYLINDRICAL_SURF";
 	static GENERALISED_CONE = "GENERALISED_CONE";
+	static PLANE_SURF = "PLANE_SURF";
 	static QUADRIC_SURF = "QUADRIC_SURF";
+	static RULED_SURF = "RULED_SURF";
+	static SPHERICAL_SURF = "SPHERICAL_SURF";
 	static SURF_OF_LINEAR_EXTRUSION = "SURF_OF_LINEAR_EXTRUSION";
+	static SURF_OF_REVOLUTION = "SURF_OF_REVOLUTION";
+	static TOROIDAL_SURF = "TOROIDAL_SURF";
 	static UNSPECIFIED = "UNSPECIFIED";
 };
 export class IfcBeamTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static BEAM = "BEAM";
-	static JOIST = "JOIST";
+	static CORNICE = "CORNICE";
+	static DIAPHRAGM = "DIAPHRAGM";
+	static EDGEBEAM = "EDGEBEAM";
+	static GIRDER_SEGMENT = "GIRDER_SEGMENT";
+	static HATSTONE = "HATSTONE";
 	static HOLLOWCORE = "HOLLOWCORE";
+	static JOIST = "JOIST";
 	static LINTEL = "LINTEL";
+	static PIERCAP = "PIERCAP";
 	static SPANDREL = "SPANDREL";
 	static T_BEAM = "T_BEAM";
-	static GIRDER_SEGMENT = "GIRDER_SEGMENT";
-	static DIAPHRAGM = "DIAPHRAGM";
-	static PIERCAP = "PIERCAP";
-	static HATSTONE = "HATSTONE";
-	static CORNICE = "CORNICE";
-	static EDGEBEAM = "EDGEBEAM";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3192,53 +3411,53 @@ export class IfcBearingTypeDisplacementEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static FIXED_MOVEMENT = "FIXED_MOVEMENT";
+	static FREE_MOVEMENT = "FREE_MOVEMENT";
 	static GUIDED_LONGITUDINAL = "GUIDED_LONGITUDINAL";
 	static GUIDED_TRANSVERSAL = "GUIDED_TRANSVERSAL";
-	static FREE_MOVEMENT = "FREE_MOVEMENT";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcBearingTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static CYLINDRICAL = "CYLINDRICAL";
-	static SPHERICAL = "SPHERICAL";
+	static DISK = "DISK";
 	static ELASTOMERIC = "ELASTOMERIC";
-	static POT = "POT";
 	static GUIDE = "GUIDE";
+	static POT = "POT";
 	static ROCKER = "ROCKER";
 	static ROLLER = "ROLLER";
-	static DISK = "DISK";
+	static SPHERICAL = "SPHERICAL";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcBenchmarkEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static EQUALTO = "EQUALTO";
 	static GREATERTHAN = "GREATERTHAN";
 	static GREATERTHANOREQUALTO = "GREATERTHANOREQUALTO";
+	static INCLUDEDIN = "INCLUDEDIN";
+	static INCLUDES = "INCLUDES";
 	static LESSTHAN = "LESSTHAN";
 	static LESSTHANOREQUALTO = "LESSTHANOREQUALTO";
-	static EQUALTO = "EQUALTO";
 	static NOTEQUALTO = "NOTEQUALTO";
-	static INCLUDES = "INCLUDES";
-	static NOTINCLUDES = "NOTINCLUDES";
-	static INCLUDEDIN = "INCLUDEDIN";
 	static NOTINCLUDEDIN = "NOTINCLUDEDIN";
+	static NOTINCLUDES = "NOTINCLUDES";
 };
 export class IfcBoilerTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static WATER = "WATER";
 	static STEAM = "STEAM";
+	static WATER = "WATER";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcBooleanOperator {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static UNION = "UNION";
-	static INTERSECTION = "INTERSECTION";
 	static DIFFERENCE = "DIFFERENCE";
+	static INTERSECTION = "INTERSECTION";
+	static UNION = "UNION";
 };
 export class IfcBridgePartTypeEnum {
 	value: string;
@@ -3273,9 +3492,11 @@ export class IfcBridgeTypeEnum {
 export class IfcBuildingElementPartTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static APRON = "APRON";
+	static ARMOURUNIT = "ARMOURUNIT";
 	static INSULATION = "INSULATION";
 	static PRECASTPANEL = "PRECASTPANEL";
-	static APRON = "APRON";
+	static SAFETYCAGE = "SAFETYCAGE";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3285,22 +3506,40 @@ export class IfcBuildingElementProxyTypeEnum {
 	static COMPLEX = "COMPLEX";
 	static ELEMENT = "ELEMENT";
 	static PARTIAL = "PARTIAL";
-	static PROVISIONFORVOID = "PROVISIONFORVOID";
-	static PROVISIONFORSPACE = "PROVISIONFORSPACE";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcBuildingSystemTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static EROSIONPREVENTION = "EROSIONPREVENTION";
 	static FENESTRATION = "FENESTRATION";
 	static FOUNDATION = "FOUNDATION";
 	static LOADBEARING = "LOADBEARING";
 	static OUTERSHELL = "OUTERSHELL";
+	static PRESTRESSING = "PRESTRESSING";
+	static REINFORCING = "REINFORCING";
 	static SHADING = "SHADING";
 	static TRANSPORT = "TRANSPORT";
-	static REINFORCING = "REINFORCING";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcBuiltSystemTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static EROSIONPREVENTION = "EROSIONPREVENTION";
+	static FENESTRATION = "FENESTRATION";
+	static FOUNDATION = "FOUNDATION";
+	static LOADBEARING = "LOADBEARING";
+	static MOORING = "MOORING";
+	static OUTERSHELL = "OUTERSHELL";
 	static PRESTRESSING = "PRESTRESSING";
+	static RAILWAYLINE = "RAILWAYLINE";
+	static RAILWAYTRACK = "RAILWAYTRACK";
+	static REINFORCING = "REINFORCING";
+	static SHADING = "SHADING";
+	static TRACKCIRCUIT = "TRACKCIRCUIT";
+	static TRANSPORT = "TRANSPORT";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3314,19 +3553,24 @@ export class IfcCableCarrierFittingTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static BEND = "BEND";
+	static CONNECTOR = "CONNECTOR";
 	static CROSS = "CROSS";
-	static REDUCER = "REDUCER";
+	static JUNCTION = "JUNCTION";
 	static TEE = "TEE";
+	static TRANSITION = "TRANSITION";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcCableCarrierSegmentTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static CABLEBRACKET = "CABLEBRACKET";
 	static CABLELADDERSEGMENT = "CABLELADDERSEGMENT";
 	static CABLETRAYSEGMENT = "CABLETRAYSEGMENT";
 	static CABLETRUNKINGSEGMENT = "CABLETRUNKINGSEGMENT";
+	static CATENARYWIRE = "CATENARYWIRE";
 	static CONDUITSEGMENT = "CONDUITSEGMENT";
+	static DROPPER = "DROPPER";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3336,6 +3580,7 @@ export class IfcCableFittingTypeEnum {
 	static CONNECTOR = "CONNECTOR";
 	static ENTRY = "ENTRY";
 	static EXIT = "EXIT";
+	static FANOUT = "FANOUT";
 	static JUNCTION = "JUNCTION";
 	static TRANSITION = "TRANSITION";
 	static USERDEFINED = "USERDEFINED";
@@ -3347,33 +3592,39 @@ export class IfcCableSegmentTypeEnum {
 	static BUSBARSEGMENT = "BUSBARSEGMENT";
 	static CABLESEGMENT = "CABLESEGMENT";
 	static CONDUCTORSEGMENT = "CONDUCTORSEGMENT";
+	static CONTACTWIRESEGMENT = "CONTACTWIRESEGMENT";
 	static CORESEGMENT = "CORESEGMENT";
+	static FIBERSEGMENT = "FIBERSEGMENT";
+	static FIBERTUBE = "FIBERTUBE";
+	static OPTICALCABLESEGMENT = "OPTICALCABLESEGMENT";
+	static STITCHWIRE = "STITCHWIRE";
+	static WIREPAIRSEGMENT = "WIREPAIRSEGMENT";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcCaissonFoundationTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static WELL = "WELL";
 	static CAISSON = "CAISSON";
+	static WELL = "WELL";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcChangeActionEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static NOCHANGE = "NOCHANGE";
-	static MODIFIED = "MODIFIED";
 	static ADDED = "ADDED";
 	static DELETED = "DELETED";
+	static MODIFIED = "MODIFIED";
+	static NOCHANGE = "NOCHANGE";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcChillerTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static AIRCOOLED = "AIRCOOLED";
-	static WATERCOOLED = "WATERCOOLED";
 	static HEATRECOVERY = "HEATRECOVERY";
+	static WATERCOOLED = "WATERCOOLED";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3400,9 +3651,9 @@ export class IfcColumnTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static COLUMN = "COLUMN";
-	static PILASTER = "PILASTER";
 	static PIERSTEM = "PIERSTEM";
 	static PIERSTEM_SEGMENT = "PIERSTEM_SEGMENT";
+	static PILASTER = "PILASTER";
 	static STANDCOLUMN = "STANDCOLUMN";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
@@ -3411,17 +3662,29 @@ export class IfcCommunicationsApplianceTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static ANTENNA = "ANTENNA";
+	static AUTOMATON = "AUTOMATON";
 	static COMPUTER = "COMPUTER";
 	static FAX = "FAX";
 	static GATEWAY = "GATEWAY";
+	static INTELLIGENTPERIPHERAL = "INTELLIGENTPERIPHERAL";
+	static IPNETWORKEQUIPMENT = "IPNETWORKEQUIPMENT";
+	static LINESIDEELECTRONICUNIT = "LINESIDEELECTRONICUNIT";
 	static MODEM = "MODEM";
 	static NETWORKAPPLIANCE = "NETWORKAPPLIANCE";
 	static NETWORKBRIDGE = "NETWORKBRIDGE";
 	static NETWORKHUB = "NETWORKHUB";
+	static OPTICALLINETERMINAL = "OPTICALLINETERMINAL";
+	static OPTICALNETWORKUNIT = "OPTICALNETWORKUNIT";
 	static PRINTER = "PRINTER";
+	static RADIOBLOCKCENTER = "RADIOBLOCKCENTER";
 	static REPEATER = "REPEATER";
 	static ROUTER = "ROUTER";
 	static SCANNER = "SCANNER";
+	static TELECOMMAND = "TELECOMMAND";
+	static TELEPHONYEXCHANGE = "TELEPHONYEXCHANGE";
+	static TRANSITIONCOMPONENT = "TRANSITIONCOMPONENT";
+	static TRANSPONDER = "TRANSPONDER";
+	static TRANSPORTEQUIPMENT = "TRANSPORTEQUIPMENT";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3434,21 +3697,21 @@ export class IfcComplexPropertyTemplateTypeEnum {
 export class IfcCompressorTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static DYNAMIC = "DYNAMIC";
-	static RECIPROCATING = "RECIPROCATING";
-	static ROTARY = "ROTARY";
-	static SCROLL = "SCROLL";
-	static TROCHOIDAL = "TROCHOIDAL";
-	static SINGLESTAGE = "SINGLESTAGE";
 	static BOOSTER = "BOOSTER";
-	static OPENTYPE = "OPENTYPE";
+	static DYNAMIC = "DYNAMIC";
 	static HERMETIC = "HERMETIC";
-	static SEMIHERMETIC = "SEMIHERMETIC";
-	static WELDEDSHELLHERMETIC = "WELDEDSHELLHERMETIC";
+	static OPENTYPE = "OPENTYPE";
+	static RECIPROCATING = "RECIPROCATING";
 	static ROLLINGPISTON = "ROLLINGPISTON";
+	static ROTARY = "ROTARY";
 	static ROTARYVANE = "ROTARYVANE";
+	static SCROLL = "SCROLL";
+	static SEMIHERMETIC = "SEMIHERMETIC";
 	static SINGLESCREW = "SINGLESCREW";
+	static SINGLESTAGE = "SINGLESTAGE";
+	static TROCHOIDAL = "TROCHOIDAL";
 	static TWINSCREW = "TWINSCREW";
+	static WELDEDSHELLHERMETIC = "WELDEDSHELLHERMETIC";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3468,17 +3731,17 @@ export class IfcCondenserTypeEnum {
 export class IfcConnectionTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static ATEND = "ATEND";
 	static ATPATH = "ATPATH";
 	static ATSTART = "ATSTART";
-	static ATEND = "ATEND";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcConstraintEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static ADVISORY = "ADVISORY";
 	static HARD = "HARD";
 	static SOFT = "SOFT";
-	static ADVISORY = "ADVISORY";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3508,8 +3771,8 @@ export class IfcConstructionMaterialResourceTypeEnum {
 	static METAL = "METAL";
 	static PLASTIC = "PLASTIC";
 	static WOOD = "WOOD";
-	static NOTDEFINED = "NOTDEFINED";
 	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcConstructionProductResourceTypeEnum {
 	value: string;
@@ -3523,10 +3786,20 @@ export class IfcControllerTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static FLOATING = "FLOATING";
+	static MULTIPOSITION = "MULTIPOSITION";
 	static PROGRAMMABLE = "PROGRAMMABLE";
 	static PROPORTIONAL = "PROPORTIONAL";
-	static MULTIPOSITION = "MULTIPOSITION";
 	static TWOPOSITION = "TWOPOSITION";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcConveyorSegmentTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static BELTCONVEYOR = "BELTCONVEYOR";
+	static BUCKETCONVEYOR = "BUCKETCONVEYOR";
+	static CHUTECONVEYOR = "CHUTECONVEYOR";
+	static SCREWCONVEYOR = "SCREWCONVEYOR";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3541,9 +3814,9 @@ export class IfcCooledBeamTypeEnum {
 export class IfcCoolingTowerTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static NATURALDRAFT = "NATURALDRAFT";
-	static MECHANICALINDUCEDDRAFT = "MECHANICALINDUCEDDRAFT";
 	static MECHANICALFORCEDDRAFT = "MECHANICALFORCEDDRAFT";
+	static MECHANICALINDUCEDDRAFT = "MECHANICALINDUCEDDRAFT";
+	static NATURALDRAFT = "NATURALDRAFT";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3559,10 +3832,22 @@ export class IfcCostScheduleTypeEnum {
 	static BUDGET = "BUDGET";
 	static COSTPLAN = "COSTPLAN";
 	static ESTIMATE = "ESTIMATE";
-	static TENDER = "TENDER";
 	static PRICEDBILLOFQUANTITIES = "PRICEDBILLOFQUANTITIES";
-	static UNPRICEDBILLOFQUANTITIES = "UNPRICEDBILLOFQUANTITIES";
 	static SCHEDULEOFRATES = "SCHEDULEOFRATES";
+	static TENDER = "TENDER";
+	static UNPRICEDBILLOFQUANTITIES = "UNPRICEDBILLOFQUANTITIES";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcCourseTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static ARMOUR = "ARMOUR";
+	static BALLASTBED = "BALLASTBED";
+	static CORE = "CORE";
+	static FILTER = "FILTER";
+	static PAVEMENT = "PAVEMENT";
+	static PROTECTION = "PROTECTION";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3570,16 +3855,17 @@ export class IfcCoveringTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static CEILING = "CEILING";
-	static FLOORING = "FLOORING";
 	static CLADDING = "CLADDING";
-	static ROOFING = "ROOFING";
-	static MOLDING = "MOLDING";
-	static SKIRTINGBOARD = "SKIRTINGBOARD";
+	static COPING = "COPING";
+	static FLOORING = "FLOORING";
 	static INSULATION = "INSULATION";
 	static MEMBRANE = "MEMBRANE";
+	static MOLDING = "MOLDING";
+	static ROOFING = "ROOFING";
+	static SKIRTINGBOARD = "SKIRTINGBOARD";
 	static SLEEVING = "SLEEVING";
+	static TOPPING = "TOPPING";
 	static WRAPPING = "WRAPPING";
-	static COPING = "COPING";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3634,56 +3920,56 @@ export class IfcDataOriginEnum {
 export class IfcDerivedUnitEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static ACCELERATIONUNIT = "ACCELERATIONUNIT";
 	static ANGULARVELOCITYUNIT = "ANGULARVELOCITYUNIT";
 	static AREADENSITYUNIT = "AREADENSITYUNIT";
 	static COMPOUNDPLANEANGLEUNIT = "COMPOUNDPLANEANGLEUNIT";
+	static CURVATUREUNIT = "CURVATUREUNIT";
 	static DYNAMICVISCOSITYUNIT = "DYNAMICVISCOSITYUNIT";
 	static HEATFLUXDENSITYUNIT = "HEATFLUXDENSITYUNIT";
+	static HEATINGVALUEUNIT = "HEATINGVALUEUNIT";
 	static INTEGERCOUNTRATEUNIT = "INTEGERCOUNTRATEUNIT";
+	static IONCONCENTRATIONUNIT = "IONCONCENTRATIONUNIT";
 	static ISOTHERMALMOISTURECAPACITYUNIT = "ISOTHERMALMOISTURECAPACITYUNIT";
 	static KINEMATICVISCOSITYUNIT = "KINEMATICVISCOSITYUNIT";
+	static LINEARFORCEUNIT = "LINEARFORCEUNIT";
+	static LINEARMOMENTUNIT = "LINEARMOMENTUNIT";
+	static LINEARSTIFFNESSUNIT = "LINEARSTIFFNESSUNIT";
 	static LINEARVELOCITYUNIT = "LINEARVELOCITYUNIT";
+	static LUMINOUSINTENSITYDISTRIBUTIONUNIT = "LUMINOUSINTENSITYDISTRIBUTIONUNIT";
 	static MASSDENSITYUNIT = "MASSDENSITYUNIT";
 	static MASSFLOWRATEUNIT = "MASSFLOWRATEUNIT";
-	static MOISTUREDIFFUSIVITYUNIT = "MOISTUREDIFFUSIVITYUNIT";
-	static MOLECULARWEIGHTUNIT = "MOLECULARWEIGHTUNIT";
-	static SPECIFICHEATCAPACITYUNIT = "SPECIFICHEATCAPACITYUNIT";
-	static THERMALADMITTANCEUNIT = "THERMALADMITTANCEUNIT";
-	static THERMALCONDUCTANCEUNIT = "THERMALCONDUCTANCEUNIT";
-	static THERMALRESISTANCEUNIT = "THERMALRESISTANCEUNIT";
-	static THERMALTRANSMITTANCEUNIT = "THERMALTRANSMITTANCEUNIT";
-	static VAPORPERMEABILITYUNIT = "VAPORPERMEABILITYUNIT";
-	static VOLUMETRICFLOWRATEUNIT = "VOLUMETRICFLOWRATEUNIT";
-	static ROTATIONALFREQUENCYUNIT = "ROTATIONALFREQUENCYUNIT";
-	static TORQUEUNIT = "TORQUEUNIT";
-	static MOMENTOFINERTIAUNIT = "MOMENTOFINERTIAUNIT";
-	static LINEARMOMENTUNIT = "LINEARMOMENTUNIT";
-	static LINEARFORCEUNIT = "LINEARFORCEUNIT";
-	static PLANARFORCEUNIT = "PLANARFORCEUNIT";
-	static MODULUSOFELASTICITYUNIT = "MODULUSOFELASTICITYUNIT";
-	static SHEARMODULUSUNIT = "SHEARMODULUSUNIT";
-	static LINEARSTIFFNESSUNIT = "LINEARSTIFFNESSUNIT";
-	static ROTATIONALSTIFFNESSUNIT = "ROTATIONALSTIFFNESSUNIT";
-	static MODULUSOFSUBGRADEREACTIONUNIT = "MODULUSOFSUBGRADEREACTIONUNIT";
-	static ACCELERATIONUNIT = "ACCELERATIONUNIT";
-	static CURVATUREUNIT = "CURVATUREUNIT";
-	static HEATINGVALUEUNIT = "HEATINGVALUEUNIT";
-	static IONCONCENTRATIONUNIT = "IONCONCENTRATIONUNIT";
-	static LUMINOUSINTENSITYDISTRIBUTIONUNIT = "LUMINOUSINTENSITYDISTRIBUTIONUNIT";
 	static MASSPERLENGTHUNIT = "MASSPERLENGTHUNIT";
+	static MODULUSOFELASTICITYUNIT = "MODULUSOFELASTICITYUNIT";
 	static MODULUSOFLINEARSUBGRADEREACTIONUNIT = "MODULUSOFLINEARSUBGRADEREACTIONUNIT";
 	static MODULUSOFROTATIONALSUBGRADEREACTIONUNIT = "MODULUSOFROTATIONALSUBGRADEREACTIONUNIT";
+	static MODULUSOFSUBGRADEREACTIONUNIT = "MODULUSOFSUBGRADEREACTIONUNIT";
+	static MOISTUREDIFFUSIVITYUNIT = "MOISTUREDIFFUSIVITYUNIT";
+	static MOLECULARWEIGHTUNIT = "MOLECULARWEIGHTUNIT";
+	static MOMENTOFINERTIAUNIT = "MOMENTOFINERTIAUNIT";
 	static PHUNIT = "PHUNIT";
+	static PLANARFORCEUNIT = "PLANARFORCEUNIT";
+	static ROTATIONALFREQUENCYUNIT = "ROTATIONALFREQUENCYUNIT";
 	static ROTATIONALMASSUNIT = "ROTATIONALMASSUNIT";
+	static ROTATIONALSTIFFNESSUNIT = "ROTATIONALSTIFFNESSUNIT";
 	static SECTIONAREAINTEGRALUNIT = "SECTIONAREAINTEGRALUNIT";
 	static SECTIONMODULUSUNIT = "SECTIONMODULUSUNIT";
+	static SHEARMODULUSUNIT = "SHEARMODULUSUNIT";
 	static SOUNDPOWERLEVELUNIT = "SOUNDPOWERLEVELUNIT";
 	static SOUNDPOWERUNIT = "SOUNDPOWERUNIT";
 	static SOUNDPRESSURELEVELUNIT = "SOUNDPRESSURELEVELUNIT";
 	static SOUNDPRESSUREUNIT = "SOUNDPRESSUREUNIT";
+	static SPECIFICHEATCAPACITYUNIT = "SPECIFICHEATCAPACITYUNIT";
 	static TEMPERATUREGRADIENTUNIT = "TEMPERATUREGRADIENTUNIT";
 	static TEMPERATURERATEOFCHANGEUNIT = "TEMPERATURERATEOFCHANGEUNIT";
+	static THERMALADMITTANCEUNIT = "THERMALADMITTANCEUNIT";
+	static THERMALCONDUCTANCEUNIT = "THERMALCONDUCTANCEUNIT";
 	static THERMALEXPANSIONCOEFFICIENTUNIT = "THERMALEXPANSIONCOEFFICIENTUNIT";
+	static THERMALRESISTANCEUNIT = "THERMALRESISTANCEUNIT";
+	static THERMALTRANSMITTANCEUNIT = "THERMALTRANSMITTANCEUNIT";
+	static TORQUEUNIT = "TORQUEUNIT";
+	static VAPORPERMEABILITYUNIT = "VAPORPERMEABILITYUNIT";
+	static VOLUMETRICFLOWRATEUNIT = "VOLUMETRICFLOWRATEUNIT";
 	static WARPINGCONSTANTUNIT = "WARPINGCONSTANTUNIT";
 	static WARPINGMOMENTUNIT = "WARPINGMOMENTUNIT";
 	static USERDEFINED = "USERDEFINED";
@@ -3691,16 +3977,45 @@ export class IfcDerivedUnitEnum {
 export class IfcDirectionSenseEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static POSITIVE = "POSITIVE";
 	static NEGATIVE = "NEGATIVE";
+	static POSITIVE = "POSITIVE";
 };
 export class IfcDiscreteAccessoryTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static ANCHORPLATE = "ANCHORPLATE";
+	static BIRDPROTECTION = "BIRDPROTECTION";
 	static BRACKET = "BRACKET";
-	static SHOE = "SHOE";
+	static CABLEARRANGER = "CABLEARRANGER";
+	static ELASTIC_CUSHION = "ELASTIC_CUSHION";
 	static EXPANSION_JOINT_DEVICE = "EXPANSION_JOINT_DEVICE";
+	static FILLER = "FILLER";
+	static FLASHING = "FLASHING";
+	static INSULATOR = "INSULATOR";
+	static LOCK = "LOCK";
+	static PANEL_STRENGTHENING = "PANEL_STRENGTHENING";
+	static POINTMACHINEMOUNTINGDEVICE = "POINTMACHINEMOUNTINGDEVICE";
+	static POINT_MACHINE_LOCKING_DEVICE = "POINT_MACHINE_LOCKING_DEVICE";
+	static RAILBRACE = "RAILBRACE";
+	static RAILPAD = "RAILPAD";
+	static RAIL_LUBRICATION = "RAIL_LUBRICATION";
+	static RAIL_MECHANICAL_EQUIPMENT = "RAIL_MECHANICAL_EQUIPMENT";
+	static SHOE = "SHOE";
+	static SLIDINGCHAIR = "SLIDINGCHAIR";
+	static SOUNDABSORPTION = "SOUNDABSORPTION";
+	static TENSIONINGEQUIPMENT = "TENSIONINGEQUIPMENT";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcDistributionBoardTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static CONSUMERUNIT = "CONSUMERUNIT";
+	static DISPATCHINGBOARD = "DISPATCHINGBOARD";
+	static DISTRIBUTIONBOARD = "DISTRIBUTIONBOARD";
+	static DISTRIBUTIONFRAME = "DISTRIBUTIONFRAME";
+	static MOTORCONTROLCENTRE = "MOTORCONTROLCENTRE";
+	static SWITCHBOARD = "SWITCHBOARD";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3725,6 +4040,7 @@ export class IfcDistributionPortTypeEnum {
 	static CABLECARRIER = "CABLECARRIER";
 	static DUCT = "DUCT";
 	static PIPE = "PIPE";
+	static WIRELESS = "WIRELESS";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3733,6 +4049,7 @@ export class IfcDistributionSystemEnum {
 	constructor(v: string) { this.value = v;}
 	static AIRCONDITIONING = "AIRCONDITIONING";
 	static AUDIOVISUAL = "AUDIOVISUAL";
+	static CATENARY_SYSTEM = "CATENARY_SYSTEM";
 	static CHEMICAL = "CHEMICAL";
 	static CHILLEDWATER = "CHILLEDWATER";
 	static COMMUNICATION = "COMMUNICATION";
@@ -3750,18 +4067,24 @@ export class IfcDistributionSystemEnum {
 	static ELECTROACOUSTIC = "ELECTROACOUSTIC";
 	static EXHAUST = "EXHAUST";
 	static FIREPROTECTION = "FIREPROTECTION";
+	static FIXEDTRANSMISSIONNETWORK = "FIXEDTRANSMISSIONNETWORK";
 	static FUEL = "FUEL";
 	static GAS = "GAS";
 	static HAZARDOUS = "HAZARDOUS";
 	static HEATING = "HEATING";
 	static LIGHTING = "LIGHTING";
 	static LIGHTNINGPROTECTION = "LIGHTNINGPROTECTION";
+	static MOBILENETWORK = "MOBILENETWORK";
+	static MONITORINGSYSTEM = "MONITORINGSYSTEM";
 	static MUNICIPALSOLIDWASTE = "MUNICIPALSOLIDWASTE";
 	static OIL = "OIL";
 	static OPERATIONAL = "OPERATIONAL";
+	static OPERATIONALTELEPHONYSYSTEM = "OPERATIONALTELEPHONYSYSTEM";
+	static OVERHEAD_CONTACTLINE_SYSTEM = "OVERHEAD_CONTACTLINE_SYSTEM";
 	static POWERGENERATION = "POWERGENERATION";
 	static RAINWATER = "RAINWATER";
 	static REFRIGERATION = "REFRIGERATION";
+	static RETURN_CIRCUIT = "RETURN_CIRCUIT";
 	static SECURITY = "SECURITY";
 	static SEWAGE = "SEWAGE";
 	static SIGNAL = "SIGNAL";
@@ -3779,10 +4102,10 @@ export class IfcDistributionSystemEnum {
 export class IfcDocumentConfidentialityEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static PUBLIC = "PUBLIC";
-	static RESTRICTED = "RESTRICTED";
 	static CONFIDENTIAL = "CONFIDENTIAL";
 	static PERSONAL = "PERSONAL";
+	static PUBLIC = "PUBLIC";
+	static RESTRICTED = "RESTRICTED";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3790,21 +4113,21 @@ export class IfcDocumentStatusEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static DRAFT = "DRAFT";
-	static FINALDRAFT = "FINALDRAFT";
 	static FINAL = "FINAL";
+	static FINALDRAFT = "FINALDRAFT";
 	static REVISION = "REVISION";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcDoorPanelOperationEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static SWINGING = "SWINGING";
 	static DOUBLE_ACTING = "DOUBLE_ACTING";
-	static SLIDING = "SLIDING";
+	static FIXEDPANEL = "FIXEDPANEL";
 	static FOLDING = "FOLDING";
 	static REVOLVING = "REVOLVING";
 	static ROLLINGUP = "ROLLINGUP";
-	static FIXEDPANEL = "FIXEDPANEL";
+	static SLIDING = "SLIDING";
+	static SWINGING = "SWINGING";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3820,65 +4143,72 @@ export class IfcDoorStyleConstructionEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static ALUMINIUM = "ALUMINIUM";
+	static ALUMINIUM_PLASTIC = "ALUMINIUM_PLASTIC";
+	static ALUMINIUM_WOOD = "ALUMINIUM_WOOD";
 	static HIGH_GRADE_STEEL = "HIGH_GRADE_STEEL";
+	static PLASTIC = "PLASTIC";
 	static STEEL = "STEEL";
 	static WOOD = "WOOD";
-	static ALUMINIUM_WOOD = "ALUMINIUM_WOOD";
-	static ALUMINIUM_PLASTIC = "ALUMINIUM_PLASTIC";
-	static PLASTIC = "PLASTIC";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcDoorStyleOperationEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static SINGLE_SWING_LEFT = "SINGLE_SWING_LEFT";
-	static SINGLE_SWING_RIGHT = "SINGLE_SWING_RIGHT";
+	static DOUBLE_DOOR_DOUBLE_SWING = "DOUBLE_DOOR_DOUBLE_SWING";
+	static DOUBLE_DOOR_FOLDING = "DOUBLE_DOOR_FOLDING";
 	static DOUBLE_DOOR_SINGLE_SWING = "DOUBLE_DOOR_SINGLE_SWING";
 	static DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_LEFT = "DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_LEFT";
 	static DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_RIGHT = "DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_RIGHT";
+	static DOUBLE_DOOR_SLIDING = "DOUBLE_DOOR_SLIDING";
 	static DOUBLE_SWING_LEFT = "DOUBLE_SWING_LEFT";
 	static DOUBLE_SWING_RIGHT = "DOUBLE_SWING_RIGHT";
-	static DOUBLE_DOOR_DOUBLE_SWING = "DOUBLE_DOOR_DOUBLE_SWING";
-	static SLIDING_TO_LEFT = "SLIDING_TO_LEFT";
-	static SLIDING_TO_RIGHT = "SLIDING_TO_RIGHT";
-	static DOUBLE_DOOR_SLIDING = "DOUBLE_DOOR_SLIDING";
 	static FOLDING_TO_LEFT = "FOLDING_TO_LEFT";
 	static FOLDING_TO_RIGHT = "FOLDING_TO_RIGHT";
-	static DOUBLE_DOOR_FOLDING = "DOUBLE_DOOR_FOLDING";
 	static REVOLVING = "REVOLVING";
 	static ROLLINGUP = "ROLLINGUP";
+	static SINGLE_SWING_LEFT = "SINGLE_SWING_LEFT";
+	static SINGLE_SWING_RIGHT = "SINGLE_SWING_RIGHT";
+	static SLIDING_TO_LEFT = "SLIDING_TO_LEFT";
+	static SLIDING_TO_RIGHT = "SLIDING_TO_RIGHT";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcDoorTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static BOOM_BARRIER = "BOOM_BARRIER";
 	static DOOR = "DOOR";
 	static GATE = "GATE";
 	static TRAPDOOR = "TRAPDOOR";
+	static TURNSTILE = "TURNSTILE";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcDoorTypeOperationEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static SINGLE_SWING_LEFT = "SINGLE_SWING_LEFT";
-	static SINGLE_SWING_RIGHT = "SINGLE_SWING_RIGHT";
-	static DOUBLE_DOOR_SINGLE_SWING = "DOUBLE_DOOR_SINGLE_SWING";
-	static DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_LEFT = "DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_LEFT";
-	static DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_RIGHT = "DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_RIGHT";
+	static DOUBLE_PANEL_DOUBLE_SWING = "DOUBLE_PANEL_DOUBLE_SWING";
+	static DOUBLE_PANEL_FOLDING = "DOUBLE_PANEL_FOLDING";
+	static DOUBLE_PANEL_LIFTING_VERTICAL = "DOUBLE_PANEL_LIFTING_VERTICAL";
+	static DOUBLE_PANEL_SINGLE_SWING = "DOUBLE_PANEL_SINGLE_SWING";
+	static DOUBLE_PANEL_SINGLE_SWING_OPPOSITE_LEFT = "DOUBLE_PANEL_SINGLE_SWING_OPPOSITE_LEFT";
+	static DOUBLE_PANEL_SINGLE_SWING_OPPOSITE_RIGHT = "DOUBLE_PANEL_SINGLE_SWING_OPPOSITE_RIGHT";
+	static DOUBLE_PANEL_SLIDING = "DOUBLE_PANEL_SLIDING";
 	static DOUBLE_SWING_LEFT = "DOUBLE_SWING_LEFT";
 	static DOUBLE_SWING_RIGHT = "DOUBLE_SWING_RIGHT";
-	static DOUBLE_DOOR_DOUBLE_SWING = "DOUBLE_DOOR_DOUBLE_SWING";
-	static SLIDING_TO_LEFT = "SLIDING_TO_LEFT";
-	static SLIDING_TO_RIGHT = "SLIDING_TO_RIGHT";
-	static DOUBLE_DOOR_SLIDING = "DOUBLE_DOOR_SLIDING";
 	static FOLDING_TO_LEFT = "FOLDING_TO_LEFT";
 	static FOLDING_TO_RIGHT = "FOLDING_TO_RIGHT";
-	static DOUBLE_DOOR_FOLDING = "DOUBLE_DOOR_FOLDING";
-	static REVOLVING = "REVOLVING";
+	static LIFTING_HORIZONTAL = "LIFTING_HORIZONTAL";
+	static LIFTING_VERTICAL_LEFT = "LIFTING_VERTICAL_LEFT";
+	static LIFTING_VERTICAL_RIGHT = "LIFTING_VERTICAL_RIGHT";
+	static REVOLVING_HORIZONTAL = "REVOLVING_HORIZONTAL";
+	static REVOLVING_VERTICAL = "REVOLVING_VERTICAL";
 	static ROLLINGUP = "ROLLINGUP";
+	static SINGLE_SWING_LEFT = "SINGLE_SWING_LEFT";
+	static SINGLE_SWING_RIGHT = "SINGLE_SWING_RIGHT";
+	static SLIDING_TO_LEFT = "SLIDING_TO_LEFT";
+	static SLIDING_TO_RIGHT = "SLIDING_TO_RIGHT";
 	static SWING_FIXED_LEFT = "SWING_FIXED_LEFT";
 	static SWING_FIXED_RIGHT = "SWING_FIXED_RIGHT";
 	static USERDEFINED = "USERDEFINED";
@@ -3900,8 +4230,8 @@ export class IfcDuctFittingTypeEnum {
 export class IfcDuctSegmentTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static RIGIDSEGMENT = "RIGIDSEGMENT";
 	static FLEXIBLESEGMENT = "FLEXIBLESEGMENT";
+	static RIGIDSEGMENT = "RIGIDSEGMENT";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3914,6 +4244,34 @@ export class IfcDuctSilencerTypeEnum {
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
+export class IfcEarthworksCutTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static BASE_EXCAVATION = "BASE_EXCAVATION";
+	static CUT = "CUT";
+	static DREDGING = "DREDGING";
+	static EXCAVATION = "EXCAVATION";
+	static OVEREXCAVATION = "OVEREXCAVATION";
+	static PAVEMENTMILLING = "PAVEMENTMILLING";
+	static STEPEXCAVATION = "STEPEXCAVATION";
+	static TOPSOILREMOVAL = "TOPSOILREMOVAL";
+	static TRENCH = "TRENCH";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcEarthworksFillTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static BACKFILL = "BACKFILL";
+	static COUNTERWEIGHT = "COUNTERWEIGHT";
+	static EMBANKMENT = "EMBANKMENT";
+	static SLOPEFILL = "SLOPEFILL";
+	static SUBGRADE = "SUBGRADE";
+	static SUBGRADEBED = "SUBGRADEBED";
+	static TRANSITIONSECTION = "TRANSITIONSECTION";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
 export class IfcElectricApplianceTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
@@ -3921,8 +4279,8 @@ export class IfcElectricApplianceTypeEnum {
 	static ELECTRICCOOKER = "ELECTRICCOOKER";
 	static FREESTANDINGELECTRICHEATER = "FREESTANDINGELECTRICHEATER";
 	static FREESTANDINGFAN = "FREESTANDINGFAN";
-	static FREESTANDINGWATERHEATER = "FREESTANDINGWATERHEATER";
 	static FREESTANDINGWATERCOOLER = "FREESTANDINGWATERCOOLER";
+	static FREESTANDINGWATERHEATER = "FREESTANDINGWATERHEATER";
 	static FREEZER = "FREEZER";
 	static FRIDGE_FREEZER = "FRIDGE_FREEZER";
 	static HANDDRYER = "HANDDRYER";
@@ -3950,10 +4308,21 @@ export class IfcElectricFlowStorageDeviceTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static BATTERY = "BATTERY";
+	static CAPACITOR = "CAPACITOR";
 	static CAPACITORBANK = "CAPACITORBANK";
+	static COMPENSATOR = "COMPENSATOR";
 	static HARMONICFILTER = "HARMONICFILTER";
+	static INDUCTOR = "INDUCTOR";
 	static INDUCTORBANK = "INDUCTORBANK";
+	static RECHARGER = "RECHARGER";
 	static UPS = "UPS";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcElectricFlowTreatmentDeviceTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static ELECTRONICFILTER = "ELECTRONICFILTER";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -3980,29 +4349,43 @@ export class IfcElectricMotorTypeEnum {
 export class IfcElectricTimeControlTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static RELAY = "RELAY";
 	static TIMECLOCK = "TIMECLOCK";
 	static TIMEDELAY = "TIMEDELAY";
-	static RELAY = "RELAY";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcElementAssemblyTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static ABUTMENT = "ABUTMENT";
 	static ACCESSORY_ASSEMBLY = "ACCESSORY_ASSEMBLY";
 	static ARCH = "ARCH";
 	static BEAM_GRID = "BEAM_GRID";
 	static BRACED_FRAME = "BRACED_FRAME";
-	static GIRDER = "GIRDER";
-	static REINFORCEMENT_UNIT = "REINFORCEMENT_UNIT";
-	static RIGID_FRAME = "RIGID_FRAME";
-	static SLAB_FIELD = "SLAB_FIELD";
-	static TRUSS = "TRUSS";
-	static ABUTMENT = "ABUTMENT";
-	static PIER = "PIER";
-	static PYLON = "PYLON";
 	static CROSS_BRACING = "CROSS_BRACING";
 	static DECK = "DECK";
+	static DILATATIONPANEL = "DILATATIONPANEL";
+	static ENTRANCEWORKS = "ENTRANCEWORKS";
+	static GIRDER = "GIRDER";
+	static GRID = "GRID";
+	static MAST = "MAST";
+	static PIER = "PIER";
+	static PYLON = "PYLON";
+	static RAIL_MECHANICAL_EQUIPMENT_ASSEMBLY = "RAIL_MECHANICAL_EQUIPMENT_ASSEMBLY";
+	static REINFORCEMENT_UNIT = "REINFORCEMENT_UNIT";
+	static RIGID_FRAME = "RIGID_FRAME";
+	static SHELTER = "SHELTER";
+	static SIGNALASSEMBLY = "SIGNALASSEMBLY";
+	static SLAB_FIELD = "SLAB_FIELD";
+	static SUMPBUSTER = "SUMPBUSTER";
+	static SUPPORTINGASSEMBLY = "SUPPORTINGASSEMBLY";
+	static SUSPENSIONASSEMBLY = "SUSPENSIONASSEMBLY";
+	static TRACKPANEL = "TRACKPANEL";
+	static TRACTION_SWITCHING_ASSEMBLY = "TRACTION_SWITCHING_ASSEMBLY";
+	static TRAFFIC_CALMING_DEVICE = "TRAFFIC_CALMING_DEVICE";
+	static TRUSS = "TRUSS";
+	static TURNOUTPANEL = "TURNOUTPANEL";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -4024,15 +4407,15 @@ export class IfcEngineTypeEnum {
 export class IfcEvaporativeCoolerTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static DIRECTEVAPORATIVEAIRWASHER = "DIRECTEVAPORATIVEAIRWASHER";
+	static DIRECTEVAPORATIVEPACKAGEDROTARYAIRCOOLER = "DIRECTEVAPORATIVEPACKAGEDROTARYAIRCOOLER";
 	static DIRECTEVAPORATIVERANDOMMEDIAAIRCOOLER = "DIRECTEVAPORATIVERANDOMMEDIAAIRCOOLER";
 	static DIRECTEVAPORATIVERIGIDMEDIAAIRCOOLER = "DIRECTEVAPORATIVERIGIDMEDIAAIRCOOLER";
 	static DIRECTEVAPORATIVESLINGERSPACKAGEDAIRCOOLER = "DIRECTEVAPORATIVESLINGERSPACKAGEDAIRCOOLER";
-	static DIRECTEVAPORATIVEPACKAGEDROTARYAIRCOOLER = "DIRECTEVAPORATIVEPACKAGEDROTARYAIRCOOLER";
-	static DIRECTEVAPORATIVEAIRWASHER = "DIRECTEVAPORATIVEAIRWASHER";
+	static INDIRECTDIRECTCOMBINATION = "INDIRECTDIRECTCOMBINATION";
+	static INDIRECTEVAPORATIVECOOLINGTOWERORCOILCOOLER = "INDIRECTEVAPORATIVECOOLINGTOWERORCOILCOOLER";
 	static INDIRECTEVAPORATIVEPACKAGEAIRCOOLER = "INDIRECTEVAPORATIVEPACKAGEAIRCOOLER";
 	static INDIRECTEVAPORATIVEWETCOIL = "INDIRECTEVAPORATIVEWETCOIL";
-	static INDIRECTEVAPORATIVECOOLINGTOWERORCOILCOOLER = "INDIRECTEVAPORATIVECOOLINGTOWERORCOILCOOLER";
-	static INDIRECTDIRECTCOMBINATION = "INDIRECTDIRECTCOMBINATION";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -4040,9 +4423,9 @@ export class IfcEvaporatorTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static DIRECTEXPANSION = "DIRECTEXPANSION";
+	static DIRECTEXPANSIONBRAZEDPLATE = "DIRECTEXPANSIONBRAZEDPLATE";
 	static DIRECTEXPANSIONSHELLANDTUBE = "DIRECTEXPANSIONSHELLANDTUBE";
 	static DIRECTEXPANSIONTUBEINTUBE = "DIRECTEXPANSIONTUBEINTUBE";
-	static DIRECTEXPANSIONBRAZEDPLATE = "DIRECTEXPANSIONBRAZEDPLATE";
 	static FLOODEDSHELLANDTUBE = "FLOODEDSHELLANDTUBE";
 	static SHELLANDCOIL = "SHELLANDCOIL";
 	static USERDEFINED = "USERDEFINED";
@@ -4051,19 +4434,19 @@ export class IfcEvaporatorTypeEnum {
 export class IfcEventTriggerTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static EVENTRULE = "EVENTRULE";
-	static EVENTMESSAGE = "EVENTMESSAGE";
-	static EVENTTIME = "EVENTTIME";
 	static EVENTCOMPLEX = "EVENTCOMPLEX";
+	static EVENTMESSAGE = "EVENTMESSAGE";
+	static EVENTRULE = "EVENTRULE";
+	static EVENTTIME = "EVENTTIME";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcEventTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static STARTEVENT = "STARTEVENT";
 	static ENDEVENT = "ENDEVENT";
 	static INTERMEDIATEEVENT = "INTERMEDIATEEVENT";
+	static STARTEVENT = "STARTEVENT";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -4072,21 +4455,45 @@ export class IfcExternalSpatialElementTypeEnum {
 	constructor(v: string) { this.value = v;}
 	static EXTERNAL = "EXTERNAL";
 	static EXTERNAL_EARTH = "EXTERNAL_EARTH";
-	static EXTERNAL_WATER = "EXTERNAL_WATER";
 	static EXTERNAL_FIRE = "EXTERNAL_FIRE";
+	static EXTERNAL_WATER = "EXTERNAL_WATER";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcFacilityPartCommonTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static ABOVEGROUND = "ABOVEGROUND";
+	static BELOWGROUND = "BELOWGROUND";
+	static JUNCTION = "JUNCTION";
+	static LEVELCROSSING = "LEVELCROSSING";
+	static SEGMENT = "SEGMENT";
+	static SUBSTRUCTURE = "SUBSTRUCTURE";
+	static SUPERSTRUCTURE = "SUPERSTRUCTURE";
+	static TERMINAL = "TERMINAL";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcFacilityUsageEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static LATERAL = "LATERAL";
+	static LONGITUDINAL = "LONGITUDINAL";
+	static REGION = "REGION";
+	static VERTICAL = "VERTICAL";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcFanTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static CENTRIFUGALAIRFOIL = "CENTRIFUGALAIRFOIL";
+	static CENTRIFUGALBACKWARDINCLINEDCURVED = "CENTRIFUGALBACKWARDINCLINEDCURVED";
 	static CENTRIFUGALFORWARDCURVED = "CENTRIFUGALFORWARDCURVED";
 	static CENTRIFUGALRADIAL = "CENTRIFUGALRADIAL";
-	static CENTRIFUGALBACKWARDINCLINEDCURVED = "CENTRIFUGALBACKWARDINCLINEDCURVED";
-	static CENTRIFUGALAIRFOIL = "CENTRIFUGALAIRFOIL";
+	static PROPELLORAXIAL = "PROPELLORAXIAL";
 	static TUBEAXIAL = "TUBEAXIAL";
 	static VANEAXIAL = "VANEAXIAL";
-	static PROPELLORAXIAL = "PROPELLORAXIAL";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -4116,6 +4523,7 @@ export class IfcFireSuppressionTerminalTypeEnum {
 	constructor(v: string) { this.value = v;}
 	static BREECHINGINLET = "BREECHINGINLET";
 	static FIREHYDRANT = "FIREHYDRANT";
+	static FIREMONITOR = "FIREMONITOR";
 	static HOSEREEL = "HOSEREEL";
 	static SPRINKLER = "SPRINKLER";
 	static SPRINKLERDEFLECTOR = "SPRINKLERDEFLECTOR";
@@ -4125,20 +4533,22 @@ export class IfcFireSuppressionTerminalTypeEnum {
 export class IfcFlowDirectionEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static SOURCE = "SOURCE";
 	static SINK = "SINK";
+	static SOURCE = "SOURCE";
 	static SOURCEANDSINK = "SOURCEANDSINK";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcFlowInstrumentTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static AMMETER = "AMMETER";
+	static COMBINED = "COMBINED";
+	static FREQUENCYMETER = "FREQUENCYMETER";
+	static PHASEANGLEMETER = "PHASEANGLEMETER";
+	static POWERFACTORMETER = "POWERFACTORMETER";
 	static PRESSUREGAUGE = "PRESSUREGAUGE";
 	static THERMOMETER = "THERMOMETER";
-	static AMMETER = "AMMETER";
-	static FREQUENCYMETER = "FREQUENCYMETER";
-	static POWERFACTORMETER = "POWERFACTORMETER";
-	static PHASEANGLEMETER = "PHASEANGLEMETER";
+	static VOLTMETER = "VOLTMETER";
 	static VOLTMETER_PEAK = "VOLTMETER_PEAK";
 	static VOLTMETER_RMS = "VOLTMETER_RMS";
 	static USERDEFINED = "USERDEFINED";
@@ -4168,34 +4578,45 @@ export class IfcFootingTypeEnum {
 export class IfcFurnitureTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static CHAIR = "CHAIR";
-	static TABLE = "TABLE";
-	static DESK = "DESK";
 	static BED = "BED";
+	static CHAIR = "CHAIR";
+	static DESK = "DESK";
 	static FILECABINET = "FILECABINET";
 	static SHELF = "SHELF";
 	static SOFA = "SOFA";
+	static TABLE = "TABLE";
+	static TECHNICALCABINET = "TECHNICALCABINET";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcGeographicElementTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static TERRAIN = "TERRAIN";
 	static SOIL_BORING_POINT = "SOIL_BORING_POINT";
+	static TERRAIN = "TERRAIN";
+	static VEGETATION = "VEGETATION";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcGeometricProjectionEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static ELEVATION_VIEW = "ELEVATION_VIEW";
 	static GRAPH_VIEW = "GRAPH_VIEW";
-	static SKETCH_VIEW = "SKETCH_VIEW";
 	static MODEL_VIEW = "MODEL_VIEW";
 	static PLAN_VIEW = "PLAN_VIEW";
 	static REFLECTED_PLAN_VIEW = "REFLECTED_PLAN_VIEW";
 	static SECTION_VIEW = "SECTION_VIEW";
-	static ELEVATION_VIEW = "ELEVATION_VIEW";
+	static SKETCH_VIEW = "SKETCH_VIEW";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcGeotechnicalStratumTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static SOLID = "SOLID";
+	static VOID = "VOID";
+	static WATER = "WATER";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -4208,10 +4629,10 @@ export class IfcGlobalOrLocalEnum {
 export class IfcGridTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static RECTANGULAR = "RECTANGULAR";
-	static RADIAL = "RADIAL";
-	static TRIANGULAR = "TRIANGULAR";
 	static IRREGULAR = "IRREGULAR";
+	static RADIAL = "RADIAL";
+	static RECTANGULAR = "RECTANGULAR";
+	static TRIANGULAR = "TRIANGULAR";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -4220,25 +4641,36 @@ export class IfcHeatExchangerTypeEnum {
 	constructor(v: string) { this.value = v;}
 	static PLATE = "PLATE";
 	static SHELLANDTUBE = "SHELLANDTUBE";
+	static TURNOUTHEATING = "TURNOUTHEATING";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcHumidifierTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static STEAMINJECTION = "STEAMINJECTION";
 	static ADIABATICAIRWASHER = "ADIABATICAIRWASHER";
-	static ADIABATICPAN = "ADIABATICPAN";
-	static ADIABATICWETTEDELEMENT = "ADIABATICWETTEDELEMENT";
 	static ADIABATICATOMIZING = "ADIABATICATOMIZING";
-	static ADIABATICULTRASONIC = "ADIABATICULTRASONIC";
-	static ADIABATICRIGIDMEDIA = "ADIABATICRIGIDMEDIA";
 	static ADIABATICCOMPRESSEDAIRNOZZLE = "ADIABATICCOMPRESSEDAIRNOZZLE";
+	static ADIABATICPAN = "ADIABATICPAN";
+	static ADIABATICRIGIDMEDIA = "ADIABATICRIGIDMEDIA";
+	static ADIABATICULTRASONIC = "ADIABATICULTRASONIC";
+	static ADIABATICWETTEDELEMENT = "ADIABATICWETTEDELEMENT";
+	static ASSISTEDBUTANE = "ASSISTEDBUTANE";
 	static ASSISTEDELECTRIC = "ASSISTEDELECTRIC";
 	static ASSISTEDNATURALGAS = "ASSISTEDNATURALGAS";
 	static ASSISTEDPROPANE = "ASSISTEDPROPANE";
-	static ASSISTEDBUTANE = "ASSISTEDBUTANE";
 	static ASSISTEDSTEAM = "ASSISTEDSTEAM";
+	static STEAMINJECTION = "STEAMINJECTION";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcImpactProtectionDeviceTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static BUMPER = "BUMPER";
+	static CRASHCUSHION = "CRASHCUSHION";
+	static DAMPINGSYSTEM = "DAMPINGSYSTEM";
+	static FENDER = "FENDER";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -4255,19 +4687,19 @@ export class IfcInterceptorTypeEnum {
 export class IfcInternalOrExternalEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static INTERNAL = "INTERNAL";
 	static EXTERNAL = "EXTERNAL";
 	static EXTERNAL_EARTH = "EXTERNAL_EARTH";
-	static EXTERNAL_WATER = "EXTERNAL_WATER";
 	static EXTERNAL_FIRE = "EXTERNAL_FIRE";
+	static EXTERNAL_WATER = "EXTERNAL_WATER";
+	static INTERNAL = "INTERNAL";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcInventoryTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static ASSETINVENTORY = "ASSETINVENTORY";
-	static SPACEINVENTORY = "SPACEINVENTORY";
 	static FURNITUREINVENTORY = "FURNITUREINVENTORY";
+	static SPACEINVENTORY = "SPACEINVENTORY";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -4282,9 +4714,9 @@ export class IfcJunctionBoxTypeEnum {
 export class IfcKnotType {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static UNIFORM_KNOTS = "UNIFORM_KNOTS";
-	static QUASI_UNIFORM_KNOTS = "QUASI_UNIFORM_KNOTS";
 	static PIECEWISE_BEZIER_KNOTS = "PIECEWISE_BEZIER_KNOTS";
+	static QUASI_UNIFORM_KNOTS = "QUASI_UNIFORM_KNOTS";
+	static UNIFORM_KNOTS = "UNIFORM_KNOTS";
 	static UNSPECIFIED = "UNSPECIFIED";
 };
 export class IfcLaborResourceTypeEnum {
@@ -4360,18 +4792,26 @@ export class IfcLightEmissionSourceEnum {
 export class IfcLightFixtureTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static POINTSOURCE = "POINTSOURCE";
 	static DIRECTIONSOURCE = "DIRECTIONSOURCE";
+	static POINTSOURCE = "POINTSOURCE";
 	static SECURITYLIGHTING = "SECURITYLIGHTING";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcLiquidTerminalTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static HOSEREEL = "HOSEREEL";
+	static LOADINGARM = "LOADINGARM";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcLoadGroupTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static LOAD_GROUP = "LOAD_GROUP";
 	static LOAD_CASE = "LOAD_CASE";
 	static LOAD_COMBINATION = "LOAD_COMBINATION";
+	static LOAD_GROUP = "LOAD_GROUP";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -4379,25 +4819,84 @@ export class IfcLogicalOperatorEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static LOGICALAND = "LOGICALAND";
-	static LOGICALOR = "LOGICALOR";
-	static LOGICALXOR = "LOGICALXOR";
 	static LOGICALNOTAND = "LOGICALNOTAND";
 	static LOGICALNOTOR = "LOGICALNOTOR";
+	static LOGICALOR = "LOGICALOR";
+	static LOGICALXOR = "LOGICALXOR";
+};
+export class IfcMarineFacilityTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static BARRIERBEACH = "BARRIERBEACH";
+	static BREAKWATER = "BREAKWATER";
+	static CANAL = "CANAL";
+	static DRYDOCK = "DRYDOCK";
+	static FLOATINGDOCK = "FLOATINGDOCK";
+	static HYDROLIFT = "HYDROLIFT";
+	static JETTY = "JETTY";
+	static LAUNCHRECOVERY = "LAUNCHRECOVERY";
+	static MARINEDEFENCE = "MARINEDEFENCE";
+	static NAVIGATIONALCHANNEL = "NAVIGATIONALCHANNEL";
+	static PORT = "PORT";
+	static QUAY = "QUAY";
+	static REVETMENT = "REVETMENT";
+	static SHIPLIFT = "SHIPLIFT";
+	static SHIPLOCK = "SHIPLOCK";
+	static SHIPYARD = "SHIPYARD";
+	static SLIPWAY = "SLIPWAY";
+	static WATERWAY = "WATERWAY";
+	static WATERWAYSHIPLIFT = "WATERWAYSHIPLIFT";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcMarinePartTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static ABOVEWATERLINE = "ABOVEWATERLINE";
+	static ANCHORAGE = "ANCHORAGE";
+	static APPROACHCHANNEL = "APPROACHCHANNEL";
+	static BELOWWATERLINE = "BELOWWATERLINE";
+	static BERTHINGSTRUCTURE = "BERTHINGSTRUCTURE";
+	static CHAMBER = "CHAMBER";
+	static CILL_LEVEL = "CILL_LEVEL";
+	static COPELEVEL = "COPELEVEL";
+	static CORE = "CORE";
+	static CREST = "CREST";
+	static GATEHEAD = "GATEHEAD";
+	static GUDINGSTRUCTURE = "GUDINGSTRUCTURE";
+	static HIGHWATERLINE = "HIGHWATERLINE";
+	static LANDFIELD = "LANDFIELD";
+	static LEEWARDSIDE = "LEEWARDSIDE";
+	static LOWWATERLINE = "LOWWATERLINE";
+	static MANUFACTURING = "MANUFACTURING";
+	static NAVIGATIONALAREA = "NAVIGATIONALAREA";
+	static PROTECTION = "PROTECTION";
+	static SHIPTRANSFER = "SHIPTRANSFER";
+	static STORAGEAREA = "STORAGEAREA";
+	static VEHICLESERVICING = "VEHICLESERVICING";
+	static WATERFIELD = "WATERFIELD";
+	static WEATHERSIDE = "WEATHERSIDE";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcMechanicalFastenerTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static ANCHORBOLT = "ANCHORBOLT";
 	static BOLT = "BOLT";
+	static CHAIN = "CHAIN";
+	static COUPLER = "COUPLER";
 	static DOWEL = "DOWEL";
 	static NAIL = "NAIL";
 	static NAILPLATE = "NAILPLATE";
+	static RAILFASTENING = "RAILFASTENING";
+	static RAILJOINT = "RAILJOINT";
 	static RIVET = "RIVET";
+	static ROPE = "ROPE";
 	static SCREW = "SCREW";
 	static SHEARCONNECTOR = "SHEARCONNECTOR";
 	static STAPLE = "STAPLE";
 	static STUDSHEARCONNECTOR = "STUDSHEARCONNECTOR";
-	static COUPLER = "COUPLER";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -4415,6 +4914,7 @@ export class IfcMedicalDeviceTypeEnum {
 export class IfcMemberTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static ARCH_SEGMENT = "ARCH_SEGMENT";
 	static BRACE = "BRACE";
 	static CHORD = "CHORD";
 	static COLLAR = "COLLAR";
@@ -4424,14 +4924,45 @@ export class IfcMemberTypeEnum {
 	static POST = "POST";
 	static PURLIN = "PURLIN";
 	static RAFTER = "RAFTER";
+	static STAY_CABLE = "STAY_CABLE";
+	static STIFFENING_RIB = "STIFFENING_RIB";
 	static STRINGER = "STRINGER";
+	static STRUCTURALCABLE = "STRUCTURALCABLE";
 	static STRUT = "STRUT";
 	static STUD = "STUD";
-	static STIFFENING_RIB = "STIFFENING_RIB";
-	static ARCH_SEGMENT = "ARCH_SEGMENT";
-	static SUSPENSION_CABLE = "SUSPENSION_CABLE";
 	static SUSPENDER = "SUSPENDER";
-	static STAY_CABLE = "STAY_CABLE";
+	static SUSPENSION_CABLE = "SUSPENSION_CABLE";
+	static TIEBAR = "TIEBAR";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcMobileTelecommunicationsApplianceTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static ACCESSPOINT = "ACCESSPOINT";
+	static BASEBANDUNIT = "BASEBANDUNIT";
+	static BASETRANSCEIVERSTATION = "BASETRANSCEIVERSTATION";
+	static E_UTRAN_NODE_B = "E_UTRAN_NODE_B";
+	static GATEWAY_GPRS_SUPPORT_NODE = "GATEWAY_GPRS_SUPPORT_NODE";
+	static MASTERUNIT = "MASTERUNIT";
+	static MOBILESWITCHINGCENTER = "MOBILESWITCHINGCENTER";
+	static MSCSERVER = "MSCSERVER";
+	static PACKETCONTROLUNIT = "PACKETCONTROLUNIT";
+	static REMOTERADIOUNIT = "REMOTERADIOUNIT";
+	static REMOTEUNIT = "REMOTEUNIT";
+	static SERVICE_GPRS_SUPPORT_NODE = "SERVICE_GPRS_SUPPORT_NODE";
+	static SUBSCRIBERSERVER = "SUBSCRIBERSERVER";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcMooringDeviceTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static BOLLARD = "BOLLARD";
+	static LINETENSIONER = "LINETENSIONER";
+	static MAGNETICDEVICE = "MAGNETICDEVICE";
+	static MOORINGHOOKS = "MOORINGHOOKS";
+	static VACUUMDEVICE = "VACUUMDEVICE";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -4444,21 +4975,24 @@ export class IfcMotorConnectionTypeEnum {
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
-export class IfcNullStyle {
+export class IfcNavigationElementTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static NULL = "NULL";
+	static BEACON = "BEACON";
+	static BUOY = "BUOY";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcObjectTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static PRODUCT = "PRODUCT";
-	static PROCESS = "PROCESS";
-	static CONTROL = "CONTROL";
-	static RESOURCE = "RESOURCE";
 	static ACTOR = "ACTOR";
+	static CONTROL = "CONTROL";
 	static GROUP = "GROUP";
+	static PROCESS = "PROCESS";
+	static PRODUCT = "PRODUCT";
 	static PROJECT = "PROJECT";
+	static RESOURCE = "RESOURCE";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcObjectiveEnum {
@@ -4504,9 +5038,17 @@ export class IfcOutletTypeEnum {
 	constructor(v: string) { this.value = v;}
 	static AUDIOVISUALOUTLET = "AUDIOVISUALOUTLET";
 	static COMMUNICATIONSOUTLET = "COMMUNICATIONSOUTLET";
-	static POWEROUTLET = "POWEROUTLET";
 	static DATAOUTLET = "DATAOUTLET";
+	static POWEROUTLET = "POWEROUTLET";
 	static TELEPHONEOUTLET = "TELEPHONEOUTLET";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcPavementTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static FLEXIBLE = "FLEXIBLE";
+	static RIGID = "RIGID";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -4555,10 +5097,10 @@ export class IfcPileTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static BORED = "BORED";
-	static DRIVEN = "DRIVEN";
-	static JETGROUTING = "JETGROUTING";
 	static COHESION = "COHESION";
+	static DRIVEN = "DRIVEN";
 	static FRICTION = "FRICTION";
+	static JETGROUTING = "JETGROUTING";
 	static SUPPORT = "SUPPORT";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
@@ -4581,8 +5123,8 @@ export class IfcPipeSegmentTypeEnum {
 	constructor(v: string) { this.value = v;}
 	static CULVERT = "CULVERT";
 	static FLEXIBLESEGMENT = "FLEXIBLESEGMENT";
-	static RIGIDSEGMENT = "RIGIDSEGMENT";
 	static GUTTER = "GUTTER";
+	static RIGIDSEGMENT = "RIGIDSEGMENT";
 	static SPOOL = "SPOOL";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
@@ -4590,15 +5132,15 @@ export class IfcPipeSegmentTypeEnum {
 export class IfcPlateTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static CURTAIN_PANEL = "CURTAIN_PANEL";
-	static SHEET = "SHEET";
-	static FLANGE_PLATE = "FLANGE_PLATE";
-	static WEB_PLATE = "WEB_PLATE";
-	static STIFFENER_PLATE = "STIFFENER_PLATE";
-	static GUSSET_PLATE = "GUSSET_PLATE";
-	static COVER_PLATE = "COVER_PLATE";
-	static SPLICE_PLATE = "SPLICE_PLATE";
 	static BASE_PLATE = "BASE_PLATE";
+	static COVER_PLATE = "COVER_PLATE";
+	static CURTAIN_PANEL = "CURTAIN_PANEL";
+	static FLANGE_PLATE = "FLANGE_PLATE";
+	static GUSSET_PLATE = "GUSSET_PLATE";
+	static SHEET = "SHEET";
+	static SPLICE_PLATE = "SPLICE_PLATE";
+	static STIFFENER_PLATE = "STIFFENER_PLATE";
+	static WEB_PLATE = "WEB_PLATE";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -4625,8 +5167,8 @@ export class IfcProcedureTypeEnum {
 export class IfcProfileTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static CURVE = "CURVE";
 	static AREA = "AREA";
+	static CURVE = "CURVE";
 };
 export class IfcProjectOrderTypeEnum {
 	value: string;
@@ -4656,20 +5198,22 @@ export class IfcProjectionElementTypeEnum {
 export class IfcPropertySetTemplateTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static PSET_TYPEDRIVENONLY = "PSET_TYPEDRIVENONLY";
-	static PSET_TYPEDRIVENOVERRIDE = "PSET_TYPEDRIVENOVERRIDE";
+	static PSET_MATERIALDRIVEN = "PSET_MATERIALDRIVEN";
 	static PSET_OCCURRENCEDRIVEN = "PSET_OCCURRENCEDRIVEN";
 	static PSET_PERFORMANCEDRIVEN = "PSET_PERFORMANCEDRIVEN";
+	static PSET_PROFILEDRIVEN = "PSET_PROFILEDRIVEN";
+	static PSET_TYPEDRIVENONLY = "PSET_TYPEDRIVENONLY";
+	static PSET_TYPEDRIVENOVERRIDE = "PSET_TYPEDRIVENOVERRIDE";
+	static QTO_OCCURRENCEDRIVEN = "QTO_OCCURRENCEDRIVEN";
 	static QTO_TYPEDRIVENONLY = "QTO_TYPEDRIVENONLY";
 	static QTO_TYPEDRIVENOVERRIDE = "QTO_TYPEDRIVENOVERRIDE";
-	static QTO_OCCURRENCEDRIVEN = "QTO_OCCURRENCEDRIVEN";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcProtectiveDeviceTrippingUnitTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static ELECTRONIC = "ELECTRONIC";
 	static ELECTROMAGNETIC = "ELECTROMAGNETIC";
+	static ELECTRONIC = "ELECTRONIC";
 	static RESIDUALCURRENT = "RESIDUALCURRENT";
 	static THERMAL = "THERMAL";
 	static USERDEFINED = "USERDEFINED";
@@ -4678,13 +5222,16 @@ export class IfcProtectiveDeviceTrippingUnitTypeEnum {
 export class IfcProtectiveDeviceTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static ANTI_ARCING_DEVICE = "ANTI_ARCING_DEVICE";
 	static CIRCUITBREAKER = "CIRCUITBREAKER";
-	static EARTHLEAKAGECIRCUITBREAKER = "EARTHLEAKAGECIRCUITBREAKER";
 	static EARTHINGSWITCH = "EARTHINGSWITCH";
+	static EARTHLEAKAGECIRCUITBREAKER = "EARTHLEAKAGECIRCUITBREAKER";
 	static FUSEDISCONNECTOR = "FUSEDISCONNECTOR";
 	static RESIDUALCURRENTCIRCUITBREAKER = "RESIDUALCURRENTCIRCUITBREAKER";
 	static RESIDUALCURRENTSWITCH = "RESIDUALCURRENTSWITCH";
+	static SPARKGAP = "SPARKGAP";
 	static VARISTOR = "VARISTOR";
+	static VOLTAGELIMITER = "VOLTAGELIMITER";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -4701,52 +5248,90 @@ export class IfcPumpTypeEnum {
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
+export class IfcRailTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static BLADE = "BLADE";
+	static CHECKRAIL = "CHECKRAIL";
+	static GUARDRAIL = "GUARDRAIL";
+	static RACKRAIL = "RACKRAIL";
+	static RAIL = "RAIL";
+	static STOCKRAIL = "STOCKRAIL";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
 export class IfcRailingTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static HANDRAIL = "HANDRAIL";
-	static GUARDRAIL = "GUARDRAIL";
 	static BALUSTRADE = "BALUSTRADE";
+	static FENCE = "FENCE";
+	static GUARDRAIL = "GUARDRAIL";
+	static HANDRAIL = "HANDRAIL";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcRailwayPartTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static DILATATIONSUPERSTRUCTURE = "DILATATIONSUPERSTRUCTURE";
+	static LINESIDESTRUCTURE = "LINESIDESTRUCTURE";
+	static LINESIDESTRUCTUREPART = "LINESIDESTRUCTUREPART";
+	static PLAINTRACKSUPERSTRUCTURE = "PLAINTRACKSUPERSTRUCTURE";
+	static SUPERSTRUCTURE = "SUPERSTRUCTURE";
+	static TRACKSTRUCTURE = "TRACKSTRUCTURE";
+	static TRACKSTRUCTUREPART = "TRACKSTRUCTUREPART";
+	static TURNOUTSUPERSTRUCTURE = "TURNOUTSUPERSTRUCTURE";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcRailwayTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcRampFlightTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static STRAIGHT = "STRAIGHT";
 	static SPIRAL = "SPIRAL";
+	static STRAIGHT = "STRAIGHT";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcRampTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static STRAIGHT_RUN_RAMP = "STRAIGHT_RUN_RAMP";
-	static TWO_STRAIGHT_RUN_RAMP = "TWO_STRAIGHT_RUN_RAMP";
-	static QUARTER_TURN_RAMP = "QUARTER_TURN_RAMP";
-	static TWO_QUARTER_TURN_RAMP = "TWO_QUARTER_TURN_RAMP";
 	static HALF_TURN_RAMP = "HALF_TURN_RAMP";
+	static QUARTER_TURN_RAMP = "QUARTER_TURN_RAMP";
 	static SPIRAL_RAMP = "SPIRAL_RAMP";
+	static STRAIGHT_RUN_RAMP = "STRAIGHT_RUN_RAMP";
+	static TWO_QUARTER_TURN_RAMP = "TWO_QUARTER_TURN_RAMP";
+	static TWO_STRAIGHT_RUN_RAMP = "TWO_STRAIGHT_RUN_RAMP";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcRecurrenceTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static DAILY = "DAILY";
-	static WEEKLY = "WEEKLY";
-	static MONTHLY_BY_DAY_OF_MONTH = "MONTHLY_BY_DAY_OF_MONTH";
-	static MONTHLY_BY_POSITION = "MONTHLY_BY_POSITION";
 	static BY_DAY_COUNT = "BY_DAY_COUNT";
 	static BY_WEEKDAY_COUNT = "BY_WEEKDAY_COUNT";
+	static DAILY = "DAILY";
+	static MONTHLY_BY_DAY_OF_MONTH = "MONTHLY_BY_DAY_OF_MONTH";
+	static MONTHLY_BY_POSITION = "MONTHLY_BY_POSITION";
+	static WEEKLY = "WEEKLY";
 	static YEARLY_BY_DAY_OF_MONTH = "YEARLY_BY_DAY_OF_MONTH";
 	static YEARLY_BY_POSITION = "YEARLY_BY_POSITION";
 };
 export class IfcReferentTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static BOUNDARY = "BOUNDARY";
+	static INTERSECTION = "INTERSECTION";
 	static KILOPOINT = "KILOPOINT";
+	static LANDMARK = "LANDMARK";
 	static MILEPOINT = "MILEPOINT";
+	static POSITION = "POSITION";
+	static REFERENCEMARKER = "REFERENCEMARKER";
 	static STATION = "STATION";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
@@ -4761,21 +5346,34 @@ export class IfcReflectanceMethodEnum {
 	static METAL = "METAL";
 	static MIRROR = "MIRROR";
 	static PHONG = "PHONG";
+	static PHYSICAL = "PHYSICAL";
 	static PLASTIC = "PLASTIC";
 	static STRAUSS = "STRAUSS";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcReinforcedSoilTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static DYNAMICALLYCOMPACTED = "DYNAMICALLYCOMPACTED";
+	static GROUTED = "GROUTED";
+	static REPLACED = "REPLACED";
+	static ROLLERCOMPACTED = "ROLLERCOMPACTED";
+	static SURCHARGEPRELOADED = "SURCHARGEPRELOADED";
+	static VERTICALLYDRAINED = "VERTICALLYDRAINED";
+	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcReinforcingBarRoleEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static MAIN = "MAIN";
-	static SHEAR = "SHEAR";
-	static LIGATURE = "LIGATURE";
-	static STUD = "STUD";
-	static PUNCHING = "PUNCHING";
-	static EDGE = "EDGE";
-	static RING = "RING";
 	static ANCHORING = "ANCHORING";
+	static EDGE = "EDGE";
+	static LIGATURE = "LIGATURE";
+	static MAIN = "MAIN";
+	static PUNCHING = "PUNCHING";
+	static RING = "RING";
+	static SHEAR = "SHEAR";
+	static STUD = "STUD";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -4795,8 +5393,8 @@ export class IfcReinforcingBarTypeEnum {
 	static PUNCHING = "PUNCHING";
 	static RING = "RING";
 	static SHEAR = "SHEAR";
-	static STUD = "STUD";
 	static SPACEBAR = "SPACEBAR";
+	static STUD = "STUD";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -4806,71 +5404,107 @@ export class IfcReinforcingMeshTypeEnum {
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
+export class IfcRoadPartTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static BICYCLECROSSING = "BICYCLECROSSING";
+	static BUS_STOP = "BUS_STOP";
+	static CARRIAGEWAY = "CARRIAGEWAY";
+	static CENTRALISLAND = "CENTRALISLAND";
+	static CENTRALRESERVE = "CENTRALRESERVE";
+	static HARDSHOULDER = "HARDSHOULDER";
+	static INTERSECTION = "INTERSECTION";
+	static LAYBY = "LAYBY";
+	static PARKINGBAY = "PARKINGBAY";
+	static PASSINGBAY = "PASSINGBAY";
+	static PEDESTRIAN_CROSSING = "PEDESTRIAN_CROSSING";
+	static RAILWAYCROSSING = "RAILWAYCROSSING";
+	static REFUGEISLAND = "REFUGEISLAND";
+	static ROADSEGMENT = "ROADSEGMENT";
+	static ROADSIDE = "ROADSIDE";
+	static ROADSIDEPART = "ROADSIDEPART";
+	static ROADWAYPLATEAU = "ROADWAYPLATEAU";
+	static ROUNDABOUT = "ROUNDABOUT";
+	static SHOULDER = "SHOULDER";
+	static SIDEWALK = "SIDEWALK";
+	static SOFTSHOULDER = "SOFTSHOULDER";
+	static TOLLPLAZA = "TOLLPLAZA";
+	static TRAFFICISLAND = "TRAFFICISLAND";
+	static TRAFFICLANE = "TRAFFICLANE";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcRoadTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
 export class IfcRoleEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static SUPPLIER = "SUPPLIER";
-	static MANUFACTURER = "MANUFACTURER";
-	static CONTRACTOR = "CONTRACTOR";
-	static SUBCONTRACTOR = "SUBCONTRACTOR";
 	static ARCHITECT = "ARCHITECT";
-	static STRUCTURALENGINEER = "STRUCTURALENGINEER";
-	static COSTENGINEER = "COSTENGINEER";
-	static CLIENT = "CLIENT";
-	static BUILDINGOWNER = "BUILDINGOWNER";
 	static BUILDINGOPERATOR = "BUILDINGOPERATOR";
-	static MECHANICALENGINEER = "MECHANICALENGINEER";
-	static ELECTRICALENGINEER = "ELECTRICALENGINEER";
-	static PROJECTMANAGER = "PROJECTMANAGER";
-	static FACILITIESMANAGER = "FACILITIESMANAGER";
+	static BUILDINGOWNER = "BUILDINGOWNER";
 	static CIVILENGINEER = "CIVILENGINEER";
+	static CLIENT = "CLIENT";
 	static COMMISSIONINGENGINEER = "COMMISSIONINGENGINEER";
-	static ENGINEER = "ENGINEER";
-	static OWNER = "OWNER";
-	static CONSULTANT = "CONSULTANT";
 	static CONSTRUCTIONMANAGER = "CONSTRUCTIONMANAGER";
+	static CONSULTANT = "CONSULTANT";
+	static CONTRACTOR = "CONTRACTOR";
+	static COSTENGINEER = "COSTENGINEER";
+	static ELECTRICALENGINEER = "ELECTRICALENGINEER";
+	static ENGINEER = "ENGINEER";
+	static FACILITIESMANAGER = "FACILITIESMANAGER";
 	static FIELDCONSTRUCTIONMANAGER = "FIELDCONSTRUCTIONMANAGER";
+	static MANUFACTURER = "MANUFACTURER";
+	static MECHANICALENGINEER = "MECHANICALENGINEER";
+	static OWNER = "OWNER";
+	static PROJECTMANAGER = "PROJECTMANAGER";
 	static RESELLER = "RESELLER";
+	static STRUCTURALENGINEER = "STRUCTURALENGINEER";
+	static SUBCONTRACTOR = "SUBCONTRACTOR";
+	static SUPPLIER = "SUPPLIER";
 	static USERDEFINED = "USERDEFINED";
 };
 export class IfcRoofTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static FLAT_ROOF = "FLAT_ROOF";
-	static SHED_ROOF = "SHED_ROOF";
-	static GABLE_ROOF = "GABLE_ROOF";
-	static HIP_ROOF = "HIP_ROOF";
-	static HIPPED_GABLE_ROOF = "HIPPED_GABLE_ROOF";
-	static GAMBREL_ROOF = "GAMBREL_ROOF";
-	static MANSARD_ROOF = "MANSARD_ROOF";
 	static BARREL_ROOF = "BARREL_ROOF";
-	static RAINBOW_ROOF = "RAINBOW_ROOF";
 	static BUTTERFLY_ROOF = "BUTTERFLY_ROOF";
-	static PAVILION_ROOF = "PAVILION_ROOF";
 	static DOME_ROOF = "DOME_ROOF";
+	static FLAT_ROOF = "FLAT_ROOF";
 	static FREEFORM = "FREEFORM";
+	static GABLE_ROOF = "GABLE_ROOF";
+	static GAMBREL_ROOF = "GAMBREL_ROOF";
+	static HIPPED_GABLE_ROOF = "HIPPED_GABLE_ROOF";
+	static HIP_ROOF = "HIP_ROOF";
+	static MANSARD_ROOF = "MANSARD_ROOF";
+	static PAVILION_ROOF = "PAVILION_ROOF";
+	static RAINBOW_ROOF = "RAINBOW_ROOF";
+	static SHED_ROOF = "SHED_ROOF";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcSIPrefix {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static EXA = "EXA";
-	static PETA = "PETA";
-	static TERA = "TERA";
-	static GIGA = "GIGA";
-	static MEGA = "MEGA";
-	static KILO = "KILO";
-	static HECTO = "HECTO";
+	static ATTO = "ATTO";
+	static CENTI = "CENTI";
 	static DECA = "DECA";
 	static DECI = "DECI";
-	static CENTI = "CENTI";
-	static MILLI = "MILLI";
-	static MICRO = "MICRO";
-	static NANO = "NANO";
-	static PICO = "PICO";
+	static EXA = "EXA";
 	static FEMTO = "FEMTO";
-	static ATTO = "ATTO";
+	static GIGA = "GIGA";
+	static HECTO = "HECTO";
+	static KILO = "KILO";
+	static MEGA = "MEGA";
+	static MICRO = "MICRO";
+	static MILLI = "MILLI";
+	static NANO = "NANO";
+	static PETA = "PETA";
+	static PICO = "PICO";
+	static TERA = "TERA";
 };
 export class IfcSIUnitName {
 	value: string;
@@ -4912,9 +5546,9 @@ export class IfcSanitaryTerminalTypeEnum {
 	static BATH = "BATH";
 	static BIDET = "BIDET";
 	static CISTERN = "CISTERN";
+	static SANITARYFOUNTAIN = "SANITARYFOUNTAIN";
 	static SHOWER = "SHOWER";
 	static SINK = "SINK";
-	static SANITARYFOUNTAIN = "SANITARYFOUNTAIN";
 	static TOILETPAN = "TOILETPAN";
 	static URINAL = "URINAL";
 	static WASHHANDBASIN = "WASHHANDBASIN";
@@ -4925,18 +5559,20 @@ export class IfcSanitaryTerminalTypeEnum {
 export class IfcSectionTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static UNIFORM = "UNIFORM";
 	static TAPERED = "TAPERED";
+	static UNIFORM = "UNIFORM";
 };
 export class IfcSensorTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static COSENSOR = "COSENSOR";
 	static CO2SENSOR = "CO2SENSOR";
 	static CONDUCTANCESENSOR = "CONDUCTANCESENSOR";
 	static CONTACTSENSOR = "CONTACTSENSOR";
+	static COSENSOR = "COSENSOR";
+	static EARTHQUAKESENSOR = "EARTHQUAKESENSOR";
 	static FIRESENSOR = "FIRESENSOR";
 	static FLOWSENSOR = "FLOWSENSOR";
+	static FOREIGNOBJECTDETECTIONSENSOR = "FOREIGNOBJECTDETECTIONSENSOR";
 	static FROSTSENSOR = "FROSTSENSOR";
 	static GASSENSOR = "GASSENSOR";
 	static HEATSENSOR = "HEATSENSOR";
@@ -4947,13 +5583,19 @@ export class IfcSensorTypeEnum {
 	static LIGHTSENSOR = "LIGHTSENSOR";
 	static MOISTURESENSOR = "MOISTURESENSOR";
 	static MOVEMENTSENSOR = "MOVEMENTSENSOR";
+	static OBSTACLESENSOR = "OBSTACLESENSOR";
 	static PHSENSOR = "PHSENSOR";
 	static PRESSURESENSOR = "PRESSURESENSOR";
 	static RADIATIONSENSOR = "RADIATIONSENSOR";
 	static RADIOACTIVITYSENSOR = "RADIOACTIVITYSENSOR";
+	static RAINSENSOR = "RAINSENSOR";
 	static SMOKESENSOR = "SMOKESENSOR";
+	static SNOWDEPTHSENSOR = "SNOWDEPTHSENSOR";
 	static SOUNDSENSOR = "SOUNDSENSOR";
 	static TEMPERATURESENSOR = "TEMPERATURESENSOR";
+	static TRAINSENSOR = "TRAINSENSOR";
+	static TURNOUTCLOSURESENSOR = "TURNOUTCLOSURESENSOR";
+	static WHEELSENSOR = "WHEELSENSOR";
 	static WINDSENSOR = "WINDSENSOR";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
@@ -4961,49 +5603,69 @@ export class IfcSensorTypeEnum {
 export class IfcSequenceEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static START_START = "START_START";
-	static START_FINISH = "START_FINISH";
-	static FINISH_START = "FINISH_START";
 	static FINISH_FINISH = "FINISH_FINISH";
+	static FINISH_START = "FINISH_START";
+	static START_FINISH = "START_FINISH";
+	static START_START = "START_START";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcShadingDeviceTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static AWNING = "AWNING";
 	static JALOUSIE = "JALOUSIE";
 	static SHUTTER = "SHUTTER";
-	static AWNING = "AWNING";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcSignTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static MARKER = "MARKER";
+	static MIRROR = "MIRROR";
+	static PICTORAL = "PICTORAL";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcSignalTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static AUDIO = "AUDIO";
+	static MIXED = "MIXED";
+	static VISUAL = "VISUAL";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcSimplePropertyTemplateTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static P_SINGLEVALUE = "P_SINGLEVALUE";
-	static P_ENUMERATEDVALUE = "P_ENUMERATEDVALUE";
 	static P_BOUNDEDVALUE = "P_BOUNDEDVALUE";
+	static P_ENUMERATEDVALUE = "P_ENUMERATEDVALUE";
 	static P_LISTVALUE = "P_LISTVALUE";
-	static P_TABLEVALUE = "P_TABLEVALUE";
 	static P_REFERENCEVALUE = "P_REFERENCEVALUE";
-	static Q_LENGTH = "Q_LENGTH";
+	static P_SINGLEVALUE = "P_SINGLEVALUE";
+	static P_TABLEVALUE = "P_TABLEVALUE";
 	static Q_AREA = "Q_AREA";
-	static Q_VOLUME = "Q_VOLUME";
 	static Q_COUNT = "Q_COUNT";
-	static Q_WEIGHT = "Q_WEIGHT";
+	static Q_LENGTH = "Q_LENGTH";
+	static Q_NUMBER = "Q_NUMBER";
 	static Q_TIME = "Q_TIME";
+	static Q_VOLUME = "Q_VOLUME";
+	static Q_WEIGHT = "Q_WEIGHT";
 };
 export class IfcSlabTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static FLOOR = "FLOOR";
-	static ROOF = "ROOF";
-	static LANDING = "LANDING";
-	static BASESLAB = "BASESLAB";
 	static APPROACH_SLAB = "APPROACH_SLAB";
+	static BASESLAB = "BASESLAB";
+	static FLOOR = "FLOOR";
+	static LANDING = "LANDING";
 	static PAVING = "PAVING";
-	static WEARING = "WEARING";
+	static ROOF = "ROOF";
 	static SIDEWALK = "SIDEWALK";
+	static TRACKSLAB = "TRACKSLAB";
+	static WEARING = "WEARING";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -5026,11 +5688,12 @@ export class IfcSpaceHeaterTypeEnum {
 export class IfcSpaceTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static SPACE = "SPACE";
-	static PARKING = "PARKING";
+	static BERTH = "BERTH";
+	static EXTERNAL = "EXTERNAL";
 	static GFA = "GFA";
 	static INTERNAL = "INTERNAL";
-	static EXTERNAL = "EXTERNAL";
+	static PARKING = "PARKING";
+	static SPACE = "SPACE";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -5039,8 +5702,10 @@ export class IfcSpatialZoneTypeEnum {
 	constructor(v: string) { this.value = v;}
 	static CONSTRUCTION = "CONSTRUCTION";
 	static FIRESAFETY = "FIRESAFETY";
+	static INTERFERENCE = "INTERFERENCE";
 	static LIGHTING = "LIGHTING";
 	static OCCUPANCY = "OCCUPANCY";
+	static RESERVATION = "RESERVATION";
 	static SECURITY = "SECURITY";
 	static THERMAL = "THERMAL";
 	static TRANSPORT = "TRANSPORT";
@@ -5060,72 +5725,73 @@ export class IfcStackTerminalTypeEnum {
 export class IfcStairFlightTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static STRAIGHT = "STRAIGHT";
-	static WINDER = "WINDER";
-	static SPIRAL = "SPIRAL";
 	static CURVED = "CURVED";
 	static FREEFORM = "FREEFORM";
+	static SPIRAL = "SPIRAL";
+	static STRAIGHT = "STRAIGHT";
+	static WINDER = "WINDER";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcStairTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static STRAIGHT_RUN_STAIR = "STRAIGHT_RUN_STAIR";
-	static TWO_STRAIGHT_RUN_STAIR = "TWO_STRAIGHT_RUN_STAIR";
-	static QUARTER_WINDING_STAIR = "QUARTER_WINDING_STAIR";
-	static QUARTER_TURN_STAIR = "QUARTER_TURN_STAIR";
-	static HALF_WINDING_STAIR = "HALF_WINDING_STAIR";
-	static HALF_TURN_STAIR = "HALF_TURN_STAIR";
-	static TWO_QUARTER_WINDING_STAIR = "TWO_QUARTER_WINDING_STAIR";
-	static TWO_QUARTER_TURN_STAIR = "TWO_QUARTER_TURN_STAIR";
-	static THREE_QUARTER_WINDING_STAIR = "THREE_QUARTER_WINDING_STAIR";
-	static THREE_QUARTER_TURN_STAIR = "THREE_QUARTER_TURN_STAIR";
-	static SPIRAL_STAIR = "SPIRAL_STAIR";
-	static DOUBLE_RETURN_STAIR = "DOUBLE_RETURN_STAIR";
 	static CURVED_RUN_STAIR = "CURVED_RUN_STAIR";
+	static DOUBLE_RETURN_STAIR = "DOUBLE_RETURN_STAIR";
+	static HALF_TURN_STAIR = "HALF_TURN_STAIR";
+	static HALF_WINDING_STAIR = "HALF_WINDING_STAIR";
+	static LADDER = "LADDER";
+	static QUARTER_TURN_STAIR = "QUARTER_TURN_STAIR";
+	static QUARTER_WINDING_STAIR = "QUARTER_WINDING_STAIR";
+	static SPIRAL_STAIR = "SPIRAL_STAIR";
+	static STRAIGHT_RUN_STAIR = "STRAIGHT_RUN_STAIR";
+	static THREE_QUARTER_TURN_STAIR = "THREE_QUARTER_TURN_STAIR";
+	static THREE_QUARTER_WINDING_STAIR = "THREE_QUARTER_WINDING_STAIR";
 	static TWO_CURVED_RUN_STAIR = "TWO_CURVED_RUN_STAIR";
+	static TWO_QUARTER_TURN_STAIR = "TWO_QUARTER_TURN_STAIR";
+	static TWO_QUARTER_WINDING_STAIR = "TWO_QUARTER_WINDING_STAIR";
+	static TWO_STRAIGHT_RUN_STAIR = "TWO_STRAIGHT_RUN_STAIR";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcStateEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static READWRITE = "READWRITE";
-	static READONLY = "READONLY";
 	static LOCKED = "LOCKED";
-	static READWRITELOCKED = "READWRITELOCKED";
+	static READONLY = "READONLY";
 	static READONLYLOCKED = "READONLYLOCKED";
+	static READWRITE = "READWRITE";
+	static READWRITELOCKED = "READWRITELOCKED";
 };
 export class IfcStructuralCurveActivityTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static CONST = "CONST";
-	static LINEAR = "LINEAR";
-	static POLYGONAL = "POLYGONAL";
-	static EQUIDISTANT = "EQUIDISTANT";
-	static SINUS = "SINUS";
-	static PARABOLA = "PARABOLA";
 	static DISCRETE = "DISCRETE";
+	static EQUIDISTANT = "EQUIDISTANT";
+	static LINEAR = "LINEAR";
+	static PARABOLA = "PARABOLA";
+	static POLYGONAL = "POLYGONAL";
+	static SINUS = "SINUS";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcStructuralCurveMemberTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static RIGID_JOINED_MEMBER = "RIGID_JOINED_MEMBER";
-	static PIN_JOINED_MEMBER = "PIN_JOINED_MEMBER";
 	static CABLE = "CABLE";
-	static TENSION_MEMBER = "TENSION_MEMBER";
 	static COMPRESSION_MEMBER = "COMPRESSION_MEMBER";
+	static PIN_JOINED_MEMBER = "PIN_JOINED_MEMBER";
+	static RIGID_JOINED_MEMBER = "RIGID_JOINED_MEMBER";
+	static TENSION_MEMBER = "TENSION_MEMBER";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcStructuralSurfaceActivityTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static CONST = "CONST";
 	static BILINEAR = "BILINEAR";
+	static CONST = "CONST";
 	static DISCRETE = "DISCRETE";
 	static ISOCONTOUR = "ISOCONTOUR";
 	static USERDEFINED = "USERDEFINED";
@@ -5151,19 +5817,26 @@ export class IfcSubContractResourceTypeEnum {
 export class IfcSurfaceFeatureTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static MARK = "MARK";
-	static TAG = "TAG";
-	static TREATMENT = "TREATMENT";
 	static DEFECT = "DEFECT";
+	static HATCHMARKING = "HATCHMARKING";
+	static LINEMARKING = "LINEMARKING";
+	static MARK = "MARK";
+	static NONSKIDSURFACING = "NONSKIDSURFACING";
+	static PAVEMENTSURFACEMARKING = "PAVEMENTSURFACEMARKING";
+	static RUMBLESTRIP = "RUMBLESTRIP";
+	static SYMBOLMARKING = "SYMBOLMARKING";
+	static TAG = "TAG";
+	static TRANSVERSERUMBLESTRIP = "TRANSVERSERUMBLESTRIP";
+	static TREATMENT = "TREATMENT";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcSurfaceSide {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static POSITIVE = "POSITIVE";
-	static NEGATIVE = "NEGATIVE";
 	static BOTH = "BOTH";
+	static NEGATIVE = "NEGATIVE";
+	static POSITIVE = "POSITIVE";
 };
 export class IfcSwitchingDeviceTypeEnum {
 	value: string;
@@ -5173,8 +5846,10 @@ export class IfcSwitchingDeviceTypeEnum {
 	static EMERGENCYSTOP = "EMERGENCYSTOP";
 	static KEYPAD = "KEYPAD";
 	static MOMENTARYSWITCH = "MOMENTARYSWITCH";
+	static RELAY = "RELAY";
 	static SELECTORSWITCH = "SELECTORSWITCH";
 	static STARTER = "STARTER";
+	static START_AND_STOP_EQUIPMENT = "START_AND_STOP_EQUIPMENT";
 	static SWITCHDISCONNECTOR = "SWITCHDISCONNECTOR";
 	static TOGGLESWITCH = "TOGGLESWITCH";
 	static USERDEFINED = "USERDEFINED";
@@ -5184,6 +5859,7 @@ export class IfcSystemFurnitureElementTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static PANEL = "PANEL";
+	static SUBRACK = "SUBRACK";
 	static WORKSURFACE = "WORKSURFACE";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
@@ -5195,6 +5871,7 @@ export class IfcTankTypeEnum {
 	static BREAKPRESSURE = "BREAKPRESSURE";
 	static EXPANSION = "EXPANSION";
 	static FEEDANDEXPANSION = "FEEDANDEXPANSION";
+	static OILRETENTIONTRAY = "OILRETENTIONTRAY";
 	static PRESSUREVESSEL = "PRESSUREVESSEL";
 	static STORAGE = "STORAGE";
 	static VESSEL = "VESSEL";
@@ -5211,11 +5888,15 @@ export class IfcTaskDurationEnum {
 export class IfcTaskTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static ADJUSTMENT = "ADJUSTMENT";
 	static ATTENDANCE = "ATTENDANCE";
+	static CALIBRATION = "CALIBRATION";
 	static CONSTRUCTION = "CONSTRUCTION";
 	static DEMOLITION = "DEMOLITION";
 	static DISMANTLE = "DISMANTLE";
 	static DISPOSAL = "DISPOSAL";
+	static EMERGENCY = "EMERGENCY";
+	static INSPECTION = "INSPECTION";
 	static INSTALLATION = "INSTALLATION";
 	static LOGISTIC = "LOGISTIC";
 	static MAINTENANCE = "MAINTENANCE";
@@ -5223,6 +5904,11 @@ export class IfcTaskTypeEnum {
 	static OPERATION = "OPERATION";
 	static REMOVAL = "REMOVAL";
 	static RENOVATION = "RENOVATION";
+	static SAFETY = "SAFETY";
+	static SHUTDOWN = "SHUTDOWN";
+	static STARTUP = "STARTUP";
+	static TESTING = "TESTING";
+	static TROUBLESHOOTING = "TROUBLESHOOTING";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -5238,11 +5924,11 @@ export class IfcTendonAnchorTypeEnum {
 export class IfcTendonConduitTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static DUCT = "DUCT";
 	static COUPLER = "COUPLER";
+	static DIABOLO = "DIABOLO";
+	static DUCT = "DUCT";
 	static GROUTING_DUCT = "GROUTING_DUCT";
 	static TRUMPET = "TRUMPET";
-	static DIABOLO = "DIABOLO";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -5259,10 +5945,10 @@ export class IfcTendonTypeEnum {
 export class IfcTextPath {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static DOWN = "DOWN";
 	static LEFT = "LEFT";
 	static RIGHT = "RIGHT";
 	static UP = "UP";
-	static DOWN = "DOWN";
 };
 export class IfcTimeSeriesDataTypeEnum {
 	value: string;
@@ -5275,9 +5961,25 @@ export class IfcTimeSeriesDataTypeEnum {
 	static PIECEWISECONTINUOUS = "PIECEWISECONTINUOUS";
 	static NOTDEFINED = "NOTDEFINED";
 };
+export class IfcTrackElementTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static BLOCKINGDEVICE = "BLOCKINGDEVICE";
+	static DERAILER = "DERAILER";
+	static FROG = "FROG";
+	static HALF_SET_OF_BLADES = "HALF_SET_OF_BLADES";
+	static SLEEPER = "SLEEPER";
+	static SPEEDREGULATOR = "SPEEDREGULATOR";
+	static TRACKENDOFALIGNMENT = "TRACKENDOFALIGNMENT";
+	static VEHICLESTOP = "VEHICLESTOP";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
 export class IfcTransformerTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static CHOPPER = "CHOPPER";
+	static COMBINED = "COMBINED";
 	static CURRENT = "CURRENT";
 	static FREQUENCY = "FREQUENCY";
 	static INVERTER = "INVERTER";
@@ -5289,29 +5991,20 @@ export class IfcTransformerTypeEnum {
 export class IfcTransitionCode {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static DISCONTINUOUS = "DISCONTINUOUS";
 	static CONTINUOUS = "CONTINUOUS";
 	static CONTSAMEGRADIENT = "CONTSAMEGRADIENT";
 	static CONTSAMEGRADIENTSAMECURVATURE = "CONTSAMEGRADIENTSAMECURVATURE";
-};
-export class IfcTransitionCurveType {
-	value: string;
-	constructor(v: string) { this.value = v;}
-	static BIQUADRATICPARABOLA = "BIQUADRATICPARABOLA";
-	static BLOSSCURVE = "BLOSSCURVE";
-	static CLOTHOIDCURVE = "CLOTHOIDCURVE";
-	static COSINECURVE = "COSINECURVE";
-	static CUBICPARABOLA = "CUBICPARABOLA";
-	static SINECURVE = "SINECURVE";
+	static DISCONTINUOUS = "DISCONTINUOUS";
 };
 export class IfcTransportElementTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static CRANEWAY = "CRANEWAY";
 	static ELEVATOR = "ELEVATOR";
 	static ESCALATOR = "ESCALATOR";
-	static MOVINGWALKWAY = "MOVINGWALKWAY";
-	static CRANEWAY = "CRANEWAY";
+	static HAULINGGEAR = "HAULINGGEAR";
 	static LIFTINGGEAR = "LIFTINGGEAR";
+	static MOVINGWALKWAY = "MOVINGWALKWAY";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -5367,11 +6060,13 @@ export class IfcUnitaryControlElementTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static ALARMPANEL = "ALARMPANEL";
+	static BASESTATIONCONTROLLER = "BASESTATIONCONTROLLER";
+	static COMBINED = "COMBINED";
 	static CONTROLPANEL = "CONTROLPANEL";
 	static GASDETECTIONPANEL = "GASDETECTIONPANEL";
+	static HUMIDISTAT = "HUMIDISTAT";
 	static INDICATORPANEL = "INDICATORPANEL";
 	static MIMICPANEL = "MIMICPANEL";
-	static HUMIDISTAT = "HUMIDISTAT";
 	static THERMOSTAT = "THERMOSTAT";
 	static WEATHERSTATION = "WEATHERSTATION";
 	static USERDEFINED = "USERDEFINED";
@@ -5380,11 +6075,11 @@ export class IfcUnitaryControlElementTypeEnum {
 export class IfcUnitaryEquipmentTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static AIRHANDLER = "AIRHANDLER";
 	static AIRCONDITIONINGUNIT = "AIRCONDITIONINGUNIT";
+	static AIRHANDLER = "AIRHANDLER";
 	static DEHUMIDIFIER = "DEHUMIDIFIER";
-	static SPLITSYSTEM = "SPLITSYSTEM";
 	static ROOFTOPUNIT = "ROOFTOPUNIT";
+	static SPLITSYSTEM = "SPLITSYSTEM";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -5397,9 +6092,9 @@ export class IfcValveTypeEnum {
 	static CHECK = "CHECK";
 	static COMMISSIONING = "COMMISSIONING";
 	static DIVERTING = "DIVERTING";
-	static DRAWOFFCOCK = "DRAWOFFCOCK";
 	static DOUBLECHECK = "DOUBLECHECK";
 	static DOUBLEREGULATING = "DOUBLEREGULATING";
+	static DRAWOFFCOCK = "DRAWOFFCOCK";
 	static FAUCET = "FAUCET";
 	static FLUSHING = "FLUSHING";
 	static GASCOCK = "GASCOCK";
@@ -5415,52 +6110,75 @@ export class IfcValveTypeEnum {
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
+export class IfcVehicleTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static CARGO = "CARGO";
+	static ROLLINGSTOCK = "ROLLINGSTOCK";
+	static VEHICLE = "VEHICLE";
+	static VEHICLEAIR = "VEHICLEAIR";
+	static VEHICLEMARINE = "VEHICLEMARINE";
+	static VEHICLETRACKED = "VEHICLETRACKED";
+	static VEHICLEWHEELED = "VEHICLEWHEELED";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
 export class IfcVibrationDamperTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static BENDING_YIELD = "BENDING_YIELD";
-	static SHEAR_YIELD = "SHEAR_YIELD";
 	static AXIAL_YIELD = "AXIAL_YIELD";
+	static BENDING_YIELD = "BENDING_YIELD";
 	static FRICTION = "FRICTION";
-	static VISCOUS = "VISCOUS";
 	static RUBBER = "RUBBER";
+	static SHEAR_YIELD = "SHEAR_YIELD";
+	static VISCOUS = "VISCOUS";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcVibrationIsolatorTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static BASE = "BASE";
 	static COMPRESSION = "COMPRESSION";
 	static SPRING = "SPRING";
-	static BASE = "BASE";
+	static USERDEFINED = "USERDEFINED";
+	static NOTDEFINED = "NOTDEFINED";
+};
+export class IfcVirtualElementTypeEnum {
+	value: string;
+	constructor(v: string) { this.value = v;}
+	static BOUNDARY = "BOUNDARY";
+	static CLEARANCE = "CLEARANCE";
+	static PROVISIONFORVOID = "PROVISIONFORVOID";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcVoidingFeatureTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static CHAMFER = "CHAMFER";
 	static CUTOUT = "CUTOUT";
-	static NOTCH = "NOTCH";
+	static EDGE = "EDGE";
 	static HOLE = "HOLE";
 	static MITER = "MITER";
-	static CHAMFER = "CHAMFER";
-	static EDGE = "EDGE";
+	static NOTCH = "NOTCH";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcWallTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static ELEMENTEDWALL = "ELEMENTEDWALL";
 	static MOVABLE = "MOVABLE";
 	static PARAPET = "PARAPET";
 	static PARTITIONING = "PARTITIONING";
 	static PLUMBINGWALL = "PLUMBINGWALL";
+	static POLYGONAL = "POLYGONAL";
+	static RETAININGWALL = "RETAININGWALL";
 	static SHEAR = "SHEAR";
 	static SOLIDWALL = "SOLIDWALL";
 	static STANDARD = "STANDARD";
-	static POLYGONAL = "POLYGONAL";
-	static ELEMENTEDWALL = "ELEMENTEDWALL";
-	static RETAININGWALL = "RETAININGWALL";
+	static WAVEWALL = "WAVEWALL";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -5480,28 +6198,28 @@ export class IfcWasteTerminalTypeEnum {
 export class IfcWindowPanelOperationEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static SIDEHUNGRIGHTHAND = "SIDEHUNGRIGHTHAND";
-	static SIDEHUNGLEFTHAND = "SIDEHUNGLEFTHAND";
-	static TILTANDTURNRIGHTHAND = "TILTANDTURNRIGHTHAND";
-	static TILTANDTURNLEFTHAND = "TILTANDTURNLEFTHAND";
-	static TOPHUNG = "TOPHUNG";
 	static BOTTOMHUNG = "BOTTOMHUNG";
-	static PIVOTHORIZONTAL = "PIVOTHORIZONTAL";
-	static PIVOTVERTICAL = "PIVOTVERTICAL";
-	static SLIDINGHORIZONTAL = "SLIDINGHORIZONTAL";
-	static SLIDINGVERTICAL = "SLIDINGVERTICAL";
-	static REMOVABLECASEMENT = "REMOVABLECASEMENT";
 	static FIXEDCASEMENT = "FIXEDCASEMENT";
 	static OTHEROPERATION = "OTHEROPERATION";
+	static PIVOTHORIZONTAL = "PIVOTHORIZONTAL";
+	static PIVOTVERTICAL = "PIVOTVERTICAL";
+	static REMOVABLECASEMENT = "REMOVABLECASEMENT";
+	static SIDEHUNGLEFTHAND = "SIDEHUNGLEFTHAND";
+	static SIDEHUNGRIGHTHAND = "SIDEHUNGRIGHTHAND";
+	static SLIDINGHORIZONTAL = "SLIDINGHORIZONTAL";
+	static SLIDINGVERTICAL = "SLIDINGVERTICAL";
+	static TILTANDTURNLEFTHAND = "TILTANDTURNLEFTHAND";
+	static TILTANDTURNRIGHTHAND = "TILTANDTURNRIGHTHAND";
+	static TOPHUNG = "TOPHUNG";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcWindowPanelPositionEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
+	static BOTTOM = "BOTTOM";
 	static LEFT = "LEFT";
 	static MIDDLE = "MIDDLE";
 	static RIGHT = "RIGHT";
-	static BOTTOM = "BOTTOM";
 	static TOP = "TOP";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -5509,50 +6227,50 @@ export class IfcWindowStyleConstructionEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
 	static ALUMINIUM = "ALUMINIUM";
+	static ALUMINIUM_WOOD = "ALUMINIUM_WOOD";
 	static HIGH_GRADE_STEEL = "HIGH_GRADE_STEEL";
+	static OTHER_CONSTRUCTION = "OTHER_CONSTRUCTION";
+	static PLASTIC = "PLASTIC";
 	static STEEL = "STEEL";
 	static WOOD = "WOOD";
-	static ALUMINIUM_WOOD = "ALUMINIUM_WOOD";
-	static PLASTIC = "PLASTIC";
-	static OTHER_CONSTRUCTION = "OTHER_CONSTRUCTION";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcWindowStyleOperationEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static SINGLE_PANEL = "SINGLE_PANEL";
-	static DOUBLE_PANEL_VERTICAL = "DOUBLE_PANEL_VERTICAL";
 	static DOUBLE_PANEL_HORIZONTAL = "DOUBLE_PANEL_HORIZONTAL";
-	static TRIPLE_PANEL_VERTICAL = "TRIPLE_PANEL_VERTICAL";
+	static DOUBLE_PANEL_VERTICAL = "DOUBLE_PANEL_VERTICAL";
+	static SINGLE_PANEL = "SINGLE_PANEL";
 	static TRIPLE_PANEL_BOTTOM = "TRIPLE_PANEL_BOTTOM";
-	static TRIPLE_PANEL_TOP = "TRIPLE_PANEL_TOP";
+	static TRIPLE_PANEL_HORIZONTAL = "TRIPLE_PANEL_HORIZONTAL";
 	static TRIPLE_PANEL_LEFT = "TRIPLE_PANEL_LEFT";
 	static TRIPLE_PANEL_RIGHT = "TRIPLE_PANEL_RIGHT";
-	static TRIPLE_PANEL_HORIZONTAL = "TRIPLE_PANEL_HORIZONTAL";
+	static TRIPLE_PANEL_TOP = "TRIPLE_PANEL_TOP";
+	static TRIPLE_PANEL_VERTICAL = "TRIPLE_PANEL_VERTICAL";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcWindowTypeEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static WINDOW = "WINDOW";
-	static SKYLIGHT = "SKYLIGHT";
 	static LIGHTDOME = "LIGHTDOME";
+	static SKYLIGHT = "SKYLIGHT";
+	static WINDOW = "WINDOW";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
 export class IfcWindowTypePartitioningEnum {
 	value: string;
 	constructor(v: string) { this.value = v;}
-	static SINGLE_PANEL = "SINGLE_PANEL";
-	static DOUBLE_PANEL_VERTICAL = "DOUBLE_PANEL_VERTICAL";
 	static DOUBLE_PANEL_HORIZONTAL = "DOUBLE_PANEL_HORIZONTAL";
-	static TRIPLE_PANEL_VERTICAL = "TRIPLE_PANEL_VERTICAL";
+	static DOUBLE_PANEL_VERTICAL = "DOUBLE_PANEL_VERTICAL";
+	static SINGLE_PANEL = "SINGLE_PANEL";
 	static TRIPLE_PANEL_BOTTOM = "TRIPLE_PANEL_BOTTOM";
-	static TRIPLE_PANEL_TOP = "TRIPLE_PANEL_TOP";
+	static TRIPLE_PANEL_HORIZONTAL = "TRIPLE_PANEL_HORIZONTAL";
 	static TRIPLE_PANEL_LEFT = "TRIPLE_PANEL_LEFT";
 	static TRIPLE_PANEL_RIGHT = "TRIPLE_PANEL_RIGHT";
-	static TRIPLE_PANEL_HORIZONTAL = "TRIPLE_PANEL_HORIZONTAL";
+	static TRIPLE_PANEL_TOP = "TRIPLE_PANEL_TOP";
+	static TRIPLE_PANEL_VERTICAL = "TRIPLE_PANEL_VERTICAL";
 	static USERDEFINED = "USERDEFINED";
 	static NOTDEFINED = "NOTDEFINED";
 };
@@ -5635,6 +6353,10 @@ export type IfcCsgSelect =
 export type IfcCurveFontOrScaledCurveFontSelect = 
 | (Handle<IfcCurveStyleFontAndScaling> | IfcCurveStyleFontAndScaling)
 | IfcCurveStyleFontSelect
+;
+export type IfcCurveMeasureSelect = 
+| IfcNonNegativeLengthMeasure
+| IfcParameterValue
 ;
 export type IfcCurveOnSurface = 
 | (Handle<IfcCompositeCurveOnSurface> | IfcCompositeCurveOnSurface)
@@ -5749,6 +6471,10 @@ export type IfcHatchLineDistanceSelect =
 | IfcPositiveLengthMeasure
 | (Handle<IfcVector> | IfcVector)
 ;
+export type IfcInterferenceSelect = 
+| (Handle<IfcElement> | IfcElement)
+| (Handle<IfcSpatialElement> | IfcSpatialElement)
+;
 export type IfcLayeredItem = 
 | (Handle<IfcRepresentation> | IfcRepresentation)
 | (Handle<IfcRepresentationItem> | IfcRepresentationItem)
@@ -5825,13 +6551,6 @@ export type IfcObjectReferenceSelect =
 export type IfcPointOrVertexPoint = 
 | (Handle<IfcPoint> | IfcPoint)
 | (Handle<IfcVertexPoint> | IfcVertexPoint)
-;
-export type IfcPresentationStyleSelect = 
-| (Handle<IfcCurveStyle> | IfcCurveStyle)
-| (Handle<IfcFillAreaStyle> | IfcFillAreaStyle)
-| IfcNullStyle
-| (Handle<IfcSurfaceStyle> | IfcSurfaceStyle)
-| (Handle<IfcTextStyle> | IfcTextStyle)
 ;
 export type IfcProcessSelect = 
 | (Handle<IfcProcess> | IfcProcess)
@@ -5916,6 +6635,10 @@ export type IfcSpaceBoundarySelect =
 | (Handle<IfcExternalSpatialElement> | IfcExternalSpatialElement)
 | (Handle<IfcSpace> | IfcSpace)
 ;
+export type IfcSpatialReferenceSelect = 
+| (Handle<IfcGroup> | IfcGroup)
+| (Handle<IfcProduct> | IfcProduct)
+;
 export type IfcSpecularHighlightSelect = 
 | IfcSpecularExponent
 | IfcSpecularRoughness
@@ -5923,10 +6646,6 @@ export type IfcSpecularHighlightSelect =
 export type IfcStructuralActivityAssignmentSelect = 
 | (Handle<IfcElement> | IfcElement)
 | (Handle<IfcStructuralItem> | IfcStructuralItem)
-;
-export type IfcStyleAssignmentSelect = 
-| (Handle<IfcPresentationStyle> | IfcPresentationStyle)
-| (Handle<IfcPresentationStyleAssignment> | IfcPresentationStyleAssignment)
 ;
 export type IfcSurfaceOrFaceSurface = 
 | (Handle<IfcFaceBasedSurfaceModel> | IfcFaceBasedSurfaceModel)
@@ -6111,9 +6830,13 @@ function ParseType(obj: any): any {
 	if (obj.label === "IFCAIRTERMINALTYPEENUM") { return new IfcAirTerminalTypeEnum(obj.value); }
 	if (obj.label === "IFCAIRTOAIRHEATRECOVERYTYPEENUM") { return new IfcAirToAirHeatRecoveryTypeEnum(obj.value); }
 	if (obj.label === "IFCALARMTYPEENUM") { return new IfcAlarmTypeEnum(obj.value); }
+	if (obj.label === "IFCALIGNMENTCANTSEGMENTTYPEENUM") { return new IfcAlignmentCantSegmentTypeEnum(obj.value); }
+	if (obj.label === "IFCALIGNMENTHORIZONTALSEGMENTTYPEENUM") { return new IfcAlignmentHorizontalSegmentTypeEnum(obj.value); }
 	if (obj.label === "IFCALIGNMENTTYPEENUM") { return new IfcAlignmentTypeEnum(obj.value); }
+	if (obj.label === "IFCALIGNMENTVERTICALSEGMENTTYPEENUM") { return new IfcAlignmentVerticalSegmentTypeEnum(obj.value); }
 	if (obj.label === "IFCANALYSISMODELTYPEENUM") { return new IfcAnalysisModelTypeEnum(obj.value); }
 	if (obj.label === "IFCANALYSISTHEORYTYPEENUM") { return new IfcAnalysisTheoryTypeEnum(obj.value); }
+	if (obj.label === "IFCANNOTATIONTYPEENUM") { return new IfcAnnotationTypeEnum(obj.value); }
 	if (obj.label === "IFCARITHMETICOPERATORENUM") { return new IfcArithmeticOperatorEnum(obj.value); }
 	if (obj.label === "IFCASSEMBLYPLACEENUM") { return new IfcAssemblyPlaceEnum(obj.value); }
 	if (obj.label === "IFCAUDIOVISUALAPPLIANCETYPEENUM") { return new IfcAudioVisualApplianceTypeEnum(obj.value); }
@@ -6130,6 +6853,7 @@ function ParseType(obj: any): any {
 	if (obj.label === "IFCBUILDINGELEMENTPARTTYPEENUM") { return new IfcBuildingElementPartTypeEnum(obj.value); }
 	if (obj.label === "IFCBUILDINGELEMENTPROXYTYPEENUM") { return new IfcBuildingElementProxyTypeEnum(obj.value); }
 	if (obj.label === "IFCBUILDINGSYSTEMTYPEENUM") { return new IfcBuildingSystemTypeEnum(obj.value); }
+	if (obj.label === "IFCBUILTSYSTEMTYPEENUM") { return new IfcBuiltSystemTypeEnum(obj.value); }
 	if (obj.label === "IFCBURNERTYPEENUM") { return new IfcBurnerTypeEnum(obj.value); }
 	if (obj.label === "IFCCABLECARRIERFITTINGTYPEENUM") { return new IfcCableCarrierFittingTypeEnum(obj.value); }
 	if (obj.label === "IFCCABLECARRIERSEGMENTTYPEENUM") { return new IfcCableCarrierSegmentTypeEnum(obj.value); }
@@ -6151,10 +6875,12 @@ function ParseType(obj: any): any {
 	if (obj.label === "IFCCONSTRUCTIONMATERIALRESOURCETYPEENUM") { return new IfcConstructionMaterialResourceTypeEnum(obj.value); }
 	if (obj.label === "IFCCONSTRUCTIONPRODUCTRESOURCETYPEENUM") { return new IfcConstructionProductResourceTypeEnum(obj.value); }
 	if (obj.label === "IFCCONTROLLERTYPEENUM") { return new IfcControllerTypeEnum(obj.value); }
+	if (obj.label === "IFCCONVEYORSEGMENTTYPEENUM") { return new IfcConveyorSegmentTypeEnum(obj.value); }
 	if (obj.label === "IFCCOOLEDBEAMTYPEENUM") { return new IfcCooledBeamTypeEnum(obj.value); }
 	if (obj.label === "IFCCOOLINGTOWERTYPEENUM") { return new IfcCoolingTowerTypeEnum(obj.value); }
 	if (obj.label === "IFCCOSTITEMTYPEENUM") { return new IfcCostItemTypeEnum(obj.value); }
 	if (obj.label === "IFCCOSTSCHEDULETYPEENUM") { return new IfcCostScheduleTypeEnum(obj.value); }
+	if (obj.label === "IFCCOURSETYPEENUM") { return new IfcCourseTypeEnum(obj.value); }
 	if (obj.label === "IFCCOVERINGTYPEENUM") { return new IfcCoveringTypeEnum(obj.value); }
 	if (obj.label === "IFCCREWRESOURCETYPEENUM") { return new IfcCrewResourceTypeEnum(obj.value); }
 	if (obj.label === "IFCCURTAINWALLTYPEENUM") { return new IfcCurtainWallTypeEnum(obj.value); }
@@ -6164,6 +6890,7 @@ function ParseType(obj: any): any {
 	if (obj.label === "IFCDERIVEDUNITENUM") { return new IfcDerivedUnitEnum(obj.value); }
 	if (obj.label === "IFCDIRECTIONSENSEENUM") { return new IfcDirectionSenseEnum(obj.value); }
 	if (obj.label === "IFCDISCRETEACCESSORYTYPEENUM") { return new IfcDiscreteAccessoryTypeEnum(obj.value); }
+	if (obj.label === "IFCDISTRIBUTIONBOARDTYPEENUM") { return new IfcDistributionBoardTypeEnum(obj.value); }
 	if (obj.label === "IFCDISTRIBUTIONCHAMBERELEMENTTYPEENUM") { return new IfcDistributionChamberElementTypeEnum(obj.value); }
 	if (obj.label === "IFCDISTRIBUTIONPORTTYPEENUM") { return new IfcDistributionPortTypeEnum(obj.value); }
 	if (obj.label === "IFCDISTRIBUTIONSYSTEMENUM") { return new IfcDistributionSystemEnum(obj.value); }
@@ -6178,9 +6905,12 @@ function ParseType(obj: any): any {
 	if (obj.label === "IFCDUCTFITTINGTYPEENUM") { return new IfcDuctFittingTypeEnum(obj.value); }
 	if (obj.label === "IFCDUCTSEGMENTTYPEENUM") { return new IfcDuctSegmentTypeEnum(obj.value); }
 	if (obj.label === "IFCDUCTSILENCERTYPEENUM") { return new IfcDuctSilencerTypeEnum(obj.value); }
+	if (obj.label === "IFCEARTHWORKSCUTTYPEENUM") { return new IfcEarthworksCutTypeEnum(obj.value); }
+	if (obj.label === "IFCEARTHWORKSFILLTYPEENUM") { return new IfcEarthworksFillTypeEnum(obj.value); }
 	if (obj.label === "IFCELECTRICAPPLIANCETYPEENUM") { return new IfcElectricApplianceTypeEnum(obj.value); }
 	if (obj.label === "IFCELECTRICDISTRIBUTIONBOARDTYPEENUM") { return new IfcElectricDistributionBoardTypeEnum(obj.value); }
 	if (obj.label === "IFCELECTRICFLOWSTORAGEDEVICETYPEENUM") { return new IfcElectricFlowStorageDeviceTypeEnum(obj.value); }
+	if (obj.label === "IFCELECTRICFLOWTREATMENTDEVICETYPEENUM") { return new IfcElectricFlowTreatmentDeviceTypeEnum(obj.value); }
 	if (obj.label === "IFCELECTRICGENERATORTYPEENUM") { return new IfcElectricGeneratorTypeEnum(obj.value); }
 	if (obj.label === "IFCELECTRICMOTORTYPEENUM") { return new IfcElectricMotorTypeEnum(obj.value); }
 	if (obj.label === "IFCELECTRICTIMECONTROLTYPEENUM") { return new IfcElectricTimeControlTypeEnum(obj.value); }
@@ -6192,6 +6922,8 @@ function ParseType(obj: any): any {
 	if (obj.label === "IFCEVENTTRIGGERTYPEENUM") { return new IfcEventTriggerTypeEnum(obj.value); }
 	if (obj.label === "IFCEVENTTYPEENUM") { return new IfcEventTypeEnum(obj.value); }
 	if (obj.label === "IFCEXTERNALSPATIALELEMENTTYPEENUM") { return new IfcExternalSpatialElementTypeEnum(obj.value); }
+	if (obj.label === "IFCFACILITYPARTCOMMONTYPEENUM") { return new IfcFacilityPartCommonTypeEnum(obj.value); }
+	if (obj.label === "IFCFACILITYUSAGEENUM") { return new IfcFacilityUsageEnum(obj.value); }
 	if (obj.label === "IFCFANTYPEENUM") { return new IfcFanTypeEnum(obj.value); }
 	if (obj.label === "IFCFASTENERTYPEENUM") { return new IfcFastenerTypeEnum(obj.value); }
 	if (obj.label === "IFCFILTERTYPEENUM") { return new IfcFilterTypeEnum(obj.value); }
@@ -6203,10 +6935,12 @@ function ParseType(obj: any): any {
 	if (obj.label === "IFCFURNITURETYPEENUM") { return new IfcFurnitureTypeEnum(obj.value); }
 	if (obj.label === "IFCGEOGRAPHICELEMENTTYPEENUM") { return new IfcGeographicElementTypeEnum(obj.value); }
 	if (obj.label === "IFCGEOMETRICPROJECTIONENUM") { return new IfcGeometricProjectionEnum(obj.value); }
+	if (obj.label === "IFCGEOTECHNICALSTRATUMTYPEENUM") { return new IfcGeotechnicalStratumTypeEnum(obj.value); }
 	if (obj.label === "IFCGLOBALORLOCALENUM") { return new IfcGlobalOrLocalEnum(obj.value); }
 	if (obj.label === "IFCGRIDTYPEENUM") { return new IfcGridTypeEnum(obj.value); }
 	if (obj.label === "IFCHEATEXCHANGERTYPEENUM") { return new IfcHeatExchangerTypeEnum(obj.value); }
 	if (obj.label === "IFCHUMIDIFIERTYPEENUM") { return new IfcHumidifierTypeEnum(obj.value); }
+	if (obj.label === "IFCIMPACTPROTECTIONDEVICETYPEENUM") { return new IfcImpactProtectionDeviceTypeEnum(obj.value); }
 	if (obj.label === "IFCINTERCEPTORTYPEENUM") { return new IfcInterceptorTypeEnum(obj.value); }
 	if (obj.label === "IFCINTERNALOREXTERNALENUM") { return new IfcInternalOrExternalEnum(obj.value); }
 	if (obj.label === "IFCINVENTORYTYPEENUM") { return new IfcInventoryTypeEnum(obj.value); }
@@ -6218,18 +6952,24 @@ function ParseType(obj: any): any {
 	if (obj.label === "IFCLIGHTDISTRIBUTIONCURVEENUM") { return new IfcLightDistributionCurveEnum(obj.value); }
 	if (obj.label === "IFCLIGHTEMISSIONSOURCEENUM") { return new IfcLightEmissionSourceEnum(obj.value); }
 	if (obj.label === "IFCLIGHTFIXTURETYPEENUM") { return new IfcLightFixtureTypeEnum(obj.value); }
+	if (obj.label === "IFCLIQUIDTERMINALTYPEENUM") { return new IfcLiquidTerminalTypeEnum(obj.value); }
 	if (obj.label === "IFCLOADGROUPTYPEENUM") { return new IfcLoadGroupTypeEnum(obj.value); }
 	if (obj.label === "IFCLOGICALOPERATORENUM") { return new IfcLogicalOperatorEnum(obj.value); }
+	if (obj.label === "IFCMARINEFACILITYTYPEENUM") { return new IfcMarineFacilityTypeEnum(obj.value); }
+	if (obj.label === "IFCMARINEPARTTYPEENUM") { return new IfcMarinePartTypeEnum(obj.value); }
 	if (obj.label === "IFCMECHANICALFASTENERTYPEENUM") { return new IfcMechanicalFastenerTypeEnum(obj.value); }
 	if (obj.label === "IFCMEDICALDEVICETYPEENUM") { return new IfcMedicalDeviceTypeEnum(obj.value); }
 	if (obj.label === "IFCMEMBERTYPEENUM") { return new IfcMemberTypeEnum(obj.value); }
+	if (obj.label === "IFCMOBILETELECOMMUNICATIONSAPPLIANCETYPEENUM") { return new IfcMobileTelecommunicationsApplianceTypeEnum(obj.value); }
+	if (obj.label === "IFCMOORINGDEVICETYPEENUM") { return new IfcMooringDeviceTypeEnum(obj.value); }
 	if (obj.label === "IFCMOTORCONNECTIONTYPEENUM") { return new IfcMotorConnectionTypeEnum(obj.value); }
-	if (obj.label === "IFCNULLSTYLE") { return new IfcNullStyle(obj.value); }
+	if (obj.label === "IFCNAVIGATIONELEMENTTYPEENUM") { return new IfcNavigationElementTypeEnum(obj.value); }
 	if (obj.label === "IFCOBJECTTYPEENUM") { return new IfcObjectTypeEnum(obj.value); }
 	if (obj.label === "IFCOBJECTIVEENUM") { return new IfcObjectiveEnum(obj.value); }
 	if (obj.label === "IFCOCCUPANTTYPEENUM") { return new IfcOccupantTypeEnum(obj.value); }
 	if (obj.label === "IFCOPENINGELEMENTTYPEENUM") { return new IfcOpeningElementTypeEnum(obj.value); }
 	if (obj.label === "IFCOUTLETTYPEENUM") { return new IfcOutletTypeEnum(obj.value); }
+	if (obj.label === "IFCPAVEMENTTYPEENUM") { return new IfcPavementTypeEnum(obj.value); }
 	if (obj.label === "IFCPERFORMANCEHISTORYTYPEENUM") { return new IfcPerformanceHistoryTypeEnum(obj.value); }
 	if (obj.label === "IFCPERMEABLECOVERINGOPERATIONENUM") { return new IfcPermeableCoveringOperationEnum(obj.value); }
 	if (obj.label === "IFCPERMITTYPEENUM") { return new IfcPermitTypeEnum(obj.value); }
@@ -6249,16 +6989,22 @@ function ParseType(obj: any): any {
 	if (obj.label === "IFCPROTECTIVEDEVICETRIPPINGUNITTYPEENUM") { return new IfcProtectiveDeviceTrippingUnitTypeEnum(obj.value); }
 	if (obj.label === "IFCPROTECTIVEDEVICETYPEENUM") { return new IfcProtectiveDeviceTypeEnum(obj.value); }
 	if (obj.label === "IFCPUMPTYPEENUM") { return new IfcPumpTypeEnum(obj.value); }
+	if (obj.label === "IFCRAILTYPEENUM") { return new IfcRailTypeEnum(obj.value); }
 	if (obj.label === "IFCRAILINGTYPEENUM") { return new IfcRailingTypeEnum(obj.value); }
+	if (obj.label === "IFCRAILWAYPARTTYPEENUM") { return new IfcRailwayPartTypeEnum(obj.value); }
+	if (obj.label === "IFCRAILWAYTYPEENUM") { return new IfcRailwayTypeEnum(obj.value); }
 	if (obj.label === "IFCRAMPFLIGHTTYPEENUM") { return new IfcRampFlightTypeEnum(obj.value); }
 	if (obj.label === "IFCRAMPTYPEENUM") { return new IfcRampTypeEnum(obj.value); }
 	if (obj.label === "IFCRECURRENCETYPEENUM") { return new IfcRecurrenceTypeEnum(obj.value); }
 	if (obj.label === "IFCREFERENTTYPEENUM") { return new IfcReferentTypeEnum(obj.value); }
 	if (obj.label === "IFCREFLECTANCEMETHODENUM") { return new IfcReflectanceMethodEnum(obj.value); }
+	if (obj.label === "IFCREINFORCEDSOILTYPEENUM") { return new IfcReinforcedSoilTypeEnum(obj.value); }
 	if (obj.label === "IFCREINFORCINGBARROLEENUM") { return new IfcReinforcingBarRoleEnum(obj.value); }
 	if (obj.label === "IFCREINFORCINGBARSURFACEENUM") { return new IfcReinforcingBarSurfaceEnum(obj.value); }
 	if (obj.label === "IFCREINFORCINGBARTYPEENUM") { return new IfcReinforcingBarTypeEnum(obj.value); }
 	if (obj.label === "IFCREINFORCINGMESHTYPEENUM") { return new IfcReinforcingMeshTypeEnum(obj.value); }
+	if (obj.label === "IFCROADPARTTYPEENUM") { return new IfcRoadPartTypeEnum(obj.value); }
+	if (obj.label === "IFCROADTYPEENUM") { return new IfcRoadTypeEnum(obj.value); }
 	if (obj.label === "IFCROLEENUM") { return new IfcRoleEnum(obj.value); }
 	if (obj.label === "IFCROOFTYPEENUM") { return new IfcRoofTypeEnum(obj.value); }
 	if (obj.label === "IFCSIPREFIX") { return new IfcSIPrefix(obj.value); }
@@ -6268,6 +7014,8 @@ function ParseType(obj: any): any {
 	if (obj.label === "IFCSENSORTYPEENUM") { return new IfcSensorTypeEnum(obj.value); }
 	if (obj.label === "IFCSEQUENCEENUM") { return new IfcSequenceEnum(obj.value); }
 	if (obj.label === "IFCSHADINGDEVICETYPEENUM") { return new IfcShadingDeviceTypeEnum(obj.value); }
+	if (obj.label === "IFCSIGNTYPEENUM") { return new IfcSignTypeEnum(obj.value); }
+	if (obj.label === "IFCSIGNALTYPEENUM") { return new IfcSignalTypeEnum(obj.value); }
 	if (obj.label === "IFCSIMPLEPROPERTYTEMPLATETYPEENUM") { return new IfcSimplePropertyTemplateTypeEnum(obj.value); }
 	if (obj.label === "IFCSLABTYPEENUM") { return new IfcSlabTypeEnum(obj.value); }
 	if (obj.label === "IFCSOLARDEVICETYPEENUM") { return new IfcSolarDeviceTypeEnum(obj.value); }
@@ -6295,9 +7043,9 @@ function ParseType(obj: any): any {
 	if (obj.label === "IFCTENDONTYPEENUM") { return new IfcTendonTypeEnum(obj.value); }
 	if (obj.label === "IFCTEXTPATH") { return new IfcTextPath(obj.value); }
 	if (obj.label === "IFCTIMESERIESDATATYPEENUM") { return new IfcTimeSeriesDataTypeEnum(obj.value); }
+	if (obj.label === "IFCTRACKELEMENTTYPEENUM") { return new IfcTrackElementTypeEnum(obj.value); }
 	if (obj.label === "IFCTRANSFORMERTYPEENUM") { return new IfcTransformerTypeEnum(obj.value); }
 	if (obj.label === "IFCTRANSITIONCODE") { return new IfcTransitionCode(obj.value); }
-	if (obj.label === "IFCTRANSITIONCURVETYPE") { return new IfcTransitionCurveType(obj.value); }
 	if (obj.label === "IFCTRANSPORTELEMENTTYPEENUM") { return new IfcTransportElementTypeEnum(obj.value); }
 	if (obj.label === "IFCTRIMMINGPREFERENCE") { return new IfcTrimmingPreference(obj.value); }
 	if (obj.label === "IFCTUBEBUNDLETYPEENUM") { return new IfcTubeBundleTypeEnum(obj.value); }
@@ -6305,8 +7053,10 @@ function ParseType(obj: any): any {
 	if (obj.label === "IFCUNITARYCONTROLELEMENTTYPEENUM") { return new IfcUnitaryControlElementTypeEnum(obj.value); }
 	if (obj.label === "IFCUNITARYEQUIPMENTTYPEENUM") { return new IfcUnitaryEquipmentTypeEnum(obj.value); }
 	if (obj.label === "IFCVALVETYPEENUM") { return new IfcValveTypeEnum(obj.value); }
+	if (obj.label === "IFCVEHICLETYPEENUM") { return new IfcVehicleTypeEnum(obj.value); }
 	if (obj.label === "IFCVIBRATIONDAMPERTYPEENUM") { return new IfcVibrationDamperTypeEnum(obj.value); }
 	if (obj.label === "IFCVIBRATIONISOLATORTYPEENUM") { return new IfcVibrationIsolatorTypeEnum(obj.value); }
+	if (obj.label === "IFCVIRTUALELEMENTTYPEENUM") { return new IfcVirtualElementTypeEnum(obj.value); }
 	if (obj.label === "IFCVOIDINGFEATURETYPEENUM") { return new IfcVoidingFeatureTypeEnum(obj.value); }
 	if (obj.label === "IFCWALLTYPEENUM") { return new IfcWallTypeEnum(obj.value); }
 	if (obj.label === "IFCWASTETERMINALTYPEENUM") { return new IfcWasteTerminalTypeEnum(obj.value); }
@@ -7133,7 +7883,7 @@ export class IfcAlarmType {
 	}
 };
 export class IfcAlignment {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Axis: (Handle<IfcCurve> | IfcCurve) , PredefinedType: IfcAlignmentTypeEnum | null)
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, PredefinedType: IfcAlignmentTypeEnum | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -7144,7 +7894,6 @@ export class IfcAlignment {
 		this.ObjectType = ObjectType;
 		this.ObjectPlacement = ObjectPlacement;
 		this.Representation = Representation;
-		this.Axis = Axis;
 		this.PredefinedType = PredefinedType;
 	}
 	expressID: number;
@@ -7156,7 +7905,6 @@ export class IfcAlignment {
 	ObjectType: IfcLabel | null;
 	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
 	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
-	Axis: (Handle<IfcCurve> | IfcCurve) ;
 	PredefinedType: IfcAlignmentTypeEnum | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignment
 	{
@@ -7168,9 +7916,8 @@ export class IfcAlignment {
 		let ObjectType = tape[ptr++];
 		let ObjectPlacement = tape[ptr++];
 		let Representation = tape[ptr++];
-		let Axis = tape[ptr++];
 		let PredefinedType = tape[ptr++];
-		return new IfcAlignment(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Axis, PredefinedType);
+		return new IfcAlignment(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, PredefinedType);
 	}
 	ToTape(): any[]
 	{
@@ -7182,363 +7929,117 @@ export class IfcAlignment {
 		args.push(this.ObjectType);;
 		args.push(this.ObjectPlacement);;
 		args.push(this.Representation);;
-		args.push(this.Axis);;
 		args.push(this.PredefinedType);;
 		return args;
 	}
 };
-export class IfcAlignment2DHorizontal {
-	constructor(expressID: number, type: number, StartDistAlong: IfcLengthMeasure | null, Segments: (Handle<IfcAlignment2DHorizontalSegment> | IfcAlignment2DHorizontalSegment)[] )
+export class IfcAlignmentCant {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, RailHeadDistance: IfcPositiveLengthMeasure )
 	{
 		this.expressID = expressID;
 		this.type = type;
-		this.StartDistAlong = StartDistAlong;
-		this.Segments = Segments;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.RailHeadDistance = RailHeadDistance;
 	}
 	expressID: number;
 	type: number;
-	StartDistAlong: IfcLengthMeasure | null;
-	Segments: (Handle<IfcAlignment2DHorizontalSegment> | IfcAlignment2DHorizontalSegment)[] ;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignment2DHorizontal
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	RailHeadDistance: IfcPositiveLengthMeasure ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignmentCant
 	{
 		let ptr = 0;
-		let StartDistAlong = tape[ptr++];
-		let Segments = tape[ptr++];
-		return new IfcAlignment2DHorizontal(expressID, type, StartDistAlong, Segments);
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let RailHeadDistance = tape[ptr++];
+		return new IfcAlignmentCant(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, RailHeadDistance);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
-		args.push(this.StartDistAlong);;
-		args.push(this.Segments);;
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.RailHeadDistance);;
 		return args;
 	}
 };
-export class IfcAlignment2DHorizontalSegment {
-	constructor(expressID: number, type: number, TangentialContinuity: IfcBoolean | null, StartTag: IfcLabel | null, EndTag: IfcLabel | null, CurveGeometry: (Handle<IfcCurveSegment2D> | IfcCurveSegment2D) )
+export class IfcAlignmentCantSegment {
+	constructor(expressID: number, type: number, StartTag: IfcLabel | null, EndTag: IfcLabel | null, StartDistAlong: IfcLengthMeasure , HorizontalLength: IfcNonNegativeLengthMeasure , StartCantLeft: IfcLengthMeasure , EndCantLeft: IfcLengthMeasure | null, StartCantRight: IfcLengthMeasure , EndCantRight: IfcLengthMeasure | null, PredefinedType: IfcAlignmentCantSegmentTypeEnum )
 	{
 		this.expressID = expressID;
 		this.type = type;
-		this.TangentialContinuity = TangentialContinuity;
-		this.StartTag = StartTag;
-		this.EndTag = EndTag;
-		this.CurveGeometry = CurveGeometry;
-	}
-	expressID: number;
-	type: number;
-	TangentialContinuity: IfcBoolean | null;
-	StartTag: IfcLabel | null;
-	EndTag: IfcLabel | null;
-	CurveGeometry: (Handle<IfcCurveSegment2D> | IfcCurveSegment2D) ;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignment2DHorizontalSegment
-	{
-		let ptr = 0;
-		let TangentialContinuity = tape[ptr++];
-		let StartTag = tape[ptr++];
-		let EndTag = tape[ptr++];
-		let CurveGeometry = tape[ptr++];
-		return new IfcAlignment2DHorizontalSegment(expressID, type, TangentialContinuity, StartTag, EndTag, CurveGeometry);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.TangentialContinuity);;
-		args.push(this.StartTag);;
-		args.push(this.EndTag);;
-		args.push(this.CurveGeometry);;
-		return args;
-	}
-};
-export class IfcAlignment2DSegment {
-	constructor(expressID: number, type: number, TangentialContinuity: IfcBoolean | null, StartTag: IfcLabel | null, EndTag: IfcLabel | null)
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.TangentialContinuity = TangentialContinuity;
-		this.StartTag = StartTag;
-		this.EndTag = EndTag;
-	}
-	expressID: number;
-	type: number;
-	TangentialContinuity: IfcBoolean | null;
-	StartTag: IfcLabel | null;
-	EndTag: IfcLabel | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignment2DSegment
-	{
-		let ptr = 0;
-		let TangentialContinuity = tape[ptr++];
-		let StartTag = tape[ptr++];
-		let EndTag = tape[ptr++];
-		return new IfcAlignment2DSegment(expressID, type, TangentialContinuity, StartTag, EndTag);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.TangentialContinuity);;
-		args.push(this.StartTag);;
-		args.push(this.EndTag);;
-		return args;
-	}
-};
-export class IfcAlignment2DVerSegCircularArc {
-	constructor(expressID: number, type: number, TangentialContinuity: IfcBoolean | null, StartTag: IfcLabel | null, EndTag: IfcLabel | null, StartDistAlong: IfcLengthMeasure , HorizontalLength: IfcPositiveLengthMeasure , StartHeight: IfcLengthMeasure , StartGradient: IfcRatioMeasure , Radius: IfcPositiveLengthMeasure , IsConvex: IfcBoolean )
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.TangentialContinuity = TangentialContinuity;
 		this.StartTag = StartTag;
 		this.EndTag = EndTag;
 		this.StartDistAlong = StartDistAlong;
 		this.HorizontalLength = HorizontalLength;
-		this.StartHeight = StartHeight;
-		this.StartGradient = StartGradient;
-		this.Radius = Radius;
-		this.IsConvex = IsConvex;
+		this.StartCantLeft = StartCantLeft;
+		this.EndCantLeft = EndCantLeft;
+		this.StartCantRight = StartCantRight;
+		this.EndCantRight = EndCantRight;
+		this.PredefinedType = PredefinedType;
 	}
 	expressID: number;
 	type: number;
-	TangentialContinuity: IfcBoolean | null;
 	StartTag: IfcLabel | null;
 	EndTag: IfcLabel | null;
 	StartDistAlong: IfcLengthMeasure ;
-	HorizontalLength: IfcPositiveLengthMeasure ;
-	StartHeight: IfcLengthMeasure ;
-	StartGradient: IfcRatioMeasure ;
-	Radius: IfcPositiveLengthMeasure ;
-	IsConvex: IfcBoolean ;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignment2DVerSegCircularArc
+	HorizontalLength: IfcNonNegativeLengthMeasure ;
+	StartCantLeft: IfcLengthMeasure ;
+	EndCantLeft: IfcLengthMeasure | null;
+	StartCantRight: IfcLengthMeasure ;
+	EndCantRight: IfcLengthMeasure | null;
+	PredefinedType: IfcAlignmentCantSegmentTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignmentCantSegment
 	{
 		let ptr = 0;
-		let TangentialContinuity = tape[ptr++];
 		let StartTag = tape[ptr++];
 		let EndTag = tape[ptr++];
 		let StartDistAlong = tape[ptr++];
 		let HorizontalLength = tape[ptr++];
-		let StartHeight = tape[ptr++];
-		let StartGradient = tape[ptr++];
-		let Radius = tape[ptr++];
-		let IsConvex = tape[ptr++];
-		return new IfcAlignment2DVerSegCircularArc(expressID, type, TangentialContinuity, StartTag, EndTag, StartDistAlong, HorizontalLength, StartHeight, StartGradient, Radius, IsConvex);
+		let StartCantLeft = tape[ptr++];
+		let EndCantLeft = tape[ptr++];
+		let StartCantRight = tape[ptr++];
+		let EndCantRight = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcAlignmentCantSegment(expressID, type, StartTag, EndTag, StartDistAlong, HorizontalLength, StartCantLeft, EndCantLeft, StartCantRight, EndCantRight, PredefinedType);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
-		args.push(this.TangentialContinuity);;
 		args.push(this.StartTag);;
 		args.push(this.EndTag);;
 		args.push(this.StartDistAlong);;
 		args.push(this.HorizontalLength);;
-		args.push(this.StartHeight);;
-		args.push(this.StartGradient);;
-		args.push(this.Radius);;
-		args.push(this.IsConvex);;
+		args.push(this.StartCantLeft);;
+		args.push(this.EndCantLeft);;
+		args.push(this.StartCantRight);;
+		args.push(this.EndCantRight);;
+		args.push(this.PredefinedType);;
 		return args;
 	}
 };
-export class IfcAlignment2DVerSegLine {
-	constructor(expressID: number, type: number, TangentialContinuity: IfcBoolean | null, StartTag: IfcLabel | null, EndTag: IfcLabel | null, StartDistAlong: IfcLengthMeasure , HorizontalLength: IfcPositiveLengthMeasure , StartHeight: IfcLengthMeasure , StartGradient: IfcRatioMeasure )
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.TangentialContinuity = TangentialContinuity;
-		this.StartTag = StartTag;
-		this.EndTag = EndTag;
-		this.StartDistAlong = StartDistAlong;
-		this.HorizontalLength = HorizontalLength;
-		this.StartHeight = StartHeight;
-		this.StartGradient = StartGradient;
-	}
-	expressID: number;
-	type: number;
-	TangentialContinuity: IfcBoolean | null;
-	StartTag: IfcLabel | null;
-	EndTag: IfcLabel | null;
-	StartDistAlong: IfcLengthMeasure ;
-	HorizontalLength: IfcPositiveLengthMeasure ;
-	StartHeight: IfcLengthMeasure ;
-	StartGradient: IfcRatioMeasure ;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignment2DVerSegLine
-	{
-		let ptr = 0;
-		let TangentialContinuity = tape[ptr++];
-		let StartTag = tape[ptr++];
-		let EndTag = tape[ptr++];
-		let StartDistAlong = tape[ptr++];
-		let HorizontalLength = tape[ptr++];
-		let StartHeight = tape[ptr++];
-		let StartGradient = tape[ptr++];
-		return new IfcAlignment2DVerSegLine(expressID, type, TangentialContinuity, StartTag, EndTag, StartDistAlong, HorizontalLength, StartHeight, StartGradient);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.TangentialContinuity);;
-		args.push(this.StartTag);;
-		args.push(this.EndTag);;
-		args.push(this.StartDistAlong);;
-		args.push(this.HorizontalLength);;
-		args.push(this.StartHeight);;
-		args.push(this.StartGradient);;
-		return args;
-	}
-};
-export class IfcAlignment2DVerSegParabolicArc {
-	constructor(expressID: number, type: number, TangentialContinuity: IfcBoolean | null, StartTag: IfcLabel | null, EndTag: IfcLabel | null, StartDistAlong: IfcLengthMeasure , HorizontalLength: IfcPositiveLengthMeasure , StartHeight: IfcLengthMeasure , StartGradient: IfcRatioMeasure , ParabolaConstant: IfcPositiveLengthMeasure , IsConvex: IfcBoolean )
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.TangentialContinuity = TangentialContinuity;
-		this.StartTag = StartTag;
-		this.EndTag = EndTag;
-		this.StartDistAlong = StartDistAlong;
-		this.HorizontalLength = HorizontalLength;
-		this.StartHeight = StartHeight;
-		this.StartGradient = StartGradient;
-		this.ParabolaConstant = ParabolaConstant;
-		this.IsConvex = IsConvex;
-	}
-	expressID: number;
-	type: number;
-	TangentialContinuity: IfcBoolean | null;
-	StartTag: IfcLabel | null;
-	EndTag: IfcLabel | null;
-	StartDistAlong: IfcLengthMeasure ;
-	HorizontalLength: IfcPositiveLengthMeasure ;
-	StartHeight: IfcLengthMeasure ;
-	StartGradient: IfcRatioMeasure ;
-	ParabolaConstant: IfcPositiveLengthMeasure ;
-	IsConvex: IfcBoolean ;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignment2DVerSegParabolicArc
-	{
-		let ptr = 0;
-		let TangentialContinuity = tape[ptr++];
-		let StartTag = tape[ptr++];
-		let EndTag = tape[ptr++];
-		let StartDistAlong = tape[ptr++];
-		let HorizontalLength = tape[ptr++];
-		let StartHeight = tape[ptr++];
-		let StartGradient = tape[ptr++];
-		let ParabolaConstant = tape[ptr++];
-		let IsConvex = tape[ptr++];
-		return new IfcAlignment2DVerSegParabolicArc(expressID, type, TangentialContinuity, StartTag, EndTag, StartDistAlong, HorizontalLength, StartHeight, StartGradient, ParabolaConstant, IsConvex);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.TangentialContinuity);;
-		args.push(this.StartTag);;
-		args.push(this.EndTag);;
-		args.push(this.StartDistAlong);;
-		args.push(this.HorizontalLength);;
-		args.push(this.StartHeight);;
-		args.push(this.StartGradient);;
-		args.push(this.ParabolaConstant);;
-		args.push(this.IsConvex);;
-		return args;
-	}
-};
-export class IfcAlignment2DVertical {
-	constructor(expressID: number, type: number, Segments: (Handle<IfcAlignment2DVerticalSegment> | IfcAlignment2DVerticalSegment)[] )
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.Segments = Segments;
-	}
-	expressID: number;
-	type: number;
-	Segments: (Handle<IfcAlignment2DVerticalSegment> | IfcAlignment2DVerticalSegment)[] ;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignment2DVertical
-	{
-		let ptr = 0;
-		let Segments = tape[ptr++];
-		return new IfcAlignment2DVertical(expressID, type, Segments);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.Segments);;
-		return args;
-	}
-};
-export class IfcAlignment2DVerticalSegment {
-	constructor(expressID: number, type: number, TangentialContinuity: IfcBoolean | null, StartTag: IfcLabel | null, EndTag: IfcLabel | null, StartDistAlong: IfcLengthMeasure , HorizontalLength: IfcPositiveLengthMeasure , StartHeight: IfcLengthMeasure , StartGradient: IfcRatioMeasure )
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.TangentialContinuity = TangentialContinuity;
-		this.StartTag = StartTag;
-		this.EndTag = EndTag;
-		this.StartDistAlong = StartDistAlong;
-		this.HorizontalLength = HorizontalLength;
-		this.StartHeight = StartHeight;
-		this.StartGradient = StartGradient;
-	}
-	expressID: number;
-	type: number;
-	TangentialContinuity: IfcBoolean | null;
-	StartTag: IfcLabel | null;
-	EndTag: IfcLabel | null;
-	StartDistAlong: IfcLengthMeasure ;
-	HorizontalLength: IfcPositiveLengthMeasure ;
-	StartHeight: IfcLengthMeasure ;
-	StartGradient: IfcRatioMeasure ;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignment2DVerticalSegment
-	{
-		let ptr = 0;
-		let TangentialContinuity = tape[ptr++];
-		let StartTag = tape[ptr++];
-		let EndTag = tape[ptr++];
-		let StartDistAlong = tape[ptr++];
-		let HorizontalLength = tape[ptr++];
-		let StartHeight = tape[ptr++];
-		let StartGradient = tape[ptr++];
-		return new IfcAlignment2DVerticalSegment(expressID, type, TangentialContinuity, StartTag, EndTag, StartDistAlong, HorizontalLength, StartHeight, StartGradient);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.TangentialContinuity);;
-		args.push(this.StartTag);;
-		args.push(this.EndTag);;
-		args.push(this.StartDistAlong);;
-		args.push(this.HorizontalLength);;
-		args.push(this.StartHeight);;
-		args.push(this.StartGradient);;
-		return args;
-	}
-};
-export class IfcAlignmentCurve {
-	constructor(expressID: number, type: number, Horizontal: (Handle<IfcAlignment2DHorizontal> | IfcAlignment2DHorizontal) , Vertical: (Handle<IfcAlignment2DVertical> | IfcAlignment2DVertical) | null, Tag: IfcLabel | null)
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.Horizontal = Horizontal;
-		this.Vertical = Vertical;
-		this.Tag = Tag;
-	}
-	expressID: number;
-	type: number;
-	Horizontal: (Handle<IfcAlignment2DHorizontal> | IfcAlignment2DHorizontal) ;
-	Vertical: (Handle<IfcAlignment2DVertical> | IfcAlignment2DVertical) | null;
-	Tag: IfcLabel | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignmentCurve
-	{
-		let ptr = 0;
-		let Horizontal = tape[ptr++];
-		let Vertical = tape[ptr++];
-		let Tag = tape[ptr++];
-		return new IfcAlignmentCurve(expressID, type, Horizontal, Vertical, Tag);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.Horizontal);;
-		args.push(this.Vertical);;
-		args.push(this.Tag);;
-		return args;
-	}
-};
-export class IfcAnnotation {
+export class IfcAlignmentHorizontal {
 	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null)
 	{
 		this.expressID = expressID;
@@ -7560,7 +8061,7 @@ export class IfcAnnotation {
 	ObjectType: IfcLabel | null;
 	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
 	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcAnnotation
+	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignmentHorizontal
 	{
 		let ptr = 0;
 		let GlobalId = tape[ptr++];
@@ -7570,7 +8071,7 @@ export class IfcAnnotation {
 		let ObjectType = tape[ptr++];
 		let ObjectPlacement = tape[ptr++];
 		let Representation = tape[ptr++];
-		return new IfcAnnotation(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation);
+		return new IfcAlignmentHorizontal(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation);
 	}
 	ToTape(): any[]
 	{
@@ -7582,6 +8083,292 @@ export class IfcAnnotation {
 		args.push(this.ObjectType);;
 		args.push(this.ObjectPlacement);;
 		args.push(this.Representation);;
+		return args;
+	}
+};
+export class IfcAlignmentHorizontalSegment {
+	constructor(expressID: number, type: number, StartTag: IfcLabel | null, EndTag: IfcLabel | null, StartPoint: (Handle<IfcCartesianPoint> | IfcCartesianPoint) , StartDirection: IfcPlaneAngleMeasure , StartRadiusOfCurvature: IfcLengthMeasure , EndRadiusOfCurvature: IfcLengthMeasure , SegmentLength: IfcNonNegativeLengthMeasure , GravityCenterLineHeight: IfcPositiveLengthMeasure | null, PredefinedType: IfcAlignmentHorizontalSegmentTypeEnum )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.StartTag = StartTag;
+		this.EndTag = EndTag;
+		this.StartPoint = StartPoint;
+		this.StartDirection = StartDirection;
+		this.StartRadiusOfCurvature = StartRadiusOfCurvature;
+		this.EndRadiusOfCurvature = EndRadiusOfCurvature;
+		this.SegmentLength = SegmentLength;
+		this.GravityCenterLineHeight = GravityCenterLineHeight;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	StartTag: IfcLabel | null;
+	EndTag: IfcLabel | null;
+	StartPoint: (Handle<IfcCartesianPoint> | IfcCartesianPoint) ;
+	StartDirection: IfcPlaneAngleMeasure ;
+	StartRadiusOfCurvature: IfcLengthMeasure ;
+	EndRadiusOfCurvature: IfcLengthMeasure ;
+	SegmentLength: IfcNonNegativeLengthMeasure ;
+	GravityCenterLineHeight: IfcPositiveLengthMeasure | null;
+	PredefinedType: IfcAlignmentHorizontalSegmentTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignmentHorizontalSegment
+	{
+		let ptr = 0;
+		let StartTag = tape[ptr++];
+		let EndTag = tape[ptr++];
+		let StartPoint = tape[ptr++];
+		let StartDirection = tape[ptr++];
+		let StartRadiusOfCurvature = tape[ptr++];
+		let EndRadiusOfCurvature = tape[ptr++];
+		let SegmentLength = tape[ptr++];
+		let GravityCenterLineHeight = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcAlignmentHorizontalSegment(expressID, type, StartTag, EndTag, StartPoint, StartDirection, StartRadiusOfCurvature, EndRadiusOfCurvature, SegmentLength, GravityCenterLineHeight, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.StartTag);;
+		args.push(this.EndTag);;
+		args.push(this.StartPoint);;
+		args.push(this.StartDirection);;
+		args.push(this.StartRadiusOfCurvature);;
+		args.push(this.EndRadiusOfCurvature);;
+		args.push(this.SegmentLength);;
+		args.push(this.GravityCenterLineHeight);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcAlignmentParameterSegment {
+	constructor(expressID: number, type: number, StartTag: IfcLabel | null, EndTag: IfcLabel | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.StartTag = StartTag;
+		this.EndTag = EndTag;
+	}
+	expressID: number;
+	type: number;
+	StartTag: IfcLabel | null;
+	EndTag: IfcLabel | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignmentParameterSegment
+	{
+		let ptr = 0;
+		let StartTag = tape[ptr++];
+		let EndTag = tape[ptr++];
+		return new IfcAlignmentParameterSegment(expressID, type, StartTag, EndTag);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.StartTag);;
+		args.push(this.EndTag);;
+		return args;
+	}
+};
+export class IfcAlignmentSegment {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, DesignParameters: (Handle<IfcAlignmentParameterSegment> | IfcAlignmentParameterSegment) )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.DesignParameters = DesignParameters;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	DesignParameters: (Handle<IfcAlignmentParameterSegment> | IfcAlignmentParameterSegment) ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignmentSegment
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let DesignParameters = tape[ptr++];
+		return new IfcAlignmentSegment(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, DesignParameters);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.DesignParameters);;
+		return args;
+	}
+};
+export class IfcAlignmentVertical {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignmentVertical
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		return new IfcAlignmentVertical(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		return args;
+	}
+};
+export class IfcAlignmentVerticalSegment {
+	constructor(expressID: number, type: number, StartTag: IfcLabel | null, EndTag: IfcLabel | null, StartDistAlong: IfcLengthMeasure , HorizontalLength: IfcNonNegativeLengthMeasure , StartHeight: IfcLengthMeasure , StartGradient: IfcRatioMeasure , EndGradient: IfcRatioMeasure , RadiusOfCurvature: IfcLengthMeasure | null, PredefinedType: IfcAlignmentVerticalSegmentTypeEnum )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.StartTag = StartTag;
+		this.EndTag = EndTag;
+		this.StartDistAlong = StartDistAlong;
+		this.HorizontalLength = HorizontalLength;
+		this.StartHeight = StartHeight;
+		this.StartGradient = StartGradient;
+		this.EndGradient = EndGradient;
+		this.RadiusOfCurvature = RadiusOfCurvature;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	StartTag: IfcLabel | null;
+	EndTag: IfcLabel | null;
+	StartDistAlong: IfcLengthMeasure ;
+	HorizontalLength: IfcNonNegativeLengthMeasure ;
+	StartHeight: IfcLengthMeasure ;
+	StartGradient: IfcRatioMeasure ;
+	EndGradient: IfcRatioMeasure ;
+	RadiusOfCurvature: IfcLengthMeasure | null;
+	PredefinedType: IfcAlignmentVerticalSegmentTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcAlignmentVerticalSegment
+	{
+		let ptr = 0;
+		let StartTag = tape[ptr++];
+		let EndTag = tape[ptr++];
+		let StartDistAlong = tape[ptr++];
+		let HorizontalLength = tape[ptr++];
+		let StartHeight = tape[ptr++];
+		let StartGradient = tape[ptr++];
+		let EndGradient = tape[ptr++];
+		let RadiusOfCurvature = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcAlignmentVerticalSegment(expressID, type, StartTag, EndTag, StartDistAlong, HorizontalLength, StartHeight, StartGradient, EndGradient, RadiusOfCurvature, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.StartTag);;
+		args.push(this.EndTag);;
+		args.push(this.StartDistAlong);;
+		args.push(this.HorizontalLength);;
+		args.push(this.StartHeight);;
+		args.push(this.StartGradient);;
+		args.push(this.EndGradient);;
+		args.push(this.RadiusOfCurvature);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcAnnotation {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, PredefinedType: IfcAnnotationTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	PredefinedType: IfcAnnotationTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcAnnotation
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcAnnotation(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.PredefinedType);;
 		return args;
 	}
 };
@@ -8162,7 +8949,7 @@ export class IfcAudioVisualApplianceType {
 	}
 };
 export class IfcAxis1Placement {
-	constructor(expressID: number, type: number, Location: (Handle<IfcCartesianPoint> | IfcCartesianPoint) , Axis: (Handle<IfcDirection> | IfcDirection) | null)
+	constructor(expressID: number, type: number, Location: (Handle<IfcPoint> | IfcPoint) , Axis: (Handle<IfcDirection> | IfcDirection) | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -8171,7 +8958,7 @@ export class IfcAxis1Placement {
 	}
 	expressID: number;
 	type: number;
-	Location: (Handle<IfcCartesianPoint> | IfcCartesianPoint) ;
+	Location: (Handle<IfcPoint> | IfcPoint) ;
 	Axis: (Handle<IfcDirection> | IfcDirection) | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcAxis1Placement
 	{
@@ -8189,7 +8976,7 @@ export class IfcAxis1Placement {
 	}
 };
 export class IfcAxis2Placement2D {
-	constructor(expressID: number, type: number, Location: (Handle<IfcCartesianPoint> | IfcCartesianPoint) , RefDirection: (Handle<IfcDirection> | IfcDirection) | null)
+	constructor(expressID: number, type: number, Location: (Handle<IfcPoint> | IfcPoint) , RefDirection: (Handle<IfcDirection> | IfcDirection) | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -8198,7 +8985,7 @@ export class IfcAxis2Placement2D {
 	}
 	expressID: number;
 	type: number;
-	Location: (Handle<IfcCartesianPoint> | IfcCartesianPoint) ;
+	Location: (Handle<IfcPoint> | IfcPoint) ;
 	RefDirection: (Handle<IfcDirection> | IfcDirection) | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcAxis2Placement2D
 	{
@@ -8216,7 +9003,7 @@ export class IfcAxis2Placement2D {
 	}
 };
 export class IfcAxis2Placement3D {
-	constructor(expressID: number, type: number, Location: (Handle<IfcCartesianPoint> | IfcCartesianPoint) , Axis: (Handle<IfcDirection> | IfcDirection) | null, RefDirection: (Handle<IfcDirection> | IfcDirection) | null)
+	constructor(expressID: number, type: number, Location: (Handle<IfcPoint> | IfcPoint) , Axis: (Handle<IfcDirection> | IfcDirection) | null, RefDirection: (Handle<IfcDirection> | IfcDirection) | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -8226,7 +9013,7 @@ export class IfcAxis2Placement3D {
 	}
 	expressID: number;
 	type: number;
-	Location: (Handle<IfcCartesianPoint> | IfcCartesianPoint) ;
+	Location: (Handle<IfcPoint> | IfcPoint) ;
 	Axis: (Handle<IfcDirection> | IfcDirection) | null;
 	RefDirection: (Handle<IfcDirection> | IfcDirection) | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcAxis2Placement3D
@@ -8236,6 +9023,37 @@ export class IfcAxis2Placement3D {
 		let Axis = tape[ptr++];
 		let RefDirection = tape[ptr++];
 		return new IfcAxis2Placement3D(expressID, type, Location, Axis, RefDirection);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.Location);;
+		args.push(this.Axis);;
+		args.push(this.RefDirection);;
+		return args;
+	}
+};
+export class IfcAxis2PlacementLinear {
+	constructor(expressID: number, type: number, Location: (Handle<IfcPoint> | IfcPoint) , Axis: (Handle<IfcDirection> | IfcDirection) | null, RefDirection: (Handle<IfcDirection> | IfcDirection) | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.Location = Location;
+		this.Axis = Axis;
+		this.RefDirection = RefDirection;
+	}
+	expressID: number;
+	type: number;
+	Location: (Handle<IfcPoint> | IfcPoint) ;
+	Axis: (Handle<IfcDirection> | IfcDirection) | null;
+	RefDirection: (Handle<IfcDirection> | IfcDirection) | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcAxis2PlacementLinear
+	{
+		let ptr = 0;
+		let Location = tape[ptr++];
+		let Axis = tape[ptr++];
+		let RefDirection = tape[ptr++];
+		return new IfcAxis2PlacementLinear(expressID, type, Location, Axis, RefDirection);
 	}
 	ToTape(): any[]
 	{
@@ -8489,61 +9307,6 @@ export class IfcBeam {
 		let Tag = tape[ptr++];
 		let PredefinedType = tape[ptr++];
 		return new IfcBeam(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.GlobalId);;
-		args.push(this.OwnerHistory);;
-		args.push(this.Name);;
-		args.push(this.Description);;
-		args.push(this.ObjectType);;
-		args.push(this.ObjectPlacement);;
-		args.push(this.Representation);;
-		args.push(this.Tag);;
-		args.push(this.PredefinedType);;
-		return args;
-	}
-};
-export class IfcBeamStandardCase {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcBeamTypeEnum | null)
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.GlobalId = GlobalId;
-		this.OwnerHistory = OwnerHistory;
-		this.Name = Name;
-		this.Description = Description;
-		this.ObjectType = ObjectType;
-		this.ObjectPlacement = ObjectPlacement;
-		this.Representation = Representation;
-		this.Tag = Tag;
-		this.PredefinedType = PredefinedType;
-	}
-	expressID: number;
-	type: number;
-	GlobalId: IfcGloballyUniqueId ;
-	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
-	Name: IfcLabel | null;
-	Description: IfcText | null;
-	ObjectType: IfcLabel | null;
-	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
-	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
-	Tag: IfcIdentifier | null;
-	PredefinedType: IfcBeamTypeEnum | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcBeamStandardCase
-	{
-		let ptr = 0;
-		let GlobalId = tape[ptr++];
-		let OwnerHistory = tape[ptr++];
-		let Name = tape[ptr++];
-		let Description = tape[ptr++];
-		let ObjectType = tape[ptr++];
-		let ObjectPlacement = tape[ptr++];
-		let Representation = tape[ptr++];
-		let Tag = tape[ptr++];
-		let PredefinedType = tape[ptr++];
-		return new IfcBeamStandardCase(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
 	}
 	ToTape(): any[]
 	{
@@ -8991,6 +9754,57 @@ export class IfcBooleanResult {
 		return args;
 	}
 };
+export class IfcBorehole {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcBorehole
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		return new IfcBorehole(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		return args;
+	}
+};
 export class IfcBoundaryCondition {
 	constructor(expressID: number, type: number, Name: IfcLabel | null)
 	{
@@ -9015,7 +9829,7 @@ export class IfcBoundaryCondition {
 	}
 };
 export class IfcBoundaryCurve {
-	constructor(expressID: number, type: number, Segments: (Handle<IfcCompositeCurveSegment> | IfcCompositeCurveSegment)[] , SelfIntersect: IfcLogical )
+	constructor(expressID: number, type: number, Segments: (Handle<IfcSegment> | IfcSegment)[] , SelfIntersect: IfcLogical )
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -9024,7 +9838,7 @@ export class IfcBoundaryCurve {
 	}
 	expressID: number;
 	type: number;
-	Segments: (Handle<IfcCompositeCurveSegment> | IfcCompositeCurveSegment)[] ;
+	Segments: (Handle<IfcSegment> | IfcSegment)[] ;
 	SelfIntersect: IfcLogical ;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcBoundaryCurve
 	{
@@ -9385,7 +10199,7 @@ export class IfcBridge {
 	}
 };
 export class IfcBridgePart {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, LongName: IfcLabel | null, CompositionType: IfcElementCompositionEnum | null, PredefinedType: IfcBridgePartTypeEnum | null)
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, LongName: IfcLabel | null, CompositionType: IfcElementCompositionEnum | null, UsageType: IfcFacilityUsageEnum , PredefinedType: IfcBridgePartTypeEnum | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -9398,6 +10212,7 @@ export class IfcBridgePart {
 		this.Representation = Representation;
 		this.LongName = LongName;
 		this.CompositionType = CompositionType;
+		this.UsageType = UsageType;
 		this.PredefinedType = PredefinedType;
 	}
 	expressID: number;
@@ -9411,6 +10226,7 @@ export class IfcBridgePart {
 	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
 	LongName: IfcLabel | null;
 	CompositionType: IfcElementCompositionEnum | null;
+	UsageType: IfcFacilityUsageEnum ;
 	PredefinedType: IfcBridgePartTypeEnum | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcBridgePart
 	{
@@ -9424,8 +10240,9 @@ export class IfcBridgePart {
 		let Representation = tape[ptr++];
 		let LongName = tape[ptr++];
 		let CompositionType = tape[ptr++];
+		let UsageType = tape[ptr++];
 		let PredefinedType = tape[ptr++];
-		return new IfcBridgePart(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, LongName, CompositionType, PredefinedType);
+		return new IfcBridgePart(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, LongName, CompositionType, UsageType, PredefinedType);
 	}
 	ToTape(): any[]
 	{
@@ -9439,6 +10256,7 @@ export class IfcBridgePart {
 		args.push(this.Representation);;
 		args.push(this.LongName);;
 		args.push(this.CompositionType);;
+		args.push(this.UsageType);;
 		args.push(this.PredefinedType);;
 		return args;
 	}
@@ -9507,57 +10325,6 @@ export class IfcBuilding {
 		args.push(this.ElevationOfRefHeight);;
 		args.push(this.ElevationOfTerrain);;
 		args.push(this.BuildingAddress);;
-		return args;
-	}
-};
-export class IfcBuildingElement {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null)
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.GlobalId = GlobalId;
-		this.OwnerHistory = OwnerHistory;
-		this.Name = Name;
-		this.Description = Description;
-		this.ObjectType = ObjectType;
-		this.ObjectPlacement = ObjectPlacement;
-		this.Representation = Representation;
-		this.Tag = Tag;
-	}
-	expressID: number;
-	type: number;
-	GlobalId: IfcGloballyUniqueId ;
-	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
-	Name: IfcLabel | null;
-	Description: IfcText | null;
-	ObjectType: IfcLabel | null;
-	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
-	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
-	Tag: IfcIdentifier | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcBuildingElement
-	{
-		let ptr = 0;
-		let GlobalId = tape[ptr++];
-		let OwnerHistory = tape[ptr++];
-		let Name = tape[ptr++];
-		let Description = tape[ptr++];
-		let ObjectType = tape[ptr++];
-		let ObjectPlacement = tape[ptr++];
-		let Representation = tape[ptr++];
-		let Tag = tape[ptr++];
-		return new IfcBuildingElement(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.GlobalId);;
-		args.push(this.OwnerHistory);;
-		args.push(this.Name);;
-		args.push(this.Description);;
-		args.push(this.ObjectType);;
-		args.push(this.ObjectPlacement);;
-		args.push(this.Representation);;
-		args.push(this.Tag);;
 		return args;
 	}
 };
@@ -9789,61 +10556,6 @@ export class IfcBuildingElementProxyType {
 		return args;
 	}
 };
-export class IfcBuildingElementType {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null)
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.GlobalId = GlobalId;
-		this.OwnerHistory = OwnerHistory;
-		this.Name = Name;
-		this.Description = Description;
-		this.ApplicableOccurrence = ApplicableOccurrence;
-		this.HasPropertySets = HasPropertySets;
-		this.RepresentationMaps = RepresentationMaps;
-		this.Tag = Tag;
-		this.ElementType = ElementType;
-	}
-	expressID: number;
-	type: number;
-	GlobalId: IfcGloballyUniqueId ;
-	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
-	Name: IfcLabel | null;
-	Description: IfcText | null;
-	ApplicableOccurrence: IfcIdentifier | null;
-	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
-	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
-	Tag: IfcLabel | null;
-	ElementType: IfcLabel | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcBuildingElementType
-	{
-		let ptr = 0;
-		let GlobalId = tape[ptr++];
-		let OwnerHistory = tape[ptr++];
-		let Name = tape[ptr++];
-		let Description = tape[ptr++];
-		let ApplicableOccurrence = tape[ptr++];
-		let HasPropertySets = tape[ptr++];
-		let RepresentationMaps = tape[ptr++];
-		let Tag = tape[ptr++];
-		let ElementType = tape[ptr++];
-		return new IfcBuildingElementType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.GlobalId);;
-		args.push(this.OwnerHistory);;
-		args.push(this.Name);;
-		args.push(this.Description);;
-		args.push(this.ApplicableOccurrence);;
-		args.push(this.HasPropertySets);;
-		args.push(this.RepresentationMaps);;
-		args.push(this.Tag);;
-		args.push(this.ElementType);;
-		return args;
-	}
-};
 export class IfcBuildingStorey {
 	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, LongName: IfcLabel | null, CompositionType: IfcElementCompositionEnum | null, Elevation: IfcLengthMeasure | null)
 	{
@@ -9936,6 +10648,159 @@ export class IfcBuildingSystem {
 		let PredefinedType = tape[ptr++];
 		let LongName = tape[ptr++];
 		return new IfcBuildingSystem(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, PredefinedType, LongName);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.PredefinedType);;
+		args.push(this.LongName);;
+		return args;
+	}
+};
+export class IfcBuiltElement {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcBuiltElement
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		return new IfcBuiltElement(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		return args;
+	}
+};
+export class IfcBuiltElementType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcBuiltElementType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		return new IfcBuiltElementType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		return args;
+	}
+};
+export class IfcBuiltSystem {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, PredefinedType: IfcBuiltSystemTypeEnum | null, LongName: IfcLabel | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.PredefinedType = PredefinedType;
+		this.LongName = LongName;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	PredefinedType: IfcBuiltSystemTypeEnum | null;
+	LongName: IfcLabel | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcBuiltSystem
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		let LongName = tape[ptr++];
+		return new IfcBuiltSystem(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, PredefinedType, LongName);
 	}
 	ToTape(): any[]
 	{
@@ -11340,45 +12205,6 @@ export class IfcCircleProfileDef {
 		return args;
 	}
 };
-export class IfcCircularArcSegment2D {
-	constructor(expressID: number, type: number, StartPoint: (Handle<IfcCartesianPoint> | IfcCartesianPoint) , StartDirection: IfcPlaneAngleMeasure , SegmentLength: IfcPositiveLengthMeasure , Radius: IfcPositiveLengthMeasure , IsCCW: IfcBoolean )
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.StartPoint = StartPoint;
-		this.StartDirection = StartDirection;
-		this.SegmentLength = SegmentLength;
-		this.Radius = Radius;
-		this.IsCCW = IsCCW;
-	}
-	expressID: number;
-	type: number;
-	StartPoint: (Handle<IfcCartesianPoint> | IfcCartesianPoint) ;
-	StartDirection: IfcPlaneAngleMeasure ;
-	SegmentLength: IfcPositiveLengthMeasure ;
-	Radius: IfcPositiveLengthMeasure ;
-	IsCCW: IfcBoolean ;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcCircularArcSegment2D
-	{
-		let ptr = 0;
-		let StartPoint = tape[ptr++];
-		let StartDirection = tape[ptr++];
-		let SegmentLength = tape[ptr++];
-		let Radius = tape[ptr++];
-		let IsCCW = tape[ptr++];
-		return new IfcCircularArcSegment2D(expressID, type, StartPoint, StartDirection, SegmentLength, Radius, IsCCW);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.StartPoint);;
-		args.push(this.StartDirection);;
-		args.push(this.SegmentLength);;
-		args.push(this.Radius);;
-		args.push(this.IsCCW);;
-		return args;
-	}
-};
 export class IfcCivilElement {
 	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null)
 	{
@@ -11486,7 +12312,7 @@ export class IfcCivilElementType {
 	}
 };
 export class IfcClassification {
-	constructor(expressID: number, type: number, Source: IfcLabel | null, Edition: IfcLabel | null, EditionDate: IfcDate | null, Name: IfcLabel , Description: IfcText | null, Location: IfcURIReference | null, ReferenceTokens: IfcIdentifier[] | null)
+	constructor(expressID: number, type: number, Source: IfcLabel | null, Edition: IfcLabel | null, EditionDate: IfcDate | null, Name: IfcLabel , Description: IfcText | null, Specification: IfcURIReference | null, ReferenceTokens: IfcIdentifier[] | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -11495,7 +12321,7 @@ export class IfcClassification {
 		this.EditionDate = EditionDate;
 		this.Name = Name;
 		this.Description = Description;
-		this.Location = Location;
+		this.Specification = Specification;
 		this.ReferenceTokens = ReferenceTokens;
 	}
 	expressID: number;
@@ -11505,7 +12331,7 @@ export class IfcClassification {
 	EditionDate: IfcDate | null;
 	Name: IfcLabel ;
 	Description: IfcText | null;
-	Location: IfcURIReference | null;
+	Specification: IfcURIReference | null;
 	ReferenceTokens: IfcIdentifier[] | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcClassification
 	{
@@ -11515,9 +12341,9 @@ export class IfcClassification {
 		let EditionDate = tape[ptr++];
 		let Name = tape[ptr++];
 		let Description = tape[ptr++];
-		let Location = tape[ptr++];
+		let Specification = tape[ptr++];
 		let ReferenceTokens = tape[ptr++];
-		return new IfcClassification(expressID, type, Source, Edition, EditionDate, Name, Description, Location, ReferenceTokens);
+		return new IfcClassification(expressID, type, Source, Edition, EditionDate, Name, Description, Specification, ReferenceTokens);
 	}
 	ToTape(): any[]
 	{
@@ -11527,7 +12353,7 @@ export class IfcClassification {
 		args.push(this.EditionDate);;
 		args.push(this.Name);;
 		args.push(this.Description);;
-		args.push(this.Location);;
+		args.push(this.Specification);;
 		args.push(this.ReferenceTokens);;
 		return args;
 	}
@@ -11595,6 +12421,33 @@ export class IfcClosedShell {
 	{
 		let args: any[] = [];
 		args.push(this.CfsFaces);;
+		return args;
+	}
+};
+export class IfcClothoid {
+	constructor(expressID: number, type: number, Position: IfcAxis2Placement | null, ClothoidConstant: IfcLengthMeasure )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.Position = Position;
+		this.ClothoidConstant = ClothoidConstant;
+	}
+	expressID: number;
+	type: number;
+	Position: IfcAxis2Placement | null;
+	ClothoidConstant: IfcLengthMeasure ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcClothoid
+	{
+		let ptr = 0;
+		let Position = tape[ptr++];
+		let ClothoidConstant = tape[ptr++];
+		return new IfcClothoid(expressID, type, Position, ClothoidConstant);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.Position);;
+		args.push(this.ClothoidConstant);;
 		return args;
 	}
 };
@@ -11848,61 +12701,6 @@ export class IfcColumn {
 		return args;
 	}
 };
-export class IfcColumnStandardCase {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcColumnTypeEnum | null)
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.GlobalId = GlobalId;
-		this.OwnerHistory = OwnerHistory;
-		this.Name = Name;
-		this.Description = Description;
-		this.ObjectType = ObjectType;
-		this.ObjectPlacement = ObjectPlacement;
-		this.Representation = Representation;
-		this.Tag = Tag;
-		this.PredefinedType = PredefinedType;
-	}
-	expressID: number;
-	type: number;
-	GlobalId: IfcGloballyUniqueId ;
-	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
-	Name: IfcLabel | null;
-	Description: IfcText | null;
-	ObjectType: IfcLabel | null;
-	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
-	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
-	Tag: IfcIdentifier | null;
-	PredefinedType: IfcColumnTypeEnum | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcColumnStandardCase
-	{
-		let ptr = 0;
-		let GlobalId = tape[ptr++];
-		let OwnerHistory = tape[ptr++];
-		let Name = tape[ptr++];
-		let Description = tape[ptr++];
-		let ObjectType = tape[ptr++];
-		let ObjectPlacement = tape[ptr++];
-		let Representation = tape[ptr++];
-		let Tag = tape[ptr++];
-		let PredefinedType = tape[ptr++];
-		return new IfcColumnStandardCase(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.GlobalId);;
-		args.push(this.OwnerHistory);;
-		args.push(this.Name);;
-		args.push(this.Description);;
-		args.push(this.ObjectType);;
-		args.push(this.ObjectPlacement);;
-		args.push(this.Representation);;
-		args.push(this.Tag);;
-		args.push(this.PredefinedType);;
-		return args;
-	}
-};
 export class IfcColumnType {
 	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcColumnTypeEnum )
 	{
@@ -12077,35 +12875,35 @@ export class IfcCommunicationsApplianceType {
 	}
 };
 export class IfcComplexProperty {
-	constructor(expressID: number, type: number, Name: IfcIdentifier , Description: IfcText | null, UsageName: IfcIdentifier , HasProperties: (Handle<IfcProperty> | IfcProperty)[] )
+	constructor(expressID: number, type: number, Name: IfcIdentifier , Specification: IfcText | null, UsageName: IfcIdentifier , HasProperties: (Handle<IfcProperty> | IfcProperty)[] )
 	{
 		this.expressID = expressID;
 		this.type = type;
 		this.Name = Name;
-		this.Description = Description;
+		this.Specification = Specification;
 		this.UsageName = UsageName;
 		this.HasProperties = HasProperties;
 	}
 	expressID: number;
 	type: number;
 	Name: IfcIdentifier ;
-	Description: IfcText | null;
+	Specification: IfcText | null;
 	UsageName: IfcIdentifier ;
 	HasProperties: (Handle<IfcProperty> | IfcProperty)[] ;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcComplexProperty
 	{
 		let ptr = 0;
 		let Name = tape[ptr++];
-		let Description = tape[ptr++];
+		let Specification = tape[ptr++];
 		let UsageName = tape[ptr++];
 		let HasProperties = tape[ptr++];
-		return new IfcComplexProperty(expressID, type, Name, Description, UsageName, HasProperties);
+		return new IfcComplexProperty(expressID, type, Name, Specification, UsageName, HasProperties);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
 		args.push(this.Name);;
-		args.push(this.Description);;
+		args.push(this.Specification);;
 		args.push(this.UsageName);;
 		args.push(this.HasProperties);;
 		return args;
@@ -12159,7 +12957,7 @@ export class IfcComplexPropertyTemplate {
 	}
 };
 export class IfcCompositeCurve {
-	constructor(expressID: number, type: number, Segments: (Handle<IfcCompositeCurveSegment> | IfcCompositeCurveSegment)[] , SelfIntersect: IfcLogical )
+	constructor(expressID: number, type: number, Segments: (Handle<IfcSegment> | IfcSegment)[] , SelfIntersect: IfcLogical )
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -12168,7 +12966,7 @@ export class IfcCompositeCurve {
 	}
 	expressID: number;
 	type: number;
-	Segments: (Handle<IfcCompositeCurveSegment> | IfcCompositeCurveSegment)[] ;
+	Segments: (Handle<IfcSegment> | IfcSegment)[] ;
 	SelfIntersect: IfcLogical ;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcCompositeCurve
 	{
@@ -12186,7 +12984,7 @@ export class IfcCompositeCurve {
 	}
 };
 export class IfcCompositeCurveOnSurface {
-	constructor(expressID: number, type: number, Segments: (Handle<IfcCompositeCurveSegment> | IfcCompositeCurveSegment)[] , SelfIntersect: IfcLogical )
+	constructor(expressID: number, type: number, Segments: (Handle<IfcSegment> | IfcSegment)[] , SelfIntersect: IfcLogical )
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -12195,7 +12993,7 @@ export class IfcCompositeCurveOnSurface {
 	}
 	expressID: number;
 	type: number;
-	Segments: (Handle<IfcCompositeCurveSegment> | IfcCompositeCurveSegment)[] ;
+	Segments: (Handle<IfcSegment> | IfcSegment)[] ;
 	SelfIntersect: IfcLogical ;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcCompositeCurveOnSurface
 	{
@@ -13594,6 +14392,120 @@ export class IfcConversionBasedUnitWithOffset {
 		return args;
 	}
 };
+export class IfcConveyorSegment {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcConveyorSegmentTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcConveyorSegmentTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcConveyorSegment
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcConveyorSegment(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcConveyorSegmentType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcConveyorSegmentTypeEnum )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	PredefinedType: IfcConveyorSegmentTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcConveyorSegmentType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcConveyorSegmentType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
 export class IfcCooledBeam {
 	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcCooledBeamTypeEnum | null)
 	{
@@ -13884,6 +14796,37 @@ export class IfcCoordinateReferenceSystem {
 		return args;
 	}
 };
+export class IfcCosineSpiral {
+	constructor(expressID: number, type: number, Position: IfcAxis2Placement | null, CosineTerm: IfcLengthMeasure , ConstantTerm: IfcLengthMeasure | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.Position = Position;
+		this.CosineTerm = CosineTerm;
+		this.ConstantTerm = ConstantTerm;
+	}
+	expressID: number;
+	type: number;
+	Position: IfcAxis2Placement | null;
+	CosineTerm: IfcLengthMeasure ;
+	ConstantTerm: IfcLengthMeasure | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcCosineSpiral
+	{
+		let ptr = 0;
+		let Position = tape[ptr++];
+		let CosineTerm = tape[ptr++];
+		let ConstantTerm = tape[ptr++];
+		return new IfcCosineSpiral(expressID, type, Position, CosineTerm, ConstantTerm);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.Position);;
+		args.push(this.CosineTerm);;
+		args.push(this.ConstantTerm);;
+		return args;
+	}
+};
 export class IfcCostItem {
 	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, Identification: IfcIdentifier | null, PredefinedType: IfcCostItemTypeEnum | null, CostValues: (Handle<IfcCostValue> | IfcCostValue)[] | null, CostQuantities: (Handle<IfcPhysicalQuantity> | IfcPhysicalQuantity)[] | null)
 	{
@@ -14054,6 +14997,120 @@ export class IfcCostValue {
 		args.push(this.Condition);;
 		args.push(this.ArithmeticOperator);;
 		args.push(this.Components);;
+		return args;
+	}
+};
+export class IfcCourse {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcCourseTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcCourseTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcCourse
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcCourse(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcCourseType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcCourseTypeEnum )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	PredefinedType: IfcCourseTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcCourseType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcCourseType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		args.push(this.PredefinedType);;
 		return args;
 	}
 };
@@ -14589,34 +15646,42 @@ export class IfcCurveBoundedSurface {
 		return args;
 	}
 };
-export class IfcCurveSegment2D {
-	constructor(expressID: number, type: number, StartPoint: (Handle<IfcCartesianPoint> | IfcCartesianPoint) , StartDirection: IfcPlaneAngleMeasure , SegmentLength: IfcPositiveLengthMeasure )
+export class IfcCurveSegment {
+	constructor(expressID: number, type: number, Transition: IfcTransitionCode , Placement: (Handle<IfcPlacement> | IfcPlacement) , SegmentStart: IfcCurveMeasureSelect , SegmentLength: IfcCurveMeasureSelect , ParentCurve: (Handle<IfcCurve> | IfcCurve) )
 	{
 		this.expressID = expressID;
 		this.type = type;
-		this.StartPoint = StartPoint;
-		this.StartDirection = StartDirection;
+		this.Transition = Transition;
+		this.Placement = Placement;
+		this.SegmentStart = SegmentStart;
 		this.SegmentLength = SegmentLength;
+		this.ParentCurve = ParentCurve;
 	}
 	expressID: number;
 	type: number;
-	StartPoint: (Handle<IfcCartesianPoint> | IfcCartesianPoint) ;
-	StartDirection: IfcPlaneAngleMeasure ;
-	SegmentLength: IfcPositiveLengthMeasure ;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcCurveSegment2D
+	Transition: IfcTransitionCode ;
+	Placement: (Handle<IfcPlacement> | IfcPlacement) ;
+	SegmentStart: IfcCurveMeasureSelect ;
+	SegmentLength: IfcCurveMeasureSelect ;
+	ParentCurve: (Handle<IfcCurve> | IfcCurve) ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcCurveSegment
 	{
 		let ptr = 0;
-		let StartPoint = tape[ptr++];
-		let StartDirection = tape[ptr++];
+		let Transition = tape[ptr++];
+		let Placement = tape[ptr++];
+		let SegmentStart = tape[ptr++];
 		let SegmentLength = tape[ptr++];
-		return new IfcCurveSegment2D(expressID, type, StartPoint, StartDirection, SegmentLength);
+		let ParentCurve = tape[ptr++];
+		return new IfcCurveSegment(expressID, type, Transition, Placement, SegmentStart, SegmentLength, ParentCurve);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
-		args.push(this.StartPoint);;
-		args.push(this.StartDirection);;
+		args.push(this.Transition);;
+		args.push(this.Placement);;
+		args.push(this.SegmentStart);;
 		args.push(this.SegmentLength);;
+		args.push(this.ParentCurve);;
 		return args;
 	}
 };
@@ -14687,32 +15752,32 @@ export class IfcCurveStyleFont {
 	}
 };
 export class IfcCurveStyleFontAndScaling {
-	constructor(expressID: number, type: number, Name: IfcLabel | null, CurveFont: IfcCurveStyleFontSelect , CurveFontScaling: IfcPositiveRatioMeasure )
+	constructor(expressID: number, type: number, Name: IfcLabel | null, CurveStyleFont: IfcCurveStyleFontSelect , CurveFontScaling: IfcPositiveRatioMeasure )
 	{
 		this.expressID = expressID;
 		this.type = type;
 		this.Name = Name;
-		this.CurveFont = CurveFont;
+		this.CurveStyleFont = CurveStyleFont;
 		this.CurveFontScaling = CurveFontScaling;
 	}
 	expressID: number;
 	type: number;
 	Name: IfcLabel | null;
-	CurveFont: IfcCurveStyleFontSelect ;
+	CurveStyleFont: IfcCurveStyleFontSelect ;
 	CurveFontScaling: IfcPositiveRatioMeasure ;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcCurveStyleFontAndScaling
 	{
 		let ptr = 0;
 		let Name = tape[ptr++];
-		let CurveFont = tape[ptr++];
+		let CurveStyleFont = tape[ptr++];
 		let CurveFontScaling = tape[ptr++];
-		return new IfcCurveStyleFontAndScaling(expressID, type, Name, CurveFont, CurveFontScaling);
+		return new IfcCurveStyleFontAndScaling(expressID, type, Name, CurveStyleFont, CurveFontScaling);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
 		args.push(this.Name);;
-		args.push(this.CurveFont);;
+		args.push(this.CurveStyleFont);;
 		args.push(this.CurveFontScaling);;
 		return args;
 	}
@@ -15031,26 +16096,29 @@ export class IfcDerivedProfileDef {
 	}
 };
 export class IfcDerivedUnit {
-	constructor(expressID: number, type: number, Elements: (Handle<IfcDerivedUnitElement> | IfcDerivedUnitElement)[] , UnitType: IfcDerivedUnitEnum , UserDefinedType: IfcLabel | null)
+	constructor(expressID: number, type: number, Elements: (Handle<IfcDerivedUnitElement> | IfcDerivedUnitElement)[] , UnitType: IfcDerivedUnitEnum , UserDefinedType: IfcLabel | null, Name: IfcLabel | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
 		this.Elements = Elements;
 		this.UnitType = UnitType;
 		this.UserDefinedType = UserDefinedType;
+		this.Name = Name;
 	}
 	expressID: number;
 	type: number;
 	Elements: (Handle<IfcDerivedUnitElement> | IfcDerivedUnitElement)[] ;
 	UnitType: IfcDerivedUnitEnum ;
 	UserDefinedType: IfcLabel | null;
+	Name: IfcLabel | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcDerivedUnit
 	{
 		let ptr = 0;
 		let Elements = tape[ptr++];
 		let UnitType = tape[ptr++];
 		let UserDefinedType = tape[ptr++];
-		return new IfcDerivedUnit(expressID, type, Elements, UnitType, UserDefinedType);
+		let Name = tape[ptr++];
+		return new IfcDerivedUnit(expressID, type, Elements, UnitType, UserDefinedType, Name);
 	}
 	ToTape(): any[]
 	{
@@ -15058,6 +16126,7 @@ export class IfcDerivedUnit {
 		args.push(this.Elements);;
 		args.push(this.UnitType);;
 		args.push(this.UserDefinedType);;
+		args.push(this.Name);;
 		return args;
 	}
 };
@@ -15155,6 +16224,88 @@ export class IfcDirection {
 	{
 		let args: any[] = [];
 		args.push(this.DirectionRatios);;
+		return args;
+	}
+};
+export class IfcDirectrixCurveSweptAreaSolid {
+	constructor(expressID: number, type: number, SweptArea: (Handle<IfcProfileDef> | IfcProfileDef) , Position: (Handle<IfcAxis2Placement3D> | IfcAxis2Placement3D) | null, Directrix: (Handle<IfcCurve> | IfcCurve) , StartParam: IfcCurveMeasureSelect | null, EndParam: IfcCurveMeasureSelect | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.SweptArea = SweptArea;
+		this.Position = Position;
+		this.Directrix = Directrix;
+		this.StartParam = StartParam;
+		this.EndParam = EndParam;
+	}
+	expressID: number;
+	type: number;
+	SweptArea: (Handle<IfcProfileDef> | IfcProfileDef) ;
+	Position: (Handle<IfcAxis2Placement3D> | IfcAxis2Placement3D) | null;
+	Directrix: (Handle<IfcCurve> | IfcCurve) ;
+	StartParam: IfcCurveMeasureSelect | null;
+	EndParam: IfcCurveMeasureSelect | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcDirectrixCurveSweptAreaSolid
+	{
+		let ptr = 0;
+		let SweptArea = tape[ptr++];
+		let Position = tape[ptr++];
+		let Directrix = tape[ptr++];
+		let StartParam = tape[ptr++];
+		let EndParam = tape[ptr++];
+		return new IfcDirectrixCurveSweptAreaSolid(expressID, type, SweptArea, Position, Directrix, StartParam, EndParam);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.SweptArea);;
+		args.push(this.Position);;
+		args.push(this.Directrix);;
+		args.push(this.StartParam);;
+		args.push(this.EndParam);;
+		return args;
+	}
+};
+export class IfcDirectrixDerivedReferenceSweptAreaSolid {
+	constructor(expressID: number, type: number, SweptArea: (Handle<IfcProfileDef> | IfcProfileDef) , Position: (Handle<IfcAxis2Placement3D> | IfcAxis2Placement3D) | null, Directrix: (Handle<IfcCurve> | IfcCurve) , StartParam: IfcCurveMeasureSelect | null, EndParam: IfcCurveMeasureSelect | null, FixedReference: (Handle<IfcDirection> | IfcDirection) )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.SweptArea = SweptArea;
+		this.Position = Position;
+		this.Directrix = Directrix;
+		this.StartParam = StartParam;
+		this.EndParam = EndParam;
+		this.FixedReference = FixedReference;
+	}
+	expressID: number;
+	type: number;
+	SweptArea: (Handle<IfcProfileDef> | IfcProfileDef) ;
+	Position: (Handle<IfcAxis2Placement3D> | IfcAxis2Placement3D) | null;
+	Directrix: (Handle<IfcCurve> | IfcCurve) ;
+	StartParam: IfcCurveMeasureSelect | null;
+	EndParam: IfcCurveMeasureSelect | null;
+	FixedReference: (Handle<IfcDirection> | IfcDirection) ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcDirectrixDerivedReferenceSweptAreaSolid
+	{
+		let ptr = 0;
+		let SweptArea = tape[ptr++];
+		let Position = tape[ptr++];
+		let Directrix = tape[ptr++];
+		let StartParam = tape[ptr++];
+		let EndParam = tape[ptr++];
+		let FixedReference = tape[ptr++];
+		return new IfcDirectrixDerivedReferenceSweptAreaSolid(expressID, type, SweptArea, Position, Directrix, StartParam, EndParam, FixedReference);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.SweptArea);;
+		args.push(this.Position);;
+		args.push(this.Directrix);;
+		args.push(this.StartParam);;
+		args.push(this.EndParam);;
+		args.push(this.FixedReference);;
 		return args;
 	}
 };
@@ -15272,42 +16423,117 @@ export class IfcDiscreteAccessoryType {
 		return args;
 	}
 };
-export class IfcDistanceExpression {
-	constructor(expressID: number, type: number, DistanceAlong: IfcLengthMeasure , OffsetLateral: IfcLengthMeasure | null, OffsetVertical: IfcLengthMeasure | null, OffsetLongitudinal: IfcLengthMeasure | null, AlongHorizontal: IfcBoolean | null)
+export class IfcDistributionBoard {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcDistributionBoardTypeEnum | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
-		this.DistanceAlong = DistanceAlong;
-		this.OffsetLateral = OffsetLateral;
-		this.OffsetVertical = OffsetVertical;
-		this.OffsetLongitudinal = OffsetLongitudinal;
-		this.AlongHorizontal = AlongHorizontal;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
 	}
 	expressID: number;
 	type: number;
-	DistanceAlong: IfcLengthMeasure ;
-	OffsetLateral: IfcLengthMeasure | null;
-	OffsetVertical: IfcLengthMeasure | null;
-	OffsetLongitudinal: IfcLengthMeasure | null;
-	AlongHorizontal: IfcBoolean | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcDistanceExpression
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcDistributionBoardTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcDistributionBoard
 	{
 		let ptr = 0;
-		let DistanceAlong = tape[ptr++];
-		let OffsetLateral = tape[ptr++];
-		let OffsetVertical = tape[ptr++];
-		let OffsetLongitudinal = tape[ptr++];
-		let AlongHorizontal = tape[ptr++];
-		return new IfcDistanceExpression(expressID, type, DistanceAlong, OffsetLateral, OffsetVertical, OffsetLongitudinal, AlongHorizontal);
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcDistributionBoard(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
-		args.push(this.DistanceAlong);;
-		args.push(this.OffsetLateral);;
-		args.push(this.OffsetVertical);;
-		args.push(this.OffsetLongitudinal);;
-		args.push(this.AlongHorizontal);;
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcDistributionBoardType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcDistributionBoardTypeEnum )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	PredefinedType: IfcDistributionBoardTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcDistributionBoardType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcDistributionBoardType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		args.push(this.PredefinedType);;
 		return args;
 	}
 };
@@ -16274,144 +17500,6 @@ export class IfcDoorPanelProperties {
 		return args;
 	}
 };
-export class IfcDoorStandardCase {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, OverallHeight: IfcPositiveLengthMeasure | null, OverallWidth: IfcPositiveLengthMeasure | null, PredefinedType: IfcDoorTypeEnum | null, OperationType: IfcDoorTypeOperationEnum | null, UserDefinedOperationType: IfcLabel | null)
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.GlobalId = GlobalId;
-		this.OwnerHistory = OwnerHistory;
-		this.Name = Name;
-		this.Description = Description;
-		this.ObjectType = ObjectType;
-		this.ObjectPlacement = ObjectPlacement;
-		this.Representation = Representation;
-		this.Tag = Tag;
-		this.OverallHeight = OverallHeight;
-		this.OverallWidth = OverallWidth;
-		this.PredefinedType = PredefinedType;
-		this.OperationType = OperationType;
-		this.UserDefinedOperationType = UserDefinedOperationType;
-	}
-	expressID: number;
-	type: number;
-	GlobalId: IfcGloballyUniqueId ;
-	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
-	Name: IfcLabel | null;
-	Description: IfcText | null;
-	ObjectType: IfcLabel | null;
-	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
-	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
-	Tag: IfcIdentifier | null;
-	OverallHeight: IfcPositiveLengthMeasure | null;
-	OverallWidth: IfcPositiveLengthMeasure | null;
-	PredefinedType: IfcDoorTypeEnum | null;
-	OperationType: IfcDoorTypeOperationEnum | null;
-	UserDefinedOperationType: IfcLabel | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcDoorStandardCase
-	{
-		let ptr = 0;
-		let GlobalId = tape[ptr++];
-		let OwnerHistory = tape[ptr++];
-		let Name = tape[ptr++];
-		let Description = tape[ptr++];
-		let ObjectType = tape[ptr++];
-		let ObjectPlacement = tape[ptr++];
-		let Representation = tape[ptr++];
-		let Tag = tape[ptr++];
-		let OverallHeight = tape[ptr++];
-		let OverallWidth = tape[ptr++];
-		let PredefinedType = tape[ptr++];
-		let OperationType = tape[ptr++];
-		let UserDefinedOperationType = tape[ptr++];
-		return new IfcDoorStandardCase(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, OverallHeight, OverallWidth, PredefinedType, OperationType, UserDefinedOperationType);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.GlobalId);;
-		args.push(this.OwnerHistory);;
-		args.push(this.Name);;
-		args.push(this.Description);;
-		args.push(this.ObjectType);;
-		args.push(this.ObjectPlacement);;
-		args.push(this.Representation);;
-		args.push(this.Tag);;
-		args.push(this.OverallHeight);;
-		args.push(this.OverallWidth);;
-		args.push(this.PredefinedType);;
-		args.push(this.OperationType);;
-		args.push(this.UserDefinedOperationType);;
-		return args;
-	}
-};
-export class IfcDoorStyle {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, OperationType: IfcDoorStyleOperationEnum , ConstructionType: IfcDoorStyleConstructionEnum , ParameterTakesPrecedence: IfcBoolean , Sizeable: IfcBoolean )
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.GlobalId = GlobalId;
-		this.OwnerHistory = OwnerHistory;
-		this.Name = Name;
-		this.Description = Description;
-		this.ApplicableOccurrence = ApplicableOccurrence;
-		this.HasPropertySets = HasPropertySets;
-		this.RepresentationMaps = RepresentationMaps;
-		this.Tag = Tag;
-		this.OperationType = OperationType;
-		this.ConstructionType = ConstructionType;
-		this.ParameterTakesPrecedence = ParameterTakesPrecedence;
-		this.Sizeable = Sizeable;
-	}
-	expressID: number;
-	type: number;
-	GlobalId: IfcGloballyUniqueId ;
-	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
-	Name: IfcLabel | null;
-	Description: IfcText | null;
-	ApplicableOccurrence: IfcIdentifier | null;
-	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
-	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
-	Tag: IfcLabel | null;
-	OperationType: IfcDoorStyleOperationEnum ;
-	ConstructionType: IfcDoorStyleConstructionEnum ;
-	ParameterTakesPrecedence: IfcBoolean ;
-	Sizeable: IfcBoolean ;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcDoorStyle
-	{
-		let ptr = 0;
-		let GlobalId = tape[ptr++];
-		let OwnerHistory = tape[ptr++];
-		let Name = tape[ptr++];
-		let Description = tape[ptr++];
-		let ApplicableOccurrence = tape[ptr++];
-		let HasPropertySets = tape[ptr++];
-		let RepresentationMaps = tape[ptr++];
-		let Tag = tape[ptr++];
-		let OperationType = tape[ptr++];
-		let ConstructionType = tape[ptr++];
-		let ParameterTakesPrecedence = tape[ptr++];
-		let Sizeable = tape[ptr++];
-		return new IfcDoorStyle(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, OperationType, ConstructionType, ParameterTakesPrecedence, Sizeable);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.GlobalId);;
-		args.push(this.OwnerHistory);;
-		args.push(this.Name);;
-		args.push(this.Description);;
-		args.push(this.ApplicableOccurrence);;
-		args.push(this.HasPropertySets);;
-		args.push(this.RepresentationMaps);;
-		args.push(this.Tag);;
-		args.push(this.OperationType);;
-		args.push(this.ConstructionType);;
-		args.push(this.ParameterTakesPrecedence);;
-		args.push(this.Sizeable);;
-		return args;
-	}
-};
 export class IfcDoorType {
 	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcDoorTypeEnum , OperationType: IfcDoorTypeOperationEnum , ParameterTakesPrecedence: IfcBoolean | null, UserDefinedOperationType: IfcLabel | null)
 	{
@@ -16871,6 +17959,167 @@ export class IfcDuctSilencerType {
 		return args;
 	}
 };
+export class IfcEarthworksCut {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcEarthworksCutTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcEarthworksCutTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcEarthworksCut
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcEarthworksCut(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcEarthworksElement {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcEarthworksElement
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		return new IfcEarthworksElement(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		return args;
+	}
+};
+export class IfcEarthworksFill {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcEarthworksFillTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcEarthworksFillTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcEarthworksFill
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcEarthworksFill(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
 export class IfcEdge {
 	constructor(expressID: number, type: number, EdgeStart: (Handle<IfcVertex> | IfcVertex) , EdgeEnd: (Handle<IfcVertex> | IfcVertex) )
 	{
@@ -17281,6 +18530,120 @@ export class IfcElectricFlowStorageDeviceType {
 		let ElementType = tape[ptr++];
 		let PredefinedType = tape[ptr++];
 		return new IfcElectricFlowStorageDeviceType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcElectricFlowTreatmentDevice {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcElectricFlowTreatmentDeviceTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcElectricFlowTreatmentDeviceTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcElectricFlowTreatmentDevice
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcElectricFlowTreatmentDevice(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcElectricFlowTreatmentDeviceType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcElectricFlowTreatmentDeviceTypeEnum )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	PredefinedType: IfcElectricFlowTreatmentDeviceTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcElectricFlowTreatmentDeviceType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcElectricFlowTreatmentDeviceType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType, PredefinedType);
 	}
 	ToTape(): any[]
 	{
@@ -19357,7 +20720,7 @@ export class IfcFacility {
 	}
 };
 export class IfcFacilityPart {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, LongName: IfcLabel | null, CompositionType: IfcElementCompositionEnum | null)
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, LongName: IfcLabel | null, CompositionType: IfcElementCompositionEnum | null, UsageType: IfcFacilityUsageEnum )
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -19370,6 +20733,7 @@ export class IfcFacilityPart {
 		this.Representation = Representation;
 		this.LongName = LongName;
 		this.CompositionType = CompositionType;
+		this.UsageType = UsageType;
 	}
 	expressID: number;
 	type: number;
@@ -19382,6 +20746,7 @@ export class IfcFacilityPart {
 	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
 	LongName: IfcLabel | null;
 	CompositionType: IfcElementCompositionEnum | null;
+	UsageType: IfcFacilityUsageEnum ;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcFacilityPart
 	{
 		let ptr = 0;
@@ -19394,7 +20759,8 @@ export class IfcFacilityPart {
 		let Representation = tape[ptr++];
 		let LongName = tape[ptr++];
 		let CompositionType = tape[ptr++];
-		return new IfcFacilityPart(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, LongName, CompositionType);
+		let UsageType = tape[ptr++];
+		return new IfcFacilityPart(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, LongName, CompositionType, UsageType);
 	}
 	ToTape(): any[]
 	{
@@ -19408,6 +20774,70 @@ export class IfcFacilityPart {
 		args.push(this.Representation);;
 		args.push(this.LongName);;
 		args.push(this.CompositionType);;
+		args.push(this.UsageType);;
+		return args;
+	}
+};
+export class IfcFacilityPartCommon {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, LongName: IfcLabel | null, CompositionType: IfcElementCompositionEnum | null, UsageType: IfcFacilityUsageEnum , PredefinedType: IfcFacilityPartCommonTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.LongName = LongName;
+		this.CompositionType = CompositionType;
+		this.UsageType = UsageType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	LongName: IfcLabel | null;
+	CompositionType: IfcElementCompositionEnum | null;
+	UsageType: IfcFacilityUsageEnum ;
+	PredefinedType: IfcFacilityPartCommonTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcFacilityPartCommon
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let LongName = tape[ptr++];
+		let CompositionType = tape[ptr++];
+		let UsageType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcFacilityPartCommon(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, LongName, CompositionType, UsageType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.LongName);;
+		args.push(this.CompositionType);;
+		args.push(this.UsageType);;
+		args.push(this.PredefinedType);;
 		return args;
 	}
 };
@@ -19840,33 +21270,33 @@ export class IfcFeatureElementSubtraction {
 	}
 };
 export class IfcFillAreaStyle {
-	constructor(expressID: number, type: number, Name: IfcLabel | null, FillStyles: IfcFillStyleSelect[] , ModelorDraughting: IfcBoolean | null)
+	constructor(expressID: number, type: number, Name: IfcLabel | null, FillStyles: IfcFillStyleSelect[] , ModelOrDraughting: IfcBoolean | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
 		this.Name = Name;
 		this.FillStyles = FillStyles;
-		this.ModelorDraughting = ModelorDraughting;
+		this.ModelOrDraughting = ModelOrDraughting;
 	}
 	expressID: number;
 	type: number;
 	Name: IfcLabel | null;
 	FillStyles: IfcFillStyleSelect[] ;
-	ModelorDraughting: IfcBoolean | null;
+	ModelOrDraughting: IfcBoolean | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcFillAreaStyle
 	{
 		let ptr = 0;
 		let Name = tape[ptr++];
 		let FillStyles = tape[ptr++];
-		let ModelorDraughting = tape[ptr++];
-		return new IfcFillAreaStyle(expressID, type, Name, FillStyles, ModelorDraughting);
+		let ModelOrDraughting = tape[ptr++];
+		return new IfcFillAreaStyle(expressID, type, Name, FillStyles, ModelOrDraughting);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
 		args.push(this.Name);;
 		args.push(this.FillStyles);;
-		args.push(this.ModelorDraughting);;
+		args.push(this.ModelOrDraughting);;
 		return args;
 	}
 };
@@ -20169,7 +21599,7 @@ export class IfcFireSuppressionTerminalType {
 	}
 };
 export class IfcFixedReferenceSweptAreaSolid {
-	constructor(expressID: number, type: number, SweptArea: (Handle<IfcProfileDef> | IfcProfileDef) , Position: (Handle<IfcAxis2Placement3D> | IfcAxis2Placement3D) | null, Directrix: (Handle<IfcCurve> | IfcCurve) , StartParam: IfcParameterValue | null, EndParam: IfcParameterValue | null, FixedReference: (Handle<IfcDirection> | IfcDirection) )
+	constructor(expressID: number, type: number, SweptArea: (Handle<IfcProfileDef> | IfcProfileDef) , Position: (Handle<IfcAxis2Placement3D> | IfcAxis2Placement3D) | null, Directrix: (Handle<IfcCurve> | IfcCurve) , StartParam: IfcCurveMeasureSelect | null, EndParam: IfcCurveMeasureSelect | null, FixedReference: (Handle<IfcDirection> | IfcDirection) )
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -20185,8 +21615,8 @@ export class IfcFixedReferenceSweptAreaSolid {
 	SweptArea: (Handle<IfcProfileDef> | IfcProfileDef) ;
 	Position: (Handle<IfcAxis2Placement3D> | IfcAxis2Placement3D) | null;
 	Directrix: (Handle<IfcCurve> | IfcCurve) ;
-	StartParam: IfcParameterValue | null;
-	EndParam: IfcParameterValue | null;
+	StartParam: IfcCurveMeasureSelect | null;
+	EndParam: IfcCurveMeasureSelect | null;
 	FixedReference: (Handle<IfcDirection> | IfcDirection) ;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcFixedReferenceSweptAreaSolid
 	{
@@ -21800,6 +23230,300 @@ export class IfcGeometricSet {
 		return args;
 	}
 };
+export class IfcGeomodel {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcGeomodel
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		return new IfcGeomodel(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		return args;
+	}
+};
+export class IfcGeoslice {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcGeoslice
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		return new IfcGeoslice(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		return args;
+	}
+};
+export class IfcGeotechnicalAssembly {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcGeotechnicalAssembly
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		return new IfcGeotechnicalAssembly(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		return args;
+	}
+};
+export class IfcGeotechnicalElement {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcGeotechnicalElement
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		return new IfcGeotechnicalElement(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		return args;
+	}
+};
+export class IfcGeotechnicalStratum {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcGeotechnicalStratumTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcGeotechnicalStratumTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcGeotechnicalStratum
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcGeotechnicalStratum(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcGradientCurve {
+	constructor(expressID: number, type: number, Segments: (Handle<IfcSegment> | IfcSegment)[] , SelfIntersect: IfcLogical , BaseCurve: (Handle<IfcBoundedCurve> | IfcBoundedCurve) , EndPoint: (Handle<IfcPlacement> | IfcPlacement) | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.Segments = Segments;
+		this.SelfIntersect = SelfIntersect;
+		this.BaseCurve = BaseCurve;
+		this.EndPoint = EndPoint;
+	}
+	expressID: number;
+	type: number;
+	Segments: (Handle<IfcSegment> | IfcSegment)[] ;
+	SelfIntersect: IfcLogical ;
+	BaseCurve: (Handle<IfcBoundedCurve> | IfcBoundedCurve) ;
+	EndPoint: (Handle<IfcPlacement> | IfcPlacement) | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcGradientCurve
+	{
+		let ptr = 0;
+		let Segments = tape[ptr++];
+		let SelfIntersect = tape[ptr++];
+		let BaseCurve = tape[ptr++];
+		let EndPoint = tape[ptr++];
+		return new IfcGradientCurve(expressID, type, Segments, SelfIntersect, BaseCurve, EndPoint);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.Segments);;
+		args.push(this.SelfIntersect);;
+		args.push(this.BaseCurve);;
+		args.push(this.EndPoint);;
+		return args;
+	}
+};
 export class IfcGrid {
 	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, UAxes: (Handle<IfcGridAxis> | IfcGridAxis)[] , VAxes: (Handle<IfcGridAxis> | IfcGridAxis)[] , WAxes: (Handle<IfcGridAxis> | IfcGridAxis)[] | null, PredefinedType: IfcGridTypeEnum | null)
 	{
@@ -22321,6 +24045,120 @@ export class IfcImageTexture {
 		return args;
 	}
 };
+export class IfcImpactProtectionDevice {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcImpactProtectionDeviceTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcImpactProtectionDeviceTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcImpactProtectionDevice
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcImpactProtectionDevice(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcImpactProtectionDeviceType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcImpactProtectionDeviceTypeEnum )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	PredefinedType: IfcImpactProtectionDeviceTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcImpactProtectionDeviceType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcImpactProtectionDeviceType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
 export class IfcIndexedColourMap {
 	constructor(expressID: number, type: number, MappedTo: (Handle<IfcTessellatedFaceSet> | IfcTessellatedFaceSet) , Opacity: IfcNormalisedRatioMeasure | null, Colours: (Handle<IfcColourRgbList> | IfcColourRgbList) , ColourIndex: IfcPositiveInteger[] )
 	{
@@ -22357,7 +24195,7 @@ export class IfcIndexedColourMap {
 	}
 };
 export class IfcIndexedPolyCurve {
-	constructor(expressID: number, type: number, Points: (Handle<IfcCartesianPointList> | IfcCartesianPointList) , Segments: IfcSegmentIndexSelect[] | null, SelfIntersect: IfcBoolean | null)
+	constructor(expressID: number, type: number, Points: (Handle<IfcCartesianPointList> | IfcCartesianPointList) , Segments: IfcSegmentIndexSelect[] | null, SelfIntersect: IfcLogical )
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -22369,7 +24207,7 @@ export class IfcIndexedPolyCurve {
 	type: number;
 	Points: (Handle<IfcCartesianPointList> | IfcCartesianPointList) ;
 	Segments: IfcSegmentIndexSelect[] | null;
-	SelfIntersect: IfcBoolean | null;
+	SelfIntersect: IfcLogical ;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcIndexedPolyCurve
 	{
 		let ptr = 0;
@@ -22434,6 +24272,41 @@ export class IfcIndexedPolygonalFaceWithVoids {
 		let args: any[] = [];
 		args.push(this.CoordIndex);;
 		args.push(this.InnerCoordIndices);;
+		return args;
+	}
+};
+export class IfcIndexedPolygonalTextureMap {
+	constructor(expressID: number, type: number, Maps: (Handle<IfcSurfaceTexture> | IfcSurfaceTexture)[] , MappedTo: (Handle<IfcTessellatedFaceSet> | IfcTessellatedFaceSet) , TexCoords: (Handle<IfcTextureVertexList> | IfcTextureVertexList) , TexCoordIndices: (Handle<IfcTextureCoordinateIndices> | IfcTextureCoordinateIndices)[] )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.Maps = Maps;
+		this.MappedTo = MappedTo;
+		this.TexCoords = TexCoords;
+		this.TexCoordIndices = TexCoordIndices;
+	}
+	expressID: number;
+	type: number;
+	Maps: (Handle<IfcSurfaceTexture> | IfcSurfaceTexture)[] ;
+	MappedTo: (Handle<IfcTessellatedFaceSet> | IfcTessellatedFaceSet) ;
+	TexCoords: (Handle<IfcTextureVertexList> | IfcTextureVertexList) ;
+	TexCoordIndices: (Handle<IfcTextureCoordinateIndices> | IfcTextureCoordinateIndices)[] ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcIndexedPolygonalTextureMap
+	{
+		let ptr = 0;
+		let Maps = tape[ptr++];
+		let MappedTo = tape[ptr++];
+		let TexCoords = tape[ptr++];
+		let TexCoordIndices = tape[ptr++];
+		return new IfcIndexedPolygonalTextureMap(expressID, type, Maps, MappedTo, TexCoords, TexCoordIndices);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.Maps);;
+		args.push(this.MappedTo);;
+		args.push(this.TexCoords);;
+		args.push(this.TexCoordIndices);;
 		return args;
 	}
 };
@@ -22904,6 +24777,120 @@ export class IfcJunctionBoxType {
 		args.push(this.Tag);;
 		args.push(this.ElementType);;
 		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcKerb {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, Mountable: IfcBoolean )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.Mountable = Mountable;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	Mountable: IfcBoolean ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcKerb
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let Mountable = tape[ptr++];
+		return new IfcKerb(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, Mountable);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.Mountable);;
+		return args;
+	}
+};
+export class IfcKerbType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, Mountable: IfcBoolean )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+		this.Mountable = Mountable;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	Mountable: IfcBoolean ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcKerbType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		let Mountable = tape[ptr++];
+		return new IfcKerbType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType, Mountable);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		args.push(this.Mountable);;
 		return args;
 	}
 };
@@ -23824,78 +25811,8 @@ export class IfcLine {
 		return args;
 	}
 };
-export class IfcLineSegment2D {
-	constructor(expressID: number, type: number, StartPoint: (Handle<IfcCartesianPoint> | IfcCartesianPoint) , StartDirection: IfcPlaneAngleMeasure , SegmentLength: IfcPositiveLengthMeasure )
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.StartPoint = StartPoint;
-		this.StartDirection = StartDirection;
-		this.SegmentLength = SegmentLength;
-	}
-	expressID: number;
-	type: number;
-	StartPoint: (Handle<IfcCartesianPoint> | IfcCartesianPoint) ;
-	StartDirection: IfcPlaneAngleMeasure ;
-	SegmentLength: IfcPositiveLengthMeasure ;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcLineSegment2D
-	{
-		let ptr = 0;
-		let StartPoint = tape[ptr++];
-		let StartDirection = tape[ptr++];
-		let SegmentLength = tape[ptr++];
-		return new IfcLineSegment2D(expressID, type, StartPoint, StartDirection, SegmentLength);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.StartPoint);;
-		args.push(this.StartDirection);;
-		args.push(this.SegmentLength);;
-		return args;
-	}
-};
-export class IfcLinearPlacement {
-	constructor(expressID: number, type: number, PlacementRelTo: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, PlacementMeasuredAlong: (Handle<IfcCurve> | IfcCurve) , Distance: (Handle<IfcDistanceExpression> | IfcDistanceExpression) , Orientation: (Handle<IfcOrientationExpression> | IfcOrientationExpression) | null, CartesianPosition: (Handle<IfcAxis2Placement3D> | IfcAxis2Placement3D) | null)
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.PlacementRelTo = PlacementRelTo;
-		this.PlacementMeasuredAlong = PlacementMeasuredAlong;
-		this.Distance = Distance;
-		this.Orientation = Orientation;
-		this.CartesianPosition = CartesianPosition;
-	}
-	expressID: number;
-	type: number;
-	PlacementRelTo: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
-	PlacementMeasuredAlong: (Handle<IfcCurve> | IfcCurve) ;
-	Distance: (Handle<IfcDistanceExpression> | IfcDistanceExpression) ;
-	Orientation: (Handle<IfcOrientationExpression> | IfcOrientationExpression) | null;
-	CartesianPosition: (Handle<IfcAxis2Placement3D> | IfcAxis2Placement3D) | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcLinearPlacement
-	{
-		let ptr = 0;
-		let PlacementRelTo = tape[ptr++];
-		let PlacementMeasuredAlong = tape[ptr++];
-		let Distance = tape[ptr++];
-		let Orientation = tape[ptr++];
-		let CartesianPosition = tape[ptr++];
-		return new IfcLinearPlacement(expressID, type, PlacementRelTo, PlacementMeasuredAlong, Distance, Orientation, CartesianPosition);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.PlacementRelTo);;
-		args.push(this.PlacementMeasuredAlong);;
-		args.push(this.Distance);;
-		args.push(this.Orientation);;
-		args.push(this.CartesianPosition);;
-		return args;
-	}
-};
-export class IfcLinearPositioningElement {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Axis: (Handle<IfcCurve> | IfcCurve) )
+export class IfcLinearElement {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -23906,7 +25823,6 @@ export class IfcLinearPositioningElement {
 		this.ObjectType = ObjectType;
 		this.ObjectPlacement = ObjectPlacement;
 		this.Representation = Representation;
-		this.Axis = Axis;
 	}
 	expressID: number;
 	type: number;
@@ -23917,8 +25833,7 @@ export class IfcLinearPositioningElement {
 	ObjectType: IfcLabel | null;
 	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
 	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
-	Axis: (Handle<IfcCurve> | IfcCurve) ;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcLinearPositioningElement
+	static FromTape(expressID: number, type: number, tape: any[]): IfcLinearElement
 	{
 		let ptr = 0;
 		let GlobalId = tape[ptr++];
@@ -23928,8 +25843,7 @@ export class IfcLinearPositioningElement {
 		let ObjectType = tape[ptr++];
 		let ObjectPlacement = tape[ptr++];
 		let Representation = tape[ptr++];
-		let Axis = tape[ptr++];
-		return new IfcLinearPositioningElement(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Axis);
+		return new IfcLinearElement(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation);
 	}
 	ToTape(): any[]
 	{
@@ -23941,7 +25855,198 @@ export class IfcLinearPositioningElement {
 		args.push(this.ObjectType);;
 		args.push(this.ObjectPlacement);;
 		args.push(this.Representation);;
-		args.push(this.Axis);;
+		return args;
+	}
+};
+export class IfcLinearPlacement {
+	constructor(expressID: number, type: number, PlacementRelTo: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, RelativePlacement: (Handle<IfcAxis2PlacementLinear> | IfcAxis2PlacementLinear) , CartesianPosition: (Handle<IfcAxis2Placement3D> | IfcAxis2Placement3D) | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.PlacementRelTo = PlacementRelTo;
+		this.RelativePlacement = RelativePlacement;
+		this.CartesianPosition = CartesianPosition;
+	}
+	expressID: number;
+	type: number;
+	PlacementRelTo: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	RelativePlacement: (Handle<IfcAxis2PlacementLinear> | IfcAxis2PlacementLinear) ;
+	CartesianPosition: (Handle<IfcAxis2Placement3D> | IfcAxis2Placement3D) | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcLinearPlacement
+	{
+		let ptr = 0;
+		let PlacementRelTo = tape[ptr++];
+		let RelativePlacement = tape[ptr++];
+		let CartesianPosition = tape[ptr++];
+		return new IfcLinearPlacement(expressID, type, PlacementRelTo, RelativePlacement, CartesianPosition);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.PlacementRelTo);;
+		args.push(this.RelativePlacement);;
+		args.push(this.CartesianPosition);;
+		return args;
+	}
+};
+export class IfcLinearPositioningElement {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcLinearPositioningElement
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		return new IfcLinearPositioningElement(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		return args;
+	}
+};
+export class IfcLiquidTerminal {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcLiquidTerminalTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcLiquidTerminalTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcLiquidTerminal
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcLiquidTerminal(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcLiquidTerminalType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcLiquidTerminalTypeEnum )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	PredefinedType: IfcLiquidTerminalTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcLiquidTerminalType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcLiquidTerminalType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		args.push(this.PredefinedType);;
 		return args;
 	}
 };
@@ -24015,7 +26120,7 @@ export class IfcManifoldSolidBrep {
 	}
 };
 export class IfcMapConversion {
-	constructor(expressID: number, type: number, SourceCRS: IfcCoordinateReferenceSystemSelect , TargetCRS: (Handle<IfcCoordinateReferenceSystem> | IfcCoordinateReferenceSystem) , Eastings: IfcLengthMeasure , Northings: IfcLengthMeasure , OrthogonalHeight: IfcLengthMeasure , XAxisAbscissa: IfcReal | null, XAxisOrdinate: IfcReal | null, Scale: IfcReal | null)
+	constructor(expressID: number, type: number, SourceCRS: IfcCoordinateReferenceSystemSelect , TargetCRS: (Handle<IfcCoordinateReferenceSystem> | IfcCoordinateReferenceSystem) , Eastings: IfcLengthMeasure , Northings: IfcLengthMeasure , OrthogonalHeight: IfcLengthMeasure , XAxisAbscissa: IfcReal | null, XAxisOrdinate: IfcReal | null, Scale: IfcReal | null, ScaleY: IfcReal | null, ScaleZ: IfcReal | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -24027,6 +26132,8 @@ export class IfcMapConversion {
 		this.XAxisAbscissa = XAxisAbscissa;
 		this.XAxisOrdinate = XAxisOrdinate;
 		this.Scale = Scale;
+		this.ScaleY = ScaleY;
+		this.ScaleZ = ScaleZ;
 	}
 	expressID: number;
 	type: number;
@@ -24038,6 +26145,8 @@ export class IfcMapConversion {
 	XAxisAbscissa: IfcReal | null;
 	XAxisOrdinate: IfcReal | null;
 	Scale: IfcReal | null;
+	ScaleY: IfcReal | null;
+	ScaleZ: IfcReal | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcMapConversion
 	{
 		let ptr = 0;
@@ -24049,7 +26158,9 @@ export class IfcMapConversion {
 		let XAxisAbscissa = tape[ptr++];
 		let XAxisOrdinate = tape[ptr++];
 		let Scale = tape[ptr++];
-		return new IfcMapConversion(expressID, type, SourceCRS, TargetCRS, Eastings, Northings, OrthogonalHeight, XAxisAbscissa, XAxisOrdinate, Scale);
+		let ScaleY = tape[ptr++];
+		let ScaleZ = tape[ptr++];
+		return new IfcMapConversion(expressID, type, SourceCRS, TargetCRS, Eastings, Northings, OrthogonalHeight, XAxisAbscissa, XAxisOrdinate, Scale, ScaleY, ScaleZ);
 	}
 	ToTape(): any[]
 	{
@@ -24062,6 +26173,8 @@ export class IfcMapConversion {
 		args.push(this.XAxisAbscissa);;
 		args.push(this.XAxisOrdinate);;
 		args.push(this.Scale);;
+		args.push(this.ScaleY);;
+		args.push(this.ScaleZ);;
 		return args;
 	}
 };
@@ -24089,6 +26202,128 @@ export class IfcMappedItem {
 		let args: any[] = [];
 		args.push(this.MappingSource);;
 		args.push(this.MappingTarget);;
+		return args;
+	}
+};
+export class IfcMarineFacility {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, LongName: IfcLabel | null, CompositionType: IfcElementCompositionEnum | null, PredefinedType: IfcMarineFacilityTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.LongName = LongName;
+		this.CompositionType = CompositionType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	LongName: IfcLabel | null;
+	CompositionType: IfcElementCompositionEnum | null;
+	PredefinedType: IfcMarineFacilityTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcMarineFacility
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let LongName = tape[ptr++];
+		let CompositionType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcMarineFacility(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, LongName, CompositionType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.LongName);;
+		args.push(this.CompositionType);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcMarinePart {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, LongName: IfcLabel | null, CompositionType: IfcElementCompositionEnum | null, UsageType: IfcFacilityUsageEnum , PredefinedType: IfcMarinePartTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.LongName = LongName;
+		this.CompositionType = CompositionType;
+		this.UsageType = UsageType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	LongName: IfcLabel | null;
+	CompositionType: IfcElementCompositionEnum | null;
+	UsageType: IfcFacilityUsageEnum ;
+	PredefinedType: IfcMarinePartTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcMarinePart
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let LongName = tape[ptr++];
+		let CompositionType = tape[ptr++];
+		let UsageType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcMarinePart(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, LongName, CompositionType, UsageType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.LongName);;
+		args.push(this.CompositionType);;
+		args.push(this.UsageType);;
+		args.push(this.PredefinedType);;
 		return args;
 	}
 };
@@ -24700,7 +26935,7 @@ export class IfcMaterialProperties {
 	}
 };
 export class IfcMaterialRelationship {
-	constructor(expressID: number, type: number, Name: IfcLabel | null, Description: IfcText | null, RelatingMaterial: (Handle<IfcMaterial> | IfcMaterial) , RelatedMaterials: (Handle<IfcMaterial> | IfcMaterial)[] , Expression: IfcLabel | null)
+	constructor(expressID: number, type: number, Name: IfcLabel | null, Description: IfcText | null, RelatingMaterial: (Handle<IfcMaterial> | IfcMaterial) , RelatedMaterials: (Handle<IfcMaterial> | IfcMaterial)[] , MaterialExpression: IfcLabel | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -24708,7 +26943,7 @@ export class IfcMaterialRelationship {
 		this.Description = Description;
 		this.RelatingMaterial = RelatingMaterial;
 		this.RelatedMaterials = RelatedMaterials;
-		this.Expression = Expression;
+		this.MaterialExpression = MaterialExpression;
 	}
 	expressID: number;
 	type: number;
@@ -24716,7 +26951,7 @@ export class IfcMaterialRelationship {
 	Description: IfcText | null;
 	RelatingMaterial: (Handle<IfcMaterial> | IfcMaterial) ;
 	RelatedMaterials: (Handle<IfcMaterial> | IfcMaterial)[] ;
-	Expression: IfcLabel | null;
+	MaterialExpression: IfcLabel | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcMaterialRelationship
 	{
 		let ptr = 0;
@@ -24724,8 +26959,8 @@ export class IfcMaterialRelationship {
 		let Description = tape[ptr++];
 		let RelatingMaterial = tape[ptr++];
 		let RelatedMaterials = tape[ptr++];
-		let Expression = tape[ptr++];
-		return new IfcMaterialRelationship(expressID, type, Name, Description, RelatingMaterial, RelatedMaterials, Expression);
+		let MaterialExpression = tape[ptr++];
+		return new IfcMaterialRelationship(expressID, type, Name, Description, RelatingMaterial, RelatedMaterials, MaterialExpression);
 	}
 	ToTape(): any[]
 	{
@@ -24734,7 +26969,7 @@ export class IfcMaterialRelationship {
 		args.push(this.Description);;
 		args.push(this.RelatingMaterial);;
 		args.push(this.RelatedMaterials);;
-		args.push(this.Expression);;
+		args.push(this.MaterialExpression);;
 		return args;
 	}
 };
@@ -25083,61 +27318,6 @@ export class IfcMember {
 		return args;
 	}
 };
-export class IfcMemberStandardCase {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcMemberTypeEnum | null)
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.GlobalId = GlobalId;
-		this.OwnerHistory = OwnerHistory;
-		this.Name = Name;
-		this.Description = Description;
-		this.ObjectType = ObjectType;
-		this.ObjectPlacement = ObjectPlacement;
-		this.Representation = Representation;
-		this.Tag = Tag;
-		this.PredefinedType = PredefinedType;
-	}
-	expressID: number;
-	type: number;
-	GlobalId: IfcGloballyUniqueId ;
-	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
-	Name: IfcLabel | null;
-	Description: IfcText | null;
-	ObjectType: IfcLabel | null;
-	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
-	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
-	Tag: IfcIdentifier | null;
-	PredefinedType: IfcMemberTypeEnum | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcMemberStandardCase
-	{
-		let ptr = 0;
-		let GlobalId = tape[ptr++];
-		let OwnerHistory = tape[ptr++];
-		let Name = tape[ptr++];
-		let Description = tape[ptr++];
-		let ObjectType = tape[ptr++];
-		let ObjectPlacement = tape[ptr++];
-		let Representation = tape[ptr++];
-		let Tag = tape[ptr++];
-		let PredefinedType = tape[ptr++];
-		return new IfcMemberStandardCase(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.GlobalId);;
-		args.push(this.OwnerHistory);;
-		args.push(this.Name);;
-		args.push(this.Description);;
-		args.push(this.ObjectType);;
-		args.push(this.ObjectPlacement);;
-		args.push(this.Representation);;
-		args.push(this.Tag);;
-		args.push(this.PredefinedType);;
-		return args;
-	}
-};
 export class IfcMemberType {
 	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcMemberTypeEnum )
 	{
@@ -25299,6 +27479,120 @@ export class IfcMirroredProfileDef {
 		return args;
 	}
 };
+export class IfcMobileTelecommunicationsAppliance {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcMobileTelecommunicationsApplianceTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcMobileTelecommunicationsApplianceTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcMobileTelecommunicationsAppliance
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcMobileTelecommunicationsAppliance(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcMobileTelecommunicationsApplianceType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcMobileTelecommunicationsApplianceTypeEnum )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	PredefinedType: IfcMobileTelecommunicationsApplianceTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcMobileTelecommunicationsApplianceType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcMobileTelecommunicationsApplianceType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
 export class IfcMonetaryUnit {
 	constructor(expressID: number, type: number, Currency: IfcLabel )
 	{
@@ -25319,6 +27613,120 @@ export class IfcMonetaryUnit {
 	{
 		let args: any[] = [];
 		args.push(this.Currency);;
+		return args;
+	}
+};
+export class IfcMooringDevice {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcMooringDeviceTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcMooringDeviceTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcMooringDevice
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcMooringDevice(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcMooringDeviceType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcMooringDeviceTypeEnum )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	PredefinedType: IfcMooringDeviceTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcMooringDeviceType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcMooringDeviceType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		args.push(this.PredefinedType);;
 		return args;
 	}
 };
@@ -25460,6 +27868,120 @@ export class IfcNamedUnit {
 		let args: any[] = [];
 		args.push(this.Dimensions);;
 		args.push(this.UnitType);;
+		return args;
+	}
+};
+export class IfcNavigationElement {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcNavigationElementTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcNavigationElementTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcNavigationElement
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcNavigationElement(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcNavigationElementType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcNavigationElementTypeEnum )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	PredefinedType: IfcNavigationElementTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcNavigationElementType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcNavigationElementType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		args.push(this.PredefinedType);;
 		return args;
 	}
 };
@@ -25760,7 +28282,7 @@ export class IfcOffsetCurve3D {
 	}
 };
 export class IfcOffsetCurveByDistances {
-	constructor(expressID: number, type: number, BasisCurve: (Handle<IfcCurve> | IfcCurve) , OffsetValues: (Handle<IfcDistanceExpression> | IfcDistanceExpression)[] , Tag: IfcLabel | null)
+	constructor(expressID: number, type: number, BasisCurve: (Handle<IfcCurve> | IfcCurve) , OffsetValues: (Handle<IfcPointByDistanceExpression> | IfcPointByDistanceExpression)[] , Tag: IfcLabel | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -25771,7 +28293,7 @@ export class IfcOffsetCurveByDistances {
 	expressID: number;
 	type: number;
 	BasisCurve: (Handle<IfcCurve> | IfcCurve) ;
-	OffsetValues: (Handle<IfcDistanceExpression> | IfcDistanceExpression)[] ;
+	OffsetValues: (Handle<IfcPointByDistanceExpression> | IfcPointByDistanceExpression)[] ;
 	Tag: IfcLabel | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcOffsetCurveByDistances
 	{
@@ -25787,6 +28309,53 @@ export class IfcOffsetCurveByDistances {
 		args.push(this.BasisCurve);;
 		args.push(this.OffsetValues);;
 		args.push(this.Tag);;
+		return args;
+	}
+};
+export class IfcOpenCrossProfileDef {
+	constructor(expressID: number, type: number, ProfileType: IfcProfileTypeEnum , ProfileName: IfcLabel | null, HorizontalWidths: IfcBoolean , Widths: IfcNonNegativeLengthMeasure[] , Slopes: IfcPlaneAngleMeasure[] , Tags: IfcLabel[] | null, OffsetPoint: (Handle<IfcCartesianPoint> | IfcCartesianPoint) | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.ProfileType = ProfileType;
+		this.ProfileName = ProfileName;
+		this.HorizontalWidths = HorizontalWidths;
+		this.Widths = Widths;
+		this.Slopes = Slopes;
+		this.Tags = Tags;
+		this.OffsetPoint = OffsetPoint;
+	}
+	expressID: number;
+	type: number;
+	ProfileType: IfcProfileTypeEnum ;
+	ProfileName: IfcLabel | null;
+	HorizontalWidths: IfcBoolean ;
+	Widths: IfcNonNegativeLengthMeasure[] ;
+	Slopes: IfcPlaneAngleMeasure[] ;
+	Tags: IfcLabel[] | null;
+	OffsetPoint: (Handle<IfcCartesianPoint> | IfcCartesianPoint) | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcOpenCrossProfileDef
+	{
+		let ptr = 0;
+		let ProfileType = tape[ptr++];
+		let ProfileName = tape[ptr++];
+		let HorizontalWidths = tape[ptr++];
+		let Widths = tape[ptr++];
+		let Slopes = tape[ptr++];
+		let Tags = tape[ptr++];
+		let OffsetPoint = tape[ptr++];
+		return new IfcOpenCrossProfileDef(expressID, type, ProfileType, ProfileName, HorizontalWidths, Widths, Slopes, Tags, OffsetPoint);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.ProfileType);;
+		args.push(this.ProfileName);;
+		args.push(this.HorizontalWidths);;
+		args.push(this.Widths);;
+		args.push(this.Slopes);;
+		args.push(this.Tags);;
+		args.push(this.OffsetPoint);;
 		return args;
 	}
 };
@@ -25852,61 +28421,6 @@ export class IfcOpeningElement {
 		let Tag = tape[ptr++];
 		let PredefinedType = tape[ptr++];
 		return new IfcOpeningElement(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.GlobalId);;
-		args.push(this.OwnerHistory);;
-		args.push(this.Name);;
-		args.push(this.Description);;
-		args.push(this.ObjectType);;
-		args.push(this.ObjectPlacement);;
-		args.push(this.Representation);;
-		args.push(this.Tag);;
-		args.push(this.PredefinedType);;
-		return args;
-	}
-};
-export class IfcOpeningStandardCase {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcOpeningElementTypeEnum | null)
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.GlobalId = GlobalId;
-		this.OwnerHistory = OwnerHistory;
-		this.Name = Name;
-		this.Description = Description;
-		this.ObjectType = ObjectType;
-		this.ObjectPlacement = ObjectPlacement;
-		this.Representation = Representation;
-		this.Tag = Tag;
-		this.PredefinedType = PredefinedType;
-	}
-	expressID: number;
-	type: number;
-	GlobalId: IfcGloballyUniqueId ;
-	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
-	Name: IfcLabel | null;
-	Description: IfcText | null;
-	ObjectType: IfcLabel | null;
-	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
-	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
-	Tag: IfcIdentifier | null;
-	PredefinedType: IfcOpeningElementTypeEnum | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcOpeningStandardCase
-	{
-		let ptr = 0;
-		let GlobalId = tape[ptr++];
-		let OwnerHistory = tape[ptr++];
-		let Name = tape[ptr++];
-		let Description = tape[ptr++];
-		let ObjectType = tape[ptr++];
-		let ObjectPlacement = tape[ptr++];
-		let Representation = tape[ptr++];
-		let Tag = tape[ptr++];
-		let PredefinedType = tape[ptr++];
-		return new IfcOpeningStandardCase(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
 	}
 	ToTape(): any[]
 	{
@@ -25997,33 +28511,6 @@ export class IfcOrganizationRelationship {
 		return args;
 	}
 };
-export class IfcOrientationExpression {
-	constructor(expressID: number, type: number, LateralAxisDirection: (Handle<IfcDirection> | IfcDirection) , VerticalAxisDirection: (Handle<IfcDirection> | IfcDirection) )
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.LateralAxisDirection = LateralAxisDirection;
-		this.VerticalAxisDirection = VerticalAxisDirection;
-	}
-	expressID: number;
-	type: number;
-	LateralAxisDirection: (Handle<IfcDirection> | IfcDirection) ;
-	VerticalAxisDirection: (Handle<IfcDirection> | IfcDirection) ;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcOrientationExpression
-	{
-		let ptr = 0;
-		let LateralAxisDirection = tape[ptr++];
-		let VerticalAxisDirection = tape[ptr++];
-		return new IfcOrientationExpression(expressID, type, LateralAxisDirection, VerticalAxisDirection);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.LateralAxisDirection);;
-		args.push(this.VerticalAxisDirection);;
-		return args;
-	}
-};
 export class IfcOrientedEdge {
 	constructor(expressID: number, type: number, EdgeStart: (Handle<IfcVertex> | IfcVertex) , EdgeEnd: (Handle<IfcVertex> | IfcVertex) , EdgeElement: (Handle<IfcEdge> | IfcEdge) , Orientation: IfcBoolean )
 	{
@@ -26060,7 +28547,7 @@ export class IfcOrientedEdge {
 	}
 };
 export class IfcOuterBoundaryCurve {
-	constructor(expressID: number, type: number, Segments: (Handle<IfcCompositeCurveSegment> | IfcCompositeCurveSegment)[] , SelfIntersect: IfcLogical )
+	constructor(expressID: number, type: number, Segments: (Handle<IfcSegment> | IfcSegment)[] , SelfIntersect: IfcLogical )
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -26069,7 +28556,7 @@ export class IfcOuterBoundaryCurve {
 	}
 	expressID: number;
 	type: number;
-	Segments: (Handle<IfcCompositeCurveSegment> | IfcCompositeCurveSegment)[] ;
+	Segments: (Handle<IfcSegment> | IfcSegment)[] ;
 	SelfIntersect: IfcLogical ;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcOuterBoundaryCurve
 	{
@@ -26302,6 +28789,120 @@ export class IfcPath {
 	{
 		let args: any[] = [];
 		args.push(this.EdgeList);;
+		return args;
+	}
+};
+export class IfcPavement {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcPavementTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcPavementTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcPavement
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcPavement(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcPavementType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcPavementTypeEnum )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	PredefinedType: IfcPavementTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcPavementType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcPavementType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		args.push(this.PredefinedType);;
 		return args;
 	}
 };
@@ -27078,7 +29679,7 @@ export class IfcPixelTexture {
 	}
 };
 export class IfcPlacement {
-	constructor(expressID: number, type: number, Location: (Handle<IfcCartesianPoint> | IfcCartesianPoint) )
+	constructor(expressID: number, type: number, Location: (Handle<IfcPoint> | IfcPoint) )
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -27086,7 +29687,7 @@ export class IfcPlacement {
 	}
 	expressID: number;
 	type: number;
-	Location: (Handle<IfcCartesianPoint> | IfcCartesianPoint) ;
+	Location: (Handle<IfcPoint> | IfcPoint) ;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcPlacement
 	{
 		let ptr = 0;
@@ -27236,61 +29837,6 @@ export class IfcPlate {
 		return args;
 	}
 };
-export class IfcPlateStandardCase {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcPlateTypeEnum | null)
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.GlobalId = GlobalId;
-		this.OwnerHistory = OwnerHistory;
-		this.Name = Name;
-		this.Description = Description;
-		this.ObjectType = ObjectType;
-		this.ObjectPlacement = ObjectPlacement;
-		this.Representation = Representation;
-		this.Tag = Tag;
-		this.PredefinedType = PredefinedType;
-	}
-	expressID: number;
-	type: number;
-	GlobalId: IfcGloballyUniqueId ;
-	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
-	Name: IfcLabel | null;
-	Description: IfcText | null;
-	ObjectType: IfcLabel | null;
-	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
-	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
-	Tag: IfcIdentifier | null;
-	PredefinedType: IfcPlateTypeEnum | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcPlateStandardCase
-	{
-		let ptr = 0;
-		let GlobalId = tape[ptr++];
-		let OwnerHistory = tape[ptr++];
-		let Name = tape[ptr++];
-		let Description = tape[ptr++];
-		let ObjectType = tape[ptr++];
-		let ObjectPlacement = tape[ptr++];
-		let Representation = tape[ptr++];
-		let Tag = tape[ptr++];
-		let PredefinedType = tape[ptr++];
-		return new IfcPlateStandardCase(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.GlobalId);;
-		args.push(this.OwnerHistory);;
-		args.push(this.Name);;
-		args.push(this.Description);;
-		args.push(this.ObjectType);;
-		args.push(this.ObjectPlacement);;
-		args.push(this.Representation);;
-		args.push(this.Tag);;
-		args.push(this.PredefinedType);;
-		return args;
-	}
-};
 export class IfcPlateType {
 	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcPlateTypeEnum )
 	{
@@ -27366,6 +29912,45 @@ export class IfcPoint {
 	ToTape(): any[]
 	{
 		let args: any[] = [];
+		return args;
+	}
+};
+export class IfcPointByDistanceExpression {
+	constructor(expressID: number, type: number, DistanceAlong: IfcCurveMeasureSelect , OffsetLateral: IfcLengthMeasure | null, OffsetVertical: IfcLengthMeasure | null, OffsetLongitudinal: IfcLengthMeasure | null, BasisCurve: (Handle<IfcCurve> | IfcCurve) )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.DistanceAlong = DistanceAlong;
+		this.OffsetLateral = OffsetLateral;
+		this.OffsetVertical = OffsetVertical;
+		this.OffsetLongitudinal = OffsetLongitudinal;
+		this.BasisCurve = BasisCurve;
+	}
+	expressID: number;
+	type: number;
+	DistanceAlong: IfcCurveMeasureSelect ;
+	OffsetLateral: IfcLengthMeasure | null;
+	OffsetVertical: IfcLengthMeasure | null;
+	OffsetLongitudinal: IfcLengthMeasure | null;
+	BasisCurve: (Handle<IfcCurve> | IfcCurve) ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcPointByDistanceExpression
+	{
+		let ptr = 0;
+		let DistanceAlong = tape[ptr++];
+		let OffsetLateral = tape[ptr++];
+		let OffsetVertical = tape[ptr++];
+		let OffsetLongitudinal = tape[ptr++];
+		let BasisCurve = tape[ptr++];
+		return new IfcPointByDistanceExpression(expressID, type, DistanceAlong, OffsetLateral, OffsetVertical, OffsetLongitudinal, BasisCurve);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.DistanceAlong);;
+		args.push(this.OffsetLateral);;
+		args.push(this.OffsetVertical);;
+		args.push(this.OffsetLongitudinal);;
+		args.push(this.BasisCurve);;
 		return args;
 	}
 };
@@ -27540,6 +30125,41 @@ export class IfcPolyline {
 	{
 		let args: any[] = [];
 		args.push(this.Points);;
+		return args;
+	}
+};
+export class IfcPolynomialCurve {
+	constructor(expressID: number, type: number, Position: (Handle<IfcPlacement> | IfcPlacement) , CoefficientsX: IfcReal[] | null, CoefficientsY: IfcReal[] | null, CoefficientsZ: IfcReal[] | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.Position = Position;
+		this.CoefficientsX = CoefficientsX;
+		this.CoefficientsY = CoefficientsY;
+		this.CoefficientsZ = CoefficientsZ;
+	}
+	expressID: number;
+	type: number;
+	Position: (Handle<IfcPlacement> | IfcPlacement) ;
+	CoefficientsX: IfcReal[] | null;
+	CoefficientsY: IfcReal[] | null;
+	CoefficientsZ: IfcReal[] | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcPolynomialCurve
+	{
+		let ptr = 0;
+		let Position = tape[ptr++];
+		let CoefficientsX = tape[ptr++];
+		let CoefficientsY = tape[ptr++];
+		let CoefficientsZ = tape[ptr++];
+		return new IfcPolynomialCurve(expressID, type, Position, CoefficientsX, CoefficientsY, CoefficientsZ);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.Position);;
+		args.push(this.CoefficientsX);;
+		args.push(this.CoefficientsY);;
+		args.push(this.CoefficientsZ);;
 		return args;
 	}
 };
@@ -27967,29 +30587,6 @@ export class IfcPresentationStyle {
 	{
 		let args: any[] = [];
 		args.push(this.Name);;
-		return args;
-	}
-};
-export class IfcPresentationStyleAssignment {
-	constructor(expressID: number, type: number, Styles: IfcPresentationStyleSelect[] )
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.Styles = Styles;
-	}
-	expressID: number;
-	type: number;
-	Styles: IfcPresentationStyleSelect[] ;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcPresentationStyleAssignment
-	{
-		let ptr = 0;
-		let Styles = tape[ptr++];
-		return new IfcPresentationStyleAssignment(expressID, type, Styles);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.Styles);;
 		return args;
 	}
 };
@@ -28589,29 +31186,29 @@ export class IfcProjectionElement {
 	}
 };
 export class IfcProperty {
-	constructor(expressID: number, type: number, Name: IfcIdentifier , Description: IfcText | null)
+	constructor(expressID: number, type: number, Name: IfcIdentifier , Specification: IfcText | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
 		this.Name = Name;
-		this.Description = Description;
+		this.Specification = Specification;
 	}
 	expressID: number;
 	type: number;
 	Name: IfcIdentifier ;
-	Description: IfcText | null;
+	Specification: IfcText | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcProperty
 	{
 		let ptr = 0;
 		let Name = tape[ptr++];
-		let Description = tape[ptr++];
-		return new IfcProperty(expressID, type, Name, Description);
+		let Specification = tape[ptr++];
+		return new IfcProperty(expressID, type, Name, Specification);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
 		args.push(this.Name);;
-		args.push(this.Description);;
+		args.push(this.Specification);;
 		return args;
 	}
 };
@@ -28635,12 +31232,12 @@ export class IfcPropertyAbstraction {
 	}
 };
 export class IfcPropertyBoundedValue {
-	constructor(expressID: number, type: number, Name: IfcIdentifier , Description: IfcText | null, UpperBoundValue: IfcValue | null, LowerBoundValue: IfcValue | null, Unit: IfcUnit | null, SetPointValue: IfcValue | null)
+	constructor(expressID: number, type: number, Name: IfcIdentifier , Specification: IfcText | null, UpperBoundValue: IfcValue | null, LowerBoundValue: IfcValue | null, Unit: IfcUnit | null, SetPointValue: IfcValue | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
 		this.Name = Name;
-		this.Description = Description;
+		this.Specification = Specification;
 		this.UpperBoundValue = UpperBoundValue;
 		this.LowerBoundValue = LowerBoundValue;
 		this.Unit = Unit;
@@ -28649,7 +31246,7 @@ export class IfcPropertyBoundedValue {
 	expressID: number;
 	type: number;
 	Name: IfcIdentifier ;
-	Description: IfcText | null;
+	Specification: IfcText | null;
 	UpperBoundValue: IfcValue | null;
 	LowerBoundValue: IfcValue | null;
 	Unit: IfcUnit | null;
@@ -28658,18 +31255,18 @@ export class IfcPropertyBoundedValue {
 	{
 		let ptr = 0;
 		let Name = tape[ptr++];
-		let Description = tape[ptr++];
+		let Specification = tape[ptr++];
 		let UpperBoundValue = tape[ptr++];
 		let LowerBoundValue = tape[ptr++];
 		let Unit = tape[ptr++];
 		let SetPointValue = tape[ptr++];
-		return new IfcPropertyBoundedValue(expressID, type, Name, Description, UpperBoundValue, LowerBoundValue, Unit, SetPointValue);
+		return new IfcPropertyBoundedValue(expressID, type, Name, Specification, UpperBoundValue, LowerBoundValue, Unit, SetPointValue);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
 		args.push(this.Name);;
-		args.push(this.Description);;
+		args.push(this.Specification);;
 		args.push(this.UpperBoundValue);;
 		args.push(this.LowerBoundValue);;
 		args.push(this.Unit);;
@@ -28752,35 +31349,35 @@ export class IfcPropertyDependencyRelationship {
 	}
 };
 export class IfcPropertyEnumeratedValue {
-	constructor(expressID: number, type: number, Name: IfcIdentifier , Description: IfcText | null, EnumerationValues: IfcValue[] | null, EnumerationReference: (Handle<IfcPropertyEnumeration> | IfcPropertyEnumeration) | null)
+	constructor(expressID: number, type: number, Name: IfcIdentifier , Specification: IfcText | null, EnumerationValues: IfcValue[] | null, EnumerationReference: (Handle<IfcPropertyEnumeration> | IfcPropertyEnumeration) | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
 		this.Name = Name;
-		this.Description = Description;
+		this.Specification = Specification;
 		this.EnumerationValues = EnumerationValues;
 		this.EnumerationReference = EnumerationReference;
 	}
 	expressID: number;
 	type: number;
 	Name: IfcIdentifier ;
-	Description: IfcText | null;
+	Specification: IfcText | null;
 	EnumerationValues: IfcValue[] | null;
 	EnumerationReference: (Handle<IfcPropertyEnumeration> | IfcPropertyEnumeration) | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcPropertyEnumeratedValue
 	{
 		let ptr = 0;
 		let Name = tape[ptr++];
-		let Description = tape[ptr++];
+		let Specification = tape[ptr++];
 		let EnumerationValues = tape[ptr++];
 		let EnumerationReference = tape[ptr++];
-		return new IfcPropertyEnumeratedValue(expressID, type, Name, Description, EnumerationValues, EnumerationReference);
+		return new IfcPropertyEnumeratedValue(expressID, type, Name, Specification, EnumerationValues, EnumerationReference);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
 		args.push(this.Name);;
-		args.push(this.Description);;
+		args.push(this.Specification);;
 		args.push(this.EnumerationValues);;
 		args.push(this.EnumerationReference);;
 		return args;
@@ -28818,70 +31415,70 @@ export class IfcPropertyEnumeration {
 	}
 };
 export class IfcPropertyListValue {
-	constructor(expressID: number, type: number, Name: IfcIdentifier , Description: IfcText | null, ListValues: IfcValue[] | null, Unit: IfcUnit | null)
+	constructor(expressID: number, type: number, Name: IfcIdentifier , Specification: IfcText | null, ListValues: IfcValue[] | null, Unit: IfcUnit | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
 		this.Name = Name;
-		this.Description = Description;
+		this.Specification = Specification;
 		this.ListValues = ListValues;
 		this.Unit = Unit;
 	}
 	expressID: number;
 	type: number;
 	Name: IfcIdentifier ;
-	Description: IfcText | null;
+	Specification: IfcText | null;
 	ListValues: IfcValue[] | null;
 	Unit: IfcUnit | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcPropertyListValue
 	{
 		let ptr = 0;
 		let Name = tape[ptr++];
-		let Description = tape[ptr++];
+		let Specification = tape[ptr++];
 		let ListValues = tape[ptr++];
 		let Unit = tape[ptr++];
-		return new IfcPropertyListValue(expressID, type, Name, Description, ListValues, Unit);
+		return new IfcPropertyListValue(expressID, type, Name, Specification, ListValues, Unit);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
 		args.push(this.Name);;
-		args.push(this.Description);;
+		args.push(this.Specification);;
 		args.push(this.ListValues);;
 		args.push(this.Unit);;
 		return args;
 	}
 };
 export class IfcPropertyReferenceValue {
-	constructor(expressID: number, type: number, Name: IfcIdentifier , Description: IfcText | null, UsageName: IfcText | null, PropertyReference: IfcObjectReferenceSelect | null)
+	constructor(expressID: number, type: number, Name: IfcIdentifier , Specification: IfcText | null, UsageName: IfcText | null, PropertyReference: IfcObjectReferenceSelect | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
 		this.Name = Name;
-		this.Description = Description;
+		this.Specification = Specification;
 		this.UsageName = UsageName;
 		this.PropertyReference = PropertyReference;
 	}
 	expressID: number;
 	type: number;
 	Name: IfcIdentifier ;
-	Description: IfcText | null;
+	Specification: IfcText | null;
 	UsageName: IfcText | null;
 	PropertyReference: IfcObjectReferenceSelect | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcPropertyReferenceValue
 	{
 		let ptr = 0;
 		let Name = tape[ptr++];
-		let Description = tape[ptr++];
+		let Specification = tape[ptr++];
 		let UsageName = tape[ptr++];
 		let PropertyReference = tape[ptr++];
-		return new IfcPropertyReferenceValue(expressID, type, Name, Description, UsageName, PropertyReference);
+		return new IfcPropertyReferenceValue(expressID, type, Name, Specification, UsageName, PropertyReference);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
 		args.push(this.Name);;
-		args.push(this.Description);;
+		args.push(this.Specification);;
 		args.push(this.UsageName);;
 		args.push(this.PropertyReference);;
 		return args;
@@ -29009,47 +31606,47 @@ export class IfcPropertySetTemplate {
 	}
 };
 export class IfcPropertySingleValue {
-	constructor(expressID: number, type: number, Name: IfcIdentifier , Description: IfcText | null, NominalValue: IfcValue | null, Unit: IfcUnit | null)
+	constructor(expressID: number, type: number, Name: IfcIdentifier , Specification: IfcText | null, NominalValue: IfcValue | null, Unit: IfcUnit | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
 		this.Name = Name;
-		this.Description = Description;
+		this.Specification = Specification;
 		this.NominalValue = NominalValue;
 		this.Unit = Unit;
 	}
 	expressID: number;
 	type: number;
 	Name: IfcIdentifier ;
-	Description: IfcText | null;
+	Specification: IfcText | null;
 	NominalValue: IfcValue | null;
 	Unit: IfcUnit | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcPropertySingleValue
 	{
 		let ptr = 0;
 		let Name = tape[ptr++];
-		let Description = tape[ptr++];
+		let Specification = tape[ptr++];
 		let NominalValue = tape[ptr++];
 		let Unit = tape[ptr++];
-		return new IfcPropertySingleValue(expressID, type, Name, Description, NominalValue, Unit);
+		return new IfcPropertySingleValue(expressID, type, Name, Specification, NominalValue, Unit);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
 		args.push(this.Name);;
-		args.push(this.Description);;
+		args.push(this.Specification);;
 		args.push(this.NominalValue);;
 		args.push(this.Unit);;
 		return args;
 	}
 };
 export class IfcPropertyTableValue {
-	constructor(expressID: number, type: number, Name: IfcIdentifier , Description: IfcText | null, DefiningValues: IfcValue[] | null, DefinedValues: IfcValue[] | null, Expression: IfcText | null, DefiningUnit: IfcUnit | null, DefinedUnit: IfcUnit | null, CurveInterpolation: IfcCurveInterpolationEnum | null)
+	constructor(expressID: number, type: number, Name: IfcIdentifier , Specification: IfcText | null, DefiningValues: IfcValue[] | null, DefinedValues: IfcValue[] | null, Expression: IfcText | null, DefiningUnit: IfcUnit | null, DefinedUnit: IfcUnit | null, CurveInterpolation: IfcCurveInterpolationEnum | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
 		this.Name = Name;
-		this.Description = Description;
+		this.Specification = Specification;
 		this.DefiningValues = DefiningValues;
 		this.DefinedValues = DefinedValues;
 		this.Expression = Expression;
@@ -29060,7 +31657,7 @@ export class IfcPropertyTableValue {
 	expressID: number;
 	type: number;
 	Name: IfcIdentifier ;
-	Description: IfcText | null;
+	Specification: IfcText | null;
 	DefiningValues: IfcValue[] | null;
 	DefinedValues: IfcValue[] | null;
 	Expression: IfcText | null;
@@ -29071,20 +31668,20 @@ export class IfcPropertyTableValue {
 	{
 		let ptr = 0;
 		let Name = tape[ptr++];
-		let Description = tape[ptr++];
+		let Specification = tape[ptr++];
 		let DefiningValues = tape[ptr++];
 		let DefinedValues = tape[ptr++];
 		let Expression = tape[ptr++];
 		let DefiningUnit = tape[ptr++];
 		let DefinedUnit = tape[ptr++];
 		let CurveInterpolation = tape[ptr++];
-		return new IfcPropertyTableValue(expressID, type, Name, Description, DefiningValues, DefinedValues, Expression, DefiningUnit, DefinedUnit, CurveInterpolation);
+		return new IfcPropertyTableValue(expressID, type, Name, Specification, DefiningValues, DefinedValues, Expression, DefiningUnit, DefinedUnit, CurveInterpolation);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
 		args.push(this.Name);;
-		args.push(this.Description);;
+		args.push(this.Specification);;
 		args.push(this.DefiningValues);;
 		args.push(this.DefinedValues);;
 		args.push(this.Expression);;
@@ -29392,61 +31989,6 @@ export class IfcProtectiveDeviceType {
 		return args;
 	}
 };
-export class IfcProxy {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, ProxyType: IfcObjectTypeEnum , Tag: IfcLabel | null)
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.GlobalId = GlobalId;
-		this.OwnerHistory = OwnerHistory;
-		this.Name = Name;
-		this.Description = Description;
-		this.ObjectType = ObjectType;
-		this.ObjectPlacement = ObjectPlacement;
-		this.Representation = Representation;
-		this.ProxyType = ProxyType;
-		this.Tag = Tag;
-	}
-	expressID: number;
-	type: number;
-	GlobalId: IfcGloballyUniqueId ;
-	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
-	Name: IfcLabel | null;
-	Description: IfcText | null;
-	ObjectType: IfcLabel | null;
-	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
-	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
-	ProxyType: IfcObjectTypeEnum ;
-	Tag: IfcLabel | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcProxy
-	{
-		let ptr = 0;
-		let GlobalId = tape[ptr++];
-		let OwnerHistory = tape[ptr++];
-		let Name = tape[ptr++];
-		let Description = tape[ptr++];
-		let ObjectType = tape[ptr++];
-		let ObjectPlacement = tape[ptr++];
-		let Representation = tape[ptr++];
-		let ProxyType = tape[ptr++];
-		let Tag = tape[ptr++];
-		return new IfcProxy(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, ProxyType, Tag);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.GlobalId);;
-		args.push(this.OwnerHistory);;
-		args.push(this.Name);;
-		args.push(this.Description);;
-		args.push(this.ObjectType);;
-		args.push(this.ObjectPlacement);;
-		args.push(this.Representation);;
-		args.push(this.ProxyType);;
-		args.push(this.Tag);;
-		return args;
-	}
-};
 export class IfcPump {
 	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcPumpTypeEnum | null)
 	{
@@ -29678,6 +32220,45 @@ export class IfcQuantityLength {
 		return args;
 	}
 };
+export class IfcQuantityNumber {
+	constructor(expressID: number, type: number, Name: IfcLabel , Description: IfcText | null, Unit: (Handle<IfcNamedUnit> | IfcNamedUnit) | null, NumberValue: IfcNumericMeasure , Formula: IfcLabel | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.Name = Name;
+		this.Description = Description;
+		this.Unit = Unit;
+		this.NumberValue = NumberValue;
+		this.Formula = Formula;
+	}
+	expressID: number;
+	type: number;
+	Name: IfcLabel ;
+	Description: IfcText | null;
+	Unit: (Handle<IfcNamedUnit> | IfcNamedUnit) | null;
+	NumberValue: IfcNumericMeasure ;
+	Formula: IfcLabel | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcQuantityNumber
+	{
+		let ptr = 0;
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let Unit = tape[ptr++];
+		let NumberValue = tape[ptr++];
+		let Formula = tape[ptr++];
+		return new IfcQuantityNumber(expressID, type, Name, Description, Unit, NumberValue, Formula);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.Unit);;
+		args.push(this.NumberValue);;
+		args.push(this.Formula);;
+		return args;
+	}
+};
 export class IfcQuantitySet {
 	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null)
 	{
@@ -29830,6 +32411,120 @@ export class IfcQuantityWeight {
 		return args;
 	}
 };
+export class IfcRail {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcRailTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcRailTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcRail
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcRail(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcRailType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcRailTypeEnum )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	PredefinedType: IfcRailTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcRailType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcRailType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
 export class IfcRailing {
 	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcRailingTypeEnum | null)
 	{
@@ -29940,6 +32635,128 @@ export class IfcRailingType {
 		args.push(this.RepresentationMaps);;
 		args.push(this.Tag);;
 		args.push(this.ElementType);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcRailway {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, LongName: IfcLabel | null, CompositionType: IfcElementCompositionEnum | null, PredefinedType: IfcRailwayTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.LongName = LongName;
+		this.CompositionType = CompositionType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	LongName: IfcLabel | null;
+	CompositionType: IfcElementCompositionEnum | null;
+	PredefinedType: IfcRailwayTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcRailway
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let LongName = tape[ptr++];
+		let CompositionType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcRailway(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, LongName, CompositionType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.LongName);;
+		args.push(this.CompositionType);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcRailwayPart {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, LongName: IfcLabel | null, CompositionType: IfcElementCompositionEnum | null, UsageType: IfcFacilityUsageEnum , PredefinedType: IfcRailwayPartTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.LongName = LongName;
+		this.CompositionType = CompositionType;
+		this.UsageType = UsageType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	LongName: IfcLabel | null;
+	CompositionType: IfcElementCompositionEnum | null;
+	UsageType: IfcFacilityUsageEnum ;
+	PredefinedType: IfcRailwayPartTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcRailwayPart
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let LongName = tape[ptr++];
+		let CompositionType = tape[ptr++];
+		let UsageType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcRailwayPart(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, LongName, CompositionType, UsageType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.LongName);;
+		args.push(this.CompositionType);;
+		args.push(this.UsageType);;
 		args.push(this.PredefinedType);;
 		return args;
 	}
@@ -30561,7 +33378,7 @@ export class IfcReference {
 	}
 };
 export class IfcReferent {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, PredefinedType: IfcReferentTypeEnum | null, RestartDistance: IfcLengthMeasure | null)
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, PredefinedType: IfcReferentTypeEnum | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -30573,7 +33390,6 @@ export class IfcReferent {
 		this.ObjectPlacement = ObjectPlacement;
 		this.Representation = Representation;
 		this.PredefinedType = PredefinedType;
-		this.RestartDistance = RestartDistance;
 	}
 	expressID: number;
 	type: number;
@@ -30585,7 +33401,6 @@ export class IfcReferent {
 	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
 	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
 	PredefinedType: IfcReferentTypeEnum | null;
-	RestartDistance: IfcLengthMeasure | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcReferent
 	{
 		let ptr = 0;
@@ -30597,8 +33412,7 @@ export class IfcReferent {
 		let ObjectPlacement = tape[ptr++];
 		let Representation = tape[ptr++];
 		let PredefinedType = tape[ptr++];
-		let RestartDistance = tape[ptr++];
-		return new IfcReferent(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, PredefinedType, RestartDistance);
+		return new IfcReferent(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, PredefinedType);
 	}
 	ToTape(): any[]
 	{
@@ -30611,7 +33425,6 @@ export class IfcReferent {
 		args.push(this.ObjectPlacement);;
 		args.push(this.Representation);;
 		args.push(this.PredefinedType);;
-		args.push(this.RestartDistance);;
 		return args;
 	}
 };
@@ -30671,6 +33484,61 @@ export class IfcRegularTimeSeries {
 		args.push(this.Unit);;
 		args.push(this.TimeStep);;
 		args.push(this.Values);;
+		return args;
+	}
+};
+export class IfcReinforcedSoil {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcReinforcedSoilTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcReinforcedSoilTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcReinforcedSoil
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcReinforcedSoil(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
 		return args;
 	}
 };
@@ -31215,6 +34083,49 @@ export class IfcReinforcingMeshType {
 		args.push(this.TransverseBarSpacing);;
 		args.push(this.BendingShapeCode);;
 		args.push(this.BendingParameters);;
+		return args;
+	}
+};
+export class IfcRelAdheresToElement {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, RelatingElement: (Handle<IfcElement> | IfcElement) , RelatedSurfaceFeatures: (Handle<IfcSurfaceFeature> | IfcSurfaceFeature)[] )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.RelatingElement = RelatingElement;
+		this.RelatedSurfaceFeatures = RelatedSurfaceFeatures;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	RelatingElement: (Handle<IfcElement> | IfcElement) ;
+	RelatedSurfaceFeatures: (Handle<IfcSurfaceFeature> | IfcSurfaceFeature)[] ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcRelAdheresToElement
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let RelatingElement = tape[ptr++];
+		let RelatedSurfaceFeatures = tape[ptr++];
+		return new IfcRelAdheresToElement(expressID, type, GlobalId, OwnerHistory, Name, Description, RelatingElement, RelatedSurfaceFeatures);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.RelatingElement);;
+		args.push(this.RelatedSurfaceFeatures);;
 		return args;
 	}
 };
@@ -31943,6 +34854,49 @@ export class IfcRelAssociatesMaterial {
 		args.push(this.Description);;
 		args.push(this.RelatedObjects);;
 		args.push(this.RelatingMaterial);;
+		return args;
+	}
+};
+export class IfcRelAssociatesProfileDef {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, RelatedObjects: IfcDefinitionSelect[] , RelatingProfileDef: (Handle<IfcProfileDef> | IfcProfileDef) )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.RelatedObjects = RelatedObjects;
+		this.RelatingProfileDef = RelatingProfileDef;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	RelatedObjects: IfcDefinitionSelect[] ;
+	RelatingProfileDef: (Handle<IfcProfileDef> | IfcProfileDef) ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcRelAssociatesProfileDef
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let RelatedObjects = tape[ptr++];
+		let RelatingProfileDef = tape[ptr++];
+		return new IfcRelAssociatesProfileDef(expressID, type, GlobalId, OwnerHistory, Name, Description, RelatedObjects, RelatingProfileDef);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.RelatedObjects);;
+		args.push(this.RelatingProfileDef);;
 		return args;
 	}
 };
@@ -32902,7 +35856,7 @@ export class IfcRelFlowControlElements {
 	}
 };
 export class IfcRelInterferesElements {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, RelatingElement: (Handle<IfcElement> | IfcElement) , RelatedElement: (Handle<IfcElement> | IfcElement) , InterferenceGeometry: (Handle<IfcConnectionGeometry> | IfcConnectionGeometry) | null, InterferenceType: IfcIdentifier | null, ImpliedOrder: boolean )
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, RelatingElement: IfcInterferenceSelect , RelatedElement: IfcInterferenceSelect , InterferenceGeometry: (Handle<IfcConnectionGeometry> | IfcConnectionGeometry) | null, InterferenceSpace: (Handle<IfcSpatialZone> | IfcSpatialZone) | null, InterferenceType: IfcIdentifier | null, ImpliedOrder: IfcLogical )
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -32913,6 +35867,7 @@ export class IfcRelInterferesElements {
 		this.RelatingElement = RelatingElement;
 		this.RelatedElement = RelatedElement;
 		this.InterferenceGeometry = InterferenceGeometry;
+		this.InterferenceSpace = InterferenceSpace;
 		this.InterferenceType = InterferenceType;
 		this.ImpliedOrder = ImpliedOrder;
 	}
@@ -32922,11 +35877,12 @@ export class IfcRelInterferesElements {
 	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
 	Name: IfcLabel | null;
 	Description: IfcText | null;
-	RelatingElement: (Handle<IfcElement> | IfcElement) ;
-	RelatedElement: (Handle<IfcElement> | IfcElement) ;
+	RelatingElement: IfcInterferenceSelect ;
+	RelatedElement: IfcInterferenceSelect ;
 	InterferenceGeometry: (Handle<IfcConnectionGeometry> | IfcConnectionGeometry) | null;
+	InterferenceSpace: (Handle<IfcSpatialZone> | IfcSpatialZone) | null;
 	InterferenceType: IfcIdentifier | null;
-	ImpliedOrder: boolean ;
+	ImpliedOrder: IfcLogical ;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcRelInterferesElements
 	{
 		let ptr = 0;
@@ -32937,9 +35893,10 @@ export class IfcRelInterferesElements {
 		let RelatingElement = tape[ptr++];
 		let RelatedElement = tape[ptr++];
 		let InterferenceGeometry = tape[ptr++];
+		let InterferenceSpace = tape[ptr++];
 		let InterferenceType = tape[ptr++];
 		let ImpliedOrder = tape[ptr++];
-		return new IfcRelInterferesElements(expressID, type, GlobalId, OwnerHistory, Name, Description, RelatingElement, RelatedElement, InterferenceGeometry, InterferenceType, ImpliedOrder);
+		return new IfcRelInterferesElements(expressID, type, GlobalId, OwnerHistory, Name, Description, RelatingElement, RelatedElement, InterferenceGeometry, InterferenceSpace, InterferenceType, ImpliedOrder);
 	}
 	ToTape(): any[]
 	{
@@ -32951,6 +35908,7 @@ export class IfcRelInterferesElements {
 		args.push(this.RelatingElement);;
 		args.push(this.RelatedElement);;
 		args.push(this.InterferenceGeometry);;
+		args.push(this.InterferenceSpace);;
 		args.push(this.InterferenceType);;
 		args.push(this.ImpliedOrder);;
 		return args;
@@ -33086,7 +36044,7 @@ export class IfcRelProjectsElement {
 	}
 };
 export class IfcRelReferencedInSpatialStructure {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, RelatedElements: (Handle<IfcProduct> | IfcProduct)[] , RelatingStructure: (Handle<IfcSpatialElement> | IfcSpatialElement) )
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, RelatedElements: IfcSpatialReferenceSelect[] , RelatingStructure: (Handle<IfcSpatialElement> | IfcSpatialElement) )
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -33103,7 +36061,7 @@ export class IfcRelReferencedInSpatialStructure {
 	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
 	Name: IfcLabel | null;
 	Description: IfcText | null;
-	RelatedElements: (Handle<IfcProduct> | IfcProduct)[] ;
+	RelatedElements: IfcSpatialReferenceSelect[] ;
 	RelatingStructure: (Handle<IfcSpatialElement> | IfcSpatialElement) ;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcRelReferencedInSpatialStructure
 	{
@@ -33995,6 +36953,128 @@ export class IfcRightCircularCylinder {
 		return args;
 	}
 };
+export class IfcRoad {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, LongName: IfcLabel | null, CompositionType: IfcElementCompositionEnum | null, PredefinedType: IfcRoadTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.LongName = LongName;
+		this.CompositionType = CompositionType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	LongName: IfcLabel | null;
+	CompositionType: IfcElementCompositionEnum | null;
+	PredefinedType: IfcRoadTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcRoad
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let LongName = tape[ptr++];
+		let CompositionType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcRoad(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, LongName, CompositionType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.LongName);;
+		args.push(this.CompositionType);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcRoadPart {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, LongName: IfcLabel | null, CompositionType: IfcElementCompositionEnum | null, UsageType: IfcFacilityUsageEnum , PredefinedType: IfcRoadPartTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.LongName = LongName;
+		this.CompositionType = CompositionType;
+		this.UsageType = UsageType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	LongName: IfcLabel | null;
+	CompositionType: IfcElementCompositionEnum | null;
+	UsageType: IfcFacilityUsageEnum ;
+	PredefinedType: IfcRoadPartTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcRoadPart
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let LongName = tape[ptr++];
+		let CompositionType = tape[ptr++];
+		let UsageType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcRoadPart(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, LongName, CompositionType, UsageType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.LongName);;
+		args.push(this.CompositionType);;
+		args.push(this.UsageType);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
 export class IfcRoof {
 	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcRoofTypeEnum | null)
 	{
@@ -34398,6 +37478,41 @@ export class IfcSeamCurve {
 		return args;
 	}
 };
+export class IfcSecondOrderPolynomialSpiral {
+	constructor(expressID: number, type: number, Position: IfcAxis2Placement | null, QuadraticTerm: IfcLengthMeasure , LinearTerm: IfcLengthMeasure | null, ConstantTerm: IfcLengthMeasure | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.Position = Position;
+		this.QuadraticTerm = QuadraticTerm;
+		this.LinearTerm = LinearTerm;
+		this.ConstantTerm = ConstantTerm;
+	}
+	expressID: number;
+	type: number;
+	Position: IfcAxis2Placement | null;
+	QuadraticTerm: IfcLengthMeasure ;
+	LinearTerm: IfcLengthMeasure | null;
+	ConstantTerm: IfcLengthMeasure | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcSecondOrderPolynomialSpiral
+	{
+		let ptr = 0;
+		let Position = tape[ptr++];
+		let QuadraticTerm = tape[ptr++];
+		let LinearTerm = tape[ptr++];
+		let ConstantTerm = tape[ptr++];
+		return new IfcSecondOrderPolynomialSpiral(expressID, type, Position, QuadraticTerm, LinearTerm, ConstantTerm);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.Position);;
+		args.push(this.QuadraticTerm);;
+		args.push(this.LinearTerm);;
+		args.push(this.ConstantTerm);;
+		return args;
+	}
+};
 export class IfcSectionProperties {
 	constructor(expressID: number, type: number, SectionType: IfcSectionTypeEnum , StartProfile: (Handle<IfcProfileDef> | IfcProfileDef) , EndProfile: (Handle<IfcProfileDef> | IfcProfileDef) | null)
 	{
@@ -34500,29 +37615,26 @@ export class IfcSectionedSolid {
 	}
 };
 export class IfcSectionedSolidHorizontal {
-	constructor(expressID: number, type: number, Directrix: (Handle<IfcCurve> | IfcCurve) , CrossSections: (Handle<IfcProfileDef> | IfcProfileDef)[] , CrossSectionPositions: (Handle<IfcDistanceExpression> | IfcDistanceExpression)[] , FixedAxisVertical: IfcBoolean )
+	constructor(expressID: number, type: number, Directrix: (Handle<IfcCurve> | IfcCurve) , CrossSections: (Handle<IfcProfileDef> | IfcProfileDef)[] , CrossSectionPositions: (Handle<IfcAxis2PlacementLinear> | IfcAxis2PlacementLinear)[] )
 	{
 		this.expressID = expressID;
 		this.type = type;
 		this.Directrix = Directrix;
 		this.CrossSections = CrossSections;
 		this.CrossSectionPositions = CrossSectionPositions;
-		this.FixedAxisVertical = FixedAxisVertical;
 	}
 	expressID: number;
 	type: number;
 	Directrix: (Handle<IfcCurve> | IfcCurve) ;
 	CrossSections: (Handle<IfcProfileDef> | IfcProfileDef)[] ;
-	CrossSectionPositions: (Handle<IfcDistanceExpression> | IfcDistanceExpression)[] ;
-	FixedAxisVertical: IfcBoolean ;
+	CrossSectionPositions: (Handle<IfcAxis2PlacementLinear> | IfcAxis2PlacementLinear)[] ;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcSectionedSolidHorizontal
 	{
 		let ptr = 0;
 		let Directrix = tape[ptr++];
 		let CrossSections = tape[ptr++];
 		let CrossSectionPositions = tape[ptr++];
-		let FixedAxisVertical = tape[ptr++];
-		return new IfcSectionedSolidHorizontal(expressID, type, Directrix, CrossSections, CrossSectionPositions, FixedAxisVertical);
+		return new IfcSectionedSolidHorizontal(expressID, type, Directrix, CrossSections, CrossSectionPositions);
 	}
 	ToTape(): any[]
 	{
@@ -34530,7 +37642,6 @@ export class IfcSectionedSolidHorizontal {
 		args.push(this.Directrix);;
 		args.push(this.CrossSections);;
 		args.push(this.CrossSectionPositions);;
-		args.push(this.FixedAxisVertical);;
 		return args;
 	}
 };
@@ -34562,6 +37673,95 @@ export class IfcSectionedSpine {
 		args.push(this.SpineCurve);;
 		args.push(this.CrossSections);;
 		args.push(this.CrossSectionPositions);;
+		return args;
+	}
+};
+export class IfcSectionedSurface {
+	constructor(expressID: number, type: number, Directrix: (Handle<IfcCurve> | IfcCurve) , CrossSectionPositions: (Handle<IfcAxis2PlacementLinear> | IfcAxis2PlacementLinear)[] , CrossSections: (Handle<IfcProfileDef> | IfcProfileDef)[] )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.Directrix = Directrix;
+		this.CrossSectionPositions = CrossSectionPositions;
+		this.CrossSections = CrossSections;
+	}
+	expressID: number;
+	type: number;
+	Directrix: (Handle<IfcCurve> | IfcCurve) ;
+	CrossSectionPositions: (Handle<IfcAxis2PlacementLinear> | IfcAxis2PlacementLinear)[] ;
+	CrossSections: (Handle<IfcProfileDef> | IfcProfileDef)[] ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcSectionedSurface
+	{
+		let ptr = 0;
+		let Directrix = tape[ptr++];
+		let CrossSectionPositions = tape[ptr++];
+		let CrossSections = tape[ptr++];
+		return new IfcSectionedSurface(expressID, type, Directrix, CrossSectionPositions, CrossSections);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.Directrix);;
+		args.push(this.CrossSectionPositions);;
+		args.push(this.CrossSections);;
+		return args;
+	}
+};
+export class IfcSegment {
+	constructor(expressID: number, type: number, Transition: IfcTransitionCode )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.Transition = Transition;
+	}
+	expressID: number;
+	type: number;
+	Transition: IfcTransitionCode ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcSegment
+	{
+		let ptr = 0;
+		let Transition = tape[ptr++];
+		return new IfcSegment(expressID, type, Transition);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.Transition);;
+		return args;
+	}
+};
+export class IfcSegmentedReferenceCurve {
+	constructor(expressID: number, type: number, Segments: (Handle<IfcSegment> | IfcSegment)[] , SelfIntersect: IfcLogical , BaseCurve: (Handle<IfcBoundedCurve> | IfcBoundedCurve) , EndPoint: (Handle<IfcPlacement> | IfcPlacement) | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.Segments = Segments;
+		this.SelfIntersect = SelfIntersect;
+		this.BaseCurve = BaseCurve;
+		this.EndPoint = EndPoint;
+	}
+	expressID: number;
+	type: number;
+	Segments: (Handle<IfcSegment> | IfcSegment)[] ;
+	SelfIntersect: IfcLogical ;
+	BaseCurve: (Handle<IfcBoundedCurve> | IfcBoundedCurve) ;
+	EndPoint: (Handle<IfcPlacement> | IfcPlacement) | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcSegmentedReferenceCurve
+	{
+		let ptr = 0;
+		let Segments = tape[ptr++];
+		let SelfIntersect = tape[ptr++];
+		let BaseCurve = tape[ptr++];
+		let EndPoint = tape[ptr++];
+		return new IfcSegmentedReferenceCurve(expressID, type, Segments, SelfIntersect, BaseCurve, EndPoint);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.Segments);;
+		args.push(this.SelfIntersect);;
+		args.push(this.BaseCurve);;
+		args.push(this.EndPoint);;
 		return args;
 	}
 };
@@ -34676,6 +37876,61 @@ export class IfcSensorType {
 		args.push(this.Tag);;
 		args.push(this.ElementType);;
 		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcSeventhOrderPolynomialSpiral {
+	constructor(expressID: number, type: number, Position: IfcAxis2Placement | null, SepticTerm: IfcLengthMeasure , SexticTerm: IfcLengthMeasure | null, QuinticTerm: IfcLengthMeasure | null, QuarticTerm: IfcLengthMeasure | null, CubicTerm: IfcLengthMeasure | null, QuadraticTerm: IfcLengthMeasure | null, LinearTerm: IfcLengthMeasure | null, ConstantTerm: IfcLengthMeasure | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.Position = Position;
+		this.SepticTerm = SepticTerm;
+		this.SexticTerm = SexticTerm;
+		this.QuinticTerm = QuinticTerm;
+		this.QuarticTerm = QuarticTerm;
+		this.CubicTerm = CubicTerm;
+		this.QuadraticTerm = QuadraticTerm;
+		this.LinearTerm = LinearTerm;
+		this.ConstantTerm = ConstantTerm;
+	}
+	expressID: number;
+	type: number;
+	Position: IfcAxis2Placement | null;
+	SepticTerm: IfcLengthMeasure ;
+	SexticTerm: IfcLengthMeasure | null;
+	QuinticTerm: IfcLengthMeasure | null;
+	QuarticTerm: IfcLengthMeasure | null;
+	CubicTerm: IfcLengthMeasure | null;
+	QuadraticTerm: IfcLengthMeasure | null;
+	LinearTerm: IfcLengthMeasure | null;
+	ConstantTerm: IfcLengthMeasure | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcSeventhOrderPolynomialSpiral
+	{
+		let ptr = 0;
+		let Position = tape[ptr++];
+		let SepticTerm = tape[ptr++];
+		let SexticTerm = tape[ptr++];
+		let QuinticTerm = tape[ptr++];
+		let QuarticTerm = tape[ptr++];
+		let CubicTerm = tape[ptr++];
+		let QuadraticTerm = tape[ptr++];
+		let LinearTerm = tape[ptr++];
+		let ConstantTerm = tape[ptr++];
+		return new IfcSeventhOrderPolynomialSpiral(expressID, type, Position, SepticTerm, SexticTerm, QuinticTerm, QuarticTerm, CubicTerm, QuadraticTerm, LinearTerm, ConstantTerm);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.Position);;
+		args.push(this.SepticTerm);;
+		args.push(this.SexticTerm);;
+		args.push(this.QuinticTerm);;
+		args.push(this.QuarticTerm);;
+		args.push(this.CubicTerm);;
+		args.push(this.QuadraticTerm);;
+		args.push(this.LinearTerm);;
+		args.push(this.ConstantTerm);;
 		return args;
 	}
 };
@@ -34925,30 +38180,258 @@ export class IfcShellBasedSurfaceModel {
 		return args;
 	}
 };
+export class IfcSign {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcSignTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcSignTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcSign
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcSign(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcSignType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcSignTypeEnum )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	PredefinedType: IfcSignTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcSignType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcSignType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcSignal {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcSignalTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcSignalTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcSignal
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcSignal(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcSignalType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcSignalTypeEnum )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	PredefinedType: IfcSignalTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcSignalType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcSignalType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
 export class IfcSimpleProperty {
-	constructor(expressID: number, type: number, Name: IfcIdentifier , Description: IfcText | null)
+	constructor(expressID: number, type: number, Name: IfcIdentifier , Specification: IfcText | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
 		this.Name = Name;
-		this.Description = Description;
+		this.Specification = Specification;
 	}
 	expressID: number;
 	type: number;
 	Name: IfcIdentifier ;
-	Description: IfcText | null;
+	Specification: IfcText | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcSimpleProperty
 	{
 		let ptr = 0;
 		let Name = tape[ptr++];
-		let Description = tape[ptr++];
-		return new IfcSimpleProperty(expressID, type, Name, Description);
+		let Specification = tape[ptr++];
+		return new IfcSimpleProperty(expressID, type, Name, Specification);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
 		args.push(this.Name);;
-		args.push(this.Description);;
+		args.push(this.Specification);;
 		return args;
 	}
 };
@@ -35016,6 +38499,41 @@ export class IfcSimplePropertyTemplate {
 		args.push(this.SecondaryUnit);;
 		args.push(this.Expression);;
 		args.push(this.AccessState);;
+		return args;
+	}
+};
+export class IfcSineSpiral {
+	constructor(expressID: number, type: number, Position: IfcAxis2Placement | null, SineTerm: IfcLengthMeasure , LinearTerm: IfcLengthMeasure | null, ConstantTerm: IfcLengthMeasure | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.Position = Position;
+		this.SineTerm = SineTerm;
+		this.LinearTerm = LinearTerm;
+		this.ConstantTerm = ConstantTerm;
+	}
+	expressID: number;
+	type: number;
+	Position: IfcAxis2Placement | null;
+	SineTerm: IfcLengthMeasure ;
+	LinearTerm: IfcLengthMeasure | null;
+	ConstantTerm: IfcLengthMeasure | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcSineSpiral
+	{
+		let ptr = 0;
+		let Position = tape[ptr++];
+		let SineTerm = tape[ptr++];
+		let LinearTerm = tape[ptr++];
+		let ConstantTerm = tape[ptr++];
+		return new IfcSineSpiral(expressID, type, Position, SineTerm, LinearTerm, ConstantTerm);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.Position);;
+		args.push(this.SineTerm);;
+		args.push(this.LinearTerm);;
+		args.push(this.ConstantTerm);;
 		return args;
 	}
 };
@@ -35133,116 +38651,6 @@ export class IfcSlab {
 		let Tag = tape[ptr++];
 		let PredefinedType = tape[ptr++];
 		return new IfcSlab(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.GlobalId);;
-		args.push(this.OwnerHistory);;
-		args.push(this.Name);;
-		args.push(this.Description);;
-		args.push(this.ObjectType);;
-		args.push(this.ObjectPlacement);;
-		args.push(this.Representation);;
-		args.push(this.Tag);;
-		args.push(this.PredefinedType);;
-		return args;
-	}
-};
-export class IfcSlabElementedCase {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcSlabTypeEnum | null)
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.GlobalId = GlobalId;
-		this.OwnerHistory = OwnerHistory;
-		this.Name = Name;
-		this.Description = Description;
-		this.ObjectType = ObjectType;
-		this.ObjectPlacement = ObjectPlacement;
-		this.Representation = Representation;
-		this.Tag = Tag;
-		this.PredefinedType = PredefinedType;
-	}
-	expressID: number;
-	type: number;
-	GlobalId: IfcGloballyUniqueId ;
-	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
-	Name: IfcLabel | null;
-	Description: IfcText | null;
-	ObjectType: IfcLabel | null;
-	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
-	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
-	Tag: IfcIdentifier | null;
-	PredefinedType: IfcSlabTypeEnum | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcSlabElementedCase
-	{
-		let ptr = 0;
-		let GlobalId = tape[ptr++];
-		let OwnerHistory = tape[ptr++];
-		let Name = tape[ptr++];
-		let Description = tape[ptr++];
-		let ObjectType = tape[ptr++];
-		let ObjectPlacement = tape[ptr++];
-		let Representation = tape[ptr++];
-		let Tag = tape[ptr++];
-		let PredefinedType = tape[ptr++];
-		return new IfcSlabElementedCase(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.GlobalId);;
-		args.push(this.OwnerHistory);;
-		args.push(this.Name);;
-		args.push(this.Description);;
-		args.push(this.ObjectType);;
-		args.push(this.ObjectPlacement);;
-		args.push(this.Representation);;
-		args.push(this.Tag);;
-		args.push(this.PredefinedType);;
-		return args;
-	}
-};
-export class IfcSlabStandardCase {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcSlabTypeEnum | null)
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.GlobalId = GlobalId;
-		this.OwnerHistory = OwnerHistory;
-		this.Name = Name;
-		this.Description = Description;
-		this.ObjectType = ObjectType;
-		this.ObjectPlacement = ObjectPlacement;
-		this.Representation = Representation;
-		this.Tag = Tag;
-		this.PredefinedType = PredefinedType;
-	}
-	expressID: number;
-	type: number;
-	GlobalId: IfcGloballyUniqueId ;
-	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
-	Name: IfcLabel | null;
-	Description: IfcText | null;
-	ObjectType: IfcLabel | null;
-	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
-	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
-	Tag: IfcIdentifier | null;
-	PredefinedType: IfcSlabTypeEnum | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcSlabStandardCase
-	{
-		let ptr = 0;
-		let GlobalId = tape[ptr++];
-		let OwnerHistory = tape[ptr++];
-		let Name = tape[ptr++];
-		let Description = tape[ptr++];
-		let ObjectType = tape[ptr++];
-		let ObjectPlacement = tape[ptr++];
-		let Representation = tape[ptr++];
-		let Tag = tape[ptr++];
-		let PredefinedType = tape[ptr++];
-		return new IfcSlabStandardCase(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
 	}
 	ToTape(): any[]
 	{
@@ -36114,6 +39522,29 @@ export class IfcSphericalSurface {
 		return args;
 	}
 };
+export class IfcSpiral {
+	constructor(expressID: number, type: number, Position: IfcAxis2Placement | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.Position = Position;
+	}
+	expressID: number;
+	type: number;
+	Position: IfcAxis2Placement | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcSpiral
+	{
+		let ptr = 0;
+		let Position = tape[ptr++];
+		return new IfcSpiral(expressID, type, Position);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.Position);;
+		return args;
+	}
+};
 export class IfcStackTerminal {
 	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcStackTerminalTypeEnum | null)
 	{
@@ -36787,7 +40218,7 @@ export class IfcStructuralCurveAction {
 	}
 };
 export class IfcStructuralCurveConnection {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, AppliedCondition: (Handle<IfcBoundaryCondition> | IfcBoundaryCondition) | null, Axis: (Handle<IfcDirection> | IfcDirection) )
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, AppliedCondition: (Handle<IfcBoundaryCondition> | IfcBoundaryCondition) | null, AxisDirection: (Handle<IfcDirection> | IfcDirection) )
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -36799,7 +40230,7 @@ export class IfcStructuralCurveConnection {
 		this.ObjectPlacement = ObjectPlacement;
 		this.Representation = Representation;
 		this.AppliedCondition = AppliedCondition;
-		this.Axis = Axis;
+		this.AxisDirection = AxisDirection;
 	}
 	expressID: number;
 	type: number;
@@ -36811,7 +40242,7 @@ export class IfcStructuralCurveConnection {
 	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
 	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
 	AppliedCondition: (Handle<IfcBoundaryCondition> | IfcBoundaryCondition) | null;
-	Axis: (Handle<IfcDirection> | IfcDirection) ;
+	AxisDirection: (Handle<IfcDirection> | IfcDirection) ;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcStructuralCurveConnection
 	{
 		let ptr = 0;
@@ -36823,8 +40254,8 @@ export class IfcStructuralCurveConnection {
 		let ObjectPlacement = tape[ptr++];
 		let Representation = tape[ptr++];
 		let AppliedCondition = tape[ptr++];
-		let Axis = tape[ptr++];
-		return new IfcStructuralCurveConnection(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, AppliedCondition, Axis);
+		let AxisDirection = tape[ptr++];
+		return new IfcStructuralCurveConnection(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, AppliedCondition, AxisDirection);
 	}
 	ToTape(): any[]
 	{
@@ -36837,7 +40268,7 @@ export class IfcStructuralCurveConnection {
 		args.push(this.ObjectPlacement);;
 		args.push(this.Representation);;
 		args.push(this.AppliedCondition);;
-		args.push(this.Axis);;
+		args.push(this.AxisDirection);;
 		return args;
 	}
 };
@@ -38371,7 +41802,7 @@ export class IfcStyleModel {
 	}
 };
 export class IfcStyledItem {
-	constructor(expressID: number, type: number, Item: (Handle<IfcRepresentationItem> | IfcRepresentationItem) | null, Styles: IfcStyleAssignmentSelect[] , Name: IfcLabel | null)
+	constructor(expressID: number, type: number, Item: (Handle<IfcRepresentationItem> | IfcRepresentationItem) | null, Styles: (Handle<IfcPresentationStyle> | IfcPresentationStyle)[] , Name: IfcLabel | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -38382,7 +41813,7 @@ export class IfcStyledItem {
 	expressID: number;
 	type: number;
 	Item: (Handle<IfcRepresentationItem> | IfcRepresentationItem) | null;
-	Styles: IfcStyleAssignmentSelect[] ;
+	Styles: (Handle<IfcPresentationStyle> | IfcPresentationStyle)[] ;
 	Name: IfcLabel | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcStyledItem
 	{
@@ -38648,7 +42079,7 @@ export class IfcSurfaceCurve {
 	}
 };
 export class IfcSurfaceCurveSweptAreaSolid {
-	constructor(expressID: number, type: number, SweptArea: (Handle<IfcProfileDef> | IfcProfileDef) , Position: (Handle<IfcAxis2Placement3D> | IfcAxis2Placement3D) | null, Directrix: (Handle<IfcCurve> | IfcCurve) , StartParam: IfcParameterValue | null, EndParam: IfcParameterValue | null, ReferenceSurface: (Handle<IfcSurface> | IfcSurface) )
+	constructor(expressID: number, type: number, SweptArea: (Handle<IfcProfileDef> | IfcProfileDef) , Position: (Handle<IfcAxis2Placement3D> | IfcAxis2Placement3D) | null, Directrix: (Handle<IfcCurve> | IfcCurve) , StartParam: IfcCurveMeasureSelect | null, EndParam: IfcCurveMeasureSelect | null, ReferenceSurface: (Handle<IfcSurface> | IfcSurface) )
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -38664,8 +42095,8 @@ export class IfcSurfaceCurveSweptAreaSolid {
 	SweptArea: (Handle<IfcProfileDef> | IfcProfileDef) ;
 	Position: (Handle<IfcAxis2Placement3D> | IfcAxis2Placement3D) | null;
 	Directrix: (Handle<IfcCurve> | IfcCurve) ;
-	StartParam: IfcParameterValue | null;
-	EndParam: IfcParameterValue | null;
+	StartParam: IfcCurveMeasureSelect | null;
+	EndParam: IfcCurveMeasureSelect | null;
 	ReferenceSurface: (Handle<IfcSurface> | IfcSurface) ;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcSurfaceCurveSweptAreaSolid
 	{
@@ -39150,7 +42581,7 @@ export class IfcSweptDiskSolid {
 	}
 };
 export class IfcSweptDiskSolidPolygonal {
-	constructor(expressID: number, type: number, Directrix: (Handle<IfcCurve> | IfcCurve) , Radius: IfcPositiveLengthMeasure , InnerRadius: IfcPositiveLengthMeasure | null, StartParam: IfcParameterValue | null, EndParam: IfcParameterValue | null, FilletRadius: IfcPositiveLengthMeasure | null)
+	constructor(expressID: number, type: number, Directrix: (Handle<IfcCurve> | IfcCurve) , Radius: IfcPositiveLengthMeasure , InnerRadius: IfcPositiveLengthMeasure | null, StartParam: IfcParameterValue | null, EndParam: IfcParameterValue | null, FilletRadius: IfcNonNegativeLengthMeasure | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -39168,7 +42599,7 @@ export class IfcSweptDiskSolidPolygonal {
 	InnerRadius: IfcPositiveLengthMeasure | null;
 	StartParam: IfcParameterValue | null;
 	EndParam: IfcParameterValue | null;
-	FilletRadius: IfcPositiveLengthMeasure | null;
+	FilletRadius: IfcNonNegativeLengthMeasure | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcSweptDiskSolidPolygonal
 	{
 		let ptr = 0;
@@ -40550,25 +43981,29 @@ export class IfcTendonType {
 	}
 };
 export class IfcTessellatedFaceSet {
-	constructor(expressID: number, type: number, Coordinates: (Handle<IfcCartesianPointList3D> | IfcCartesianPointList3D) )
+	constructor(expressID: number, type: number, Coordinates: (Handle<IfcCartesianPointList3D> | IfcCartesianPointList3D) , Closed: IfcBoolean | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
 		this.Coordinates = Coordinates;
+		this.Closed = Closed;
 	}
 	expressID: number;
 	type: number;
 	Coordinates: (Handle<IfcCartesianPointList3D> | IfcCartesianPointList3D) ;
+	Closed: IfcBoolean | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcTessellatedFaceSet
 	{
 		let ptr = 0;
 		let Coordinates = tape[ptr++];
-		return new IfcTessellatedFaceSet(expressID, type, Coordinates);
+		let Closed = tape[ptr++];
+		return new IfcTessellatedFaceSet(expressID, type, Coordinates, Closed);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
 		args.push(this.Coordinates);;
+		args.push(this.Closed);;
 		return args;
 	}
 };
@@ -40871,6 +44306,64 @@ export class IfcTextureCoordinateGenerator {
 		return args;
 	}
 };
+export class IfcTextureCoordinateIndices {
+	constructor(expressID: number, type: number, TexCoordIndex: IfcPositiveInteger[] , TexCoordsOf: (Handle<IfcIndexedPolygonalFace> | IfcIndexedPolygonalFace) )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.TexCoordIndex = TexCoordIndex;
+		this.TexCoordsOf = TexCoordsOf;
+	}
+	expressID: number;
+	type: number;
+	TexCoordIndex: IfcPositiveInteger[] ;
+	TexCoordsOf: (Handle<IfcIndexedPolygonalFace> | IfcIndexedPolygonalFace) ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcTextureCoordinateIndices
+	{
+		let ptr = 0;
+		let TexCoordIndex = tape[ptr++];
+		let TexCoordsOf = tape[ptr++];
+		return new IfcTextureCoordinateIndices(expressID, type, TexCoordIndex, TexCoordsOf);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.TexCoordIndex);;
+		args.push(this.TexCoordsOf);;
+		return args;
+	}
+};
+export class IfcTextureCoordinateIndicesWithVoids {
+	constructor(expressID: number, type: number, TexCoordIndex: IfcPositiveInteger[] , TexCoordsOf: (Handle<IfcIndexedPolygonalFace> | IfcIndexedPolygonalFace) , InnerTexCoordIndices: IfcPositiveInteger[] )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.TexCoordIndex = TexCoordIndex;
+		this.TexCoordsOf = TexCoordsOf;
+		this.InnerTexCoordIndices = InnerTexCoordIndices;
+	}
+	expressID: number;
+	type: number;
+	TexCoordIndex: IfcPositiveInteger[] ;
+	TexCoordsOf: (Handle<IfcIndexedPolygonalFace> | IfcIndexedPolygonalFace) ;
+	InnerTexCoordIndices: IfcPositiveInteger[] ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcTextureCoordinateIndicesWithVoids
+	{
+		let ptr = 0;
+		let TexCoordIndex = tape[ptr++];
+		let TexCoordsOf = tape[ptr++];
+		let InnerTexCoordIndices = tape[ptr++];
+		return new IfcTextureCoordinateIndicesWithVoids(expressID, type, TexCoordIndex, TexCoordsOf, InnerTexCoordIndices);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.TexCoordIndex);;
+		args.push(this.TexCoordsOf);;
+		args.push(this.InnerTexCoordIndices);;
+		return args;
+	}
+};
 export class IfcTextureMap {
 	constructor(expressID: number, type: number, Maps: (Handle<IfcSurfaceTexture> | IfcSurfaceTexture)[] , Vertices: (Handle<IfcTextureVertex> | IfcTextureVertex)[] , MappedTo: (Handle<IfcFace> | IfcFace) )
 	{
@@ -40945,6 +44438,45 @@ export class IfcTextureVertexList {
 	{
 		let args: any[] = [];
 		args.push(this.TexCoordsList);;
+		return args;
+	}
+};
+export class IfcThirdOrderPolynomialSpiral {
+	constructor(expressID: number, type: number, Position: IfcAxis2Placement | null, CubicTerm: IfcLengthMeasure , QuadraticTerm: IfcLengthMeasure | null, LinearTerm: IfcLengthMeasure | null, ConstantTerm: IfcLengthMeasure | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.Position = Position;
+		this.CubicTerm = CubicTerm;
+		this.QuadraticTerm = QuadraticTerm;
+		this.LinearTerm = LinearTerm;
+		this.ConstantTerm = ConstantTerm;
+	}
+	expressID: number;
+	type: number;
+	Position: IfcAxis2Placement | null;
+	CubicTerm: IfcLengthMeasure ;
+	QuadraticTerm: IfcLengthMeasure | null;
+	LinearTerm: IfcLengthMeasure | null;
+	ConstantTerm: IfcLengthMeasure | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcThirdOrderPolynomialSpiral
+	{
+		let ptr = 0;
+		let Position = tape[ptr++];
+		let CubicTerm = tape[ptr++];
+		let QuadraticTerm = tape[ptr++];
+		let LinearTerm = tape[ptr++];
+		let ConstantTerm = tape[ptr++];
+		return new IfcThirdOrderPolynomialSpiral(expressID, type, Position, CubicTerm, QuadraticTerm, LinearTerm, ConstantTerm);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.Position);;
+		args.push(this.CubicTerm);;
+		args.push(this.QuadraticTerm);;
+		args.push(this.LinearTerm);;
+		args.push(this.ConstantTerm);;
 		return args;
 	}
 };
@@ -41134,6 +44666,120 @@ export class IfcToroidalSurface {
 		return args;
 	}
 };
+export class IfcTrackElement {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcTrackElementTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcTrackElementTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcTrackElement
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcTrackElement(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcTrackElementType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcTrackElementTypeEnum )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	PredefinedType: IfcTrackElementTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcTrackElementType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcTrackElementType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
 export class IfcTransformer {
 	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcTransformerTypeEnum | null)
 	{
@@ -41245,57 +44891,6 @@ export class IfcTransformerType {
 		args.push(this.Tag);;
 		args.push(this.ElementType);;
 		args.push(this.PredefinedType);;
-		return args;
-	}
-};
-export class IfcTransitionCurveSegment2D {
-	constructor(expressID: number, type: number, StartPoint: (Handle<IfcCartesianPoint> | IfcCartesianPoint) , StartDirection: IfcPlaneAngleMeasure , SegmentLength: IfcPositiveLengthMeasure , StartRadius: IfcPositiveLengthMeasure | null, EndRadius: IfcPositiveLengthMeasure | null, IsStartRadiusCCW: IfcBoolean , IsEndRadiusCCW: IfcBoolean , TransitionCurveType: IfcTransitionCurveType )
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.StartPoint = StartPoint;
-		this.StartDirection = StartDirection;
-		this.SegmentLength = SegmentLength;
-		this.StartRadius = StartRadius;
-		this.EndRadius = EndRadius;
-		this.IsStartRadiusCCW = IsStartRadiusCCW;
-		this.IsEndRadiusCCW = IsEndRadiusCCW;
-		this.TransitionCurveType = TransitionCurveType;
-	}
-	expressID: number;
-	type: number;
-	StartPoint: (Handle<IfcCartesianPoint> | IfcCartesianPoint) ;
-	StartDirection: IfcPlaneAngleMeasure ;
-	SegmentLength: IfcPositiveLengthMeasure ;
-	StartRadius: IfcPositiveLengthMeasure | null;
-	EndRadius: IfcPositiveLengthMeasure | null;
-	IsStartRadiusCCW: IfcBoolean ;
-	IsEndRadiusCCW: IfcBoolean ;
-	TransitionCurveType: IfcTransitionCurveType ;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcTransitionCurveSegment2D
-	{
-		let ptr = 0;
-		let StartPoint = tape[ptr++];
-		let StartDirection = tape[ptr++];
-		let SegmentLength = tape[ptr++];
-		let StartRadius = tape[ptr++];
-		let EndRadius = tape[ptr++];
-		let IsStartRadiusCCW = tape[ptr++];
-		let IsEndRadiusCCW = tape[ptr++];
-		let TransitionCurveType = tape[ptr++];
-		return new IfcTransitionCurveSegment2D(expressID, type, StartPoint, StartDirection, SegmentLength, StartRadius, EndRadius, IsStartRadiusCCW, IsEndRadiusCCW, TransitionCurveType);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.StartPoint);;
-		args.push(this.StartDirection);;
-		args.push(this.SegmentLength);;
-		args.push(this.StartRadius);;
-		args.push(this.EndRadius);;
-		args.push(this.IsStartRadiusCCW);;
-		args.push(this.IsEndRadiusCCW);;
-		args.push(this.TransitionCurveType);;
 		return args;
 	}
 };
@@ -41413,6 +45008,112 @@ export class IfcTransportElementType {
 		return args;
 	}
 };
+export class IfcTransportationDevice {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcTransportationDevice
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		return new IfcTransportationDevice(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		return args;
+	}
+};
+export class IfcTransportationDeviceType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcTransportationDeviceType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		return new IfcTransportationDeviceType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		return args;
+	}
+};
 export class IfcTrapeziumProfileDef {
 	constructor(expressID: number, type: number, ProfileType: IfcProfileTypeEnum , ProfileName: IfcLabel | null, Position: (Handle<IfcAxis2Placement2D> | IfcAxis2Placement2D) | null, BottomXDim: IfcPositiveLengthMeasure , TopXDim: IfcPositiveLengthMeasure , YDim: IfcPositiveLengthMeasure , TopXOffset: IfcLengthMeasure )
 	{
@@ -41461,52 +45162,52 @@ export class IfcTrapeziumProfileDef {
 	}
 };
 export class IfcTriangulatedFaceSet {
-	constructor(expressID: number, type: number, Coordinates: (Handle<IfcCartesianPointList3D> | IfcCartesianPointList3D) , Normals: IfcParameterValue[] | null, Closed: IfcBoolean | null, CoordIndex: IfcPositiveInteger[] , PnIndex: IfcPositiveInteger[] | null)
+	constructor(expressID: number, type: number, Coordinates: (Handle<IfcCartesianPointList3D> | IfcCartesianPointList3D) , Closed: IfcBoolean | null, Normals: IfcParameterValue[] | null, CoordIndex: IfcPositiveInteger[] , PnIndex: IfcPositiveInteger[] | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
 		this.Coordinates = Coordinates;
-		this.Normals = Normals;
 		this.Closed = Closed;
+		this.Normals = Normals;
 		this.CoordIndex = CoordIndex;
 		this.PnIndex = PnIndex;
 	}
 	expressID: number;
 	type: number;
 	Coordinates: (Handle<IfcCartesianPointList3D> | IfcCartesianPointList3D) ;
-	Normals: IfcParameterValue[] | null;
 	Closed: IfcBoolean | null;
+	Normals: IfcParameterValue[] | null;
 	CoordIndex: IfcPositiveInteger[] ;
 	PnIndex: IfcPositiveInteger[] | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcTriangulatedFaceSet
 	{
 		let ptr = 0;
 		let Coordinates = tape[ptr++];
-		let Normals = tape[ptr++];
 		let Closed = tape[ptr++];
+		let Normals = tape[ptr++];
 		let CoordIndex = tape[ptr++];
 		let PnIndex = tape[ptr++];
-		return new IfcTriangulatedFaceSet(expressID, type, Coordinates, Normals, Closed, CoordIndex, PnIndex);
+		return new IfcTriangulatedFaceSet(expressID, type, Coordinates, Closed, Normals, CoordIndex, PnIndex);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
 		args.push(this.Coordinates);;
-		args.push(this.Normals);;
 		args.push(this.Closed);;
+		args.push(this.Normals);;
 		args.push(this.CoordIndex);;
 		args.push(this.PnIndex);;
 		return args;
 	}
 };
 export class IfcTriangulatedIrregularNetwork {
-	constructor(expressID: number, type: number, Coordinates: (Handle<IfcCartesianPointList3D> | IfcCartesianPointList3D) , Normals: IfcParameterValue[] | null, Closed: IfcBoolean | null, CoordIndex: IfcPositiveInteger[] , PnIndex: IfcPositiveInteger[] | null, Flags: IfcInteger[] )
+	constructor(expressID: number, type: number, Coordinates: (Handle<IfcCartesianPointList3D> | IfcCartesianPointList3D) , Closed: IfcBoolean | null, Normals: IfcParameterValue[] | null, CoordIndex: IfcPositiveInteger[] , PnIndex: IfcPositiveInteger[] | null, Flags: IfcInteger[] )
 	{
 		this.expressID = expressID;
 		this.type = type;
 		this.Coordinates = Coordinates;
-		this.Normals = Normals;
 		this.Closed = Closed;
+		this.Normals = Normals;
 		this.CoordIndex = CoordIndex;
 		this.PnIndex = PnIndex;
 		this.Flags = Flags;
@@ -41514,8 +45215,8 @@ export class IfcTriangulatedIrregularNetwork {
 	expressID: number;
 	type: number;
 	Coordinates: (Handle<IfcCartesianPointList3D> | IfcCartesianPointList3D) ;
-	Normals: IfcParameterValue[] | null;
 	Closed: IfcBoolean | null;
+	Normals: IfcParameterValue[] | null;
 	CoordIndex: IfcPositiveInteger[] ;
 	PnIndex: IfcPositiveInteger[] | null;
 	Flags: IfcInteger[] ;
@@ -41523,19 +45224,19 @@ export class IfcTriangulatedIrregularNetwork {
 	{
 		let ptr = 0;
 		let Coordinates = tape[ptr++];
-		let Normals = tape[ptr++];
 		let Closed = tape[ptr++];
+		let Normals = tape[ptr++];
 		let CoordIndex = tape[ptr++];
 		let PnIndex = tape[ptr++];
 		let Flags = tape[ptr++];
-		return new IfcTriangulatedIrregularNetwork(expressID, type, Coordinates, Normals, Closed, CoordIndex, PnIndex, Flags);
+		return new IfcTriangulatedIrregularNetwork(expressID, type, Coordinates, Closed, Normals, CoordIndex, PnIndex, Flags);
 	}
 	ToTape(): any[]
 	{
 		let args: any[] = [];
 		args.push(this.Coordinates);;
-		args.push(this.Normals);;
 		args.push(this.Closed);;
+		args.push(this.Normals);;
 		args.push(this.CoordIndex);;
 		args.push(this.PnIndex);;
 		args.push(this.Flags);;
@@ -42350,6 +46051,120 @@ export class IfcVector {
 		return args;
 	}
 };
+export class IfcVehicle {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcVehicleTypeEnum | null)
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ObjectType = ObjectType;
+		this.ObjectPlacement = ObjectPlacement;
+		this.Representation = Representation;
+		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ObjectType: IfcLabel | null;
+	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
+	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
+	Tag: IfcIdentifier | null;
+	PredefinedType: IfcVehicleTypeEnum | null;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcVehicle
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ObjectType = tape[ptr++];
+		let ObjectPlacement = tape[ptr++];
+		let Representation = tape[ptr++];
+		let Tag = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcVehicle(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ObjectType);;
+		args.push(this.ObjectPlacement);;
+		args.push(this.Representation);;
+		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
+export class IfcVehicleType {
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcVehicleTypeEnum )
+	{
+		this.expressID = expressID;
+		this.type = type;
+		this.GlobalId = GlobalId;
+		this.OwnerHistory = OwnerHistory;
+		this.Name = Name;
+		this.Description = Description;
+		this.ApplicableOccurrence = ApplicableOccurrence;
+		this.HasPropertySets = HasPropertySets;
+		this.RepresentationMaps = RepresentationMaps;
+		this.Tag = Tag;
+		this.ElementType = ElementType;
+		this.PredefinedType = PredefinedType;
+	}
+	expressID: number;
+	type: number;
+	GlobalId: IfcGloballyUniqueId ;
+	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
+	Name: IfcLabel | null;
+	Description: IfcText | null;
+	ApplicableOccurrence: IfcIdentifier | null;
+	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
+	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
+	Tag: IfcLabel | null;
+	ElementType: IfcLabel | null;
+	PredefinedType: IfcVehicleTypeEnum ;
+	static FromTape(expressID: number, type: number, tape: any[]): IfcVehicleType
+	{
+		let ptr = 0;
+		let GlobalId = tape[ptr++];
+		let OwnerHistory = tape[ptr++];
+		let Name = tape[ptr++];
+		let Description = tape[ptr++];
+		let ApplicableOccurrence = tape[ptr++];
+		let HasPropertySets = tape[ptr++];
+		let RepresentationMaps = tape[ptr++];
+		let Tag = tape[ptr++];
+		let ElementType = tape[ptr++];
+		let PredefinedType = tape[ptr++];
+		return new IfcVehicleType(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ElementType, PredefinedType);
+	}
+	ToTape(): any[]
+	{
+		let args: any[] = [];
+		args.push(this.GlobalId);;
+		args.push(this.OwnerHistory);;
+		args.push(this.Name);;
+		args.push(this.Description);;
+		args.push(this.ApplicableOccurrence);;
+		args.push(this.HasPropertySets);;
+		args.push(this.RepresentationMaps);;
+		args.push(this.Tag);;
+		args.push(this.ElementType);;
+		args.push(this.PredefinedType);;
+		return args;
+	}
+};
 export class IfcVertex {
 	constructor(expressID: number, type: number, )
 	{
@@ -42416,7 +46231,7 @@ export class IfcVertexPoint {
 	}
 };
 export class IfcVibrationDamper {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcVibrationDamperTypeEnum | null)
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcDamperTypeEnum | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -42440,7 +46255,7 @@ export class IfcVibrationDamper {
 	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
 	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
 	Tag: IfcIdentifier | null;
-	PredefinedType: IfcVibrationDamperTypeEnum | null;
+	PredefinedType: IfcDamperTypeEnum | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcVibrationDamper
 	{
 		let ptr = 0;
@@ -42471,7 +46286,7 @@ export class IfcVibrationDamper {
 	}
 };
 export class IfcVibrationDamperType {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcVibrationDamperTypeEnum | null)
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcVibrationDamperTypeEnum )
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -42497,7 +46312,7 @@ export class IfcVibrationDamperType {
 	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
 	Tag: IfcLabel | null;
 	ElementType: IfcLabel | null;
-	PredefinedType: IfcVibrationDamperTypeEnum | null;
+	PredefinedType: IfcVibrationDamperTypeEnum ;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcVibrationDamperType
 	{
 		let ptr = 0;
@@ -42644,7 +46459,7 @@ export class IfcVibrationIsolatorType {
 	}
 };
 export class IfcVirtualElement {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null)
+	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcVirtualElementTypeEnum | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -42656,6 +46471,7 @@ export class IfcVirtualElement {
 		this.ObjectPlacement = ObjectPlacement;
 		this.Representation = Representation;
 		this.Tag = Tag;
+		this.PredefinedType = PredefinedType;
 	}
 	expressID: number;
 	type: number;
@@ -42667,6 +46483,7 @@ export class IfcVirtualElement {
 	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
 	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
 	Tag: IfcIdentifier | null;
+	PredefinedType: IfcVirtualElementTypeEnum | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcVirtualElement
 	{
 		let ptr = 0;
@@ -42678,7 +46495,8 @@ export class IfcVirtualElement {
 		let ObjectPlacement = tape[ptr++];
 		let Representation = tape[ptr++];
 		let Tag = tape[ptr++];
-		return new IfcVirtualElement(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag);
+		let PredefinedType = tape[ptr++];
+		return new IfcVirtualElement(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
 	}
 	ToTape(): any[]
 	{
@@ -42691,6 +46509,7 @@ export class IfcVirtualElement {
 		args.push(this.ObjectPlacement);;
 		args.push(this.Representation);;
 		args.push(this.Tag);;
+		args.push(this.PredefinedType);;
 		return args;
 	}
 };
@@ -42815,61 +46634,6 @@ export class IfcWall {
 		let Tag = tape[ptr++];
 		let PredefinedType = tape[ptr++];
 		return new IfcWall(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.GlobalId);;
-		args.push(this.OwnerHistory);;
-		args.push(this.Name);;
-		args.push(this.Description);;
-		args.push(this.ObjectType);;
-		args.push(this.ObjectPlacement);;
-		args.push(this.Representation);;
-		args.push(this.Tag);;
-		args.push(this.PredefinedType);;
-		return args;
-	}
-};
-export class IfcWallElementedCase {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, PredefinedType: IfcWallTypeEnum | null)
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.GlobalId = GlobalId;
-		this.OwnerHistory = OwnerHistory;
-		this.Name = Name;
-		this.Description = Description;
-		this.ObjectType = ObjectType;
-		this.ObjectPlacement = ObjectPlacement;
-		this.Representation = Representation;
-		this.Tag = Tag;
-		this.PredefinedType = PredefinedType;
-	}
-	expressID: number;
-	type: number;
-	GlobalId: IfcGloballyUniqueId ;
-	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
-	Name: IfcLabel | null;
-	Description: IfcText | null;
-	ObjectType: IfcLabel | null;
-	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
-	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
-	Tag: IfcIdentifier | null;
-	PredefinedType: IfcWallTypeEnum | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcWallElementedCase
-	{
-		let ptr = 0;
-		let GlobalId = tape[ptr++];
-		let OwnerHistory = tape[ptr++];
-		let Name = tape[ptr++];
-		let Description = tape[ptr++];
-		let ObjectType = tape[ptr++];
-		let ObjectPlacement = tape[ptr++];
-		let Representation = tape[ptr++];
-		let Tag = tape[ptr++];
-		let PredefinedType = tape[ptr++];
-		return new IfcWallElementedCase(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, PredefinedType);
 	}
 	ToTape(): any[]
 	{
@@ -43323,144 +47087,6 @@ export class IfcWindowPanelProperties {
 		return args;
 	}
 };
-export class IfcWindowStandardCase {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ObjectType: IfcLabel | null, ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null, Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null, Tag: IfcIdentifier | null, OverallHeight: IfcPositiveLengthMeasure | null, OverallWidth: IfcPositiveLengthMeasure | null, PredefinedType: IfcWindowTypeEnum | null, PartitioningType: IfcWindowTypePartitioningEnum | null, UserDefinedPartitioningType: IfcLabel | null)
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.GlobalId = GlobalId;
-		this.OwnerHistory = OwnerHistory;
-		this.Name = Name;
-		this.Description = Description;
-		this.ObjectType = ObjectType;
-		this.ObjectPlacement = ObjectPlacement;
-		this.Representation = Representation;
-		this.Tag = Tag;
-		this.OverallHeight = OverallHeight;
-		this.OverallWidth = OverallWidth;
-		this.PredefinedType = PredefinedType;
-		this.PartitioningType = PartitioningType;
-		this.UserDefinedPartitioningType = UserDefinedPartitioningType;
-	}
-	expressID: number;
-	type: number;
-	GlobalId: IfcGloballyUniqueId ;
-	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
-	Name: IfcLabel | null;
-	Description: IfcText | null;
-	ObjectType: IfcLabel | null;
-	ObjectPlacement: (Handle<IfcObjectPlacement> | IfcObjectPlacement) | null;
-	Representation: (Handle<IfcProductRepresentation> | IfcProductRepresentation) | null;
-	Tag: IfcIdentifier | null;
-	OverallHeight: IfcPositiveLengthMeasure | null;
-	OverallWidth: IfcPositiveLengthMeasure | null;
-	PredefinedType: IfcWindowTypeEnum | null;
-	PartitioningType: IfcWindowTypePartitioningEnum | null;
-	UserDefinedPartitioningType: IfcLabel | null;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcWindowStandardCase
-	{
-		let ptr = 0;
-		let GlobalId = tape[ptr++];
-		let OwnerHistory = tape[ptr++];
-		let Name = tape[ptr++];
-		let Description = tape[ptr++];
-		let ObjectType = tape[ptr++];
-		let ObjectPlacement = tape[ptr++];
-		let Representation = tape[ptr++];
-		let Tag = tape[ptr++];
-		let OverallHeight = tape[ptr++];
-		let OverallWidth = tape[ptr++];
-		let PredefinedType = tape[ptr++];
-		let PartitioningType = tape[ptr++];
-		let UserDefinedPartitioningType = tape[ptr++];
-		return new IfcWindowStandardCase(expressID, type, GlobalId, OwnerHistory, Name, Description, ObjectType, ObjectPlacement, Representation, Tag, OverallHeight, OverallWidth, PredefinedType, PartitioningType, UserDefinedPartitioningType);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.GlobalId);;
-		args.push(this.OwnerHistory);;
-		args.push(this.Name);;
-		args.push(this.Description);;
-		args.push(this.ObjectType);;
-		args.push(this.ObjectPlacement);;
-		args.push(this.Representation);;
-		args.push(this.Tag);;
-		args.push(this.OverallHeight);;
-		args.push(this.OverallWidth);;
-		args.push(this.PredefinedType);;
-		args.push(this.PartitioningType);;
-		args.push(this.UserDefinedPartitioningType);;
-		return args;
-	}
-};
-export class IfcWindowStyle {
-	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ConstructionType: IfcWindowStyleConstructionEnum , OperationType: IfcWindowStyleOperationEnum , ParameterTakesPrecedence: IfcBoolean , Sizeable: IfcBoolean )
-	{
-		this.expressID = expressID;
-		this.type = type;
-		this.GlobalId = GlobalId;
-		this.OwnerHistory = OwnerHistory;
-		this.Name = Name;
-		this.Description = Description;
-		this.ApplicableOccurrence = ApplicableOccurrence;
-		this.HasPropertySets = HasPropertySets;
-		this.RepresentationMaps = RepresentationMaps;
-		this.Tag = Tag;
-		this.ConstructionType = ConstructionType;
-		this.OperationType = OperationType;
-		this.ParameterTakesPrecedence = ParameterTakesPrecedence;
-		this.Sizeable = Sizeable;
-	}
-	expressID: number;
-	type: number;
-	GlobalId: IfcGloballyUniqueId ;
-	OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null;
-	Name: IfcLabel | null;
-	Description: IfcText | null;
-	ApplicableOccurrence: IfcIdentifier | null;
-	HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null;
-	RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null;
-	Tag: IfcLabel | null;
-	ConstructionType: IfcWindowStyleConstructionEnum ;
-	OperationType: IfcWindowStyleOperationEnum ;
-	ParameterTakesPrecedence: IfcBoolean ;
-	Sizeable: IfcBoolean ;
-	static FromTape(expressID: number, type: number, tape: any[]): IfcWindowStyle
-	{
-		let ptr = 0;
-		let GlobalId = tape[ptr++];
-		let OwnerHistory = tape[ptr++];
-		let Name = tape[ptr++];
-		let Description = tape[ptr++];
-		let ApplicableOccurrence = tape[ptr++];
-		let HasPropertySets = tape[ptr++];
-		let RepresentationMaps = tape[ptr++];
-		let Tag = tape[ptr++];
-		let ConstructionType = tape[ptr++];
-		let OperationType = tape[ptr++];
-		let ParameterTakesPrecedence = tape[ptr++];
-		let Sizeable = tape[ptr++];
-		return new IfcWindowStyle(expressID, type, GlobalId, OwnerHistory, Name, Description, ApplicableOccurrence, HasPropertySets, RepresentationMaps, Tag, ConstructionType, OperationType, ParameterTakesPrecedence, Sizeable);
-	}
-	ToTape(): any[]
-	{
-		let args: any[] = [];
-		args.push(this.GlobalId);;
-		args.push(this.OwnerHistory);;
-		args.push(this.Name);;
-		args.push(this.Description);;
-		args.push(this.ApplicableOccurrence);;
-		args.push(this.HasPropertySets);;
-		args.push(this.RepresentationMaps);;
-		args.push(this.Tag);;
-		args.push(this.ConstructionType);;
-		args.push(this.OperationType);;
-		args.push(this.ParameterTakesPrecedence);;
-		args.push(this.Sizeable);;
-		return args;
-	}
-};
 export class IfcWindowType {
 	constructor(expressID: number, type: number, GlobalId: IfcGloballyUniqueId , OwnerHistory: (Handle<IfcOwnerHistory> | IfcOwnerHistory) | null, Name: IfcLabel | null, Description: IfcText | null, ApplicableOccurrence: IfcIdentifier | null, HasPropertySets: (Handle<IfcPropertySetDefinition> | IfcPropertySetDefinition)[] | null, RepresentationMaps: (Handle<IfcRepresentationMap> | IfcRepresentationMap)[] | null, Tag: IfcLabel | null, ElementType: IfcLabel | null, PredefinedType: IfcWindowTypeEnum , PartitioningType: IfcWindowTypePartitioningEnum , ParameterTakesPrecedence: IfcBoolean | null, UserDefinedPartitioningType: IfcLabel | null)
 	{
@@ -43809,7 +47435,7 @@ export class IfcWorkSchedule {
 	}
 };
 export class IfcWorkTime {
-	constructor(expressID: number, type: number, Name: IfcLabel | null, DataOrigin: IfcDataOriginEnum | null, UserDefinedDataOrigin: IfcLabel | null, RecurrencePattern: (Handle<IfcRecurrencePattern> | IfcRecurrencePattern) | null, Start: IfcDate | null, Finish: IfcDate | null)
+	constructor(expressID: number, type: number, Name: IfcLabel | null, DataOrigin: IfcDataOriginEnum | null, UserDefinedDataOrigin: IfcLabel | null, RecurrencePattern: (Handle<IfcRecurrencePattern> | IfcRecurrencePattern) | null, StartDate: IfcDate | null, FinishDate: IfcDate | null)
 	{
 		this.expressID = expressID;
 		this.type = type;
@@ -43817,8 +47443,8 @@ export class IfcWorkTime {
 		this.DataOrigin = DataOrigin;
 		this.UserDefinedDataOrigin = UserDefinedDataOrigin;
 		this.RecurrencePattern = RecurrencePattern;
-		this.Start = Start;
-		this.Finish = Finish;
+		this.StartDate = StartDate;
+		this.FinishDate = FinishDate;
 	}
 	expressID: number;
 	type: number;
@@ -43826,8 +47452,8 @@ export class IfcWorkTime {
 	DataOrigin: IfcDataOriginEnum | null;
 	UserDefinedDataOrigin: IfcLabel | null;
 	RecurrencePattern: (Handle<IfcRecurrencePattern> | IfcRecurrencePattern) | null;
-	Start: IfcDate | null;
-	Finish: IfcDate | null;
+	StartDate: IfcDate | null;
+	FinishDate: IfcDate | null;
 	static FromTape(expressID: number, type: number, tape: any[]): IfcWorkTime
 	{
 		let ptr = 0;
@@ -43835,9 +47461,9 @@ export class IfcWorkTime {
 		let DataOrigin = tape[ptr++];
 		let UserDefinedDataOrigin = tape[ptr++];
 		let RecurrencePattern = tape[ptr++];
-		let Start = tape[ptr++];
-		let Finish = tape[ptr++];
-		return new IfcWorkTime(expressID, type, Name, DataOrigin, UserDefinedDataOrigin, RecurrencePattern, Start, Finish);
+		let StartDate = tape[ptr++];
+		let FinishDate = tape[ptr++];
+		return new IfcWorkTime(expressID, type, Name, DataOrigin, UserDefinedDataOrigin, RecurrencePattern, StartDate, FinishDate);
 	}
 	ToTape(): any[]
 	{
@@ -43846,8 +47472,8 @@ export class IfcWorkTime {
 		args.push(this.DataOrigin);;
 		args.push(this.UserDefinedDataOrigin);;
 		args.push(this.RecurrencePattern);;
-		args.push(this.Start);;
-		args.push(this.Finish);;
+		args.push(this.StartDate);;
+		args.push(this.FinishDate);;
 		return args;
 	}
 };

@@ -55,33 +55,6 @@ FromRawLineData[ifc2x4.IFCALARMTYPE] = (d) => {
 FromRawLineData[ifc2x4.IFCALIGNMENT] = (d) => {
 	return IfcAlignment.FromTape(d.ID, d.type, d.arguments);
 };
-FromRawLineData[ifc2x4.IFCALIGNMENT2DHORIZONTAL] = (d) => {
-	return IfcAlignment2DHorizontal.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCALIGNMENT2DHORIZONTALSEGMENT] = (d) => {
-	return IfcAlignment2DHorizontalSegment.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCALIGNMENT2DSEGMENT] = (d) => {
-	return IfcAlignment2DSegment.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCALIGNMENT2DVERSEGCIRCULARARC] = (d) => {
-	return IfcAlignment2DVerSegCircularArc.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCALIGNMENT2DVERSEGLINE] = (d) => {
-	return IfcAlignment2DVerSegLine.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCALIGNMENT2DVERSEGPARABOLICARC] = (d) => {
-	return IfcAlignment2DVerSegParabolicArc.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCALIGNMENT2DVERTICAL] = (d) => {
-	return IfcAlignment2DVertical.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCALIGNMENT2DVERTICALSEGMENT] = (d) => {
-	return IfcAlignment2DVerticalSegment.FromTape(d.ID, d.type, d.arguments);
-};
-FromRawLineData[ifc2x4.IFCALIGNMENTCURVE] = (d) => {
-	return IfcAlignmentCurve.FromTape(d.ID, d.type, d.arguments);
-};
 FromRawLineData[ifc2x4.IFCANNOTATION] = (d) => {
 	return IfcAnnotation.FromTape(d.ID, d.type, d.arguments);
 };

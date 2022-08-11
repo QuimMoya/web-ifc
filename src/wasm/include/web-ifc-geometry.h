@@ -28,6 +28,23 @@
 #include "web-ifc.h"
 #include "util.h"
 
+const static std::unordered_map<std::string, int> Horizontal_alignment_type{
+	{"LINE", 1},
+	{"CIRCULARARC", 2},
+	{"CLOTHOID", 3},
+	{"CUBIC", 4},
+	{"HELMERTCURVE", 5},
+	{"BLOSSCURVE", 6},
+	{"COSINECURVE", 7},
+	{"SINECURVE", 8},
+	{"VIENNESEBEND", 9}};
+
+const static std::unordered_map<std::string, int> Vertical_alignment_type{
+	{"CONSTANTGRADIENT", 1},
+	{"CIRCULARARC", 2},
+	{"PARABOLICARC", 3},
+	{"CLOTHOID", 4}};
+
 const double EXTRUSION_DISTANCE_HALFSPACE_M = 50;
 
 const bool DEBUG_DUMP_SVG = false;
@@ -50,6 +67,7 @@ namespace webifc
 	class IfcGeometryLoader
 	{
 	public:
+		glm::dvec3 origin;
 		IfcGeometryLoader(IfcLoader &l) : _loader(l),
 										  _transformation(1)
 		{
@@ -96,6 +114,7 @@ namespace webifc
 				{
 					auto &geom = _expressIDToGeometry[composedMesh.expressID];
 					auto pt = geom.GetPoint(0);
+					origin = pt;
 					auto transformedPt = newMatrix * glm::dvec4(pt, 1);
 					_coordinationMatrix = glm::translate(-glm::dvec3(transformedPt));
 					_isCoordinated = true;
@@ -127,6 +146,318 @@ namespace webifc
 				AddComposedMeshToFlatMesh(flatMesh, c, newMatrix, newParentColor, newHasColor);
 			}
 		}
+
+		//ALIGNMENTS
+
+		IfcAlignment GetAlignment(uint32_t expressID, IfcAlignment alignment = IfcAlignment(), glm::dmat4 transform = glm::dmat4(1))
+		{
+			auto lineID = _loader.ExpressIDToLineID(expressID);
+			auto &line = _loader.GetLine(lineID);
+
+			switch (line.ifcType)
+			{
+			case ifc2x4::IFCALIGNMENT:
+			{
+				_loader.MoveToArgumentOffset(line, 5);
+				uint32_t localPlacement = 0;
+				if (_loader.GetTokenType() == IfcTokenType::REF)
+				{
+					_loader.Reverse();
+					localPlacement = _loader.GetRefArgument();
+				}
+
+				glm::dmat4 transform_t = glm::dmat4(1);
+				if (localPlacement != 0 && ValidExpressId(localPlacement))
+				{
+					transform_t = GetLocalPlacement(localPlacement);
+				}
+
+				auto &relNests = (_loader.GetRelNests())[line.expressID];
+				for (auto expressID : relNests)
+				{
+					alignment = GetAlignment(expressID, alignment, transform * transform_t);
+				}
+
+				break;
+			}
+			case ifc2x4::IFCALIGNMENTHORIZONTAL:
+			{
+				_loader.MoveToArgumentOffset(line, 5);
+				uint32_t localPlacement = 0;
+				if (_loader.GetTokenType() == IfcTokenType::REF)
+				{
+					_loader.Reverse();
+					localPlacement = _loader.GetRefArgument();
+				}
+
+				glm::dmat4 transform_t = glm::dmat4(1);
+				if (localPlacement != 0 && ValidExpressId(localPlacement))
+				{
+					transform_t = GetLocalPlacement(localPlacement);
+				}
+
+				auto &relNests = (_loader.GetRelNests())[line.expressID];
+				for (auto expressID : relNests)
+				{
+					alignment.Horizontal.curves.push_back(GetAlignmentCurve(expressID));
+				}
+
+				for (int i = 0; i < alignment.Horizontal.curves.size(); i++)
+				{
+					for (int j = 0; j < alignment.Horizontal.curves[i].points.size(); j++)
+					{
+						alignment.Horizontal.curves[i].points[j] =
+							glm::dvec4(alignment.Horizontal.curves[i].points[j], 0, 1) * transform * transform_t;
+					}
+				}
+
+				break;
+			}
+			case ifc2x4::IFCALIGNMENTVERTICAL:
+			{
+				_loader.MoveToArgumentOffset(line, 5);
+				uint32_t localPlacement = 0;
+				if (_loader.GetTokenType() == IfcTokenType::REF)
+				{
+					_loader.Reverse();
+					localPlacement = _loader.GetRefArgument();
+				}
+
+				glm::dmat4 transform_t = glm::dmat4(1);
+				if (localPlacement != 0 && ValidExpressId(localPlacement))
+				{
+					transform_t = GetLocalPlacement(localPlacement);
+				}
+
+				auto &relNests = (_loader.GetRelNests())[line.expressID];
+				for (auto expressID : relNests)
+				{
+					alignment.Vertical.curves.push_back(GetAlignmentCurve(expressID));
+				}
+
+				for (int i = 0; i < alignment.Vertical.curves.size(); i++)
+				{
+					for (int j = 0; j < alignment.Vertical.curves[i].points.size(); j++)
+					{
+						alignment.Vertical.curves[i].points[j] =
+							glm::dvec4(alignment.Vertical.curves[i].points[j], 0, 1) * transform * transform_t;
+					}
+				}
+
+				break;
+			}
+			default:
+			{
+				break;
+			}
+			}
+
+			return alignment;
+		}
+
+		IfcCurve<2> GetAlignmentCurve(uint32_t expressID)
+		{
+			auto lineID = _loader.ExpressIDToLineID(expressID);
+			auto &line = _loader.GetLine(lineID);
+
+			IfcCurve<2> alignmentCurve;
+
+			switch (line.ifcType)
+			{
+			case ifc2x4::IFCALIGNMENTSEGMENT:
+			{
+
+				_loader.MoveToArgumentOffset(line, 5);
+				uint32_t localPlacement = 0;
+				if (_loader.GetTokenType() == IfcTokenType::REF)
+				{
+					_loader.Reverse();
+					localPlacement = _loader.GetRefArgument();
+				}
+
+				glm::dmat4 transform_t = glm::dmat4(1);
+				if (localPlacement != 0 && ValidExpressId(localPlacement))
+				{
+					transform_t = GetLocalPlacement(localPlacement);
+				}
+
+				_loader.MoveToArgumentOffset(line, 7);
+				uint32_t curveID = 0;
+				if (_loader.GetTokenType() == IfcTokenType::REF)
+				{
+					_loader.Reverse();
+					curveID = _loader.GetRefArgument();
+				}
+				if (curveID != 0 && ValidExpressId(curveID))
+				{
+					IfcCurve<2> temp = GetAlignmentCurve(curveID);
+					alignmentCurve = temp;
+				}
+
+				for (int i = 0; i < alignmentCurve.points.size(); i++)
+				{
+					alignmentCurve.points[i] = glm::dvec4(alignmentCurve.points[i], 0, 1) * transform_t;
+				}
+
+				break;
+			}
+			case ifc2x4::IFCALIGNMENTHORIZONTALSEGMENT:
+			{
+
+				_loader.MoveToArgumentOffset(line, 8);
+				std::string type = _loader.GetStringArgument();
+
+				_loader.MoveToArgumentOffset(line, 2);
+				uint32_t ifcStartPoint = _loader.GetRefArgument();
+				glm::dvec2 StartPoint = GetCartesianPoint2D(ifcStartPoint);
+
+				_loader.MoveToArgumentOffset(line, 3);
+				double ifcStartDirection = _loader.GetDoubleArgument();
+
+				_loader.MoveToArgumentOffset(line, 4);
+				double StartRadiusOfCurvature = _loader.GetDoubleArgument();
+
+				_loader.MoveToArgumentOffset(line, 5);
+				double EndRadiusOfCurvature = _loader.GetDoubleArgument();
+
+				_loader.MoveToArgumentOffset(line, 6);
+				double SegmentLength = _loader.GetDoubleArgument();
+
+				_loader.MoveToArgumentOffset(line, 7);
+				double GravityCenterLineHeight = _loader.GetDoubleArgument();
+
+				switch (Horizontal_alignment_type.at(type))
+				{
+				default:
+				{
+					break;
+				}
+				case 1: // LINE
+				{
+
+					IfcCurve<2> curve;
+					ifcStartDirection = ifcStartDirection;
+					glm::dvec2 Direction(
+						glm::cos(ifcStartDirection),
+						glm::sin(ifcStartDirection));
+					glm::dvec2 EndPoint = StartPoint + Direction * SegmentLength;
+
+					curve.Add(StartPoint);
+					curve.Add(EndPoint);
+
+					alignmentCurve = curve;
+
+					break;
+				}
+				case 2: // ARC
+				{
+
+					IfcCurve<2> curve;
+					double span = (SegmentLength / StartRadiusOfCurvature);
+					ifcStartDirection = ifcStartDirection - (CONST_PI / 2);
+
+					bool sw = true;
+					auto curve2D = GetEllipseCurve(StartRadiusOfCurvature, StartRadiusOfCurvature, _loader.GetSettings().CIRCLE_SEGMENTS_MEDIUM, glm::dmat3(1), ifcStartDirection, ifcStartDirection + span, sw);
+					glm::dvec2 desp = glm::dvec2(StartPoint.x - curve2D.points[0].x, StartPoint.y - curve2D.points[0].y);
+
+					for (auto &pt2D : curve2D.points)
+					{
+						glm::dvec2 Normal2D_1 = glm::normalize(glm::dvec2(pt2D.x - StartPoint.x, pt2D.y - StartPoint.y));
+						curve.Add(pt2D + desp);
+					}
+
+					alignmentCurve = curve;
+
+					break;
+				}
+				case 3:
+				{
+					break;
+				}
+				case 4:
+				{
+					break;
+				}
+				case 5:
+				{
+					break;
+				}
+				case 6:
+				{
+					break;
+				}
+				case 7:
+				{
+					break;
+				}
+				case 8:
+				{
+					break;
+				}
+				case 9:
+				{
+					break;
+				}
+				}
+
+				break;
+			}
+			case ifc2x4::IFCALIGNMENTVERTICALSEGMENT:
+			{
+				_loader.MoveToArgumentOffset(line, 2);
+				double StartDistAlong = _loader.GetDoubleArgument();
+
+				_loader.MoveToArgumentOffset(line, 3);
+				double HorizontalLength = _loader.GetDoubleArgument();
+
+				_loader.MoveToArgumentOffset(line, 4);
+				double StartHeight = _loader.GetDoubleArgument();
+
+				_loader.MoveToArgumentOffset(line, 5);
+				double StartGradient = _loader.GetDoubleArgument();
+
+				_loader.MoveToArgumentOffset(line, 6);
+				double EndGradient = _loader.GetDoubleArgument();
+
+				_loader.MoveToArgumentOffset(line, 7);
+				double RadiusOfCurvature = _loader.GetDoubleArgument();
+
+				_loader.MoveToArgumentOffset(line, 8);
+				std::string type = _loader.GetStringArgument();
+
+				IfcProfile profile;
+
+				switch (Vertical_alignment_type.at(type))
+				{
+				default:
+				{
+					break;
+				}
+				case 1: // CONSTANTGRADIENT
+				{
+					IfcCurve<2> curve;
+
+					glm::dvec4 iPoint = glm::dvec4(StartDistAlong, StartHeight, 0, 1);
+					glm::dvec4 jPoint = glm::dvec4(StartDistAlong + HorizontalLength, StartHeight + HorizontalLength * StartGradient, 0, 1);
+					glm::dvec3 Normal = glm::dvec3(0, 0, 1);
+
+					curve.Add(iPoint);
+					curve.Add(jPoint);
+
+					alignmentCurve = curve;
+
+					break;
+				}
+				}
+				break;
+			}
+			}
+
+			return alignmentCurve;
+		}
+
+
+		//END-ALIGNMENTS
 
 		IfcFlatMesh GetFlatMesh(uint32_t expressID)
 		{
@@ -2752,7 +3083,7 @@ namespace webifc
 
 				if (placementID)
 				{
-					GetAxis2Placement2D(placementID);
+					placement = GetAxis2Placement2D(placementID);
 				}
 
 				profile.curve = GetCircleCurve(radius, _loader.GetSettings().CIRCLE_SEGMENTS_HIGH, placement);

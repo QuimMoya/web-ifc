@@ -108,6 +108,13 @@ namespace webifc
 		}
 
 		// this is lazy
+		std::unordered_map<uint32_t, std::vector<uint32_t>>& GetRelNests()
+		{
+			return _metaData._relNests;
+		}
+
+
+		// this is lazy
 		std::unordered_map<uint32_t, std::vector<std::pair<uint32_t, uint32_t>>> &GetRelMaterials()
 		{
 			return _metaData._relMaterials;
@@ -140,6 +147,7 @@ namespace webifc
 
 			PopulateRelVoidsMap();
 			PopulateRelAggregatesMap();
+			PopulateRelNestsMap();
 			PopulateStyledItemMap();
 			PopulateRelMaterialsMap();
 			ReadLinearScalingFactor();
@@ -312,6 +320,28 @@ namespace webifc
 				{
 					uint32_t aggregateID = GetRefArgument(aggregate);
 					_metaData._relAggregates[relatingBuildingElement].push_back(aggregateID);
+				}
+			}
+		}
+
+		void PopulateRelNestsMap()
+		{
+			auto relVoids = GetExpressIDsWithType(ifc2x4::IFCRELNESTS);
+
+			for (uint32_t relVoidID : relVoids)
+			{
+				uint32_t lineID = ExpressIDToLineID(relVoidID);
+				auto& line = GetLine(lineID);
+
+				MoveToArgumentOffset(line, 4);
+
+				uint32_t relatingBuildingElement = GetRefArgument();
+				auto nests = GetSetArgument();
+
+				for (auto& nest : nests)
+				{
+					uint32_t nestID = GetRefArgument(nest);
+					_metaData._relNests[relatingBuildingElement].push_back(nestID);
 				}
 			}
 		}

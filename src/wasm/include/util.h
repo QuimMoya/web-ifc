@@ -410,6 +410,18 @@ namespace webifc
 		bool isConvex;
 	};
 
+	struct IfcAlignmentSegment
+	{
+		std::vector<IfcCurve<2>> curves;
+	};
+
+	struct IfcAlignment
+	{
+		IfcAlignmentSegment Horizontal;
+		IfcAlignmentSegment Vertical;
+		glm::dvec3 origin;
+	};
+
 	struct Cylinder
 	{
 		bool Active = false;
