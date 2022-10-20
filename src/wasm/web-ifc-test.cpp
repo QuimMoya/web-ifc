@@ -33,6 +33,24 @@ void SpecificLoadTest(webifc::IfcLoader &loader, webifc::IfcGeometryLoader &geom
     }
 }
 
+std::vector<webifc::IfcAlignment> LoadAllAlignments(webifc::IfcLoader &loader, webifc::IfcGeometryLoader &geometryLoader)
+{
+    auto type = ifc2x4::IFCALIGNMENT;
+
+    auto elements = loader.GetExpressIDsWithType(type);
+
+    std::vector<webifc::IfcAlignment> alignments;
+
+    for (int i = 0; i < elements.size(); i++)
+    {
+        webifc::IfcAlignment alignment = geometryLoader.GetAlignment(elements[i]);
+        alignment.origin = geometryLoader.origin;
+        alignments.push_back(alignment);
+    }
+
+    return alignments;
+}
+
 std::vector<webifc::IfcFlatMesh> LoadAllTest(webifc::IfcLoader &loader, webifc::IfcGeometryLoader &geometryLoader)
 {
     std::vector<webifc::IfcFlatMesh> meshes;
@@ -232,8 +250,11 @@ int main()
     // return 0;
 
     // std::string content = ReadFile(L"C:/Users/qmoya/Desktop/PROGRAMES/VSCODE/IFC.JS/issues/#145 Solved/S_Office_Integrated Design Archi.ifc");
-    std::string content = ReadFile(L"C:/Users/qmoya/Desktop/PROGRAMES/VSCODE/IFC.JS/issues/#156 Solved/#172 Processing/15.ifc");
+    // std::string content = ReadFile(L"C:/Users/qmoya/Desktop/PROGRAMES/VSCODE/IFC.JS/issues/#156 Solved/#172 Processing/15.ifc");
     // std::string content = ReadFile(L"C:/Users/qmoya/Desktop/IFC/IFC_BSI_ADVANCEDBREPS/bsi_basin-advanced-brep FAIL.ifc");
+    // std::string content = ReadFile(L"C:/Users/qmoya/Desktop/PROGRAMES/VSCODE/IFC.JS/issues/#Serialize/M3D-ARM.ifc");
+    // std::string content = ReadFile(L"C:/Users/qmoya/Desktop/IFC/IFC4.3/20210629_EXEMPLES_IFCINFRA_2/Alignment-12d-7/Alignment-12d-7.ifc");
+    std::string content = ReadFile(L"C:/Users/qmoya/Desktop/IFC/IFC4.3/20211027_ALTRES_EXEMPLES_INFRA/Tronco4x3.IFC");
 
     webifc::LoaderSettings set;
     set.COORDINATE_TO_ORIGIN = true;
@@ -273,6 +294,7 @@ int main()
     // SpecificLoadTest(loader, geometryLoader, 217102);
     // SpecificLoadTest(loader, geometryLoader, 181);
     auto meshes = LoadAllTest(loader, geometryLoader);
+    auto alignments = LoadAllAlignments(loader, geometryLoader);
     auto trans = webifc::FlattenTransformation(geometryLoader.GetCoordinationMatrix());
 
     auto errors = loader.GetAndClearErrors();

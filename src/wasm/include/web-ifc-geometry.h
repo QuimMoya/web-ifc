@@ -29,20 +29,20 @@
 #include "util.h"
 
 const static std::unordered_map<std::string, int> Horizontal_alignment_type{
-	{"LINE", 1},
-	{"CIRCULARARC", 2},
-	{"CLOTHOID", 3},
-	{"CUBIC", 4},
-	{"HELMERTCURVE", 5},
+	{"LINE", 1},		//done
+	{"CIRCULARARC", 2},	//done
+	{"CLOTHOID", 3},	//done
+	{"CUBICSPIRAL", 4},
+	{"BIQUADRATICPARABOLA", 5},
 	{"BLOSSCURVE", 6},
 	{"COSINECURVE", 7},
 	{"SINECURVE", 8},
 	{"VIENNESEBEND", 9}};
 
 const static std::unordered_map<std::string, int> Vertical_alignment_type{
-	{"CONSTANTGRADIENT", 1},
-	{"CIRCULARARC", 2},
-	{"PARABOLICARC", 3},
+	{"CONSTANTGRADIENT", 1},	//done
+	{"CIRCULARARC", 2},			//done
+	{"PARABOLICARC", 3},		//done
 	{"CLOTHOID", 4}};
 
 const double EXTRUSION_DISTANCE_HALFSPACE_M = 50;
@@ -147,7 +147,7 @@ namespace webifc
 			}
 		}
 
-		//ALIGNMENTS
+		// ALIGNMENTS
 
 		IfcAlignment GetAlignment(uint32_t expressID, IfcAlignment alignment = IfcAlignment(), glm::dmat4 transform = glm::dmat4(1))
 		{
@@ -357,12 +357,11 @@ namespace webifc
 					ifcStartDirection = ifcStartDirection - (CONST_PI / 2);
 
 					bool sw = true;
-					auto curve2D = GetEllipseCurve(StartRadiusOfCurvature, StartRadiusOfCurvature, _loader.GetSettings().CIRCLE_SEGMENTS_MEDIUM, glm::dmat3(1), ifcStartDirection, ifcStartDirection + span, sw);
+					auto curve2D = GetEllipseCurve(StartRadiusOfCurvature, StartRadiusOfCurvature, 20, glm::dmat3(1), ifcStartDirection, ifcStartDirection + span, sw);
 					glm::dvec2 desp = glm::dvec2(StartPoint.x - curve2D.points[0].x, StartPoint.y - curve2D.points[0].y);
 
 					for (auto &pt2D : curve2D.points)
 					{
-						glm::dvec2 Normal2D_1 = glm::normalize(glm::dvec2(pt2D.x - StartPoint.x, pt2D.y - StartPoint.y));
 						curve.Add(pt2D + desp);
 					}
 
@@ -370,11 +369,108 @@ namespace webifc
 
 					break;
 				}
-				case 3:
+				case 3: // CLOTHOID
 				{
+					bool inverse = false;
+					if (abs(StartRadiusOfCurvature) > abs(EndRadiusOfCurvature))
+					{
+						inverse = true;
+					}
+					IfcCurve<2> curve;
+					double A = sqrt(abs(EndRadiusOfCurvature - StartRadiusOfCurvature) * SegmentLength);
+					double Api = A * sqrt(CONST_PI);
+					double uMax = SegmentLength / Api;
+
+					double s = A * uMax * sqrt(CONST_PI);
+					double radFin = (A * A * A) / (A * s);
+
+					double vSin = 0;
+					double vCos = 0;
+
+					glm::dvec2 DirectionX(
+						glm::cos(ifcStartDirection),
+						glm::sin(ifcStartDirection));
+					glm::dvec2 DirectionY(
+						-glm::sin(ifcStartDirection),
+						glm::cos(ifcStartDirection));
+
+					if (EndRadiusOfCurvature < 0 || StartRadiusOfCurvature < 0)
+					{
+						DirectionY.x = -DirectionY.x;
+						DirectionY.y = -DirectionY.y;
+					}
+
+					if (inverse)
+					{
+						DirectionX.x = -DirectionX.x;
+						DirectionX.y = -DirectionX.y;
+					}
+
+					double def = 1000;
+					double dif = def / 10;
+					double count = 0;
+					double tram = uMax / def;
+					glm::dvec2 end(0, 0);
+					glm::dvec2 prev(0, 0);
+					glm::dvec2 endDir;
+					for (double c = 1; c < def + 1; c++)
+					{
+						prev = end;
+						end = StartPoint + Api * (DirectionX * vCos + DirectionY * vSin);
+						if (c == def || c == 1 || count >= dif)
+						{
+							curve.Add(end);
+							count = 0;
+						}
+						if (c == def)
+						{
+							endDir = prev - end;
+						}
+						double val = c * tram;
+						vSin += sin(CONST_PI * ((A * val * val) / (2 * abs(A)))) * tram;
+						vCos += cos(CONST_PI * ((A * val * val) / (2 * abs(A)))) * tram;
+						count++;
+					}
+
+					if (inverse)
+					{
+						DirectionX.x = -DirectionX.x;
+						DirectionX.y = -DirectionX.y;
+
+						glm::dvec2 newDirectionX(
+							endDir.x,
+							endDir.y);
+						glm::dvec2 newDirectionY(
+							-endDir.y,
+							endDir.x);
+
+						if (EndRadiusOfCurvature < 0 || StartRadiusOfCurvature < 0)
+						{
+							newDirectionY.x = -newDirectionY.x;
+							newDirectionY.y = -newDirectionY.y;
+						}
+
+						newDirectionX = glm::normalize(newDirectionX);
+						newDirectionY = glm::normalize(newDirectionY);
+
+						for (uint32_t i = 0; i < curve.points.size(); i++)
+						{
+							double xx = curve.points[i].x - end.x;
+							double yy = curve.points[i].y - end.y;
+							double dx = xx * newDirectionX.x + yy * newDirectionX.y;
+							double dy = xx * newDirectionY.x + yy * newDirectionY.y;
+							double newDx = StartPoint.x + DirectionX.x * dx + DirectionY.x * dy;
+							double newDy = StartPoint.y + DirectionX.y * dx + DirectionY.y * dy;
+							curve.points[i].x = newDx;
+							curve.points[i].y = newDy;
+						}
+					}
+
+					alignmentCurve = curve;
+
 					break;
 				}
-				case 4:
+				case 4: // CUBIC
 				{
 					break;
 				}
@@ -448,6 +544,65 @@ namespace webifc
 
 					break;
 				}
+				case 2: // ARC
+				{
+					IfcCurve<2> curve;
+
+					double ifcStartDirection = atan(StartGradient);
+					double ifcEndDirection = atan(EndGradient);
+
+					ifcStartDirection = ifcStartDirection - (CONST_PI / 2);
+					ifcEndDirection = ifcEndDirection - (CONST_PI / 2);
+
+					glm::dvec2 StartPoint(StartDistAlong, StartHeight);
+
+					bool sw = true;
+					if (ifcStartDirection > ifcEndDirection)
+					{
+						ifcStartDirection = ifcStartDirection + CONST_PI;
+						ifcEndDirection = ifcEndDirection + CONST_PI;
+					}
+					auto curve2D = GetEllipseCurve(RadiusOfCurvature, RadiusOfCurvature, _loader.GetSettings().CIRCLE_SEGMENTS_MEDIUM, glm::dmat3(1), ifcStartDirection, ifcEndDirection, sw);
+					glm::dvec2 desp = glm::dvec2(StartPoint.x - curve2D.points[0].x, StartPoint.y - curve2D.points[0].y);
+
+					for (auto &pt2D : curve2D.points)
+					{
+						curve.Add(pt2D + desp);
+					}
+
+					alignmentCurve = curve;
+
+					break;
+				}
+				case 3: //PARABOLIC
+				{
+					IfcCurve<2> curve;
+
+					glm::dvec2 StartPoint(StartDistAlong, StartHeight);
+
+					double R = HorizontalLength / (EndGradient - StartGradient);
+
+					std::vector<glm::dvec2> points;
+
+					for(double i = 0; i <= _loader.GetSettings().CIRCLE_SEGMENTS_MEDIUM; i++)
+					{
+						double pr = i / _loader.GetSettings().CIRCLE_SEGMENTS_MEDIUM;
+						double grad = ((HorizontalLength * pr) / R) + StartGradient;
+						double alt = (HorizontalLength * pr * (grad + StartGradient) * 0.5) + StartHeight;
+						points.push_back(glm::dvec2(HorizontalLength * pr, alt));
+					}
+					
+					glm::dvec2 desp = glm::dvec2(StartPoint.x - points[0].x, StartPoint.y - points[0].y);
+
+					for (auto &pt2D : points)
+					{
+						curve.Add(pt2D + desp);
+					}
+
+					alignmentCurve = curve;
+
+					break;
+				}
 				}
 				break;
 			}
@@ -456,8 +611,7 @@ namespace webifc
 			return alignmentCurve;
 		}
 
-
-		//END-ALIGNMENTS
+		// END-ALIGNMENTS
 
 		IfcFlatMesh GetFlatMesh(uint32_t expressID)
 		{
