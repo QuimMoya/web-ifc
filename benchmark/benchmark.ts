@@ -8,23 +8,25 @@ import * as WebIFC from '../dist/web-ifc-api-node';
 let newIfcAPI = new WebIFC.IfcAPI();
 const OUTPUT_FILE = '../benchmark.md';
 const BENCHMARK_FILES_DIR = "./ifcfiles";
+
 class FileResult
 {
-    filename: string;
-    fileSize: number;
-    timeTakenToOpenModel: number;
-    timeSuccess: number;
-    numberOfIfcEntities: number;
-    totalNumberOfProducedMesh: number;
-    totalNumberOfGeometries : number;
-    totalNumberOfErrors: number;
+    filename !: string;
+    fileSize !: number;
+    timeTakenToOpenModel !: number;
+    timeSuccess !: number;
+    numberOfIfcEntities !: number;
+    totalNumberOfProducedMesh !: number;
+    totalNumberOfGeometries !: number;
+    totalNumberOfErrors !: number;
+    fastBool !: boolean;
 }
 
 class SystemInfo{
-    gpu: string;
-    cpuName: string;
-    freeRam: number;
-    totalRam: number;
+    gpu !: string;
+    cpuName !: string;
+    freeRam !: number;
+    totalRam !: number;
 }
 
 const ms = (): number => {
@@ -33,10 +35,10 @@ const ms = (): number => {
 };
 
 // hack Object.fromEntries doesn't works
-function mapToObj(inputMap) {
-    let obj = {};
+function mapToObj(inputMap : any) {
+    let obj : any = {};
 
-    inputMap.forEach(function(value, key){
+    inputMap.forEach(function(value: any , key: any){
         obj[key] = value
     });
 
@@ -49,11 +51,11 @@ async function writeResult(content : string){
 }
 class BenchMarkResult
 {
-    results: Map<string, FileResult>;
+    results !: Map<string, FileResult>;
 }
 class BenchmarkResultFormatter{
-    results: Map<string, FileResult>;
-    columns : Object
+    results !: Map<string, FileResult>;
+    columns !: Object
     getMarkdownTable() : string
     {
         let datas =  mapToObj(this.results);
@@ -70,7 +72,7 @@ class BenchmarkResultFormatter{
     {
         let header = "|";
         let separator = "|";
-        for (const [column, value] of columns) {
+        for (const [_, value] of columns) {
             header += ` ${value} |`;
             separator += "-------|"
         }
@@ -79,7 +81,7 @@ class BenchmarkResultFormatter{
     private getMarkdownTableRow(line : any, columns : any) : string 
     {
         let row = "";
-        for (const [column, value] of columns) {
+        for (const [column] of columns) {
             row += ` ${line[column]} |`;
         }
         row += "\n";
@@ -87,10 +89,12 @@ class BenchmarkResultFormatter{
     }
 }
 
-async function BenchmarkIfcFile(module: any, filename: string): Promise<FileResult>
+async function BenchmarkIfcFile(module: any, filename: string, fastBool: boolean): Promise<FileResult>
 {
     let result = new FileResult();
     result.filename = filename;
+    result.fastBool = fastBool;
+    
     
     //let modelID = module.OpenModel("example.ifc", new Uint8Array(data.toString()));
 
@@ -98,7 +102,7 @@ async function BenchmarkIfcFile(module: any, filename: string): Promise<FileResu
     const ifcFileContent = fs.readFileSync(ifcFilePath);
     
     let startTime = ms();
-    let modelID : number = module.OpenModel(ifcFileContent);
+    let modelID : number = module.OpenModel(ifcFileContent,{ USE_FAST_BOOLS: fastBool });
     let endTime = ms();
     result.timeTakenToOpenModel = endTime - startTime; // time to open and close the file and nothing else
 
@@ -106,7 +110,7 @@ async function BenchmarkIfcFile(module: any, filename: string): Promise<FileResu
     result.numberOfIfcEntities = module.GetAllLines(modelID).size();
     
     result.totalNumberOfProducedMesh = 0;
-    module.StreamAllMeshes(modelID, (mesh) => {
+    module.StreamAllMeshes(modelID, () => {
         ++result.totalNumberOfProducedMesh;
     });
 
@@ -137,7 +141,13 @@ async function BenchmarkWebIFC(module: any, files: string[]): Promise<BenchMarkR
     for (let file in files)
     {
         let filename = files[file];
-        result.results.set(filename, await BenchmarkIfcFile(module, filename));
+        console.log("-------------------------------");
+        console.log(filename);
+        console.log("-------------------------------");
+        console.log("-------------------------------SLOW BOOL---------------------");
+        result.results.set(filename, await BenchmarkIfcFile(module, filename,false));
+        console.log("-------------------------------FAST BOOL---------------------");
+        result.results.set(filename+"-FASTBOOL", await BenchmarkIfcFile(module, filename,true));
     }
 
     return result;
@@ -171,6 +181,7 @@ function generateMarkdownReport(systemInfo : SystemInfo, fileResult : Map<string
     let formatter = new BenchmarkResultFormatter();
     formatter.columns = {
         filename: "filename",
+        fastBool: "Fast Bools Enabled",
         fileSize: "Size (mo)",
         timeTakenToOpenModel: "Time to open model (ms)",
         timeSuccess: "Time to execute all (ms)",
@@ -187,6 +198,9 @@ function generateMarkdownReport(systemInfo : SystemInfo, fileResult : Map<string
 async function RunBenchmark()
 {
     let files = await GetBenchmarkFiles();
+    for (let i=0; i < files.length;i++) {
+      console.log(files[i]);
+    }
     let systemInfo = await getSystemInformations();
     console.log(``);
     console.log(systemInfo);
