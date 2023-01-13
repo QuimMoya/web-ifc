@@ -10,6 +10,7 @@
 #include <array>
 #include <unordered_map>
 #include <optional>
+#include <cstring>
 #include <functional>
 
 #include <glm/glm.hpp>
@@ -412,6 +413,12 @@ namespace webifc
 		}
 	};
 
+	struct IfcSegmentIndexSelect
+	{
+		std::string type;
+		std::vector<uint32_t> indexs;
+	};
+
 	struct IfcProfile
 	{
 		std::string type;
@@ -477,15 +484,24 @@ namespace webifc
 
 		glm::dvec3 normal()
 		{
-			if(!CylinderSurface.Active && !BSplineSurface.Active && !RevolutionSurface.Active)
+			if (!CylinderSurface.Active && !BSplineSurface.Active && !RevolutionSurface.Active)
 			{
 				return transformation[2];
 			}
 			else
 			{
-				if(BSplineSurface.Active) {printf("Normal to bspline still not implemented\n");}
-				if(CylinderSurface.Active) {printf("Normal to cylinder still not implemented\n");}
-				if(RevolutionSurface.Active) {printf("Normal to revolution still not implemented\n");}
+				if (BSplineSurface.Active)
+				{
+					printf("Normal to bspline still not implemented\n");
+				}
+				if (CylinderSurface.Active)
+				{
+					printf("Normal to cylinder still not implemented\n");
+				}
+				if (RevolutionSurface.Active)
+				{
+					printf("Normal to revolution still not implemented\n");
+				}
 				return glm::dvec3(0);
 			}
 		}
@@ -568,6 +584,47 @@ namespace webifc
 	{
 		auto norm = computeNormal(glm::dvec3(a, 0), glm::dvec3(b, 0), glm::dvec3(c, 0));
 		return glm::dot(norm, glm::dvec3(0, 0, 1)) > 0.0;
+	}
+
+	double VectorToAngle(double x, double y)
+	{
+		double dd = sqrt(x * x + y * y);
+		double xx = x / dd;
+		double yy = y / dd;
+
+		double angle = asin(xx);
+		double cosv = cos(angle);
+
+		if (glm::abs(yy - cosv) > 1e-5)
+		{
+			angle = acos(yy);
+			double sinv = sin(angle);
+			cosv = cos(angle);
+			if (glm::abs(yy - cosv) > 1e-5 || glm::abs(xx - sinv) > 1e-5)
+			{
+				angle = angle + (CONST_PI - angle) * 2;
+				sinv = sin(angle);
+				cosv = cos(angle);
+				if (glm::abs(yy - cosv) > 1e-5 || glm::abs(xx - sinv) > 1e-5)
+				{
+					angle = angle + CONST_PI;
+				}
+			}
+		}
+
+		return (angle / (2 * CONST_PI)) * 360;
+	}
+
+	double mirrorAngle(double angle) //in degrees
+	{
+		if(angle < 180)
+		{
+			return 180 - angle;
+		}
+		else
+		{
+			return 180 + (360 - angle);
+		}
 	}
 
 	IfcCurve<2> GetRectangleCurve(double xdim, double ydim, glm::dmat3 placement = glm::dmat3(1))
@@ -724,6 +781,7 @@ namespace webifc
 		return c;
 	}
 
+	// TODO: review and simplify
 	glm::dvec2 BSplineInverseEvaluation(glm::dvec3 pt, tinynurbs::RationalSurface3d srf)
 	{
 		// Initial data
@@ -2057,7 +2115,7 @@ namespace webifc
 		inline void push(void *v, unsigned long long size)
 		{
 			CheckChunk(size);
-			memcpy(chunks.back().chunk.data() + chunks[writePtr].size, v, size);
+			std::memcpy(chunks.back().chunk.data() + chunks[writePtr].size, v, size);
 			chunks[writePtr].size += size;
 		}
 
@@ -2101,7 +2159,7 @@ namespace webifc
 
 			T v;
 
-			memcpy(&v, valuePtr, sizeof(T));
+			std::memcpy(&v, valuePtr, sizeof(T));
 
 			AdvanceRead(sizeof(T));
 			return v;
@@ -2259,7 +2317,7 @@ namespace webifc
 			}
 			if (chunkStart == chunkEnd)
 			{
-				memcpy(dest, &chunks[chunkStart].chunk[chunkStartPos], chunkEndPos - chunkStartPos);
+				std::memcpy(dest, &chunks[chunkStart].chunk[chunkStartPos], chunkEndPos - chunkStartPos);
 				updateChunks();
 
 				return chunkEndPos - chunkStartPos;
@@ -2268,8 +2326,8 @@ namespace webifc
 			{
 				uint32_t startChunkSize = chunks[chunkStart].size;
 				uint32_t partOfStartchunk = startChunkSize - chunkStartPos;
-				memcpy(dest, &chunks[chunkStart].chunk[chunkStartPos], partOfStartchunk);
-				memcpy(dest + partOfStartchunk, &chunks[chunkEnd].chunk[0], chunkEndPos);
+				std::memcpy(dest, &chunks[chunkStart].chunk[chunkStartPos], partOfStartchunk);
+				std::memcpy(dest + partOfStartchunk, &chunks[chunkEnd].chunk[0], chunkEndPos);
 				updateChunks();
 
 				return partOfStartchunk + chunkEndPos;
