@@ -38,11 +38,10 @@ namespace webifc
 
 	void writeFile(std::wstring filename, std::string data)
 	{
-#ifdef _MSC_VER
-		std::ofstream out(filename);
+		std::string newFileName(filename.begin(), filename.end());
+		std::ofstream out(newFileName);
 		out << data;
 		out.close();
-#endif
 	}
 
 	// for some reason std::string_view is not compiling...
@@ -201,14 +200,9 @@ namespace webifc
 
 		inline void AddFace(uint32_t a, uint32_t b, uint32_t c)
 		{
-			// indexData.reserve((numFaces + 1) * 3);
-			// indexData[numFaces * 3 + 0] = a;
-			// indexData[numFaces * 3 + 1] = b;
-			// indexData[numFaces * 3 + 2] = c;
 			indexData.push_back(a);
 			indexData.push_back(b);
 			indexData.push_back(c);
-
 			numFaces++;
 		}
 
@@ -326,6 +320,129 @@ namespace webifc
 					maxIndex + geom.indexData[k * 3 + 1],
 					maxIndex + geom.indexData[k * 3 + 2]);
 			}
+		}
+
+		bool doesBoundingBoxIntersect(IfcGeometry geomA, IfcGeometry geomB)
+		{
+			glm::dvec3 center;
+			glm::dvec3 extents;
+			geomA.GetCenterExtents(center, extents);
+
+			glm::dvec3 center2;
+			glm::dvec3 extents2;
+			geomB.GetCenterExtents(center2, extents2);
+
+			double rad = geomA.radius();
+			double rad2 = geomB.radius();
+
+			// If the spheres containing geometries are in contact
+			if (glm::distance(center, center2) < rad + rad2)
+			{
+				// If the bounding boxes are in contact
+				if (geomA.BoundingBoxInContactWith(geomB)  || geomB.BoundingBoxInContactWith(geomA))
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		bool BoundingBoxInContactWith(IfcGeometry geom)
+		{
+			glm::dvec3 center;
+			glm::dvec3 extents;
+			GetCenterExtents(center, extents);
+
+			glm::dvec3 center2;
+			glm::dvec3 extents2;
+			geom.GetCenterExtents(center2, extents2);
+
+			std::vector<glm::dvec3> corners = geometryCorners();
+			
+			return geom.pointsInsideBoundingBox(corners);
+
+		}
+
+		bool pointsInsideBoundingBox(std::vector<glm::dvec3> points)
+		{
+			for(uint32_t i = 0; i < points.size(); i++)
+			{
+				if(points[i].x <= max.x && points[i].y <= max.y && points[i].z <= max.z
+				&& points[i].x >= min.x && points[i].y >= min.y && points[i].z >= min.z)
+				{
+					return true;
+				}
+			}
+		}
+
+		std::vector<glm::dvec3> geometryCorners()
+		{
+			std::vector<glm::dvec3> result;
+
+			glm::dvec3 p0;
+			p0.x = max.x;
+			p0.y = max.y;
+			p0.z = max.z;
+			result.push_back(p0);
+
+			glm::dvec3 p1;
+			p1.x = max.x;
+			p1.y = max.y;
+			p1.z = min.z;
+			result.push_back(p1);
+
+			glm::dvec3 p2;
+			p2.x = max.x;
+			p2.y = min.y;
+			p2.z = max.z;
+			result.push_back(p2);
+
+			glm::dvec3 p3;
+			p3.x = min.x;
+			p3.y = max.y;
+			p3.z = max.z;
+			result.push_back(p3);
+
+			glm::dvec3 p4;
+			p4.x = max.x;
+			p4.y = min.y;
+			p4.z = min.z;
+			result.push_back(p4);
+
+			glm::dvec3 p5;
+			p5.x = min.x;
+			p5.y = max.y;
+			p5.z = min.z;
+			result.push_back(p5);
+
+			glm::dvec3 p6;
+			p6.x = min.x;
+			p6.y = min.y;
+			p6.z = max.z;
+			result.push_back(p6);
+
+			glm::dvec3 p7;
+			p7.x = min.x;
+			p7.y = min.y;
+			p7.z = min.z;
+			result.push_back(p7);
+
+			return result;
+		}
+
+		double radius()
+		{
+			glm::dvec3 center;
+			glm::dvec3 extents;
+			GetCenterExtents(center, extents);
+
+			double rad = glm::distance(center, max);
+			double radb = glm::distance(center, min);
+			if (rad < radb)
+			{
+				return radb;
+			}
+			return rad;
 		}
 
 		uint32_t GetVertexDataSize()
@@ -615,9 +732,9 @@ namespace webifc
 		return (angle / (2 * CONST_PI)) * 360;
 	}
 
-	double mirrorAngle(double angle) //in degrees
+	double mirrorAngle(double angle) // in degrees
 	{
-		if(angle < 180)
+		if (angle < 180)
 		{
 			return 180 - angle;
 		}
@@ -1421,11 +1538,15 @@ namespace webifc
 
 		auto geomIt = geometryMap.find(mesh.expressID);
 
+		// TODO: This function causes solids to explode sometimes
+		// It mixes all faces of openings in a single elements, the
+		// problem is that sometimes faces of openings are coincident, overlapp, etc...
+
 		if (geomIt != geometryMap.end())
 		{
 			auto meshGeom = geomIt->second;
 
-			if (meshGeom.numFaces)
+			if (meshGeom.numFaces && meshGeom.doesBoundingBoxIntersect(meshGeom, geom))
 			{
 				for (uint32_t i = 0; i < meshGeom.numFaces; i++)
 				{

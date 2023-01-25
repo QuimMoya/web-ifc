@@ -97,5 +97,7 @@
     "cmake.configureOnOpen": true,
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "cmake.sourceDirectory": "${workspaceFolder}/src/wasm",
-    "cmake.buildDirectory": "${workspaceFolder}/src/wasm/build"
+    "cmake.buildDirectory": "${workspaceFolder}/src/wasm/build",
+    "ecl.launchConfiguration": "not found",
+    "ecl.targetCluster": {}
 }

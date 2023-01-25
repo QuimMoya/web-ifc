@@ -1091,14 +1091,14 @@ namespace webifc
 
 			double radius = sqrt(pow(cenX - p1.x, 2) + pow(cenY - p1.y, 2));
 
-			//Using geometrical subdivision to avoid complex calculus with angles
+			// Using geometrical subdivision to avoid complex calculus with angles
 
 			std::vector<glm::dvec2> pointList;
 			pointList.push_back(p1);
 			pointList.push_back(p2);
 			pointList.push_back(p3);
 
-			while(pointList.size() < _loader.GetSettings().CIRCLE_SEGMENTS_MEDIUM)
+			while (pointList.size() < _loader.GetSettings().CIRCLE_SEGMENTS_MEDIUM)
 			{
 				std::vector<glm::dvec2> tempPointList;
 				for (uint32_t j = 0; j < pointList.size() - 1; j++)
@@ -1282,6 +1282,8 @@ namespace webifc
 				const int threshold = LoaderSettings().BOOL_ABORT_THRESHOLD;
 				std::vector<IfcGeometry> seconds;
 
+				uint32_t num = 0;
+
 				for (auto &geom : secondGeoms)
 				{
 					if (geom.numPoints < threshold)
@@ -1295,8 +1297,14 @@ namespace webifc
 
 					if (_loader.GetSettings().DUMP_CSG_MESHES)
 					{
-						DumpIfcGeometry(geom, L"geom.obj");
+						std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+						stringstream ss;
+						ss << num;
+						string str = ss.str();
+						str = "geom" + str + ".obj";
+						DumpIfcGeometry(geom, converter.from_bytes(str));
 					}
+					num++;
 				}
 
 				if (firstGeom.numPoints > threshold)
