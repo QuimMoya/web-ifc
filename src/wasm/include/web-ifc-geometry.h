@@ -17,12 +17,12 @@
 
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
-#include <mapbox/earcut.hpp>
 
 #include "math/intersect-mesh-mesh.h"
 #include "math/bool-mesh-mesh.h"
 
 #include <tinynurbs/tinynurbs.h>
+#include <CDT.h>
 
 #include "ifc-schema.h"
 #include "web-ifc.h"
@@ -68,12 +68,6 @@ namespace webifc
 		bool HasCachedGeometry(uint32_t expressID)
 		{
 			return _expressIDToGeometry.find(expressID) != _expressIDToGeometry.end();
-		}
-
-		IfcGeometry GetFlattenedGeometry(uint32_t expressID)
-		{
-			auto mesh = GetMesh(expressID);
-			return flatten(mesh, _expressIDToGeometry, NormalizeIFC);
 		}
 
 		void AddComposedMeshToFlatMesh(IfcFlatMesh &flatMesh, const IfcComposedMesh &composedMesh, const glm::dmat4 &parentMatrix = glm::dmat4(1), const glm::dvec4 &color = glm::dvec4(1, 1, 1, 1), bool hasColor = false)
@@ -370,13 +364,14 @@ namespace webifc
 				if (relVoidsIt != relVoids.end() && !relVoidsIt->second.empty())
 				{
 					IfcComposedMesh resultMesh;
+					IfcGeometry result;
 
 					auto origin = GetOrigin(mesh, _expressIDToGeometry);
 					auto normalizeMat = glm::translate(-origin);
 					auto flatElementMesh = flatten(mesh, _expressIDToGeometry, normalizeMat);
 					auto elementColor = mesh.GetColor();
 
-					if (!flatElementMesh.IsEmpty())
+					if (!flatElementMesh.size() == 0)
 					{
 
 						// TODO: this is inefficient, better make one-to-many subtraction in bool logic
@@ -386,14 +381,13 @@ namespace webifc
 						{
 							IfcComposedMesh voidGeom = GetMesh(relVoidExpressID);
 							auto flatVoidMesh = flatten(voidGeom, _expressIDToGeometry, normalizeMat);
-
-							voidGeoms.push_back(flatVoidMesh);
+							voidGeoms.insert(voidGeoms.end(), flatVoidMesh.begin(), flatVoidMesh.end());
 						}
 
-						flatElementMesh = BoolSubtract(flatElementMesh, voidGeoms, line.expressID);
+						result = BoolSubtract(flatElementMesh, voidGeoms, line.expressID);
 					}
 
-					_expressIDToGeometry[line.expressID] = flatElementMesh;
+					_expressIDToGeometry[line.expressID] = result;
 					resultMesh.transformation = glm::translate(origin);
 					resultMesh.expressID = line.expressID;
 					resultMesh.hasGeometry = true;
@@ -451,7 +445,7 @@ namespace webifc
 					auto flatSecondMesh = flatten(secondMesh, _expressIDToGeometry, normalizeMat);
 
 					std::vector<IfcGeometry> flatSecondGeoms;
-					flatSecondGeoms.push_back(flatSecondMesh);
+					flatSecondGeoms.insert(flatSecondGeoms.end(), flatSecondMesh.begin(), flatSecondMesh.end());
 
 					webifc::IfcGeometry resultMesh = BoolSubtract(flatFirstMesh, flatSecondGeoms, line.expressID);
 
@@ -492,7 +486,7 @@ namespace webifc
 					auto flatFirstMesh = flatten(firstMesh, _expressIDToGeometry, normalizeMat);
 					auto flatSecondMesh = flatten(secondMesh, _expressIDToGeometry, normalizeMat);
 
-					if (flatFirstMesh.numFaces == 0)
+					if (flatFirstMesh.size() == 0)
 					{
 						// bail out because we will get strange meshes
 						// if this happens, probably there's an issue parsing the first mesh
@@ -500,7 +494,7 @@ namespace webifc
 					}
 
 					std::vector<IfcGeometry> flatSecondGeoms;
-					flatSecondGeoms.push_back(flatSecondMesh);
+					flatSecondGeoms.insert(flatSecondGeoms.end(), flatSecondMesh.begin(), flatSecondMesh.end());
 
 					webifc::IfcGeometry resultMesh = BoolSubtract(flatFirstMesh, flatSecondGeoms, line.expressID);
 
@@ -1091,14 +1085,14 @@ namespace webifc
 
 			double radius = sqrt(pow(cenX - p1.x, 2) + pow(cenY - p1.y, 2));
 
-			//Using geometrical subdivision to avoid complex calculus with angles
+			// Using geometrical subdivision to avoid complex calculus with angles
 
 			std::vector<glm::dvec2> pointList;
 			pointList.push_back(p1);
 			pointList.push_back(p2);
 			pointList.push_back(p3);
 
-			while(pointList.size() < _loader.GetSettings().CIRCLE_SEGMENTS_MEDIUM)
+			while (pointList.size() < _loader.GetSettings().CIRCLE_SEGMENTS_MEDIUM)
 			{
 				std::vector<glm::dvec2> tempPointList;
 				for (uint32_t j = 0; j < pointList.size() - 1; j++)
@@ -1230,17 +1224,137 @@ namespace webifc
 			return result;
 		}
 
-		IfcGeometry BoolSubtract(const IfcGeometry &firstGeom, const std::vector<IfcGeometry> &secondGeoms, uint32_t expressID)
+		IfcGeometry scaleGeometry(IfcGeometry geometry, double scaleFactor)
+		{
+			if (geometry.numPoints > 0)
+			{
+				double ct;
+				glm::dvec3 centroid;
+				for (int j = 0; j < geometry.numPoints; j++)
+				{
+					centroid += geometry.GetPoint(j);
+					ct++;
+				}
+				centroid /= ct;
+
+				for (int j = 0; j < geometry.numPoints; j++)
+				{
+					glm::dvec3 pt = geometry.GetPoint(j);
+					glm::dvec3 vc = pt - centroid;
+					glm::dvec3 scaledPoint = centroid;
+					scaledPoint += vc * scaleFactor;
+					geometry.AssignPoint(j, scaledPoint);
+				}
+			}
+			return geometry;
+		}
+
+		bool isManifold(IfcGeometry geometry)
+		{
+			// Some solids have triangles with naked edges
+			// these naked edges cause manifold to fail
+
+			double mindist = 1e-3;
+
+			for (int i = 0; i < geometry.numFaces; i++)
+			{
+				int a = geometry.indexData[i * 3 + 0];
+				int b = geometry.indexData[i * 3 + 1];
+				int c = geometry.indexData[i * 3 + 2];
+
+				glm::dvec3 p1 = geometry.GetPoint(a);
+				glm::dvec3 p2 = geometry.GetPoint(b);
+				glm::dvec3 p3 = geometry.GetPoint(c);
+
+				for (int j = 0; j < geometry.numPoints; j++)
+				{
+					glm::dvec3 pc = geometry.GetPoint(j);
+
+					double d1 = glm::distance(p1, pc);
+					double d2 = glm::distance(p2, pc);
+					double d3 = glm::distance(p1, p2);
+
+					if (d1 > mindist && d2 > mindist && std::abs(d1 + d2 - d3) < 1e-8)
+					{
+						return false;
+					}
+
+					d1 = glm::distance(p1, pc);
+					d2 = glm::distance(p3, pc);
+					d3 = glm::distance(p1, p3);
+
+					if (d1 > mindist && d2 > mindist && std::abs(d1 + d2 - d3) < 1e-8)
+					{
+						return false;
+					}
+
+					d1 = glm::distance(p2, pc);
+					d2 = glm::distance(p3, pc);
+					d3 = glm::distance(p2, p3);
+
+					if (d1 > mindist && d2 > mindist && std::abs(d1 + d2 - d3) < 1e-8)
+					{
+						return false;
+					}
+				}
+			}
+			return true;
+		}
+
+		IfcGeometry BoolSubtract(const std::vector<IfcGeometry> &firstGeoms, const std::vector<IfcGeometry> &secondGeoms, uint32_t expressID)
 		{
 			IfcGeometry result;
+
+			IfcGeometry firstGeom;
 			IfcGeometry secondGeom;
 
-			if (_loader.GetSettings().USE_FAST_BOOLS)
+			bool allManifold = true;
+
+			for (auto geom : firstGeoms)
 			{
+				if (!isManifold(geom))
+				{
+					allManifold = false;
+					break;
+				}
+			}
+			for (auto geom : secondGeoms)
+			{
+				if (!isManifold(geom))
+				{
+					allManifold = false;
+					break;
+				}
+			}
+
+			if (!allManifold)
+			{
+				for (auto geom : firstGeoms)
+				{
+					geom = scaleGeometry(geom, 0.99999);
+					if (geom.numFaces != 0)
+					{
+						if (firstGeom.numFaces == 0)
+						{
+							firstGeom = geom;
+						}
+						else
+						{
+							firstGeom = boolJoin(firstGeom, geom);
+						}
+
+						if (_loader.GetSettings().DUMP_CSG_MESHES)
+						{
+							DumpIfcGeometry(geom, L"firstGeom.obj");
+						}
+					}
+				}
+
 				for (auto geom : secondGeoms)
 				{
 					if (geom.numFaces != 0)
 					{
+						geom = scaleGeometry(geom, 1.00001);
 						if (secondGeom.numFaces == 0)
 						{
 							secondGeom = geom;
@@ -1252,17 +1366,9 @@ namespace webifc
 
 						if (_loader.GetSettings().DUMP_CSG_MESHES)
 						{
-							DumpIfcGeometry(geom, L"geom.obj");
+							DumpIfcGeometry(geom, L"secondGeom.obj");
 						}
 					}
-				}
-				if (firstGeom.numFaces == 0 || secondGeom.numFaces == 0)
-				{
-					_loader.ReportError({LoaderErrorType::BOOL_ERROR, "bool aborted due to empty source or target"});
-
-					// bail out because we will get strange meshes
-					// if this happens, probably there's an issue parsing the mesh that occurred earlier
-					return firstGeom;
 				}
 
 				IfcGeometry r1;
@@ -1280,34 +1386,45 @@ namespace webifc
 			else
 			{
 				const int threshold = LoaderSettings().BOOL_ABORT_THRESHOLD;
+
+				std::vector<IfcGeometry> firsts;
 				std::vector<IfcGeometry> seconds;
 
-				for (auto &geom : secondGeoms)
+				for (auto &geom : firstGeoms)
 				{
-					if (geom.numPoints < threshold)
+					if (geom.numPoints < threshold && geom.numFaces > 0)
 					{
-						seconds.push_back(geom);
+						firsts.push_back(scaleGeometry(geom, 0.99999999));
 					}
 					else
 					{
-						_loader.ReportError({LoaderErrorType::BOOL_ERROR, "complex bool aborted due to BOOL_ABORT_THRESHOLD"});
+						_loader.ReportError({LoaderErrorType::BOOL_ERROR, "complex bool aborted due to BOOL_ABORT_THRESHOLD or zero faces"});
 					}
 
 					if (_loader.GetSettings().DUMP_CSG_MESHES)
 					{
-						DumpIfcGeometry(geom, L"geom.obj");
+						DumpIfcGeometry(geom, L"firstGeom.obj");
 					}
 				}
 
-				if (firstGeom.numPoints > threshold)
+				for (auto &geom : secondGeoms)
 				{
-					_loader.ReportError({LoaderErrorType::BOOL_ERROR, "complex bool aborted due to BOOL_ABORT_THRESHOLD"});
+					if (geom.numPoints < threshold && geom.numFaces > 0)
+					{
+						seconds.push_back(scaleGeometry(geom, 1.00000001));
+					}
+					else
+					{
+						_loader.ReportError({LoaderErrorType::BOOL_ERROR, "complex bool aborted due to BOOL_ABORT_THRESHOLD or zero faces"});
+					}
 
-					// bail out because we expect this operation to take too long
-					return firstGeom;
+					if (_loader.GetSettings().DUMP_CSG_MESHES)
+					{
+						DumpIfcGeometry(geom, L"secondGeom.obj");
+					}
 				}
 
-				if (firstGeom.numFaces == 0 || seconds.size() == 0)
+				if (firsts.size() == 0 || seconds.size() == 0)
 				{
 					_loader.ReportError({LoaderErrorType::BOOL_ERROR, "bool aborted due to empty source or target"});
 
@@ -1316,7 +1433,7 @@ namespace webifc
 					return firstGeom;
 				}
 
-				result = boolMultiOp_Manifold(firstGeom, seconds, expressID);
+				result = boolMultiOp_Manifold(firsts, seconds, expressID);
 			}
 
 			if (_loader.GetSettings().DUMP_CSG_MESHES)
@@ -2584,18 +2701,31 @@ namespace webifc
 
 			if (tinynurbs::surfaceIsValid(srf))
 			{
-
 				// Find projected boundary using NURBS inverse evaluation
+
+				std::vector<CDT::V2d<double>> vertices;
+				CDT::EdgeVec edges;
 
 				using Point = std::array<double, 2>;
 				std::vector<std::vector<Point>> uvBoundaryValues;
-
 				std::vector<Point> points;
 				for (int j = 0; j < bounds[0].curve.points.size(); j++)
 				{
 					glm::dvec3 pt = bounds[0].curve.points[j];
 					glm::dvec2 pInv = BSplineInverseEvaluation(pt, srf);
 					points.push_back({pInv.x, pInv.y});
+
+					vertices.push_back({pInv.x, pInv.y});
+					if (j < bounds[0].curve.points.size() - 1)
+					{
+						CDT::Edge ed = CDT::Edge(vertices.size() - 1, vertices.size());
+						edges.push_back(ed);
+					}
+					else
+					{
+						CDT::Edge ed = CDT::Edge(vertices.size() - 1, vertices.size() - bounds[0].curve.points.size());
+						edges.push_back(ed);
+					}
 				}
 				uvBoundaryValues.push_back(points);
 
@@ -2603,7 +2733,21 @@ namespace webifc
 				// Subdivide resulting triangles to increase definition
 				// r indicates the level of subdivision, currently 3 you can increase it to 5
 
-				std::vector<uint32_t> indices = mapbox::earcut<uint32_t>(uvBoundaryValues);
+				CDT::Triangulation<double> cdt(CDT::VertexInsertionOrder::AsProvided);
+				auto mapping = CDT::RemoveDuplicatesAndRemapEdges(vertices, edges).mapping;
+				cdt.insertVertices(vertices);
+				cdt.insertEdges(edges);
+				cdt.eraseOuterTrianglesAndHoles();
+
+				std::vector<uint32_t> indices;
+				auto triangles = cdt.triangles;
+
+				for (auto &t : triangles)
+				{
+					indices.push_back(mapping[t.vertices[0]]);
+					indices.push_back(mapping[t.vertices[1]]);
+					indices.push_back(mapping[t.vertices[2]]);
+				}
 
 				for (int r = 0; r < 3; r++)
 				{
@@ -2748,9 +2892,11 @@ namespace webifc
 					std::swap(v12, v13);
 				}
 
+				std::vector<CDT::V2d<double>> vertices;
+				CDT::EdgeVec edges;
+
 				for (auto &bound : bounds)
 				{
-					std::vector<Point> points;
 					for (int i = 0; i < bound.curve.points.size(); i++)
 					{
 						glm::dvec3 pt = bound.curve.points[i];
@@ -2763,17 +2909,29 @@ namespace webifc
 							glm::dot(pt2, v12),
 							glm::dot(pt2, v13));
 
-						points.push_back({proj.x, proj.y});
+						vertices.push_back({proj.x, proj.y});
+						if (i < bound.curve.points.size() - 1)
+						{
+							CDT::Edge ed = CDT::Edge(vertices.size() - 1, vertices.size());
+							edges.push_back(ed);
+						}
+						else
+						{
+							CDT::Edge ed = CDT::Edge(vertices.size() - 1, vertices.size() - bound.curve.points.size());
+							edges.push_back(ed);
+						}
 					}
-
-					polygon.push_back(points);
 				}
+				CDT::Triangulation<double> cdt(CDT::VertexInsertionOrder::AsProvided);
+				auto mapping = CDT::RemoveDuplicatesAndRemapEdges(vertices, edges).mapping;
+				cdt.insertVertices(vertices);
+				cdt.insertEdges(edges);
+				cdt.eraseOuterTrianglesAndHoles();
 
-				std::vector<uint32_t> indices = mapbox::earcut<uint32_t>(polygon);
-
-				for (int i = 0; i < indices.size(); i += 3)
+				auto triangles = cdt.triangles;
+				for (auto &t : triangles)
 				{
-					geometry.AddFace(offset + indices[i + 0], offset + indices[i + 1], offset + indices[i + 2]);
+					geometry.AddFace(offset + mapping[t.vertices[0]], offset + mapping[t.vertices[1]], offset + mapping[t.vertices[2]]);
 				}
 			}
 			else
@@ -2991,13 +3149,29 @@ namespace webifc
 
 				glm::dvec3 normal = dir;
 
+				std::vector<CDT::V2d<double>> vertices;
+				CDT::EdgeVec edges;
+
 				for (int i = 0; i < profile.curve.points.size(); i++)
 				{
 					glm::dvec2 pt = profile.curve.points[i];
 					glm::dvec4 et = glm::dvec4(glm::dvec3(pt, 0) + dir * distance, 1);
-
 					geom.AddPoint(et, normal);
-					polygon[0].push_back({pt.x, pt.y});
+
+					CDT::V2d<double> cpt;
+					cpt.x = pt.x;
+					cpt.y = pt.y;
+					vertices.push_back({pt.x, pt.y});
+					if (i < profile.curve.points.size() - 1)
+					{
+						CDT::Edge ed = CDT::Edge(vertices.size() - 1, vertices.size());
+						edges.push_back(ed);
+					}
+					else
+					{
+						CDT::Edge ed = CDT::Edge(vertices.size() - 1, vertices.size() - profile.curve.points.size());
+						edges.push_back(ed);
+					}
 				}
 
 				for (int i = 0; i < profile.curve.points.size(); i++)
@@ -3019,13 +3193,39 @@ namespace webifc
 
 						profile.curve.Add(pt);
 						geom.AddPoint(et, normal);
-						polygon[i + 1].push_back({pt.x, pt.y}); // Index 0 is main profile; see earcut reference
+
+						vertices.push_back({pt.x, pt.y});
+						if (j < pointCount - 1)
+						{
+							CDT::Edge ed = CDT::Edge(vertices.size() - 1, vertices.size());
+							edges.push_back(ed);
+						}
+						else
+						{
+							CDT::Edge ed = CDT::Edge(vertices.size() - 1, vertices.size() - pointCount);
+							edges.push_back(ed);
+						}
 					}
 				}
 
-				std::vector<uint32_t> indices = mapbox::earcut<uint32_t>(polygon);
+				CDT::Triangulation<double> cdt(CDT::VertexInsertionOrder::AsProvided);
+				auto mapping = CDT::RemoveDuplicatesAndRemapEdges(vertices, edges).mapping;
 
-				if (indices.size() < 3)
+				cdt.insertVertices(vertices);
+				cdt.insertEdges(edges);
+				cdt.eraseOuterTrianglesAndHoles();
+
+				std::vector<uint32_t> indices;
+				auto triangles = cdt.triangles;
+
+				for (auto &t : triangles)
+				{
+					indices.push_back(mapping[t.vertices[0]]);
+					indices.push_back(mapping[t.vertices[1]]);
+					indices.push_back(mapping[t.vertices[2]]);
+				}
+
+				if (cdt.triangles.size() < 1)
 				{
 					// probably a degenerate polygon
 					_loader.ReportError({LoaderErrorType::UNSPECIFIED, "degenerate polygon in extrude"});
@@ -3033,7 +3233,7 @@ namespace webifc
 				}
 
 				uint32_t offset = 0;
-				bool winding = GetWindingOfTriangle(geom.GetPoint(offset + indices[0]), geom.GetPoint(offset + indices[1]), geom.GetPoint(offset + indices[2]));
+				bool winding = GetWindingOfTriangle(geom.GetPoint(indices[0]), geom.GetPoint(indices[1]), geom.GetPoint(indices[2]));
 				bool flipWinding = !winding;
 
 				for (int i = 0; i < indices.size(); i += 3)

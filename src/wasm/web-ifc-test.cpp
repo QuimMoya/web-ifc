@@ -397,12 +397,12 @@ int main()
     // return 0;
 
     //std::string content = ReadFile(L"C:/Users/qmoya/Desktop/PROGRAMES/VSCODE/IFC.JS/issues/#83 processing/05111002_IFCR2_Geo_Columns_1.ifc");
-    std::string content = ReadFile("C:/Users/qmoya/Desktop/PROGRAMES/VSCODE/IFC.JS/issues/#295/cylinders.ifc");
+    std::string content = ReadFile("C:/Users/qmoya/Desktop/PROGRAMES/VSCODE/IFC.JS/issues/#bool testing/S_Office_Integrated Design Archi.ifc");
 
     webifc::LoaderSettings set;
     set.COORDINATE_TO_ORIGIN = true;
     set.DUMP_CSG_MESHES = false;
-    set.USE_FAST_BOOLS = true;
+    set.USE_FAST_BOOLS = false;
 
     webifc::IfcLoader loader(set);
 

@@ -228,6 +228,21 @@ namespace webifc
 				vertexData[index * VERTEX_FORMAT_SIZE_FLOATS + 2]);
 		}
 
+		inline void AssignPoint(uint32_t index, glm::dvec3 pt)
+		{
+			vertexData[index * VERTEX_FORMAT_SIZE_FLOATS + 0] = pt.x;
+			vertexData[index * VERTEX_FORMAT_SIZE_FLOATS + 1] = pt.y;
+			vertexData[index * VERTEX_FORMAT_SIZE_FLOATS + 2] = pt.z;
+		}
+
+		inline glm::dvec3 GetNormal(uint32_t index) const
+		{
+			return glm::dvec3(
+				vertexData[index * VERTEX_FORMAT_SIZE_FLOATS + 3],
+				vertexData[index * VERTEX_FORMAT_SIZE_FLOATS + 4],
+				vertexData[index * VERTEX_FORMAT_SIZE_FLOATS + 5]);
+		}
+
 		void GetCenterExtents(glm::dvec3 &center, glm::dvec3 &extents) const
 		{
 			glm::dvec3 min(DBL_MAX, DBL_MAX, DBL_MAX);
@@ -614,9 +629,9 @@ namespace webifc
 		return (angle / (2 * CONST_PI)) * 360;
 	}
 
-	double mirrorAngle(double angle) //in degrees
+	double mirrorAngle(double angle) // in degrees
 	{
-		if(angle < 180)
+		if (angle < 180)
 		{
 			return 180 - angle;
 		}
@@ -1412,7 +1427,7 @@ namespace webifc
 		}
 	}
 
-	void flattenRecursive(IfcComposedMesh &mesh, std::unordered_map<uint32_t, IfcGeometry> &geometryMap, IfcGeometry &geom, glm::dmat4 mat)
+	void flattenRecursive(IfcComposedMesh &mesh, std::unordered_map<uint32_t, IfcGeometry> &geometryMap, std::vector<IfcGeometry> &geom, glm::dmat4 mat)
 	{
 		glm::dmat4 newMat = mat * mesh.transformation;
 
@@ -1426,6 +1441,8 @@ namespace webifc
 
 			if (meshGeom.numFaces)
 			{
+				IfcGeometry newGeom;
+
 				for (uint32_t i = 0; i < meshGeom.numFaces; i++)
 				{
 					Face f = meshGeom.GetFace(i);
@@ -1435,13 +1452,15 @@ namespace webifc
 
 					if (transformationBreaksWinding)
 					{
-						geom.AddFace(b, a, c);
+						newGeom.AddFace(b, a, c);
 					}
 					else
 					{
-						geom.AddFace(a, b, c);
+						newGeom.AddFace(a, b, c);
 					}
 				}
+
+				geom.push_back(newGeom);
 			}
 		}
 
@@ -1451,9 +1470,9 @@ namespace webifc
 		}
 	}
 
-	IfcGeometry flatten(IfcComposedMesh &mesh, std::unordered_map<uint32_t, IfcGeometry> &geometryMap, glm::dmat4 mat = glm::dmat4(1))
+	std::vector<IfcGeometry> flatten(IfcComposedMesh &mesh, std::unordered_map<uint32_t, IfcGeometry> &geometryMap, glm::dmat4 mat = glm::dmat4(1))
 	{
-		IfcGeometry geom;
+		std::vector<IfcGeometry> geom;
 		flattenRecursive(mesh, geometryMap, geom, mat);
 		return geom;
 	}
