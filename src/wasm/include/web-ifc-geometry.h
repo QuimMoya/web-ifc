@@ -70,12 +70,6 @@ namespace webifc
 			return _expressIDToGeometry.find(expressID) != _expressIDToGeometry.end();
 		}
 
-		IfcGeometry GetFlattenedGeometry(uint32_t expressID)
-		{
-			auto mesh = GetMesh(expressID);
-			return flatten(mesh, _expressIDToGeometry, NormalizeIFC);
-		}
-
 		void AddComposedMeshToFlatMesh(IfcFlatMesh &flatMesh, const IfcComposedMesh &composedMesh, const glm::dmat4 &parentMatrix = glm::dmat4(1), const glm::dvec4 &color = glm::dvec4(1, 1, 1, 1), bool hasColor = false)
 		{
 			glm::dvec4 newParentColor = color;
@@ -370,13 +364,14 @@ namespace webifc
 				if (relVoidsIt != relVoids.end() && !relVoidsIt->second.empty())
 				{
 					IfcComposedMesh resultMesh;
+					IfcGeometry result;
 
 					auto origin = GetOrigin(mesh, _expressIDToGeometry);
 					auto normalizeMat = glm::translate(-origin);
 					auto flatElementMesh = flatten(mesh, _expressIDToGeometry, normalizeMat);
 					auto elementColor = mesh.GetColor();
 
-					if (!flatElementMesh.IsEmpty())
+					if (!flatElementMesh.size() == 0)
 					{
 
 						// TODO: this is inefficient, better make one-to-many subtraction in bool logic
@@ -386,14 +381,13 @@ namespace webifc
 						{
 							IfcComposedMesh voidGeom = GetMesh(relVoidExpressID);
 							auto flatVoidMesh = flatten(voidGeom, _expressIDToGeometry, normalizeMat);
-
-							voidGeoms.push_back(flatVoidMesh);
+							voidGeoms.insert(voidGeoms.end(), flatVoidMesh.begin(), flatVoidMesh.end());
 						}
 
-						flatElementMesh = BoolSubtract(flatElementMesh, voidGeoms, line.expressID);
+						result = BoolSubtract(flatElementMesh, voidGeoms, line.expressID);
 					}
 
-					_expressIDToGeometry[line.expressID] = flatElementMesh;
+					_expressIDToGeometry[line.expressID] = result;
 					resultMesh.transformation = glm::translate(origin);
 					resultMesh.expressID = line.expressID;
 					resultMesh.hasGeometry = true;
@@ -451,7 +445,7 @@ namespace webifc
 					auto flatSecondMesh = flatten(secondMesh, _expressIDToGeometry, normalizeMat);
 
 					std::vector<IfcGeometry> flatSecondGeoms;
-					flatSecondGeoms.push_back(flatSecondMesh);
+					flatSecondGeoms.insert(flatSecondGeoms.end(), flatSecondMesh.begin(), flatSecondMesh.end());
 
 					webifc::IfcGeometry resultMesh = BoolSubtract(flatFirstMesh, flatSecondGeoms, line.expressID);
 
@@ -492,7 +486,7 @@ namespace webifc
 					auto flatFirstMesh = flatten(firstMesh, _expressIDToGeometry, normalizeMat);
 					auto flatSecondMesh = flatten(secondMesh, _expressIDToGeometry, normalizeMat);
 
-					if (flatFirstMesh.numFaces == 0)
+					if (flatFirstMesh.size() == 0)
 					{
 						// bail out because we will get strange meshes
 						// if this happens, probably there's an issue parsing the first mesh
@@ -500,7 +494,7 @@ namespace webifc
 					}
 
 					std::vector<IfcGeometry> flatSecondGeoms;
-					flatSecondGeoms.push_back(flatSecondMesh);
+					flatSecondGeoms.insert(flatSecondGeoms.end(), flatSecondMesh.begin(), flatSecondMesh.end());
 
 					webifc::IfcGeometry resultMesh = BoolSubtract(flatFirstMesh, flatSecondGeoms, line.expressID);
 
@@ -1091,14 +1085,14 @@ namespace webifc
 
 			double radius = sqrt(pow(cenX - p1.x, 2) + pow(cenY - p1.y, 2));
 
-			//Using geometrical subdivision to avoid complex calculus with angles
+			// Using geometrical subdivision to avoid complex calculus with angles
 
 			std::vector<glm::dvec2> pointList;
 			pointList.push_back(p1);
 			pointList.push_back(p2);
 			pointList.push_back(p3);
 
-			while(pointList.size() < _loader.GetSettings().CIRCLE_SEGMENTS_MEDIUM)
+			while (pointList.size() < _loader.GetSettings().CIRCLE_SEGMENTS_MEDIUM)
 			{
 				std::vector<glm::dvec2> tempPointList;
 				for (uint32_t j = 0; j < pointList.size() - 1; j++)
@@ -1230,17 +1224,66 @@ namespace webifc
 			return result;
 		}
 
-		IfcGeometry BoolSubtract(const IfcGeometry &firstGeom, const std::vector<IfcGeometry> &secondGeoms, uint32_t expressID)
+		IfcGeometry scaleGeometry(IfcGeometry geometry, double scaleFactor)
+		{
+			if (geometry.numPoints > 0)
+			{
+				double ct;
+				glm::dvec3 centroid;
+				for (int j = 0; j < geometry.numPoints; j++)
+				{
+					centroid += geometry.GetPoint(j);
+					ct++;
+				}
+				centroid /= ct;
+
+				for (int j = 0; j < geometry.numPoints; j++)
+				{
+					glm::dvec3 pt = geometry.GetPoint(j);
+					glm::dvec3 vc = pt - centroid;
+					glm::dvec3 scaledPoint = centroid;
+					scaledPoint += vc * scaleFactor;
+					geometry.AssignPoint(j, scaledPoint);
+				}
+			}
+			return geometry;
+		}
+
+		IfcGeometry BoolSubtract(const std::vector<IfcGeometry> &firstGeoms, const std::vector<IfcGeometry> &secondGeoms, uint32_t expressID)
 		{
 			IfcGeometry result;
+
+			IfcGeometry firstGeom;
 			IfcGeometry secondGeom;
 
 			if (_loader.GetSettings().USE_FAST_BOOLS)
 			{
+				for (auto geom : firstGeoms)
+				{
+					geom = scaleGeometry(geom, 0.99999);
+					if (geom.numFaces != 0)
+					{
+						if (firstGeom.numFaces == 0)
+						{
+							firstGeom = geom;
+						}
+						else
+						{
+							firstGeom = boolJoin(firstGeom, geom);
+						}
+
+						if (_loader.GetSettings().DUMP_CSG_MESHES)
+						{
+							DumpIfcGeometry(geom, L"firstGeom.obj");
+						}
+					}
+				}
+
 				for (auto geom : secondGeoms)
 				{
 					if (geom.numFaces != 0)
 					{
+						//geom = scaleGeometry(geom, 1.00001);
 						if (secondGeom.numFaces == 0)
 						{
 							secondGeom = geom;
@@ -1252,17 +1295,9 @@ namespace webifc
 
 						if (_loader.GetSettings().DUMP_CSG_MESHES)
 						{
-							DumpIfcGeometry(geom, L"geom.obj");
+							DumpIfcGeometry(geom, L"secondGeom.obj");
 						}
 					}
-				}
-				if (firstGeom.numFaces == 0 || secondGeom.numFaces == 0)
-				{
-					_loader.ReportError({LoaderErrorType::BOOL_ERROR, "bool aborted due to empty source or target"});
-
-					// bail out because we will get strange meshes
-					// if this happens, probably there's an issue parsing the mesh that occurred earlier
-					return firstGeom;
 				}
 
 				IfcGeometry r1;
@@ -1280,34 +1315,45 @@ namespace webifc
 			else
 			{
 				const int threshold = LoaderSettings().BOOL_ABORT_THRESHOLD;
+
+				std::vector<IfcGeometry> firsts;
 				std::vector<IfcGeometry> seconds;
 
-				for (auto &geom : secondGeoms)
+				for (auto &geom : firstGeoms)
 				{
-					if (geom.numPoints < threshold)
+					if (geom.numPoints < threshold && geom.numFaces > 0)
 					{
-						seconds.push_back(geom);
+						firsts.push_back(scaleGeometry(geom, 0.999999999));
 					}
 					else
 					{
-						_loader.ReportError({LoaderErrorType::BOOL_ERROR, "complex bool aborted due to BOOL_ABORT_THRESHOLD"});
+						_loader.ReportError({LoaderErrorType::BOOL_ERROR, "complex bool aborted due to BOOL_ABORT_THRESHOLD or zero faces"});
 					}
 
 					if (_loader.GetSettings().DUMP_CSG_MESHES)
 					{
-						DumpIfcGeometry(geom, L"geom.obj");
+						DumpIfcGeometry(geom, L"firstGeom.obj");
 					}
 				}
 
-				if (firstGeom.numPoints > threshold)
+				for (auto &geom : secondGeoms)
 				{
-					_loader.ReportError({LoaderErrorType::BOOL_ERROR, "complex bool aborted due to BOOL_ABORT_THRESHOLD"});
+					if (geom.numPoints < threshold && geom.numFaces > 0)
+					{
+						seconds.push_back(scaleGeometry(geom, 1.000000001));
+					}
+					else
+					{
+						_loader.ReportError({LoaderErrorType::BOOL_ERROR, "complex bool aborted due to BOOL_ABORT_THRESHOLD or zero faces"});
+					}
 
-					// bail out because we expect this operation to take too long
-					return firstGeom;
+					if (_loader.GetSettings().DUMP_CSG_MESHES)
+					{
+						DumpIfcGeometry(geom, L"secondGeom.obj");
+					}
 				}
 
-				if (firstGeom.numFaces == 0 || seconds.size() == 0)
+				if (firsts.size() == 0 || seconds.size() == 0)
 				{
 					_loader.ReportError({LoaderErrorType::BOOL_ERROR, "bool aborted due to empty source or target"});
 
@@ -1316,7 +1362,7 @@ namespace webifc
 					return firstGeom;
 				}
 
-				result = boolMultiOp_Manifold(firstGeom, seconds, expressID);
+				result = boolMultiOp_Manifold(firsts, seconds, expressID);
 			}
 
 			if (_loader.GetSettings().DUMP_CSG_MESHES)
@@ -3356,11 +3402,10 @@ namespace webifc
 				}
 
 				_loader.MoveToArgumentOffset(line, 3);
-				double filletRadius = 0;
 				double depth = _loader.GetDoubleArgument();
 				double width = _loader.GetDoubleArgument();
 				double thickness = _loader.GetDoubleArgument();
-				filletRadius = _loader.GetDoubleArgument();
+				double filletRadius = _loader.GetDoubleArgument();
 				double edgeRadius = _loader.GetDoubleArgument();
 				double legSlope = _loader.GetDoubleArgument();
 				double centreOfGravityInX = _loader.GetDoubleArgument();
@@ -3378,6 +3423,52 @@ namespace webifc
 				}
 
 				profile.curve = GetLShapedCurve(width, depth, thickness, hasFillet, filletRadius, edgeRadius, legSlope, placement);
+
+				return profile;
+			}
+			case ifc::IFCTSHAPEPROFILEDEF:
+			{
+				IfcProfile profile;
+
+				_loader.MoveToArgumentOffset(line, 0);
+				profile.type = _loader.GetStringArgument();
+				profile.isConvex = false;
+
+				_loader.MoveToArgumentOffset(line, 2);
+
+				glm::dmat3 placement(1);
+
+				if (_loader.GetTokenType() == webifc::IfcTokenType::REF)
+				{
+					_loader.Reverse();
+
+					uint32_t placementID = _loader.GetRefArgument();
+					glm::dmat3 placement = GetAxis2Placement2D(placementID);
+				}
+
+				_loader.MoveToArgumentOffset(line, 3);
+				double depth = _loader.GetDoubleArgument();
+				double width = _loader.GetDoubleArgument();
+				double webThickness = _loader.GetDoubleArgument();
+				double flangeThickness = _loader.GetDoubleArgument();
+				double filletRadius = _loader.GetDoubleArgument();
+				double flangeEdgeRadius = _loader.GetDoubleArgument();
+				double webEdgeRadius = _loader.GetDoubleArgument();
+				double webSlope = _loader.GetDoubleArgument();
+				double flangeSlope = _loader.GetDoubleArgument();			
+
+				// optional fillet
+				bool hasFillet = false;
+
+				if (_loader.GetTokenType() == webifc::IfcTokenType::REAL)
+				{
+					_loader.Reverse();
+
+					hasFillet = true;
+					filletRadius = _loader.GetDoubleArgument();
+				}
+
+				profile.curve = GetTShapedCurve(width, depth, webThickness, hasFillet, filletRadius, flangeEdgeRadius, flangeSlope, placement);
 
 				return profile;
 			}
@@ -3420,7 +3511,48 @@ namespace webifc
 
 				return profile;
 			}
+			case ifc::IFCCSHAPEPROFILEDEF:
+			{
+				IfcProfile profile;
+<<<<<<< Updated upstream
 
+				_loader.MoveToArgumentOffset(line, 0);
+				profile.type = _loader.GetStringArgument();
+				profile.isConvex = true;
+
+=======
+
+				_loader.MoveToArgumentOffset(line, 0);
+				profile.type = _loader.GetStringArgument();
+				profile.isConvex = true;
+
+>>>>>>> Stashed changes
+				_loader.MoveToArgumentOffset(line, 2);
+
+				glm::dmat3 placement(1);
+
+				if (_loader.GetTokenType() == webifc::IfcTokenType::REF)
+				{
+					_loader.Reverse();
+
+					uint32_t placementID = _loader.GetRefArgument();
+					glm::dmat3 placement = GetAxis2Placement2D(placementID);
+				}
+
+				bool hasFillet = false;
+
+				_loader.MoveToArgumentOffset(line, 3);
+
+				double depth = _loader.GetDoubleArgument();
+				double Width = _loader.GetDoubleArgument();
+				double Thickness = _loader.GetDoubleArgument();
+				double girth = _loader.GetDoubleArgument();
+				double filletRadius = _loader.GetDoubleArgument();
+
+				profile.curve = GetCShapedCurve(Width, depth, girth, Thickness, hasFillet, filletRadius, placement);
+
+				return profile;
+			}
 			case ifc::IFCDERIVEDPROFILEDEF:
 			{
 				_loader.MoveToArgumentOffset(line, 2);
